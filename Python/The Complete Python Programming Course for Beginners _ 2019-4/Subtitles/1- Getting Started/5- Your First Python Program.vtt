@@ -1,0 +1,213 @@
+WEBVTT
+
+1
+00:00:04.000 --> 00:00:08.000
+Now with VSCode open on the top,
+
+2
+00:00:08.000 --> 00:00:12.000
+from the file menu go to open, and
+
+3
+00:00:12.000 --> 00:00:16.000
+somewhere on your desk, create a new folder. Let's call this
+
+4
+00:00:16.000 --> 00:00:20.000
+folder HelloWorld. And then
+
+5
+00:00:20.000 --> 00:00:24.000
+open it, beautiful, now click this icon on the top,
+
+6
+00:00:24.000 --> 00:00:28.000
+this opens up the explorer panel. In this panel,
+
+7
+00:00:28.000 --> 00:00:32.000
+you can see all the files and folders in your project. So let's
+
+8
+00:00:32.000 --> 00:00:36.000
+add a new file, and call that app.
+
+9
+00:00:36.000 --> 00:00:40.000
+py. So all our python files should have the py
+
+10
+00:00:40.000 --> 00:00:44.000
+extension. Press enter. Now let's close
+
+11
+00:00:44.000 --> 00:00:48.000
+this. And type a bit of python code. In this lecture,
+
+12
+00:00:48.000 --> 00:00:52.000
+we're going to use one of the built in functions in Python called
+
+13
+00:00:52.000 --> 00:00:56.000
+print. So in Python, we have a lot of built in functions for
+
+14
+00:00:56.000 --> 00:01:00.000
+performing various kinds of tasks. For example, as a midd of forth, think of the
+
+15
+00:01:00.000 --> 00:01:04.000
+remote control of your tv. on this remote control you have a bunch of
+
+16
+00:01:04.000 --> 00:01:08.000
+functions like turn on, turn off, change the chanel, change the volume
+
+17
+00:01:08.000 --> 00:01:12.000
+and so on. These are the built in functions in your TV.
+
+18
+00:01:12.000 --> 00:01:16.000
+We have the same concept in python and many other programming languages.
+
+19
+00:01:16.000 --> 00:01:20.000
+So one of these built in functions that comes with python is print.
+
+20
+00:01:20.000 --> 00:01:24.000
+And we can use this to print something
+
+21
+00:01:24.000 --> 00:01:28.000
+on the screen. Now whenever you wanna use a function, you should open
+
+22
+00:01:28.000 --> 00:01:32.000
+and close parenthesis. In programming we say
+
+23
+00:01:32.000 --> 00:01:36.000
+recalling the print function. Calling a function means executing it.
+
+24
+00:01:36.000 --> 00:01:40.000
+Now let's display the hello world message
+
+25
+00:01:40.000 --> 00:01:44.000
+on the screen. Whenever you want to work with text, you should put your text
+
+26
+00:01:44.000 --> 00:01:48.000
+in between quotes. Either double quotes
+
+27
+00:01:48.000 --> 00:01:52.000
+or single quotes. Now I'm going to go with double quotes
+
+28
+00:01:52.000 --> 00:01:56.000
+and add Hello World and
+
+29
+00:01:56.000 --> 00:02:00.000
+then put a happy Persian cat here, beautiful, save the changes
+
+30
+00:02:00.000 --> 00:02:04.000
+with command and s on Mac, or control and
+
+31
+00:02:04.000 --> 00:02:08.000
+S on Windows. Now to execute this code, we need to go back to
+
+32
+00:02:08.000 --> 00:02:12.000
+command prompt on Windows or Terminal on Mac. But
+
+33
+00:02:12.000 --> 00:02:16.000
+the good news is that we don't have to switch programs, here in VSCode
+
+34
+00:02:16.000 --> 00:02:20.000
+we have an integrated terminal, so press control
+
+35
+00:02:20.000 --> 00:02:24.000
+and back tick, that is the key before number 1 on your
+
+36
+00:02:24.000 --> 00:02:28.000
+keyboard. It's just below the escape button.
+
+37
+00:02:28.000 --> 00:02:32.000
+So this is our integrated terminal, now if you're on Windows
+
+38
+00:02:32.000 --> 00:02:36.000
+type python, but if you're on Mac or Linux, type Python 3,
+
+39
+00:02:36.000 --> 00:02:40.000
+and next to that, add the name of our file, that is
+
+40
+00:02:40.000 --> 00:02:44.000
+app.py. And here's our Hello World message
+
+41
+00:02:44.000 --> 00:02:48.000
+in the terminal, beautiful. Now let's take this to the next level
+
+42
+00:02:48.000 --> 00:02:52.000
+and make it a little bit more interesting. Let's close this terminal Window
+
+43
+00:02:52.000 --> 00:02:56.000
+by pressing control and back tick and add a
+
+44
+00:02:56.000 --> 00:03:00.000
+second line of code, so one more time, print,
+
+45
+00:03:00.000 --> 00:03:04.000
+this time let's add quotes with a star in between them.
+
+46
+00:03:04.000 --> 00:03:08.000
+Now, let's see if you want to repeat this star ten times.
+
+47
+00:03:08.000 --> 00:03:12.000
+So here we can multiply this by 10, save,
+
+48
+00:03:12.000 --> 00:03:16.000
+the changes. Open up the terminal and run our program.
+
+49
+00:03:16.000 --> 00:03:20.000
+And you can see this star is repeated
+
+50
+00:03:20.000 --> 00:03:24.000
+ten times. So as you can see the instructions in our program
+
+51
+00:03:24.000 --> 00:03:28.000
+are executed from top to bottom in order. In the
+
+52
+00:03:28.000 --> 00:03:32.000
+next lecture, I'm going to show you how to convert this vs code to a powerful
+
+53
+00:03:32.000 --> 00:03:36.000
+ID for building python applications.
