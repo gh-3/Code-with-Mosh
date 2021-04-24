@@ -1,6 +1,6 @@
 # Code-with-Mosh
 
-in this course Mosh teache both on Mac and Windows. 
+In this course Mosh teaches Python on both Mac and Windows. 
 
 But I prepare (codes + notes) for Windows 10.
 
