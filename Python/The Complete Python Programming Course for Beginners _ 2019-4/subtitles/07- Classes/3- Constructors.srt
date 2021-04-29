@@ -1,0 +1,351 @@
+2
+00:00:04,000 --> 00:00:08,250
+So here when we create a point object
+ we want to supply initial
+
+3
+00:00:08,250 --> 00:00:11,650
+values for X and Y coordinates. 
+Like this:
+
+4
+00:00:12,340 --> 00:00:15,580
+1 and 2.
+To achive this we need a
+
+5
+00:00:15,580 --> 00:00:19,220
+constructor, 
+which is a special method that is called when
+
+6
+00:00:19,220 --> 00:00:22,770
+we create a new point object.
+ Let me show you how to create
+
+7
+00:00:22,780 --> 00:00:27,140
+a constructor. 
+So in our point class we
+
+8
+00:00:27,140 --> 00:00:30,530
+define a new function.
+ The name of this function should
+
+9
+00:00:30,530 --> 00:00:34,720
+be double underline init double underline. 
+This 
+
+10
+00:00:34,720 --> 00:00:38,330
+is a special method that
+we call a magic method. 
+In
+
+11
+00:00:38,330 --> 00:00:41,500
+python classes we have
+ several magic methods and you're
+
+12
+00:00:41,500 --> 00:00:44,930
+going to learn more about them
+ throughout this section. 
+ So this magic
+
+13
+00:00:44,930 --> 00:00:48,650
+method is called a constructor and 
+it's executed when
+
+14
+00:00:48,650 --> 00:00:52,020
+we create a new point object.
+ Now earlier I told you
+
+15
+00:00:52,030 --> 00:00:55,280
+that all the methods that we
+ defined in the class should have
+
+16
+00:00:55,280 --> 00:00:58,970
+at least one parameter
+which we call self by
+
+17
+00:00:58,970 --> 00:01:02,540
+convention. 
+You will see what this is shortly. 
+So
+
+18
+00:01:02,650 --> 00:01:06,910
+we add self and then
+ optionally we add any additional parameters
+
+19
+00:01:06,940 --> 00:01:10,760
+for initializing a point object, like x and
+
+20
+00:01:10,760 --> 00:01:15,000
+y. 
+Now what is this self? 
+self
+
+21
+00:01:15,010 --> 00:01:18,140
+is a reference to the current point object. 
+For
+
+22
+00:01:18,140 --> 00:01:21,430
+example, here on line nine when we call
+
+23
+00:01:21,430 --> 00:01:24,940
+the Point class,
+ Python will internally create a point
+
+24
+00:01:24,940 --> 00:01:28,850
+object in memory and set self to reference
+
+25
+00:01:28,960 --> 00:01:32,520
+that point object. 
+Now this point object has
+
+26
+00:01:32,530 --> 00:01:35,800
+a bunch of methods that you have seen before, 
+for example when we
+
+27
+00:01:35,800 --> 00:01:39,080
+use the dot operator,
+ you can see all the
+
+28
+00:01:39,080 --> 00:01:42,180
+methods in this point object. 
+But an
+
+29
+00:01:42,190 --> 00:01:46,140
+object can also have attributes
+ which are basically variables
+
+30
+00:01:46,140 --> 00:01:49,630
+that include data about that object. 
+For example
+
+31
+00:01:49,630 --> 00:01:52,750
+we can have attributes
+ like X and y that we
+
+32
+00:01:52,750 --> 00:01:56,190
+can easily print on the terminal. 
+In
+
+33
+00:01:56,200 --> 00:02:00,430
+other words a class
+ or an object bundles data,
+
+34
+00:02:00,440 --> 00:02:04,630
+and functions related to that
+ data into one unit. Once
+
+35
+00:02:04,630 --> 00:02:07,960
+again as a metaphor. think of a human.
+ A human can have
+
+36
+00:02:07,970 --> 00:02:11,330
+attributes like eye color. height. weight and
+
+37
+00:02:11,330 --> 00:02:15,050
+so on. as well
+ as functions like walk. talk
+
+38
+00:02:15,060 --> 00:02:19,440
+and so on. Okay.
+ so back to our constructor. you
+
+39
+00:02:19,440 --> 00:02:23,460
+learn that self is a
+ reference to the current object. so
+
+40
+00:02:23,460 --> 00:02:27,370
+we can use that to set
+ the X and Y attributes like
+
+41
+00:02:27,370 --> 00:02:30,470
+this self that eggs.
+ We can set it to
+
+42
+00:02:30,470 --> 00:02:34,430
+some default value.
+ like zero or this X argument
+
+43
+00:02:34,450 --> 00:02:38,700
+that we receive in this method. Similarly. let's
+
+44
+00:02:38,700 --> 00:02:42,010
+set self that. Why do why now
+
+45
+00:02:42,010 --> 00:02:48,060
+. With this code.
+ When we use the dot operator. look
+
+46
+00:02:48,940 --> 00:02:52,880
+. we have to draw method as
+ well as the two new attributes X
+
+47
+00:02:53,050 --> 00:02:56,350
+and Y. so we
+ can simply print point at
+
+48
+00:02:56,360 --> 00:02:59,580
+Exxon Terminal. Let's take a look around this
+
+49
+00:02:59,580 --> 00:03:03,460
+code. As you can see.
+ X is one no
+
+50
+00:03:03,840 --> 00:03:07,660
+back to our draw method.
+ Here again. we have this self parameter
+
+51
+00:03:07,670 --> 00:03:11,510
+So using this we have a
+ reference to the current point object. And
+
+52
+00:03:11,510 --> 00:03:15,050
+with that we can read the X and Y values and print
+
+53
+00:03:15,050 --> 00:03:19,060
+them on the terminal. 
+So here I'm going to change this implementation
+
+54
+00:03:19,640 --> 00:03:23,560
+and pass a formatted string like this point
+
+55
+00:03:24,040 --> 00:03:27,860
+parenthesis. Here I want to pass self dot
+
+56
+00:03:27,870 --> 00:03:31,530
+X. then comma and then self. That's
+
+57
+00:03:31,530 --> 00:03:35,000
+y. 
+So using self we can read
+
+58
+00:03:35,010 --> 00:03:38,590
+attributes of the current object
+ or we can also call other
+
+59
+00:03:38,590 --> 00:03:42,360
+methods in this object. Now let's change line
+
+60
+00:03:42,370 --> 00:03:45,860
+11 and simply call point dot draw.
+
+61
+00:03:46,800 --> 00:03:50,650
+Save the changes.
+Run the program. 
+And this
+
+62
+00:03:50,650 --> 00:03:54,150
+is what we get now.
+ What is interesting here
+
+63
+00:03:54,540 --> 00:03:58,100
+is that when calling the draw method
+ we didn't have to supply a
+
+64
+00:03:58,100 --> 00:04:01,420
+value for the self parameter
+ because Python does that by 
+
+65
+00:04:01,420 --> 00:04:04,960
+default. 
+Now technically we could come back here
+
+66
+00:04:05,340 --> 00:04:08,840
+and pass this point object as a reference to
+
+67
+00:04:08,840 --> 00:04:12,410
+the current object,
+but this is really unnecessary and
+
+68
+00:04:12,410 --> 00:04:15,860
+it makes our code busy or noisy, so
+
+69
+00:04:16,240 --> 00:04:19,800
+here's what you need to take away.
+ The methods that we define in a class
+
+70
+00:04:19,910 --> 00:04:23,410
+should have at least one parameter
+ which by convention is
+
+71
+00:04:23,410 --> 00:04:27,200
+called self. 
+And this references the current point object
+
+72
+00:04:27,200 --> 00:04:30,820
+that we're working with when
+calling methods of an object. 
+We
+
+73
+00:04:30,820 --> 00:04:37,000
+never have to supply a value for this parameter, 
+Python interpreter does that for us.
+

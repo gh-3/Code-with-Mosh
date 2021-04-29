@@ -1,0 +1,249 @@
+WEBVTT
+
+1
+00:00:04.000 --> 00:00:08.000
+So here we have a path object that represents a directory. A few useful
+
+2
+00:00:08.000 --> 00:00:12.000
+methods that we need to be aware of are exists
+
+3
+00:00:12.000 --> 00:00:16.000
+in terms of booleans, mkdir to create this directory
+
+4
+00:00:16.000 --> 00:00:20.000
+rmdir to remove it,
+
+5
+00:00:20.000 --> 00:00:24.000
+and rename to rename it to a new name. Let's say ecommerce2
+
+6
+00:00:24.000 --> 00:00:28.000
+now these are pretty self explanatory, so in this lecture we're not going to
+
+7
+00:00:28.000 --> 00:00:32.000
+look at these, instead we're going to look at another method that is
+
+8
+00:00:32.000 --> 00:00:36.000
+iterdir. With this method we can get the list of files,
+
+9
+00:00:36.000 --> 00:00:40.000
+and directories in this path, so let's print the results
+
+10
+00:00:40.000 --> 00:00:44.000
+and see what we get. We get a generator object
+
+11
+00:00:44.000 --> 00:00:48.000
+remember generator objects? A generator object as the name
+
+12
+00:00:48.000 --> 00:00:52.000
+implies returns a new value every time we iterate.
+
+13
+00:00:52.000 --> 00:00:56.000
+So when we are working with large lists of items, instead of storing all
+
+14
+00:00:56.000 --> 00:01:00.000
+those items into memory, we use a generator object. We
+
+15
+00:01:00.000 --> 00:01:04.000
+iterate it and get a new value everytime, this is more efficient.
+
+16
+00:01:04.000 --> 00:01:08.000
+So that's the reason this method returns a generator object because
+
+17
+00:01:08.000 --> 00:01:12.000
+when working with files and directories it is possible to have
+
+18
+00:01:12.000 --> 00:01:16.000
+a directory with a million files in it. So now we can iterate
+
+19
+00:01:16.000 --> 00:01:20.000
+over this let's say for p
+
+20
+00:01:20.000 --> 00:01:24.000
+and then print p. Let's run the program.
+
+21
+00:01:24.000 --> 00:01:28.000
+So on my machine, I have one file, and
+
+22
+00:01:28.000 --> 00:01:32.000
+3 directories in this path. As you can see this method returns
+
+23
+00:01:32.000 --> 00:01:36.000
+both the files and directories. Now if you're working
+
+24
+00:01:36.000 --> 00:01:40.000
+with the directory that doesn't have ten million files in it, you can
+
+25
+00:01:40.000 --> 00:01:44.000
+convert this generator to a list using a list comprehension
+
+26
+00:01:44.000 --> 00:01:48.000
+so instead of iterating over this generator we can use
+
+27
+00:01:48.000 --> 00:01:52.000
+a list comprehension which is pretty similar to what we have here,
+
+28
+00:01:52.000 --> 00:01:56.000
+that the square brackets and add p here. So p
+
+29
+00:01:56.000 --> 00:02:00.000
+or p in path .iterdir. Now,
+
+30
+00:02:00.000 --> 00:02:04.000
+we get  all these paths and we can print them,
+
+31
+00:02:04.000 --> 00:02:08.000
+let's see what we get. We get an array
+
+32
+00:02:08.000 --> 00:02:12.000
+of posixpath objects. What is this?
+
+33
+00:02:12.000 --> 00:02:16.000
+Well, this path class that we imported on the top, this is the base
+
+34
+00:02:16.000 --> 00:02:20.000
+class for two different classes, posixPath and Windows
+
+35
+00:02:20.000 --> 00:02:24.000
+path. Posix is the standard use in unix like operating
+
+36
+00:02:24.000 --> 00:02:28.000
+systems so because I'm using a Mac, here we have a list
+
+37
+00:02:28.000 --> 00:02:32.000
+of posixpath objects. If you're on Windows, you see a list of
+
+38
+00:02:32.000 --> 00:02:36.000
+windows path objects. Okay? Now here we can take this comprehension
+
+39
+00:02:36.000 --> 00:02:40.000
+expression to the next level and apply filtering. Let's say we
+
+40
+00:02:40.000 --> 00:02:44.000
+only want to get the directories. So if we get p.
+
+41
+00:02:44.000 --> 00:02:48.000
+is dir, you learned about this method in the last lecture.
+
+42
+00:02:48.000 --> 00:02:52.000
+Right? Let's run the program, so here are,
+
+43
+00:02:52.000 --> 00:02:56.000
+3 directories that we have inside of the ecommerce
+
+44
+00:02:56.000 --> 00:03:00.000
+directory. Okay? So, this method
+
+45
+00:03:00.000 --> 00:03:04.000
+is pretty useful to get the list of files and directories in a path
+
+46
+00:03:04.000 --> 00:03:08.000
+but it has two limitations, one is that  we cannot search by the
+
+47
+00:03:08.000 --> 00:03:12.000
+pattern, and second is that it doesn't search recursively.
+
+48
+00:03:12.000 --> 00:03:16.000
+So, for those scenarios we need to use a different method, that is glob.
+
+49
+00:03:16.000 --> 00:03:20.000
+Let me show you, so, path.
+
+50
+00:03:20.000 --> 00:03:24.000
+glob this method takes a pattern so we can
+
+51
+00:03:24.000 --> 00:03:28.000
+search for all files or let's say all py files,
+
+52
+00:03:28.000 --> 00:03:32.000
+similar to the other method this returns a generator. So we can use it an expression
+
+53
+00:03:32.000 --> 00:03:36.000
+like this. p for
+
+54
+00:03:36.000 --> 00:03:40.000
+p in path.glob. Now we get the py files
+
+55
+00:03:40.000 --> 00:03:44.000
+let's print them here.
+
+56
+00:03:44.000 --> 00:03:48.000
+So in this directory I only have a single py file.
+
+57
+00:03:48.000 --> 00:03:52.000
+Now, to search recursively, we need to change this
+
+58
+00:03:52.000 --> 00:03:56.000
+pattern to something like this. The other option
+
+59
+00:03:56.000 --> 00:04:00.000
+is to use the r glob method. So, we remove the
+
+60
+00:04:00.000 --> 00:04:04.000
+pattern and use rglob. Short for recursive glob.
+
+61
+00:04:04.000 --> 00:04:08.000
+Now when we run this program, we get
+
+62
+00:04:08.000 --> 00:04:12.000
+all the py files in the ecommerce directory and all is true.

@@ -1,0 +1,333 @@
+2
+00:00:04,450 --> 00:00:08,060
+Here we have this list with a bunch
+ of numbers that are not in any particular
+
+3
+00:00:08,060 --> 00:00:12,090
+order to sort this list.
+ We call numbers that
+
+4
+00:00:12,090 --> 00:00:16,050
+sort. Now let's print it and
+
+5
+00:00:16,050 --> 00:00:19,860
+you can see our numbers
+ are sorted in ascending order. What
+
+6
+00:00:19,860 --> 00:00:24,680
+if you want to sort these
+ items in descending order. Well. this
+
+7
+00:00:24,680 --> 00:00:27,960
+sort method takes two parameters: 
+key, which will look at
+
+8
+00:00:27,960 --> 00:00:31,650
+later 
+and reverse which we can use to change the sort order.
+
+9
+00:00:32,140 --> 00:00:36,410
+So here we can use a
+ keyword argument to set a value for
+
+10
+00:00:36,410 --> 00:00:40,360
+the reverse parameter.
+ We said this to true. and
+
+11
+00:00:40,940 --> 00:00:44,980
+with this you can see our
+ numbers are sorted in descending order. So
+
+12
+00:00:44,980 --> 00:00:48,560
+this is the basic
+ of sorting lists. However. in
+
+13
+00:00:48,570 --> 00:00:52,500
+addition to the sort method.
+ we have a built in function called
+
+14
+00:00:52,510 --> 00:00:56,130
+Sorted. As you can see.
+ this function takes an
+
+15
+00:00:56,140 --> 00:00:59,250
+iterable so we can pass
+ any iterables here and it
+
+16
+00:00:59,250 --> 00:01:02,850
+will sort it for
+ us. So we can pass
+
+17
+00:01:02,860 --> 00:01:06,620
+our numbers list. And this will return a
+
+18
+00:01:06,620 --> 00:01:10,140
+new list that is sorted.
+ So unlike the sort method,
+
+19
+00:01:10,140 --> 00:01:13,470
+this will not modify
+ the original list, it will
+
+20
+00:01:13,470 --> 00:01:17,160
+return a new sorted list.
+ So let me comment on this line
+
+21
+00:01:17,540 --> 00:01:21,860
+and print the result
+ of calling this function. Now
+
+22
+00:01:21,860 --> 00:01:25,320
+let's run this program. You can
+ see here is our new list
+
+23
+00:01:25,320 --> 00:01:28,780
+that is sorted. and below
+ that we have our original list
+
+24
+00:01:28,780 --> 00:01:32,570
+that is not sorted.
+ Also similar to the sort method
+
+25
+00:01:32,580 --> 00:01:36,490
+. If you want to change
+ the sort order. you can simply set
+
+26
+00:01:36,500 --> 00:01:40,440
+the reverse argument to true. Let's
+
+27
+00:01:40,440 --> 00:01:44,980
+run it one more time.
+ And here's the result. Beautiful. so
+
+28
+00:01:45,010 --> 00:01:48,310
+sorting numbers and strings is pretty easy.
+But what if
+
+29
+00:01:48,310 --> 00:01:51,940
+you're dealing with a list
+of complex objects?
+For example:
+
+30
+00:01:51,950 --> 00:01:56,620
+what if we have a list of topples? 
+Let me show you. So
+
+31
+00:01:56,620 --> 00:02:00,320
+I'm going to deal with everything here.
+ Let's imagine we're building an application for
+
+32
+00:02:00,320 --> 00:02:04,260
+processing orders and we have
+ this list of order items
+
+33
+00:02:04,940 --> 00:02:09,440
+. Every item in this list
+ is a topple with two items. the
+
+34
+00:02:09,440 --> 00:02:13,060
+product name followed by the
+
+35
+00:02:13,060 --> 00:02:16,450
+price. So here's the first item. Now let's
+
+36
+00:02:16,450 --> 00:02:20,920
+add another item with
+ a different price. And finally
+
+37
+00:02:20,930 --> 00:02:24,610
+. the third item.
+ What happens if we try to
+
+38
+00:02:24,610 --> 00:02:28,610
+sort this list. Let's take a
+ look so items not sword and
+
+39
+00:02:28,610 --> 00:02:32,690
+then we print the items So
+
+40
+00:02:32,690 --> 00:02:36,030
+nothing is changed here
+ because Python doesn't know how
+
+41
+00:02:36,030 --> 00:02:39,300
+to sort this list. In
+ situations like this we need
+
+42
+00:02:39,300 --> 00:02:43,150
+to define a function that
+ Python will use for sorting lists.
+
+43
+00:02:43,540 --> 00:02:47,610
+Let me show you. So here
+ I'm going to define a function. Let's
+
+44
+00:02:47,610 --> 00:02:51,020
+call it sort underline item. This function should
+
+45
+00:02:51,020 --> 00:02:55,470
+take an item like this topple. There
+
+46
+00:02:55,470 --> 00:02:58,610
+you go. And it should
+ return a value that will be
+
+47
+00:02:58,610 --> 00:03:02,240
+used for sorting. In this example Let's imagine
+
+48
+00:03:02,240 --> 00:03:06,360
+we want to sort these
+ items based on their price. So
+
+49
+00:03:06,370 --> 00:03:10,790
+if each item is a topple.
+ we can get the price using
+
+50
+00:03:10,800 --> 00:03:14,990
+square brackets of one. So we'll return Item
+
+51
+00:03:15,000 --> 00:03:18,830
+of one. So all this function does
+ is that it takes an item and
+
+52
+00:03:18,830 --> 00:03:22,350
+it returns its price.
+ Now, Python is dealing with
+
+53
+00:03:22,350 --> 00:03:25,790
+a list of numbers and it
+ can easily sort that list. Now,
+
+54
+00:03:25,790 --> 00:03:29,420
+finally we need to
+ pass this function when sorting
+
+55
+00:03:29,430 --> 00:03:33,110
+our list of items. So once again,
+ look at the sort method, The
+
+56
+00:03:33,110 --> 00:03:36,400
+first parameter is key
+ and this is where we
+
+57
+00:03:36,400 --> 00:03:39,730
+need to pass our sorting function. So we
+
+58
+00:03:39,730 --> 00:03:43,200
+pass sort underlying item, but note
+
+59
+00:03:43,200 --> 00:03:46,710
+that I'm not calling this function,
+ I'm simply passing a
+
+60
+00:03:46,720 --> 00:03:50,430
+reference to this function. 
+When Python attempts to
+
+61
+00:03:50,430 --> 00:03:54,130
+sort this list, the list of items.
+ it gets each item
+
+62
+00:03:54,230 --> 00:03:58,340
+and it will pass each
+ item to our sort function. Okay.
+
+63
+00:03:58,390 --> 00:04:02,910
+so let's run this
+ program and see what happens. We
+
+64
+00:04:02,910 --> 00:04:07,160
+get a TypeError
+ sort takes no positional arguments
+
+65
+00:04:07,170 --> 00:04:11,340
+which basically means here
+ we can only use keyword arguments.
+
+66
+00:04:11,350 --> 00:04:15,190
+So we need to specify our argument.
+ That is key. We
+
+67
+00:04:15,190 --> 00:04:18,540
+set it to sort_item.
+Now, let's
+
+68
+00:04:18,540 --> 00:04:22,200
+run this program one more time.
+ Okay. Look. Our
+
+69
+00:04:22,200 --> 00:04:26,660
+list of items is sorted by
+ the price of each item. However
+
+70
+00:04:26,670 --> 00:04:35,000
+the way we have implemented this sort function is a little bit ugly.
+There is a better way and let's gonna show you next.

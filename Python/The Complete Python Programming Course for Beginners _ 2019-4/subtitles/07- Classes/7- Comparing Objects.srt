@@ -1,0 +1,238 @@
+2
+00:00:04,000 --> 00:00:07,750
+There are times that we need to compare two objects. 
+For example here
+
+3
+00:00:07,750 --> 00:00:11,460
+we have this point object.
+If I define another point object
+
+4
+00:00:11,840 --> 00:00:15,510
+with the exact same values 
+then compare
+
+5
+00:00:15,510 --> 00:00:18,870
+them and print the
+
+6
+00:00:18,870 --> 00:00:21,970
+result, What do you think we're going to get? 
+Let's take a
+
+7
+00:00:21,970 --> 00:00:25,660
+look. 
+We get False.
+What's going on here? 
+The
+
+8
+00:00:25,660 --> 00:00:29,840
+reason we get False is that 
+by default this equality operator
+
+9
+00:00:30,090 --> 00:00:33,400
+compares the references or addresses of these two
+
+10
+00:00:33,400 --> 00:00:37,250
+objects in memory. 
+In this case these two variables are
+
+11
+00:00:37,250 --> 00:00:40,870
+referencing to different objects in memory and 
+that's why they're
+
+12
+00:00:40,870 --> 00:00:43,980
+not equal. 
+To solve this problem we need a
+
+13
+00:00:43,980 --> 00:00:47,930
+magic method. 
+That magic method is called when we compare two
+
+14
+00:00:47,930 --> 00:00:51,700
+objects. So back to this page here
+
+15
+00:00:51,700 --> 00:00:55,130
+we have comparison magic methods. Let's
+
+16
+00:00:55,130 --> 00:00:58,400
+take a look. So these are
+ all the magic methods we have for
+
+17
+00:00:58,400 --> 00:01:02,080
+comparing two objects.
+ for example. we have EQ for
+
+18
+00:01:02,080 --> 00:01:05,220
+testing equality. We also have any which is
+
+19
+00:01:05,220 --> 00:01:08,650
+short for not equal. We have L t.
+ which is short for less
+
+20
+00:01:08,650 --> 00:01:12,330
+than greater than and so on. So back
+
+21
+00:01:12,330 --> 00:01:15,580
+to a point class.
+ we need to define e
+
+22
+00:01:15,580 --> 00:01:19,010
+que magic method.
+ On that page. we can see
+
+23
+00:01:19,010 --> 00:01:22,810
+that this method requires two parameters self and
+
+24
+00:01:22,810 --> 00:01:26,350
+other. Now. in this method.
+ we need to return
+
+25
+00:01:26,360 --> 00:01:30,060
+true if these two
+ objects are equal. otherwise false
+
+26
+00:01:30,440 --> 00:01:34,160
+. So we can write
+ an expression like this self that
+
+27
+00:01:34,170 --> 00:01:38,310
+X equals other than eggs and self
+
+28
+00:01:38,310 --> 00:01:42,170
+that wine equals other than why. So
+
+29
+00:01:42,170 --> 00:01:45,570
+if this expression is evaluated to true. these
+
+30
+00:01:45,570 --> 00:01:48,780
+two objects are considered equal. Now let's
+
+31
+00:01:48,780 --> 00:01:52,250
+save the changes. We run our program
+ one more time. and we get true
+
+32
+00:01:52,840 --> 00:01:56,430
+Beautiful. Now what if
+ you want to compare these
+
+33
+00:01:56,430 --> 00:01:59,680
+two point objects like this if point is
+
+34
+00:01:59,680 --> 00:02:03,200
+greater than other. we run the program. We
+
+35
+00:02:03,200 --> 00:02:07,010
+get a type error because the
+ greater than operator is not supported
+
+36
+00:02:07,020 --> 00:02:10,410
+based on instances of
+ the point class. So to
+
+37
+00:02:10,410 --> 00:02:14,410
+solve this problem. we need to define another
+
+38
+00:02:14,410 --> 00:02:17,760
+magic method. So define G t
+
+39
+00:02:17,760 --> 00:02:20,970
+. which is short for greater
+ than once again. We have two
+
+40
+00:02:20,970 --> 00:02:24,280
+parameters self and other and write some code
+
+41
+00:02:24,280 --> 00:02:27,750
+like this. Return Self dot X is greater
+
+42
+00:02:27,750 --> 00:02:31,350
+than other that X and self that y
+
+43
+00:02:31,410 --> 00:02:34,510
+is greater than other. that why save the
+
+44
+00:02:34,510 --> 00:02:38,060
+changes. Now. Let's modify this
+
+45
+00:02:38,060 --> 00:02:41,540
+value So I'm going to
+ change the X and y
+
+46
+00:02:41,540 --> 00:02:45,440
+of the first point
+ to 10 and 20 So
+
+47
+00:02:45,450 --> 00:02:48,850
+the first point is greater
+ than the second point. Let's run
+
+48
+00:02:48,850 --> 00:02:52,590
+the program. We get true beautiful.
+ What if we
+
+49
+00:02:52,590 --> 00:02:56,810
+change this to less
+ than run the program. We
+
+50
+00:02:56,810 --> 00:03:00,900
+get false. So as you see
+ you don't have to explicitly implement
+
+51
+00:03:00,910 --> 00:03:04,380
+each of these operators, 
+when you implement the greater than
+
+52
+00:03:04,380 --> 00:03:07,590
+magic method Python would
+ automatically figure out 
+ what to do if you use less than operator.
+

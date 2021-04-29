@@ -1,0 +1,240 @@
+2
+00:00:04,000 --> 00:00:07,730
+All right. Look at this piece of
+ code here on October. defining an
+
+3
+00:00:07,730 --> 00:00:11,070
+empty list. Then we're iterating over this
+
+4
+00:00:11,070 --> 00:00:14,910
+range object. In each iteration.
+ we get eggs multiplied
+
+5
+00:00:14,910 --> 00:00:18,190
+by two and added to our list.
+ As I told you
+
+6
+00:00:18,190 --> 00:00:21,590
+before, whenever you have this
+ pattern in your code you can
+
+7
+00:00:21,600 --> 00:00:25,180
+either use the map
+ function or preferably a list
+
+8
+00:00:25,180 --> 00:00:28,940
+comprehension. So let's review the syntax for
+
+9
+00:00:28,940 --> 00:00:32,240
+a list comprehension. We have
+ square brackets to define a
+
+10
+00:00:32,240 --> 00:00:35,960
+list. And here's our comprehension expression. We
+
+11
+00:00:35,960 --> 00:00:40,060
+have expression for item in items
+
+12
+00:00:40,840 --> 00:00:44,250
+. so we iterate over an iterable. In
+
+13
+00:00:44,260 --> 00:00:47,760
+each iteration. we get
+ this item and then do
+
+14
+00:00:47,760 --> 00:00:51,000
+something with it. So what
+ is our iterable in this
+
+15
+00:00:51,000 --> 00:00:54,550
+example is this range
+ object that is returned from
+
+16
+00:00:54,550 --> 00:00:58,450
+the range function So range of five here
+
+17
+00:00:58,940 --> 00:01:02,210
+. What is our loop.
+ Variable. That is X and
+
+18
+00:01:02,210 --> 00:01:05,750
+what is our expression.
+ They're multiplying eggs by two
+
+19
+00:01:06,440 --> 00:01:10,240
+so we can start
+ a result in values. This
+
+20
+00:01:10,240 --> 00:01:13,800
+line of code is
+ exactly identical to these three
+
+21
+00:01:13,800 --> 00:01:17,140
+lines. So let's still at this now. These
+
+22
+00:01:17,140 --> 00:01:20,700
+comprehension are not limited to list.
+ We can also use
+
+23
+00:01:20,700 --> 00:01:24,460
+them with sets and dictionaries. So now if
+
+24
+00:01:24,460 --> 00:01:28,320
+we replace these square
+ brackets with curly braces. We
+
+25
+00:01:28,320 --> 00:01:32,580
+get a set. let's print values. So
+
+26
+00:01:32,580 --> 00:01:36,560
+we get a set of even numbers. right? 
+Now
+
+27
+00:01:36,560 --> 00:01:39,700
+What is the syntactical difference between a set and a
+
+28
+00:01:39,700 --> 00:01:43,380
+dictionary? 
+Well, for both these data structures
+
+29
+00:01:43,380 --> 00:01:47,520
+we use curly braces.
+ In sets We just have values;
+
+30
+00:01:47,700 --> 00:01:50,850
+but in dictionaries we
+ have key value pairs that are
+
+31
+00:01:50,850 --> 00:01:54,310
+separated using a colon.
+ So here we can map one
+
+32
+00:01:54,310 --> 00:01:58,340
+to a character to another
+ character and so on. So
+
+33
+00:01:58,340 --> 00:02:01,960
+we can easily use
+ comprehension expressions to create dictionary
+
+34
+00:02:01,960 --> 00:02:05,490
+objects. So here. in this expression. all
+
+35
+00:02:05,490 --> 00:02:08,690
+we need to do is to
+ change this expression such that we have
+
+36
+00:02:08,690 --> 00:02:12,900
+a key value. Parents. So here we
+ can use X as the key and
+
+37
+00:02:12,900 --> 00:02:16,190
+X Times two as the value.
+ Now let's dilate these two
+
+38
+00:02:16,190 --> 00:02:20,660
+alliance. save the changes
+ and run the code. We
+
+39
+00:02:20,660 --> 00:02:24,150
+have this dictionary with these key value pairs
+
+40
+00:02:24,160 --> 00:02:27,580
+. Okay. So instead of defining an
+
+41
+00:02:27,590 --> 00:02:31,540
+empty dictionary. then looping over an
+
+42
+00:02:31,550 --> 00:02:34,960
+iterable and then in each iteration adding
+
+43
+00:02:34,960 --> 00:02:39,100
+something to this dictionary like
+ values of X equals X
+
+44
+00:02:39,110 --> 00:02:42,270
+times two. Whenever you have this pattern in
+
+45
+00:02:42,270 --> 00:02:46,500
+your code. you can
+ use a dictionary comprehension. So
+
+46
+00:02:46,500 --> 00:02:50,640
+to recap. we can
+ use comprehension with lists, sets
+
+47
+00:02:50,890 --> 00:02:54,140
+and dictionaries. But what about tuples?
+ Let's take a
+
+48
+00:02:54,140 --> 00:02:57,510
+look. So let's remove this key value pair
+
+49
+00:02:57,510 --> 00:03:00,750
+and only use X Times two and
+
+50
+00:03:00,760 --> 00:03:05,830
+also change the curly braces to parenthesis. Let's
+
+51
+00:03:05,830 --> 00:03:08,980
+also delay these few lines. Run the
+
+52
+00:03:08,980 --> 00:03:12,210
+program. 
+We don't get a tuple; What's going
+
+53
+00:03:12,210 --> 00:03:15,940
+on here? We get
+ a generator object. and that's
+

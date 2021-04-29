@@ -1,0 +1,238 @@
+2
+00:00:04,000 --> 00:00:08,280
+So here we have a list of four items.
+ We can use square brackets
+
+3
+00:00:08,290 --> 00:00:11,830
+to access individual items
+ in this list. So let's
+
+4
+00:00:11,830 --> 00:00:15,410
+print letters of zero. This will return
+
+5
+00:00:15,410 --> 00:00:18,530
+the first item in this list.
+ So when we
+
+6
+00:00:18,530 --> 00:00:22,030
+run. this program will
+ get a. Now similar to
+
+7
+00:00:22,030 --> 00:00:25,950
+strings. If you pass
+ a negative index here like
+
+8
+00:00:25,950 --> 00:00:29,400
+negative one. this will return the first item
+
+9
+00:00:29,400 --> 00:00:32,880
+from the end of the list.
+ So when you run this
+
+10
+00:00:32,890 --> 00:00:36,410
+we'll get d using square brackets. We
+
+11
+00:00:36,410 --> 00:00:40,320
+can also modify items
+ in the list. So let's
+
+12
+00:00:40,320 --> 00:00:43,920
+change the first item to a capital A
+
+13
+00:00:43,930 --> 00:00:47,790
+and then print the entire list. There
+
+14
+00:00:47,790 --> 00:00:51,820
+you go. So this is
+ the basic of accessing individual
+
+15
+00:00:51,830 --> 00:00:55,120
+elements in the list. The earlier
+ in the course you learn that
+
+16
+00:00:55,120 --> 00:00:58,460
+we can use to indexes
+ to slice a string. We
+
+17
+00:00:58,460 --> 00:01:02,000
+have the exact same concept here.
+ so we add square
+
+18
+00:01:02,000 --> 00:01:05,620
+brackets. First index. colon second
+
+19
+00:01:05,620 --> 00:01:09,140
+index. and this will return a new list
+
+20
+00:01:09,150 --> 00:01:12,910
+with the first three items
+ in our original list. So
+
+21
+00:01:12,910 --> 00:01:17,490
+if we print our original list. you
+
+22
+00:01:17,490 --> 00:01:21,130
+can see that it's not changed now.
+ just like strength
+
+23
+00:01:21,160 --> 00:01:24,460
+. If you don't specify
+ the first argument. zero will
+
+24
+00:01:24,460 --> 00:01:28,180
+be assumed by default. So as
+ you can see. these two expressions
+
+25
+00:01:28,180 --> 00:01:31,830
+produce the exact same result. Similarly. if
+
+26
+00:01:31,830 --> 00:01:35,100
+you don't include the end index by
+
+27
+00:01:35,100 --> 00:01:38,680
+default. the length of the
+ list will be used here. So
+
+28
+00:01:38,680 --> 00:01:42,380
+this expression will return a
+ new list with all the items
+
+29
+00:01:42,590 --> 00:01:45,750
+in the original list. And similarly. we can
+
+30
+00:01:45,750 --> 00:01:49,070
+also exclude the START index here. And
+
+31
+00:01:49,070 --> 00:01:53,600
+with this syntax. we can get
+ a copy of our original list. There
+
+32
+00:01:53,600 --> 00:01:57,560
+you go. Now. when slicing a string.
+ we can also pass
+
+33
+00:01:57,600 --> 00:02:01,290
+a step. And this
+ is useful in situations where
+
+34
+00:02:01,300 --> 00:02:04,980
+you want to return every
+ second or every third element in
+
+35
+00:02:04,980 --> 00:02:09,650
+the original list. So now
+ when we run this code. we'll
+
+36
+00:02:09,650 --> 00:02:13,930
+get A and C So
+ be will be a skip. Let
+
+37
+00:02:13,930 --> 00:02:17,150
+me show you using
+ a better example. So I'm
+
+38
+00:02:17,150 --> 00:02:20,540
+going to delete everything here.
+ create a new list called
+
+39
+00:02:20,540 --> 00:02:24,030
+numbers. Here. We're going to
+ use the list function and
+
+40
+00:02:24,030 --> 00:02:27,770
+pass a range of 20. Let's
+
+41
+00:02:27,770 --> 00:02:31,550
+print our last. so we get numbers
+
+42
+00:02:31,560 --> 00:02:34,760
+0 to 19. Okay. Now. let's
+
+43
+00:02:34,760 --> 00:02:38,190
+see what happens when we
+ add square brackets here. We
+
+44
+00:02:38,190 --> 00:02:41,450
+to Collins and to this
+
+45
+00:02:41,450 --> 00:02:45,330
+will return every other element
+ in the original list. Take
+
+46
+00:02:45,330 --> 00:02:49,220
+a look. So we get
+ all the even numbers. 0
+
+47
+00:02:49,220 --> 00:02:52,760
+to 4 and so on.
+ It's pretty cool. isn't it. Here's
+
+48
+00:02:52,770 --> 00:02:56,030
+another cool thing you can do here.
+ Let's change the
+
+49
+00:02:56,030 --> 00:02:59,850
+step to negative one. As
+
+50
+00:02:59,850 --> 00:03:03,260
+you can see. this will return
+ all the items in the original list
+
+51
+00:03:03,640 --> 00:03:07,210
+but in reverse order.
+ So these are some useful
+
+52
+00:03:07,210 --> 00:03:11,360
+things you can do with lists.
+ Next we'll look at unpacking lists.
+

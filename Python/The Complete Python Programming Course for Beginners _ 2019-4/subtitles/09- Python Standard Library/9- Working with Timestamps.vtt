@@ -1,0 +1,141 @@
+WEBVTT
+
+1
+00:00:04.000 --> 00:00:08.000
+Over the next few lectures, we're going to work with date and time
+
+2
+00:00:08.000 --> 00:00:12.000
+in python. Basically we have two modules for working with date and time,
+
+3
+00:00:12.000 --> 00:00:16.000
+one is the time module, which gives us a time stamp,
+
+4
+00:00:16.000 --> 00:00:20.000
+and the other is date time, which gives us date time objects
+
+5
+00:00:20.000 --> 00:00:24.000
+with attributes like year, month, and so on. In this lecture we're going to
+
+6
+00:00:24.000 --> 00:00:28.000
+look at the time module, and we'll look at the day time module next,
+
+7
+00:00:28.000 --> 00:00:32.000
+so, this time module has a method called time,
+
+8
+00:00:32.000 --> 00:00:36.000
+that returns the current date time as a time stamp. Let me show you. So,
+
+9
+00:00:36.000 --> 00:00:40.000
+print, the result this is what
+
+10
+00:00:40.000 --> 00:00:44.000
+we get, this floating point number represents the number of seconds
+
+11
+00:00:44.000 --> 00:00:48.000
+from the beginning of time. I'm not talking about the big bang theory, that is
+
+12
+00:00:48.000 --> 00:00:52.000
+the beginning of time on your operating system. On unix that is generated
+
+13
+00:00:52.000 --> 00:00:56.000
+first 9070, on windows honestly I'm not sure, so this
+
+14
+00:00:56.000 --> 00:01:00.000
+floating point number you see here, is the number of seconds after
+
+15
+00:01:00.000 --> 00:01:04.000
+January first 1970 which is referred to as unix epic
+
+16
+00:01:04.000 --> 00:01:08.000
+time. As you can see these timestamps are not human readable,
+
+17
+00:01:08.000 --> 00:01:12.000
+so we use them to perform calculations. Here is an example.
+
+18
+00:01:12.000 --> 00:01:16.000
+I'm going to define a function to simulate sending an
+
+19
+00:01:16.000 --> 00:01:20.000
+email to 2000 recipients. So send emails
+
+20
+00:01:20.000 --> 00:01:24.000
+let's just do a for loop for i in range
+
+21
+00:01:24.000 --> 00:01:28.000
+10000 I'm going to do a pass here,
+
+22
+00:01:28.000 --> 00:01:32.000
+now, you're going to call this function but before
+
+23
+00:01:32.000 --> 00:01:36.000
+calling that, we're going to call time.time
+
+24
+00:01:36.000 --> 00:01:40.000
+get the current time, store it here, and
+
+25
+00:01:40.000 --> 00:01:44.000
+one more time after we send the emails. so time.time
+
+26
+00:01:44.000 --> 00:01:48.000
+values the end time, now we set
+
+27
+00:01:48.000 --> 00:01:52.000
+duration to end - start.
+
+28
+00:01:52.000 --> 00:01:56.000
+Let's print the result, duration,
+
+29
+00:01:56.000 --> 00:02:00.000
+so this is the amount of time it took to execute this function.
+
+30
+00:02:00.000 --> 00:02:04.000
+Now earlier in the course I also talked about the time it module
+
+31
+00:02:04.000 --> 00:02:08.000
+we can also use that to calculate the execution time of
+
+32
+00:02:08.000 --> 00:02:12.000
+some piece of code. Both approaches are perfectly fine. So as you learn
+
+33
+00:02:12.000 --> 00:02:16.000
+more about python, or any other programming languages, you will realize there are
+
+34
+00:02:16.000 --> 00:02:20.000
+multiple ways to solve a problem. So these are time stamps in python,
+
+35
+00:02:20.000 --> 00:02:24.000
+next we'll look at date time objects.

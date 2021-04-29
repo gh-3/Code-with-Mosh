@@ -1,0 +1,521 @@
+2
+00:00:04,000 --> 00:00:08,360
+Earlier in the course you learn about
+ the common data structures in python. You
+
+3
+00:00:08,360 --> 00:00:12,370
+learn about lists.
+ sets. dictionaries and so on. These
+
+4
+00:00:12,370 --> 00:00:16,030
+data structures or container types are pretty useful
+
+5
+00:00:16,040 --> 00:00:19,350
+and sufficient for most cases.
+ But there are times that
+
+6
+00:00:19,350 --> 00:00:22,730
+you want to create your own custom container types. 
+For
+
+7
+00:00:22,730 --> 00:00:26,320
+example here we have this class TagCloud.
+ We're going to implement this
+
+8
+00:00:26,320 --> 00:00:29,670
+from scratch together. 
+With this class we can keep
+
+9
+00:00:29,670 --> 00:00:33,060
+track of the number of various tags on a block. 
+For
+
+10
+00:00:33,060 --> 00:00:36,710
+example, How many articles do we have that are tagged with python or
+
+11
+00:00:36,710 --> 00:00:40,300
+JavaScript and so on?
+So because this class represents a
+
+12
+00:00:40,300 --> 00:00:43,980
+container, it supports various operations around
+
+13
+00:00:43,980 --> 00:00:47,530
+containers. 
+Here are a few examples. 
+Let me create
+
+14
+00:00:47,720 --> 00:00:51,220
+an object. Okay. 
+Now because this
+
+15
+00:00:51,220 --> 00:00:55,210
+is a container, we can get the
+number of items in this container. 
+We
+
+16
+00:00:55,210 --> 00:00:58,550
+can also get an item by its key. 
+For
+
+17
+00:00:58,550 --> 00:01:02,300
+example we can get the number of articles tagged with
+
+18
+00:01:02,300 --> 00:01:06,050
+python. 
+We can also set that and finally
+
+19
+00:01:06,050 --> 00:01:09,420
+we can iterate over this container.
+So for tag in
+
+20
+00:01:09,420 --> 00:01:13,540
+cloud we can print each tag in cloud. 
+These
+
+21
+00:01:13,540 --> 00:01:17,160
+are the operations that are
+ supported by this custom container
+
+22
+00:01:17,160 --> 00:01:20,360
+type. 
+So let me show you how to implement a
+
+23
+00:01:20,360 --> 00:01:23,640
+class like this.
+ We create a class called it
+
+24
+00:01:23,640 --> 00:01:27,600
+TagCloud. 
+Now internally we're going to use one
+
+25
+00:01:27,610 --> 00:01:31,540
+or more of the built-in data structures 
+like lists, dictionaries
+
+26
+00:01:31,540 --> 00:01:35,150
+and so on. In this case.
+ I'm going to use a dictionary because it
+
+27
+00:01:35,150 --> 00:01:38,860
+allows us to quickly get
+ the number of given tax. So
+
+28
+00:01:39,240 --> 00:01:43,750
+first we define a constructor self
+
+29
+00:01:44,540 --> 00:01:48,650
+. and in this constructor we initialize tag's
+
+30
+00:01:48,650 --> 00:01:53,130
+attribute to an empty dictionary. Now
+
+31
+00:01:53,130 --> 00:01:57,070
+we can optionally add
+ a method like add that
+
+32
+00:01:57,070 --> 00:02:00,400
+takes a tag. Now here we
+ should check to see if we
+
+33
+00:02:00,400 --> 00:02:03,560
+have this tack in our dictionary.
+ If we don't have it. we're going to
+
+34
+00:02:03,560 --> 00:02:06,670
+set its value to one.
+ Otherwise. we're going to increment it
+
+35
+00:02:06,670 --> 00:02:10,830
+by one. Here's one way
+ to implement this logic so
+
+36
+00:02:10,850 --> 00:02:14,630
+self. The tags.
+ We use the get method to
+
+37
+00:02:14,630 --> 00:02:17,890
+get an item by this key and
+
+38
+00:02:17,890 --> 00:02:21,860
+supply a default value.
+ If we don't have that now
+
+39
+00:02:21,860 --> 00:02:25,640
+we get the count incremental by one.
+ And finally we
+
+40
+00:02:25,640 --> 00:02:28,880
+set the value for
+ this key so self. the
+
+41
+00:02:28,880 --> 00:02:32,110
+tags of tag. We set it
+
+42
+00:02:32,110 --> 00:02:35,350
+to this new value. Okay. let's test our
+
+43
+00:02:35,350 --> 00:02:39,600
+program up to this point.
+ so I'm going to create the
+
+44
+00:02:39,600 --> 00:02:43,350
+cloud object and then call the
+
+45
+00:02:43,350 --> 00:02:46,930
+add method a few times.
+ Let's add python three
+
+46
+00:02:46,930 --> 00:02:50,240
+times and then print cloud of the
+
+47
+00:02:50,240 --> 00:02:54,500
+tags. Save the changes. Run the program. So
+
+48
+00:02:54,500 --> 00:02:58,040
+in our dictionary we have
+ one key value pair python set
+
+49
+00:02:58,040 --> 00:03:01,450
+to three. Beautiful.
+ Now you might be wondering why
+
+50
+00:03:01,450 --> 00:03:04,740
+I created a custom class
+ instead of using a plain old
+
+51
+00:03:04,740 --> 00:03:08,040
+dictionary? 
+The reason for this is because I want to make
+
+52
+00:03:08,040 --> 00:03:11,880
+this a little bit smarter
+ than a typical dictionary. What
+
+53
+00:03:11,880 --> 00:03:16,470
+if we add a python
+ tag with the capital P. Technically
+
+54
+00:03:16,530 --> 00:03:20,030
+. this is the same tag
+ as a lower case python. So
+
+55
+00:03:20,030 --> 00:03:23,760
+when we run this program.
+ we should see one python tag repeated
+
+56
+00:03:23,760 --> 00:03:26,870
+three times. Let's run the program.
+ That's not what we
+
+57
+00:03:26,870 --> 00:03:30,690
+get. We get two separate items.
+ This is how a typical dictionary
+
+58
+00:03:30,690 --> 00:03:33,990
+behaves. So in this class. I'm
+
+59
+00:03:33,990 --> 00:03:37,510
+going to take care
+ of case sensitivity. Whatever time
+
+60
+00:03:37,510 --> 00:03:40,630
+we receive here. we're going
+ to convert it to lure a
+
+61
+00:03:40,630 --> 00:03:44,060
+case when setting in as
+ well as when reading it
+
+62
+00:03:45,840 --> 00:03:49,270
+. Now. save the changes.
+ Run the program one more time. The
+
+63
+00:03:49,270 --> 00:03:52,890
+problem is gone.
+ Beautiful. So with this class your
+
+64
+00:03:52,900 --> 00:03:56,770
+encapsulating the complexity around the case sensitivity
+
+65
+00:03:56,770 --> 00:04:00,070
+of tags. When using this class.
+ we no longer have to worry
+
+66
+00:04:00,070 --> 00:04:03,500
+about lowercase or uppercase characters. So our code
+
+67
+00:04:03,500 --> 00:04:07,880
+looks cleaner and simpler.
+ All that complexity is encapsulated
+
+68
+00:04:08,000 --> 00:04:11,160
+in the tight cloud class.
+ It's not visible to the rest of our
+
+69
+00:04:11,160 --> 00:04:14,950
+program. Okay. now let's take
+ this to the next level. I
+
+70
+00:04:14,950 --> 00:04:19,860
+want to be able to read the
+ account of a tag like this using
+
+71
+00:04:19,870 --> 00:04:23,130
+square brackets. 
+To do this we need to implement a
+
+72
+00:04:23,130 --> 00:04:27,760
+magic method called __getitem__. So define
+
+73
+00:04:28,240 --> 00:04:31,460
+get item. It should take
+
+74
+00:04:31,460 --> 00:04:35,550
+self as well as a
+ key in this case tag
+
+75
+00:04:37,140 --> 00:04:40,840
+and this method. We're going
+ to return self the tags that
+
+76
+00:04:40,840 --> 00:04:43,940
+get this tag. and if we
+
+77
+00:04:43,940 --> 00:04:47,200
+don't have it. we want
+ to return zero by default. And
+
+78
+00:04:47,200 --> 00:04:50,720
+once again. we should convert
+ this to lower case. As
+
+79
+00:04:50,720 --> 00:04:54,170
+we can see. with this implementation.
+ we can easily get the number of
+
+80
+00:04:54,170 --> 00:04:57,750
+a given tax. We can't do
+ this with a typical dictionary if
+
+81
+00:04:57,750 --> 00:05:01,730
+we don't have the python tag
+ our dictionary with through an era. Now
+
+82
+00:05:01,730 --> 00:05:05,190
+let's take this to the next level.
+ With the current implementation we can only
+
+83
+00:05:05,190 --> 00:05:08,700
+read the number of a given tack.
+ We cannot set it
+
+84
+00:05:08,710 --> 00:05:12,340
+like this. 
+To do that we need to implement another
+
+85
+00:05:12,340 --> 00:05:16,510
+magic method called __setitem__. It's pretty straightforward
+
+86
+00:05:16,510 --> 00:05:20,910
+. So define set item. It
+
+87
+00:05:20,910 --> 00:05:24,450
+takes three parameters. Self key and
+
+88
+00:05:24,450 --> 00:05:28,540
+value in this case
+ are key is tag and
+
+89
+00:05:28,550 --> 00:05:31,730
+our value is just count. So here we
+
+90
+00:05:31,730 --> 00:05:35,550
+set self the tags of tag
+
+91
+00:05:35,560 --> 00:05:40,160
+that lower to this new account. So
+
+92
+00:05:40,640 --> 00:05:44,820
+with this implementation. we can set
+ the number of a given tag. Now
+
+93
+00:05:44,820 --> 00:05:48,250
+. in order to be able
+ to get the number of items in
+
+94
+00:05:48,250 --> 00:05:51,750
+this TagCloud we should implement the
+
+95
+00:05:51,750 --> 00:05:55,150
+__len__ magic method again. 
+Very very
+
+96
+00:05:55,150 --> 00:05:59,300
+easy. S
+o define len. 
+It
+
+97
+00:05:59,300 --> 00:06:03,060
+takes only the self parameter.
+And here we return
+
+98
+00:06:03,540 --> 00:06:07,360
+len of self dot tags. 
+And
+
+99
+00:06:07,360 --> 00:06:10,740
+finally to make this iterable,
+ so we can iterate over
+
+100
+00:06:10,740 --> 00:06:14,460
+it using a for loop,
+ we need to implement another magic method
+
+101
+00:06:15,440 --> 00:06:19,860
+that is __iter__. 
+So define
+
+102
+00:06:20,240 --> 00:06:23,780
+iter. 
+It takes self. 
+Now
+
+103
+00:06:23,790 --> 00:06:27,170
+all we have to do is to
+ use one of the built in functions to
+
+104
+00:06:27,170 --> 00:06:30,700
+get an iterator object. 
+An iterator object is
+
+105
+00:06:30,700 --> 00:06:34,090
+an object that walks a
+ container and gets one item at
+
+106
+00:06:34,090 --> 00:06:37,280
+a time. So we call either. which is
+
+107
+00:06:37,280 --> 00:06:40,930
+one of the built in functions.
+ What do we want to iterate over in
+
+108
+00:06:40,930 --> 00:06:44,180
+this case. Self. The tax. So
+
+109
+00:06:44,180 --> 00:06:47,680
+this function returns an operator object.
+ which gives us
+
+110
+00:06:47,840 --> 00:06:51,040
+one item at a time
+ in a for loop. so we
+

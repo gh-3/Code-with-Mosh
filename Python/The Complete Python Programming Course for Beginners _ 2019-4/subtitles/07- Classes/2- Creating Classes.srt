@@ -1,0 +1,293 @@
+2
+00:00:04,390 --> 00:00:08,550
+All right. 
+Now let's see 
+how we can create a point class in Python? 
+So
+
+3
+00:00:08,550 --> 00:00:11,800
+we start with a class keyboard.
+ Then we give our
+
+4
+00:00:11,800 --> 00:00:15,750
+class a name like point. 
+Note
+
+5
+00:00:15,750 --> 00:00:19,210
+that here I'm using
+ Pascal naming convention which is
+
+6
+00:00:19,210 --> 00:00:22,460
+different from the naming convention
+ that we use for naming our
+
+7
+00:00:22,460 --> 00:00:25,970
+variables and functions to name
+our variables and functions. 
+We
+
+8
+00:00:25,970 --> 00:00:29,550
+use all lower case
+ letters and we separate multiple
+
+9
+00:00:29,550 --> 00:00:33,030
+words using an underscore.
+ But to name our classes we
+
+10
+00:00:33,030 --> 00:00:36,620
+use a different convention
+ which is called Pascal naming
+
+11
+00:00:36,620 --> 00:00:40,250
+convention. 
+And basically it says that 
+the first letter
+
+12
+00:00:40,260 --> 00:00:43,470
+of every word should be uppercase and we
+
+13
+00:00:43,470 --> 00:00:46,960
+shouldn't use an underscore to separate multiple words.
+
+14
+00:00:47,540 --> 00:00:50,870
+Here is an example.
+ We can call this class MyPoint. 
+ You
+
+15
+00:00:50,870 --> 00:00:54,270
+can see that the first letter
+ of every word is upper case and
+
+16
+00:00:54,270 --> 00:00:58,350
+there is no underscore here. Okay. so let's
+
+17
+00:00:58,350 --> 00:01:02,270
+change this back to point.
+ After this we add a colon to
+
+18
+00:01:02,280 --> 00:01:05,850
+indicate a block. 
+In this block we'll define
+
+19
+00:01:05,860 --> 00:01:09,370
+all the functions related to points. 
+For example
+
+20
+00:01:09,370 --> 00:01:12,710
+we can define functions for drawing a point, 
+for moving this
+
+21
+00:01:12,710 --> 00:01:16,080
+point to a new location, 
+or getting the distance from
+
+22
+00:01:16,080 --> 00:01:20,310
+this point and another point.
+Here's an example. 
+We
+
+23
+00:01:20,310 --> 00:01:24,310
+define a function called draw parenthesis. 
+Now
+
+24
+00:01:24,320 --> 00:01:27,880
+all functions in our classes
+ should have at least one
+
+25
+00:01:27,880 --> 00:01:32,350
+parameter and 
+by convention we call that parameter self.
+
+26
+00:01:32,940 --> 00:01:36,490
+You will see what this is in a minute. 
+So bear with me. Now
+
+27
+00:01:36,490 --> 00:01:40,700
+we add our colon
+ and let's just print the
+
+28
+00:01:40,700 --> 00:01:44,290
+war draw under terminal.
+ So now we have a class
+
+29
+00:01:44,300 --> 00:01:47,960
+or a blueprint for creating point objects. Every
+
+30
+00:01:47,960 --> 00:01:51,610
+point object that we create
+ will have this draw method. Let's
+
+31
+00:01:51,610 --> 00:01:54,840
+take a look. So to
+
+32
+00:01:54,840 --> 00:01:58,090
+create a point object.
+ we call this class like a
+
+33
+00:01:58,090 --> 00:02:01,580
+function. 
+There you go. 
+Now this returns a
+
+34
+00:02:01,580 --> 00:02:04,850
+point object that we can
+ assign to a variable like
+
+35
+00:02:04,850 --> 00:02:08,970
+point. So if we use the dot operator,
+
+36
+00:02:08,980 --> 00:02:12,280
+you can see we have the draw
+ method as well as a bunch of other
+
+37
+00:02:12,280 --> 00:02:15,700
+methods that we didn't define
+ but our point object got these
+
+38
+00:02:15,700 --> 00:02:18,850
+methods from another object in python through a
+
+39
+00:02:18,850 --> 00:02:22,100
+mechanism called inheritance.
+ We'll look at that later in
+
+40
+00:02:22,100 --> 00:02:26,360
+this section. No if it print type
+
+41
+00:02:26,740 --> 00:02:29,960
+of point. Now let's run
+ this and see what we
+
+42
+00:02:29,960 --> 00:02:33,840
+get. We get a class of
+
+43
+00:02:33,840 --> 00:02:37,360
+Maine that point. 
+This __man__ you see here
+
+44
+00:02:37,740 --> 00:02:40,760
+is the name of our module. and we're
+ going to look at that later in this
+
+45
+00:02:40,760 --> 00:02:43,950
+section. So this is the
+ type function that you have
+
+46
+00:02:43,950 --> 00:02:47,760
+seen before. 
+We have another useful function called
+
+47
+00:02:47,770 --> 00:02:51,350
+isinstant. 
+Sometimes we have an object and
+
+48
+00:02:51,350 --> 00:02:54,580
+we want to know if this
+ object is an instance of a
+
+49
+00:02:54,580 --> 00:02:57,940
+given class. So let's see if
+
+50
+00:02:57,940 --> 00:03:01,630
+this point object is
+ an instance of the point
+
+51
+00:03:01,640 --> 00:03:05,320
+class. Now let's print the
+
+52
+00:03:05,320 --> 00:03:09,080
+result on the terminal
+ and run our program. So
+
+53
+00:03:09,090 --> 00:03:12,410
+obviously this point object is an
+
+54
+00:03:12,410 --> 00:03:15,770
+instance of our point class. However. if
+
+55
+00:03:15,770 --> 00:03:19,200
+it changed this to end. obviously our
+
+56
+00:03:19,200 --> 00:03:22,900
+point object is not an
+ instance of the end class
+
+57
+00:03:22,910 --> 00:03:26,760
+. So when we run this program.
+ we get false
+
+58
+00:03:28,140 --> 00:03:31,810
+. So this is how
+ we create custom classes in python
+
+59
+00:03:31,820 --> 00:03:35,400
+. So far. so good.
+ But our point objects need
+
+60
+00:03:35,400 --> 00:03:38,810
+some initial values like X and y. 
+To
+
+61
+00:03:38,810 --> 00:03:42,010
+set these values we need a constructor.
+And that's the topic for the next lecture.
+

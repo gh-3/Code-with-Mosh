@@ -1,0 +1,361 @@
+2
+00:00:04,410 --> 00:00:08,420
+As I explained in the last lecture,
+ when writing your own functions, prefer
+
+3
+00:00:08,430 --> 00:00:11,810
+not to raise exceptions because 
+these exceptions come with
+
+4
+00:00:11,810 --> 00:00:15,260
+a cost and 
+that's what I'm going to show you in this lecture. 
+So
+
+5
+00:00:16,840 --> 00:00:20,870
+from the timeit module,
+ I'm going to import a function called
+
+6
+00:00:20,880 --> 00:00:24,590
+timeit. 
+With this function, we can calculate the execution
+
+7
+00:00:24,590 --> 00:00:27,950
+time of some python code. 
+So this
+
+8
+00:00:27,950 --> 00:00:31,200
+is how it works.
+ Imagine we want to calculate the
+
+9
+00:00:31,200 --> 00:00:34,370
+execution time of this piece of code.
+ We define a
+
+10
+00:00:34,370 --> 00:00:37,690
+variable. Let's call it code1 and set it
+
+11
+00:00:37,690 --> 00:00:41,360
+to a string. 
+This string should include our python code.
+
+12
+00:00:41,840 --> 00:00:45,520
+So I'm going to use
+ triple codes because our python code is
+
+13
+00:00:45,520 --> 00:00:49,070
+spread across multiple lines and we terminated
+
+14
+00:00:49,070 --> 00:00:53,140
+here. 
+So this is one  piece of code now. 
+After
+
+15
+00:00:53,140 --> 00:00:56,630
+that, we call timeit as
+
+16
+00:00:56,630 --> 00:00:59,860
+the first argument we passed python code. That
+
+17
+00:00:59,860 --> 00:01:03,100
+is our code Juan Variable. Now. here we
+
+18
+00:01:03,100 --> 00:01:06,290
+have a keyword argument number.
+ We said this to the
+
+19
+00:01:06,290 --> 00:01:10,120
+number of times we want to
+ execute this piece of code. so
+
+20
+00:01:10,120 --> 00:01:14,310
+let's set it to 10,000 so
+ we can see the difference. Now
+
+21
+00:01:14,320 --> 00:01:18,260
+this function returns the execution time
+ of this piece of code after
+
+22
+00:01:18,260 --> 00:01:21,860
+10,000 repetitions. Now this function will execute
+
+23
+00:01:21,860 --> 00:01:25,190
+our prison code 10,000 times.
+ It will calculate the
+
+24
+00:01:25,190 --> 00:01:28,860
+execution time and return it
+ so we can simply print it
+
+25
+00:01:29,440 --> 00:01:33,040
+on a terminal.
+ I would like to add a
+
+26
+00:01:33,040 --> 00:01:36,760
+label as well. Let's say first code
+
+27
+00:01:38,140 --> 00:01:41,710
+. Now open up a terminal window.
+ You can't run this using code
+
+28
+00:01:41,710 --> 00:01:45,660
+runner. So type python uh. pie
+
+29
+00:01:47,140 --> 00:01:50,600
+. You can see our
+ program was executed 10,000 times and
+
+30
+00:01:50,600 --> 00:01:54,840
+we got 10,000 messages here.
+ And here's the execution time not
+
+31
+00:01:54,840 --> 00:01:58,760
+to clean this up.
+ Let's go back to our except clause
+
+32
+00:01:59,240 --> 00:02:02,570
+. I don't want to print
+ this error message. so let's use the
+
+33
+00:02:02,570 --> 00:02:05,960
+pass statement. 
+This pass statement is a statement that
+
+34
+00:02:05,960 --> 00:02:09,550
+doesn't do anything. 
+And we need to use that here because 
+we cannot have 
+
+35
+00:02:09,560 --> 00:02:13,160
+an empty except block. 
+Okay. so save
+
+36
+00:02:13,160 --> 00:02:16,410
+the changes back in the terminal.
+ Let's run this one more
+
+37
+00:02:16,410 --> 00:02:19,840
+time. so here's a
+ total execution time. Now let's
+
+38
+00:02:19,840 --> 00:02:23,540
+try a different approach. 
+Back
+
+39
+00:02:23,540 --> 00:02:27,370
+in our calculate_xfactor function
+ instead of raising an exception, if
+
+40
+00:02:27,380 --> 00:02:31,020
+age is zero or less,
+ we can return a value like
+
+41
+00:02:31,020 --> 00:02:34,620
+None. So I'm going to select this
+
+42
+00:02:34,630 --> 00:02:38,260
+entire code. copied then pasted.
+
+43
+00:02:38,940 --> 00:02:42,450
+Let's change this variables name to coat
+
+44
+00:02:42,460 --> 00:02:45,690
+to in this implementation. Instead of
+
+45
+00:02:45,690 --> 00:02:49,800
+raising an exception.
+ we want to return none. So
+
+46
+00:02:49,800 --> 00:02:53,600
+None is an object that represents
+ the absence of a value. 
+ In
+
+47
+00:02:53,600 --> 00:02:57,240
+this new implementation. We don't need a
+ try block so we can simplify our
+
+48
+00:02:57,240 --> 00:03:00,950
+code. Let's delete that as
+ well as the except clause
+
+49
+00:03:01,340 --> 00:03:05,020
+on the past statement.
+ We simply get the X factor
+
+50
+00:03:05,110 --> 00:03:08,470
+. You can store
+ it in a variable. so
+
+51
+00:03:08,470 --> 00:03:12,230
+instead of handling an exception.
+ we can compare this X factor
+
+52
+00:03:12,240 --> 00:03:16,500
+with none. So if X factor equals
+
+53
+00:03:16,500 --> 00:03:20,260
+nine. then let's just pass so
+
+54
+00:03:20,260 --> 00:03:24,270
+immediately you can see this code
+ is simpler than the previous implementation
+
+55
+00:03:24,280 --> 00:03:27,640
+. and as you will see in a second.
+ this will be executed almost four
+
+56
+00:03:27,640 --> 00:03:31,740
+times faster. Let me show you. So down
+
+57
+00:03:31,740 --> 00:03:34,840
+the bottom. I'm going to
+ duplicate this lying change the
+
+58
+00:03:34,840 --> 00:03:38,790
+label to second code and replace
+
+59
+00:03:38,790 --> 00:03:42,990
+Code Juan with CO two.
+ Save the changes back
+
+60
+00:03:42,990 --> 00:03:46,560
+in the terminal. Let's run the program. So
+
+61
+00:03:46,560 --> 00:03:50,010
+here's the execution time
+ of the first implementation. As
+
+62
+00:03:50,010 --> 00:03:53,440
+you can see.
+ our second implementation was almost four
+
+63
+00:03:53,440 --> 00:03:56,820
+times faster. 
+Now there is a caveat here. 
+We 
+
+64
+00:03:56,820 --> 00:04:00,620
+see this difference when 
+we execute this piece of code 10,000 times.
+
+65
+00:04:00,630 --> 00:04:04,020
+So if you're on the code once
+you're not going to see any differences. 
+In
+
+66
+00:04:04,020 --> 00:04:07,200
+other words, if you're building
+ a simple application for a
+
+67
+00:04:07,200 --> 00:04:10,370
+few users, raising exceptions in
+ your functions is not going
+
+68
+00:04:10,370 --> 00:04:14,280
+to have a bad impact on
+the performance of your application. 
+But 
+
+69
+00:04:14,280 --> 00:04:17,730
+if you're building an application where 
+performance and scalability is
+
+70
+00:04:17,730 --> 00:04:21,000
+important, then it's better
+ to raise exceptions when you
+
+71
+00:04:21,000 --> 00:04:24,640
+really have to. 
+As a general rule of thumb. when
+
+72
+00:04:24,640 --> 00:04:28,310
+you want to raise exceptions in your functions, 
+think twice. 
+See
+
+73
+00:04:28,310 --> 00:04:31,800
+if you can handle the situation with a simple if statement; 
+Whether
+
+74
+00:04:31,800 --> 00:04:35,050
+there is a performance difference or not, 
+your code will end up being a
+
+75
+00:04:35,050 --> 00:04:38,500
+little bit cleaner. 
+So raise exceptions if you really have to.
+

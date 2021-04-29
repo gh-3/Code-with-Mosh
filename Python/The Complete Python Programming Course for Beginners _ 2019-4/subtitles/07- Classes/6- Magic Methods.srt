@@ -1,0 +1,239 @@
+2
+00:00:04,000 --> 00:00:07,860
+Throughout this course 
+I've mentioned magic methods a few times. 
+These
+
+3
+00:00:07,860 --> 00:00:11,340
+are the methods that have
+ two underscores at the beginning and
+
+4
+00:00:11,350 --> 00:00:14,720
+end of their name
+ and they're called automatically by
+
+5
+00:00:14,720 --> 00:00:18,350
+Python interpreter depending on how
+ we use our objects and
+
+6
+00:00:18,350 --> 00:00:22,050
+classes. 
+For example here we
+ have this __init__ magic method. We
+
+7
+00:00:22,050 --> 00:00:26,260
+don't directly call it.
+ It's called automatically by Python interpreter
+
+8
+00:00:26,640 --> 00:00:29,980
+when we create a new point object. 
+Now we
+
+9
+00:00:29,980 --> 00:00:33,280
+have quite a few magic methods in Python.
+ Over the next few
+
+10
+00:00:33,280 --> 00:00:36,460
+lectures. you're going to learn about the key ones.
+ But if you want to see the
+
+11
+00:00:36,460 --> 00:00:40,490
+complete list. simply search for python 3 magic
+
+12
+00:00:40,490 --> 00:00:44,000
+methods Look at this first page here.
+ a guide to
+
+13
+00:00:44,000 --> 00:00:47,980
+Python's magic methods.
+ I really like this documentation. It's
+
+14
+00:00:47,980 --> 00:00:51,330
+actually better than pitons documentation itself. On
+
+15
+00:00:51,330 --> 00:00:54,800
+this page you can see 
+various magic methods in different categories with
+
+16
+00:00:54,800 --> 00:00:58,630
+examples. For example.
+ look at the category of representing
+
+17
+00:00:58,630 --> 00:01:01,950
+your classes. These are the
+ magic methods that we have in
+
+18
+00:01:01,950 --> 00:01:05,150
+this category. 
+The first one ster is a
+
+19
+00:01:05,150 --> 00:01:08,790
+really useful one and 
+this is called when we try to convert
+
+20
+00:01:08,790 --> 00:01:12,790
+an object to a string.
+ Let me show you how it works so
+
+21
+00:01:12,790 --> 00:01:16,680
+back to our code. We have
+ this point object. If we print this
+
+22
+00:01:16,690 --> 00:01:20,440
+on the terminal. 
+see what we get. 
+We
+
+23
+00:01:20,440 --> 00:01:24,250
+get the name of our module
+ followed by the class name and
+
+24
+00:01:24,250 --> 00:01:27,780
+the address of this point Object in memory.
+ This is the default
+
+25
+00:01:27,780 --> 00:01:31,560
+implementation of the str magic
+ method in our point object.
+
+26
+00:01:32,340 --> 00:01:36,550
+So if it I point dot
+
+27
+00:01:37,140 --> 00:01:40,930
+you can see all magic methods
+ that are available in our point object.
+
+28
+00:01:40,940 --> 00:01:45,220
+We didn't explicitly create these methods. 
+Our point object inherited
+
+29
+00:01:45,220 --> 00:01:48,430
+them from another object,
+ This is what we call inheritance and
+
+30
+00:01:48,430 --> 00:01:52,300
+you're going to learn about that soon.
+ Now in this list you can see we
+
+31
+00:01:52,300 --> 00:01:55,650
+have this str method. 
+So by default this
+
+32
+00:01:55,650 --> 00:01:58,880
+returns the name of the
+ class of this object followed by
+
+33
+00:01:58,880 --> 00:02:02,610
+its memory address.
+ Now let's reimplement this method
+
+34
+00:02:02,620 --> 00:02:06,750
+to get a better result So delayed
+
+35
+00:02:08,440 --> 00:02:12,230
+back to our class Let's define this
+
+36
+00:02:12,240 --> 00:02:15,960
+stir method So 200 scores stir to
+
+37
+00:02:15,960 --> 00:02:19,760
+underscore Now. just like before. the first parameter
+
+38
+00:02:19,760 --> 00:02:23,430
+should be self. Now here
+ we should simply return a
+
+39
+00:02:23,430 --> 00:02:27,080
+string representation of this point object. So
+
+40
+00:02:27,080 --> 00:02:30,270
+I'm going to return a
+ formatted string in this string. I'm
+
+41
+00:02:30,270 --> 00:02:34,020
+going to add parenthesis first we add self
+
+42
+00:02:34,200 --> 00:02:37,690
+dot eggs than comma self that
+
+43
+00:02:37,690 --> 00:02:41,590
+why save the changes now when
+
+44
+00:02:41,590 --> 00:02:45,360
+we print this point of Jack. this
+
+45
+00:02:45,360 --> 00:02:48,560
+is what we get.
+ This is very useful. We get
+
+46
+00:02:48,560 --> 00:02:52,900
+the same result if you
+ also try to convert a
+
+47
+00:02:52,900 --> 00:02:58,260
+point object to a string
+using the str function. 
+So
+
+48
+00:02:58,400 --> 00:03:02,060
+look. 
+We get the same result. 
+So
+
+49
+00:03:02,440 --> 00:03:06,090
+in it and stir are
+ examples of two useful magic
+
+50
+00:03:06,090 --> 00:03:09,160
+methods in python. 
+Over the next few lectures, 
+you're going to learn about other useful magic methods.
+
