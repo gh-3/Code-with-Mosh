@@ -1,0 +1,273 @@
+2
+00:00:04,440 --> 00:00:07,570
+This class will be built in the last
+lecture has a tiny problem. 
+Let me
+
+3
+00:00:07,570 --> 00:00:10,640
+show you. 
+So here we have a cloud object I want to
+
+4
+00:00:10,640 --> 00:00:14,440
+call Cloud that at past python. Repeat
+
+5
+00:00:14,440 --> 00:00:17,710
+this a couple of times and
+ then change this to an R p
+
+6
+00:00:17,710 --> 00:00:21,890
+G s P.
+ Now. if we print cloud of
+
+7
+00:00:21,890 --> 00:00:25,690
+python all in uppercase. we
+
+8
+00:00:25,690 --> 00:00:29,840
+get three. So our
+ program is working. However. if
+
+9
+00:00:29,840 --> 00:00:35,630
+I access the underlying
+ dictionary in this class. our
+
+10
+00:00:35,630 --> 00:00:39,300
+program is going to crash.
+ Let's take a look. So
+
+11
+00:00:39,300 --> 00:00:42,720
+we got an exception of
+ type key error because we
+
+12
+00:00:42,720 --> 00:00:46,140
+don't have this key in our dictionary.
+ Everything stored as
+
+13
+00:00:46,140 --> 00:00:49,470
+lower case. 
+So the problem with this class is
+
+14
+00:00:49,470 --> 00:00:52,670
+that it gives us access
+ to the underlying dictionary that
+
+15
+00:00:52,670 --> 00:00:56,140
+is used to keep track of the count of tags. 
+To 
+
+16
+00:00:56,140 --> 00:00:59,650
+fix this problem we need to
+ hide this attribute from the outside so
+
+17
+00:00:59,650 --> 00:01:03,500
+we cannot access it. 
+How do we do this? Very easy. 
+So
+
+18
+00:01:03,510 --> 00:01:07,740
+back to our class put the cursor on
+
+19
+00:01:07,740 --> 00:01:11,070
+this attribute and press F2. 
+This is
+
+20
+00:01:11,070 --> 00:01:14,420
+used for renaming objects in VSCode. 
+Now to make this
+
+21
+00:01:14,420 --> 00:01:18,020
+private or inaccessible from the outside you
+
+22
+00:01:18,020 --> 00:01:21,320
+need to prefix it with two underlines.
+ Now when you press
+
+23
+00:01:21,320 --> 00:01:24,620
+enter you're going to see an error on the bottom right corner of
+
+24
+00:01:24,620 --> 00:01:28,380
+the screen is going to tell
+ you that the re factoring library rope
+
+25
+00:01:28,390 --> 00:01:31,630
+is not installed. Go ahead and
+ install that and then try this
+
+26
+00:01:31,630 --> 00:01:35,220
+again. Now we can see all occurrences of
+
+27
+00:01:35,220 --> 00:01:39,450
+self attacks. is renamed to
+ self dot Double underscore tags
+
+28
+00:01:39,940 --> 00:01:43,070
+now back to where we use a
+
+29
+00:01:43,070 --> 00:01:46,500
+tag cloud object. If we use the DOT
+
+30
+00:01:46,500 --> 00:01:50,030
+operator so cloud dot we
+
+31
+00:01:50,030 --> 00:01:53,620
+no longer have tags here.
+ We also don't have double
+
+32
+00:01:53,620 --> 00:01:58,190
+underscore tags. So if you print this. we
+
+33
+00:01:58,190 --> 00:02:01,490
+get an exception of type attribute. error tag
+
+34
+00:02:01,490 --> 00:02:05,200
+. Cloud object doesn't have this attribute. So
+
+35
+00:02:05,200 --> 00:02:08,610
+this is how we can
+ make certain attributes or certain methods
+
+36
+00:02:08,610 --> 00:02:12,310
+in a class private. If it
+ prefix them with double under squares
+
+37
+00:02:12,470 --> 00:02:16,470
+they're considered private.
+ Having said that technically these
+
+38
+00:02:16,470 --> 00:02:20,040
+members are still accessible from the outside,
+it's just a little bit harder
+
+39
+00:02:20,040 --> 00:02:24,400
+to access them. 
+So the point of this practice is not security. 
+It's
+
+40
+00:02:24,400 --> 00:02:28,320
+more of a warning or alert to
+ someone who is using this class, it's
+
+41
+00:02:28,320 --> 00:02:32,420
+telling the consumer of this class:
+Hey, don't touch this, this is private. 
+But
+
+42
+00:02:32,420 --> 00:02:35,700
+let me show you 
+How you can still access this? 
+I'm
+
+43
+00:02:35,700 --> 00:02:39,360
+going to delete all this code.
+Every class or every object
+
+44
+00:02:39,740 --> 00:02:43,930
+has this property called Underscore Underscore dict. 
+This
+
+45
+00:02:43,930 --> 00:02:47,360
+is a dictionary that holds
+ all the attributes in this class.
+
+46
+00:02:47,940 --> 00:02:53,070
+Let's take a look. 
+France. So
+
+47
+00:02:53,350 --> 00:02:56,780
+in this class. we have this attribute called
+
+48
+00:02:56,790 --> 00:03:00,390
+Underlying tag. Cloud double underlines tax. So
+
+49
+00:03:00,390 --> 00:03:04,110
+when Python interpreter runs this go.
+ it automatically renames
+
+50
+00:03:04,110 --> 00:03:07,740
+this attribute and prefixes it
+ with the name of its class
+
+51
+00:03:07,750 --> 00:03:11,120
+. So technically we can still access it.
+ Let me show you. I'm going to copy this
+
+52
+00:03:11,120 --> 00:03:15,050
+name and then print
+
+53
+00:03:15,440 --> 00:03:18,740
+cloud dot This attribute. Let's take
+
+54
+00:03:18,740 --> 00:03:22,580
+a look. We get an empty dictionary. 
+So
+
+55
+00:03:22,590 --> 00:03:26,040
+in python unlike languages like C Sharp or Java, we
+
+56
+00:03:26,040 --> 00:03:29,440
+don't really have the concept of private member's. 
+These private
+
+57
+00:03:29,440 --> 00:03:33,220
+members are still accessible from the outside.
+Using double underscores
+
+58
+00:03:33,240 --> 00:03:40,000
+is more of a convention to prevent 
+accidental access of these private members.
+

@@ -1,0 +1,124 @@
+2
+00:00:04,000 --> 00:00:08,390
+In this lecture we're going to look at
+a powerful built in function called dir. 
+With
+
+3
+00:00:08,390 --> 00:00:11,910
+this function we can get the
+ list of attributes and methods defined
+
+4
+00:00:11,910 --> 00:00:15,660
+in an object. 
+So in this example
+we're importing the sales module
+
+5
+00:00:16,140 --> 00:00:19,470
+as you learned earlier.
+Now sales is an object, so we
+
+6
+00:00:19,470 --> 00:00:22,890
+can use the dot operator
+ to access all the methods and
+
+7
+00:00:22,890 --> 00:00:26,660
+attributes defined in this object.
+As you work on large projects 
+
+8
+00:00:26,750 --> 00:00:30,070
+there are times that things don't work as you expect, 
+so you can use the dir 
+
+9
+00:00:30,070 --> 00:00:34,080
+function for debugging.
+Let me show you. 
+So let's
+
+10
+00:00:34,080 --> 00:00:39,290
+print dit of sales. 
+When
+
+11
+00:00:39,290 --> 00:00:42,820
+we run this program, we get 
+an array of strings in
+
+12
+00:00:42,820 --> 00:00:46,570
+this array. 
+We have all the attributes and methods defined in
+
+13
+00:00:46,570 --> 00:00:50,150
+an object. 
+So as you see in our sales module, we have these
+
+14
+00:00:50,150 --> 00:00:53,880
+two functions calculate shipping and tax as
+
+15
+00:00:53,880 --> 00:00:57,430
+well as these magic attributes
+ that are automatically created for
+
+16
+00:00:57,430 --> 00:01:01,960
+us. 
+Let's take a look at a few of these. 
+so I'm
+
+17
+00:01:01,960 --> 00:01:06,360
+going to comment out this line and 
+print sales dot
+
+18
+00:01:07,240 --> 00:01:10,550
+name, 
+that returns the name of our module. 
+We
+
+19
+00:01:10,550 --> 00:01:14,500
+can also get name of the package, 
+as
+
+20
+00:01:14,500 --> 00:01:18,800
+well as the file name, as well as 
+the address of its file. So
+
+21
+00:01:18,890 --> 00:01:22,790
+let's run this program. So here
+ is the name of our module. As
+
+22
+00:01:22,790 --> 00:01:26,570
+you can see, 
+it's fully qualified with the name of its packages. 
+After
+
+23
+00:01:26,570 --> 00:01:29,970
+that we have the name of our package.
+ So the sales module is
+
+24
+00:01:29,970 --> 00:01:33,470
+defined in ecommerce dot shopping package, 
+and
+
+25
+00:01:33,470 --> 00:01:36,950
+below that we have the path to this file and file system 
+

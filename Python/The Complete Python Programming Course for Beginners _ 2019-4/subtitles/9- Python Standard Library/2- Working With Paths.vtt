@@ -1,0 +1,285 @@
+WEBVTT
+
+1
+00:00:04.000 --> 00:00:08.000
+Over the next few lectures, you're going to learn how to work with files and
+
+2
+00:00:08.000 --> 00:00:12.000
+directories in python, in this lecture you're going to look at the path class  because that's
+
+3
+00:00:12.000 --> 00:00:16.000
+the foundation to work with files and directories. So,
+
+4
+00:00:16.000 --> 00:00:20.000
+from the path lib module let's import
+
+5
+00:00:20.000 --> 00:00:24.000
+path class now we can create a path object in a few different
+
+6
+00:00:24.000 --> 00:00:28.000
+ways. We can create an absolute path, for example if you're on windows
+
+7
+00:00:28.000 --> 00:00:32.000
+you can create a path object like this. C drive
+
+8
+00:00:32.000 --> 00:00:36.000
+\\program files\Microsoft
+
+9
+00:00:36.000 --> 00:00:40.000
+or whatever, now when working with a long path, these double back slashes
+
+10
+00:00:40.000 --> 00:00:44.000
+get a little bit ugly, so we can simplify this by using a raw
+
+11
+00:00:44.000 --> 00:00:48.000
+string. In a raw string, back slash is not going to
+
+12
+00:00:48.000 --> 00:00:52.000
+stay in character, it's taken literally as is. So,
+
+13
+00:00:52.000 --> 00:00:56.000
+you prefix this with an r, now we have a raw string so we can get
+
+14
+00:00:56.000 --> 00:01:00.000
+a bit of the second backslash, like this.
+
+15
+00:01:00.000 --> 00:01:04.000
+Now if you're on Mac or Lennox, you can create an absolute path like
+
+16
+00:01:04.000 --> 00:01:08.000
+this, /usr/local/bin
+
+17
+00:01:08.000 --> 00:01:12.000
+you can also create the path object that represents the current folder.
+
+18
+00:01:12.000 --> 00:01:16.000
+Or we can use a related path here, so current folder
+
+19
+00:01:16.000 --> 00:01:20.000
+let's go to the ecommerce sub folder and then pick
+
+20
+00:01:20.000 --> 00:01:24.000
+init.py we can also combine path objects
+
+21
+00:01:24.000 --> 00:01:28.000
+together for example you can have one path object and then using
+
+22
+00:01:28.000 --> 00:01:32.000
+a slash combine it with another path
+
+23
+00:01:32.000 --> 00:01:36.000
+or you can also combine a path object with a string, so here
+
+24
+00:01:36.000 --> 00:01:40.000
+we can have a string. And then again we can
+
+25
+00:01:40.000 --> 00:01:44.000
+combine this with another string. We can
+
+26
+00:01:44.000 --> 00:01:48.000
+also get the home directory of the current user, so this path class
+
+27
+00:01:48.000 --> 00:01:52.000
+has a class method called home, that returns the home directory
+
+28
+00:01:52.000 --> 00:01:56.000
+of the current user. So these are various ways to create the path object,
+
+29
+00:01:56.000 --> 00:02:00.000
+in this demo, I'm going to use what we have on line 6,
+
+30
+00:02:00.000 --> 00:02:04.000
+so, let's delete the rest, and store the result
+
+31
+00:02:04.000 --> 00:02:08.000
+here. Now this path object has quite a few useful members.
+
+32
+00:02:08.000 --> 00:02:12.000
+And in this section I'm going to show you the most important ones, but if you want to see
+
+33
+00:02:12.000 --> 00:02:16.000
+a comprehensive list, simply search for Python 3,
+
+34
+00:02:16.000 --> 00:02:20.000
+path lib. On this page we can see all the members
+
+35
+00:02:20.000 --> 00:02:24.000
+of path class. So with this path object we can
+
+36
+00:02:24.000 --> 00:02:28.000
+call the exists method to see if this file or directory exists
+
+37
+00:02:28.000 --> 00:02:32.000
+or not. To check to see if this path represents a file
+
+38
+00:02:32.000 --> 00:02:36.000
+we call is file, we also have
+
+39
+00:02:36.000 --> 00:02:40.000
+is directory, we can also extract individual
+
+40
+00:02:40.000 --> 00:02:44.000
+components in this path which is extremely useful, for example, let's
+
+41
+00:02:44.000 --> 00:02:48.000
+print path.name.
+
+42
+00:02:48.000 --> 00:02:52.000
+So this returns only the file name in this path.
+
+43
+00:02:52.000 --> 00:02:56.000
+We also have path.stem,
+
+44
+00:02:56.000 --> 00:03:00.000
+which returns the file name without the
+
+45
+00:03:00.000 --> 00:03:04.000
+extension. If you want to get the extension you can access
+
+46
+00:03:04.000 --> 00:03:08.000
+the suffix attribute, so this returns
+
+47
+00:03:08.000 --> 00:03:12.000
+.py, we can also get the parent of this path
+
+48
+00:03:12.000 --> 00:03:16.000
+so path.parent
+
+49
+00:03:16.000 --> 00:03:20.000
+and this returns the parent folder ecommerce.
+
+50
+00:03:20.000 --> 00:03:24.000
+Now here we have a couple other useful methods that I really like, one of them is
+
+51
+00:03:24.000 --> 00:03:28.000
+with name. Path.with_name. And
+
+52
+00:03:28.000 --> 00:03:32.000
+we can use this to create a new path object based on this existing path
+
+53
+00:03:32.000 --> 00:03:36.000
+but only change the name and the extension of the file,
+
+54
+00:03:36.000 --> 00:03:40.000
+so if I pass let's say file.txt.
+
+55
+00:03:40.000 --> 00:03:44.000
+We get a new path object here.
+
+56
+00:03:44.000 --> 00:03:48.000
+Now let's print this. So this returns
+
+57
+00:03:48.000 --> 00:03:52.000
+ecommerce/file.txt. We can also get the
+
+58
+00:03:52.000 --> 00:03:56.000
+absolute value of this path. So path.absolute.
+
+59
+00:03:56.000 --> 00:04:00.000
+Let's run the program,
+
+60
+00:04:00.000 --> 00:04:04.000
+so here's the absolute value of this file, obviously this file
+
+61
+00:04:04.000 --> 00:04:08.000
+doesn't exist yet, they're only representing it's path.
+
+62
+00:04:08.000 --> 00:04:12.000
+Now similar to this with name, we have another method with
+
+63
+00:04:12.000 --> 00:04:16.000
+suffix, and we use that to change the extension of a file. So,
+
+64
+00:04:16.000 --> 00:04:20.000
+with suffix, and here
+
+65
+00:04:20.000 --> 00:04:24.000
+I'm going to pass .txt. Now let's simply print
+
+66
+00:04:24.000 --> 00:04:28.000
+this path, so we get ecommerce,
+
+67
+00:04:28.000 --> 00:04:32.000
+/init.txt. Note that here we have not renamed the
+
+68
+00:04:32.000 --> 00:04:36.000
+file, we are only representing a path object. Over the next
+
+69
+00:04:36.000 --> 00:04:40.000
+couple lectures, I will show you how to rename files and directories. So,
+
+70
+00:04:40.000 --> 00:04:44.000
+these are the important members of the path class that we should note,
+
+71
+00:04:44.000 --> 00:04:48.000
+in the next lecture, we'll look at working with directors.

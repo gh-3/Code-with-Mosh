@@ -1,0 +1,385 @@
+2
+00:00:04,000 --> 00:00:08,260
+When we install a package using pipenv, 
+two files get automatically created
+
+3
+00:00:08,740 --> 00:00:12,070
+Pipfile and Pipfile.lock.
+These two files are
+
+4
+00:00:12,070 --> 00:00:16,010
+used to keep track of 
+the dependencies of our project and 
+their version. 
+ Let's
+
+5
+00:00:16,010 --> 00:00:20,050
+take a look. 
+So first I'm going to open up the file. 
+Here
+
+6
+00:00:20,050 --> 00:00:24,720
+we have four sections. 
+The first one is source that 
+specifies address
+
+7
+00:00:24,730 --> 00:00:28,250
+of the repository where
+ these packages are downloaded from.
+
+8
+00:00:28,940 --> 00:00:32,500
+Below that we have Dev or 
+development packages, 
+These
+
+9
+00:00:32,500 --> 00:00:35,730
+are the packages that we used
+as part of our development, 
+such as
+
+10
+00:00:35,730 --> 00:00:39,620
+packages that we used for automatic testing.
+ They're only used during
+
+11
+00:00:39,620 --> 00:00:43,050
+development so they don't have to
+ exist for our application to run.
+
+12
+00:00:43,840 --> 00:00:47,520
+Below that we've got the 
+packages that our application is
+
+13
+00:00:47,520 --> 00:00:51,480
+dependent on. 
+In this case, we are dependent on the request package,
+
+14
+00:00:51,500 --> 00:00:55,220
+and this asters you see here because 
+we didn't specify a version
+
+15
+00:00:55,220 --> 00:00:58,740
+when installing this package.
+ This asterisk means the latest
+
+16
+00:00:58,740 --> 00:01:02,570
+version. 
+If you specify the version that would end up here. 
+And
+
+17
+00:01:02,570 --> 00:01:05,940
+finally below that we've got 
+requires that specifies the
+
+18
+00:01:05,940 --> 00:01:09,220
+version of python we need to run this application. 
+So
+
+19
+00:01:09,220 --> 00:01:12,720
+this is our Pipfile.
+Now let's look at the file
+
+20
+00:01:12,730 --> 00:01:15,990
+dot lock. 
+This is a JSON file that lists the
+
+21
+00:01:15,990 --> 00:01:19,960
+dependencies of our application and their exact version.
+
+22
+00:01:20,440 --> 00:01:24,330
+Let me show you. 
+So here on the top, we've got this section called Meta,
+Don't
+
+23
+00:01:24,330 --> 00:01:27,630
+worry about that.
+Below that we have default, and
+
+24
+00:01:27,630 --> 00:01:30,940
+inside of the default, 
+we've got all the dependencies of our application and
+
+25
+00:01:30,940 --> 00:01:34,740
+their exact version.
+Here's the first one, certifi. 
+Now
+
+26
+00:01:34,740 --> 00:01:37,850
+we didnt explicitly install this package.
+This is one of
+
+27
+00:01:37,850 --> 00:01:41,300
+the dependencies of the requests package. 
+So all
+
+28
+00:01:41,300 --> 00:01:45,100
+the packages that we installed and
+ their dependencies and their dependencies are
+
+29
+00:01:45,100 --> 00:01:48,960
+listed in this file. 
+So the version that is installed on my machine
+
+30
+00:01:49,540 --> 00:01:52,890
+is this version.
+Now if you scroll down, you
+
+31
+00:01:52,890 --> 00:01:56,120
+can find the requests package and here's
+
+32
+00:01:56,120 --> 00:01:59,370
+the version that is installed on my machine.
+Now with all the
+
+33
+00:01:59,370 --> 00:02:02,850
+information stored in this file,
+we can take our source code, 
+put
+
+34
+00:02:02,850 --> 00:02:06,750
+it on another machine like a production environment and 
+reproduce
+
+35
+00:02:06,760 --> 00:02:10,490
+this exact execution environment. 
+And this minimizes or
+
+36
+00:02:10,500 --> 00:02:13,930
+eliminates the situation where your
+ application runs on your machine
+
+37
+00:02:13,930 --> 00:02:17,390
+but doesn't run on another machine
+ because there is a different version of
+
+38
+00:02:17,390 --> 00:02:20,580
+one of these dependencies on that machine. 
+Now let
+
+39
+00:02:20,580 --> 00:02:23,710
+me show you this workflow in action.
+So here on
+
+40
+00:02:23,710 --> 00:02:28,250
+the terminal, 
+let's find the virtual environment for this project,
+pipenv
+
+41
+00:02:28,250 --> 00:02:32,540
+dash dash venv. 
+Okay
+
+42
+00:02:32,550 --> 00:02:36,190
+here's the directory.
+I'm going to delete this directory to 
+
+43
+00:02:36,190 --> 00:02:39,530
+simulate the scenario where we 
+copy our project onto another
+
+44
+00:02:39,530 --> 00:02:42,760
+machine. 
+On that machine this spiritual environment does
+
+45
+00:02:42,760 --> 00:02:46,760
+not exist. 
+All we have is the source code of our application. 
+Right?
+
+46
+00:02:47,240 --> 00:02:50,800
+So on Mac or Linux we can delete that directory by
+
+47
+00:02:50,800 --> 00:02:54,370
+running rm -rf and
+
+48
+00:02:54,370 --> 00:02:58,050
+then the path of the directory delete.
+
+49
+00:02:59,240 --> 00:03:02,480
+So now if you run
+ pipenv Dash dash venv one
+
+50
+00:03:02,480 --> 00:03:05,740
+more time. 
+It tells us that no virtual environment has been
+
+51
+00:03:05,740 --> 00:03:09,360
+created for this project yet.
+All we have is 
+
+52
+00:03:09,360 --> 00:03:12,680
+this source code and our 
+Pipfiles that specify the
+
+53
+00:03:12,680 --> 00:03:15,980
+dependencies of our application. 
+Right? 
+So now
+
+54
+00:03:15,980 --> 00:03:20,190
+we need to install all these dependencies and 
+that is very easy. 
+We run
+
+55
+00:03:20,190 --> 00:03:24,260
+pipenv install without any additional arguments.
+
+56
+00:03:24,740 --> 00:03:28,310
+When we run this command pipenv 
+will look at our Pipfile and install
+
+57
+00:03:28,320 --> 00:03:34,930
+all the dependencies of our application. 
+All
+
+58
+00:03:34,930 --> 00:03:38,460
+right. 
+Now let's run pipenv dash dash
+
+59
+00:03:39,540 --> 00:03:43,430
+venv. 
+You can see we have this virtual environment. 
+And
+
+60
+00:03:43,430 --> 00:03:47,060
+in this virtual environment, we've got 
+all the dependencies of this project.
+
+61
+00:03:48,040 --> 00:03:51,780
+Now these dependencies are
+installed based on the version specified
+
+62
+00:03:51,780 --> 00:03:55,030
+here. 
+So for the request package, we're asking for
+
+63
+00:03:55,030 --> 00:03:58,200
+the very latest version.
+However on my machine at the
+
+64
+00:03:58,200 --> 00:04:02,320
+time of development,
+ I've been using version 2.20 point
+
+65
+00:04:02,320 --> 00:04:05,870
+one. 
+So chances are in the future when 
+we put this project
+
+66
+00:04:05,870 --> 00:04:09,220
+on a different machine and install the dependences, 
+we might have
+
+67
+00:04:09,230 --> 00:04:12,950
+a newer version of the request package.
+In that case
+
+68
+00:04:12,960 --> 00:04:16,230
+those dependencies installed on that machine 
+will be different from the
+
+69
+00:04:16,230 --> 00:04:19,340
+dependencies on my development machine.
+If you want to
+
+70
+00:04:19,340 --> 00:04:22,520
+install the exact same versions listed here,
+you should tell
+
+71
+00:04:22,520 --> 00:04:27,200
+pipenv to ignore the pipfile and 
+use pipfile.lock.
+
+72
+00:04:27,200 --> 00:04:29,470
+So back on the terminal, 
+we run pip
+
+73
+00:04:29,470 --> 00:04:32,940
+env install and then supply an
+
+74
+00:04:32,940 --> 00:04:37,100
+additional parameter, 
+dash dash ignore dash
+
+75
+00:04:37,110 --> 00:04:41,190
+pipfile. 
+As
+
+76
+00:04:41,190 --> 00:04:44,680
+you can see, 
+this time pipenv have installed 
+the dependencies from Pipfile.lock.
+

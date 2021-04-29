@@ -1,0 +1,175 @@
+2
+00:00:04,000 --> 00:00:07,740
+So in the last lecture
+we defined this Mammal object. 
+Now
+
+3
+00:00:07,740 --> 00:00:11,160
+let me show you a couple
+of useful built in functions. 
+We
+
+4
+00:00:11,160 --> 00:00:14,400
+have this function is instance and it
+
+5
+00:00:14,400 --> 00:00:17,730
+tells us if an object
+ is an instance of a given
+
+6
+00:00:17,730 --> 00:00:21,140
+class. So if you pass em and
+
+7
+00:00:21,140 --> 00:00:24,770
+mammal here. obviously this M object is an instance
+
+8
+00:00:24,770 --> 00:00:28,400
+of mammal. So when
+ we print the result. we
+
+9
+00:00:28,400 --> 00:00:32,220
+should see True. What if you pass animal
+
+10
+00:00:32,220 --> 00:00:35,540
+here. Let's run the program. We still get
+
+11
+00:00:35,540 --> 00:00:39,610
+true because mammal inherits from animal So an
+
+12
+00:00:39,620 --> 00:00:43,140
+instance of the mammal class is also an
+
+13
+00:00:43,140 --> 00:00:46,450
+animal. 
+Now let me show you something interesting. 
+This
+
+14
+00:00:46,460 --> 00:00:50,350
+animal class that were defined
+ here inherits from another class
+
+15
+00:00:50,350 --> 00:00:54,750
+called object, even though
+ we didn't add that here.
+
+16
+00:00:55,840 --> 00:00:59,470
+So we have a class called
+ object and that is the base class
+
+17
+00:00:59,470 --> 00:01:03,610
+for all classes in python.
+ So every class that we have directly
+
+18
+00:01:03,620 --> 00:01:07,080
+or indirectly derives from the object class. 
+Let
+
+19
+00:01:07,080 --> 00:01:10,330
+me show you. 
+So that's still at this and go
+
+20
+00:01:10,330 --> 00:01:13,410
+back to line 18. 
+Let's see if I
+
+21
+00:01:13,410 --> 00:01:17,220
+am is an instance of object. 
+Run
+
+22
+00:01:17,220 --> 00:01:20,770
+the program. 
+We get true. 
+So mammal inherits from
+
+23
+00:01:20,780 --> 00:01:24,100
+animal which inherits from object. 
+We also have this
+
+24
+00:01:24,100 --> 00:01:29,920
+built in function for creating an empty object. 
+Now
+
+25
+00:01:29,960 --> 00:01:33,680
+if we inspect this object you
+
+26
+00:01:33,680 --> 00:01:37,110
+can see all these magic methods.
+ These are the magic methods that
+
+27
+00:01:37,120 --> 00:01:40,940
+every class in python has.
+ So if we type m
+
+28
+00:01:40,950 --> 00:01:44,290
+dot you can see our mammal
+ class or are mammal. Object also
+
+29
+00:01:44,290 --> 00:01:47,570
+has these methods because
+ it inherited them from the
+
+30
+00:01:47,570 --> 00:01:51,090
+base object class. We have
+ another built in function that
+
+31
+00:01:51,090 --> 00:01:54,460
+you might find useful
+ in certain situations and that
+
+32
+00:01:54,460 --> 00:01:57,900
+is is subclass. And with
+
+33
+00:01:57,900 --> 00:02:01,660
+this we can see if
+ a class derives from another class
+
+34
+00:02:02,240 --> 00:02:05,820
+. So let's see if
+ mammal is a subclass of
+
+35
+00:02:05,820 --> 00:02:10,200
+animal print. The result. obviously
+
+36
+00:02:10,200 --> 00:02:15,500
+we get true now.
+ If we change animal to object, we
+
+37
+00:02:15,500 --> 00:02:23,000
+still get true because 
+mammal indirectly derives or inherits 
+from the object class.
+

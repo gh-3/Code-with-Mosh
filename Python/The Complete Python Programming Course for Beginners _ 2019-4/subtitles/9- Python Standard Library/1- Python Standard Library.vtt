@@ -1,0 +1,45 @@
+WEBVTT
+
+1
+00:00:04.000 --> 00:00:08.000
+Python has a batteries included philosophy which means it comes with
+
+2
+00:00:08.000 --> 00:00:12.000
+a comprehensive library of packages and modules that provide common feature
+
+3
+00:00:12.000 --> 00:00:16.000
+that we need when building real applications. So in this section
+
+4
+00:00:16.000 --> 00:00:20.000
+we're going to explore python standard library more specifically you're going to learn
+
+5
+00:00:20.000 --> 00:00:24.000
+how to work with files and directories SQLite databases
+
+6
+00:00:24.000 --> 00:00:28.000
+date/time objects, generate random values, send emails and so on.
+
+7
+00:00:28.000 --> 00:00:32.000
+Now as you go through this section don't worry about memorizing anything just
+
+8
+00:00:32.000 --> 00:00:36.000
+try to give an idea of what is where and what we can do. We can
+
+9
+00:00:36.000 --> 00:00:40.000
+always come back to this section and treat it as a reference. For example,
+
+10
+00:00:40.000 --> 00:00:44.000
+if in the future you want to generate random values you can come back and watch the
+
+11
+00:00:44.000 --> 00:00:48.000
+corresponding lecture.

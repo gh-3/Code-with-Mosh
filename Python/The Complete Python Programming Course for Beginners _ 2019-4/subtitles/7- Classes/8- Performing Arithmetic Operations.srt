@@ -1,0 +1,100 @@
+2
+00:00:04,440 --> 00:00:08,000
+We also have magic methods for 
+performing arithmetic operations between
+
+3
+00:00:08,000 --> 00:00:11,610
+two objects. 
+For example what if you want to add these
+
+4
+00:00:11,610 --> 00:00:14,880
+two points together? 
+when you run this program, obviously
+
+5
+00:00:14,880 --> 00:00:18,750
+you're going to get an error.
+ So back in the list of magic methods
+
+6
+00:00:19,240 --> 00:00:22,460
+here we have numeric magic methods in this
+
+7
+00:00:22,460 --> 00:00:26,660
+category. If you scroll down.
+ you can see normal arithmetic
+
+8
+00:00:26,670 --> 00:00:30,290
+operators. so we have add. subtract. multiply and
+
+9
+00:00:30,290 --> 00:00:34,320
+so on. So in order
+ to add two points together. we
+
+10
+00:00:34,320 --> 00:00:38,850
+need to implement the ad matter.
+ Sir. Define ad
+
+11
+00:00:40,140 --> 00:00:43,620
+with two parameters. Self and other was
+
+12
+00:00:43,620 --> 00:00:46,820
+simply return and you point object with
+
+13
+00:00:46,820 --> 00:00:50,720
+these values. Self that X plus other
+
+14
+00:00:50,730 --> 00:00:54,180
+dot X. That's our
+ first argument and then self
+
+15
+00:00:54,180 --> 00:00:57,950
+good wine. plus other. That's why pretty
+
+16
+00:00:57,950 --> 00:01:01,550
+simple. right. So let's save the changes around
+
+17
+00:01:01,550 --> 00:01:05,260
+the program. We get this
+ new point object at this address
+
+18
+00:01:05,640 --> 00:01:09,450
+so we don't see the actual X and Y values of this point object
+
+19
+00:01:09,460 --> 00:01:13,260
+. because in this example.
+ I removed the stir magic method
+
+20
+00:01:14,040 --> 00:01:17,930
+. However. if you store
+ the result of this arithmetic operation
+
+21
+00:01:18,120 --> 00:01:21,940
+in another object like combined and
+
+22
+00:01:21,940 --> 00:01:25,220
+then print combined that X. you
+
+23
+00:01:25,220 --> 00:01:31,000
+can see we get 11.
+ which proves that we successfully added two points together.
+

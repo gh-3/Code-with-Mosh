@@ -1,0 +1,127 @@
+2
+00:00:04,000 --> 00:00:07,880
+So here in app.py 
+I'm currently importing the sales module. 
+When
+
+3
+00:00:07,880 --> 00:00:11,310
+Python sees this, 
+it will look for a file called sales dot
+
+4
+00:00:11,310 --> 00:00:14,590
+py in the current directory.
+If it doesn't find
+
+5
+00:00:14,590 --> 00:00:18,020
+this file, 
+it will look in a bunch of 
+predefined directories that
+
+6
+00:00:18,020 --> 00:00:22,640
+come with python installation.
+Let me show you. 
+So
+
+7
+00:00:22,640 --> 00:00:26,150
+we have a built in module called path. 
+Let's import that.
+
+8
+00:00:26,640 --> 00:00:30,440
+In this module we have a variable path which 
+returns
+
+9
+00:00:30,530 --> 00:00:33,920
+the list of directories that
+ Python will look at to find a
+
+10
+00:00:33,920 --> 00:00:39,320
+module. 
+Let's print this on the terminal. 
+So
+
+11
+00:00:39,320 --> 00:00:42,540
+as you see, we get 
+an array of strings. 
+The
+
+12
+00:00:42,540 --> 00:00:46,170
+first element in this array
+ represents the current folder, so
+
+13
+00:00:46,170 --> 00:00:49,320
+on my machine that is mashfeghhamedani slash
+
+14
+00:00:49,320 --> 00:00:52,760
+Dropbox Courses Python blah blah blah. 
+On your machine
+
+15
+00:00:52,760 --> 00:00:57,220
+is going to be different.
+ After that we have Library Frameworks
+
+16
+00:00:57,230 --> 00:01:00,980
+Python.framework Versions 3.7 da da da da da.
+
+17
+00:01:00,980 --> 00:01:04,440
+This is going to be different 
+on your machine depending on 
+your operating system. 
+I'm
+
+18
+00:01:04,440 --> 00:01:08,170
+using Mac, so this is
+the address of python installation on
+
+19
+00:01:08,170 --> 00:01:11,570
+Mac OS. 
+On Windows you're probably going to get something like
+
+20
+00:01:11,580 --> 00:01:14,970
+C drive Backslash program files Python.\ blah
+
+21
+00:01:14,970 --> 00:01:18,720
+blah blah. 
+So when Python sees an import statement
+
+22
+00:01:18,730 --> 00:01:22,110
+it will search 
+all this directories to find this module. 
+As soon
+
+23
+00:01:22,110 --> 00:01:25,570
+as it finds the module,
+the search stops there. 
+Now
+
+24
+00:01:25,570 --> 00:01:29,740
+you might be curious 
+How we can import a module from a subdirectory? 
+Well
+
+25
+00:01:29,750 --> 00:01:33,140
+to do that we need to look at packages and 
+that's the topic for the next lecture.
+

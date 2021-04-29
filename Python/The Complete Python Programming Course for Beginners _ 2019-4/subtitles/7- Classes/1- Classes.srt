@@ -1,0 +1,180 @@
+2
+00:00:04,490 --> 00:00:08,100
+In this section we're going to look
+ at classes which are extremely important in
+
+3
+00:00:08,100 --> 00:00:12,090
+python programming or in programming in general. So
+
+4
+00:00:12,090 --> 00:00:15,400
+let's start with an example.
+ I'm going to define a list
+
+5
+00:00:15,400 --> 00:00:18,590
+of numbers like this. Now you have
+
+6
+00:00:18,590 --> 00:00:22,160
+learned that when we use the dark notation.
+ we get access to
+
+7
+00:00:22,170 --> 00:00:26,040
+all these functions or. more accurately. methods enlist
+
+8
+00:00:26,040 --> 00:00:29,950
+objects. so every list
+ object in python has these
+
+9
+00:00:29,960 --> 00:00:33,180
+methods now. Wouldn't it
+ be nice if we could
+
+10
+00:00:33,180 --> 00:00:36,700
+create an object like shopping cart. And this
+
+11
+00:00:36,710 --> 00:00:41,210
+object would have methods like add. remove. get
+
+12
+00:00:41,220 --> 00:00:44,830
+total like this. Or as another
+
+13
+00:00:44,830 --> 00:00:48,990
+example. Wouldn't that be nice if
+ we could have a point. Object with
+
+14
+00:00:48,990 --> 00:00:53,480
+methods like Draw. move or get
+
+15
+00:00:53,480 --> 00:00:57,410
+distance to get the
+ distance between this point and
+
+16
+00:00:57,420 --> 00:01:00,770
+another point. That's when classes come to
+
+17
+00:01:00,770 --> 00:01:04,360
+the rescue. So a
+ class is a blueprint for
+
+18
+00:01:04,360 --> 00:01:07,640
+creating new objects. Throughout the course. you have
+
+19
+00:01:07,640 --> 00:01:10,850
+heard the term class.
+ for example. Let's define a
+
+20
+00:01:10,850 --> 00:01:15,150
+variable and set it to an integer.
+ and then print it's
+
+21
+00:01:15,150 --> 00:01:18,560
+type. When we run this program.
+ what do you see here
+
+22
+00:01:18,940 --> 00:01:22,110
+. A class of aunt.
+ So in Python we have
+
+23
+00:01:22,110 --> 00:01:26,190
+a class called Aunt for creating managers. Similarly
+
+24
+00:01:26,190 --> 00:01:29,920
+. we have classes
+ for creating billions. lists. dictionaries
+
+25
+00:01:29,920 --> 00:01:33,740
+and so on. 
+So every object that we have in python is created
+
+26
+00:01:33,860 --> 00:01:37,880
+using a class which is
+ a blueprint for creating objects of
+
+27
+00:01:37,880 --> 00:01:41,710
+that type. In this section.
+ you're going to learn how to create custom
+
+28
+00:01:41,710 --> 00:01:45,310
+classes like customer shopping. cart point
+
+29
+00:01:45,320 --> 00:01:48,810
+and so on. Now.
+ before we get started. let's define
+
+30
+00:01:48,820 --> 00:01:52,360
+a few terms. Once again. a class is
+
+31
+00:01:52,360 --> 00:01:57,310
+a blueprint for creating new objects. An
+
+32
+00:01:57,320 --> 00:02:01,770
+object is an instance of a class. As
+
+33
+00:02:01,770 --> 00:02:05,540
+an example. we could have
+ a class called Human. and
+
+34
+00:02:05,540 --> 00:02:09,610
+this class would define all
+ the attributes of humans. Then
+
+35
+00:02:09,610 --> 00:02:13,650
+we could create objects like John. Mary
+
+36
+00:02:13,660 --> 00:02:17,500
+. Jack and so on.
+ So this is a difference between classes and
+
+37
+00:02:17,500 --> 00:02:21,810
+objects. Now a lot of
+ people use these terms interchangeably
+
+38
+00:02:21,820 --> 00:02:26,460
+. but technically a class
+ and an object are different. So
+
+39
+00:02:26,840 --> 00:02:30,140
+now you know what classes are
+ and how they're useful. In the next
+
+40
+00:02:30,140 --> 00:02:33,650
+lecture. I'm going to show you how
+ to create a custom class in Python
+

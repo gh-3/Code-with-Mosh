@@ -1,0 +1,196 @@
+2
+00:00:04,000 --> 00:00:08,070
+Currently all our files or modules are 
+in this folder. 
+But as our application 
+
+3
+00:00:08,070 --> 00:00:12,690
+grows, we probably want toorganize these files 
+into subdirectories, 
+otherwise
+
+4
+00:00:12,690 --> 00:00:16,150
+we'll end up with hundreds
+ or even thousands of python files or
+
+5
+00:00:16,160 --> 00:00:19,560
+python modules in one folder.
+That is not good.
+
+6
+00:00:20,140 --> 00:00:23,890
+So in this demo I want to
+move the sales module to 
+a subdirectory called
+
+7
+00:00:23,900 --> 00:00:28,530
+ecommerce. 
+So I'm going to add a new subdirectory e
+
+8
+00:00:28,530 --> 00:00:32,210
+commerce and then 
+drag and drop this module right
+
+9
+00:00:32,210 --> 00:00:35,960
+here. 
+Now back to app.py.
+
+10
+00:00:36,740 --> 00:00:40,130
+You can see we have a
+red underline here because 
+Python cannot find
+
+11
+00:00:40,130 --> 00:00:43,450
+a sales module. 
+To fix this issue, we should come back
+
+12
+00:00:43,450 --> 00:00:48,280
+to our ecommerce folder
+ and add a new file called
+
+13
+00:00:48,360 --> 00:00:51,880
+double underscore init double underscore dot
+
+14
+00:00:51,880 --> 00:00:55,430
+py. 
+When we add this file here python would
+
+15
+00:00:55,430 --> 00:00:58,900
+treat the ecommerce foller 
+as a package. 
+So
+
+16
+00:00:58,900 --> 00:01:02,990
+a package is 
+a container
+for one or more modules. 
+In
+
+17
+00:01:02,990 --> 00:01:07,210
+file system terms a package
+ is mapped to a directory and
+
+18
+00:01:07,250 --> 00:01:10,500
+a module is mapped to a file.
+ So now we
+
+19
+00:01:10,500 --> 00:01:13,900
+can go back to app dot py and 
+prefix the
+
+20
+00:01:13,900 --> 00:01:17,780
+name of this module with the
+name of its package, that is e
+
+21
+00:01:17,780 --> 00:01:21,560
+commerce dot sells. 
+Save the changes. 
+The
+
+22
+00:01:21,560 --> 00:01:25,320
+error is gone. 
+Now to use any of the objects in the sales module,
+
+23
+00:01:25,330 --> 00:01:28,560
+we need to prefix them with
+the name of their package 
+and modules. 
+So
+
+24
+00:01:28,570 --> 00:01:32,350
+ecommerce dot sales dot calculate tax.
+
+25
+00:01:33,140 --> 00:01:36,570
+Obviously this is going to make our code 
+a little bit noisy because 
+every time
+
+26
+00:01:36,570 --> 00:01:39,920
+we want to use one of the
+objects in the sales module will have
+
+27
+00:01:39,920 --> 00:01:43,200
+to type ecommerce dot sales dot. 
+That is
+
+28
+00:01:43,210 --> 00:01:46,960
+tedious. 
+A better approach is to use the from statement.
+
+29
+00:01:47,340 --> 00:01:50,580
+So we changed this to 
+from ecommerce dot
+
+30
+00:01:50,580 --> 00:01:54,710
+sales import calculate tax. 
+Now
+
+31
+00:01:54,710 --> 00:01:58,570
+we can simply call this
+ function like a function defined in
+
+32
+00:01:58,570 --> 00:02:01,840
+app module. 
+That is better.
+But what if you want to use
+
+33
+00:02:01,840 --> 00:02:05,290
+multiple objects in the sales module? 
+Well we
+
+34
+00:02:05,290 --> 00:02:08,640
+can list them all here.
+But if that ends
+
+35
+00:02:08,640 --> 00:02:13,580
+up being too noisy, 
+we can take a different approach. 
+So we
+
+36
+00:02:13,580 --> 00:02:17,260
+can type 
+from ecommerce import sales.
+
+37
+00:02:17,740 --> 00:02:21,150
+So we're importing the sales
+ module as an object and then
+
+38
+00:02:21,150 --> 00:02:24,860
+we can use the dot operator to 
+access all the members of this module.
+

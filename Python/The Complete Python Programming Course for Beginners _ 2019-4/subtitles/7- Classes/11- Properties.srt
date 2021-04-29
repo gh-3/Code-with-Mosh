@@ -1,0 +1,578 @@
+2
+00:00:04,000 --> 00:00:07,720
+There are times that you want to
+ have control over an attribute in
+
+3
+00:00:07,720 --> 00:00:11,430
+a class. 
+For example: Here we have this product class in
+
+4
+00:00:11,430 --> 00:00:14,900
+the constructor. 
+We said the price attributes With
+
+5
+00:00:14,900 --> 00:00:19,540
+this implementation. we can
+ create a product object and
+
+6
+00:00:19,540 --> 00:00:23,380
+give it a negative price. And Python interpreter
+
+7
+00:00:23,380 --> 00:00:27,380
+will execute this without any problems.
+ This is not good. So
+
+8
+00:00:27,380 --> 00:00:31,000
+How can we prevent this?
+How can we ensure that our products don't
+
+9
+00:00:31,000 --> 00:00:35,170
+have a negative price?
+ Here's one simple solution: We
+
+10
+00:00:35,170 --> 00:00:38,400
+can make this field
+ private and then define two
+
+11
+00:00:38,400 --> 00:00:42,650
+methods for getting and setting
+ the value of this attribute. So
+
+12
+00:00:44,340 --> 00:00:49,500
+we define a method
+ called get underlying price. Here
+
+13
+00:00:49,500 --> 00:00:54,660
+we simply return self that price and
+
+14
+00:00:54,660 --> 00:00:58,360
+similarly with define set
+ on the line price that
+
+15
+00:00:58,360 --> 00:01:01,740
+takes a value. Now here. First we
+
+16
+00:01:01,740 --> 00:01:05,650
+check. If value is less than zero. we
+
+17
+00:01:05,650 --> 00:01:09,600
+can raise an exception
+ of type value error. saying
+
+18
+00:01:09,600 --> 00:01:15,130
+price cannot be negative. Otherwise
+
+19
+00:01:15,140 --> 00:01:18,970
+. we set self that price to
+
+20
+00:01:18,970 --> 00:01:23,080
+this new value. 
+Now in another implementation instead
+
+21
+00:01:23,080 --> 00:01:26,280
+of raising this exception,
+ we could just ignore setting the
+
+22
+00:01:26,280 --> 00:01:29,850
+value if it's negative.
+Now with these two methods in place
+
+23
+00:01:30,340 --> 00:01:33,720
+. we go back to our
+ constructor instead of directly setting the
+
+24
+00:01:33,720 --> 00:01:37,790
+price. Attribute. Recall Self that
+
+25
+00:01:37,790 --> 00:01:41,940
+set price and give
+ it this initial value. When
+
+26
+00:01:41,940 --> 00:01:45,050
+we run this program.
+ our data validation logic is going to
+
+27
+00:01:45,050 --> 00:01:49,850
+kick in. and it will throw an exception.
+ Take a look so
+
+28
+00:01:49,860 --> 00:01:54,220
+we got a value error because 
+price cannot be negative. 
+So
+
+29
+00:01:54,220 --> 00:01:57,660
+this was a simple solution.
+But it's kind of ugly. 
+It's
+
+30
+00:01:57,660 --> 00:02:00,930
+what we consider unPythonic. 
+Pythonic is
+
+31
+00:02:00,930 --> 00:02:04,810
+one of those expressions that you hear
+ a lot in the python community when
+
+32
+00:02:04,810 --> 00:02:08,560
+we say this code or this implementation is not Pythonic, that
+
+33
+00:02:08,560 --> 00:02:11,960
+means it's not using Python's best practices.
+It's not using
+
+34
+00:02:11,960 --> 00:02:15,630
+the Python language featuresto the fullest potential. 
+This
+
+35
+00:02:15,630 --> 00:02:19,330
+implementation is the kind of
+ code that the Java programmer, learning
+
+36
+00:02:19,330 --> 00:02:22,750
+python rights. 
+But in Python we have a better way to achieve
+
+37
+00:02:22,750 --> 00:02:26,190
+the same result. 
+That's when we use a property. 
+A 
+
+38
+00:02:26,190 --> 00:02:29,880
+property is an object that sits
+ in front of an attribute and
+
+39
+00:02:29,880 --> 00:02:33,440
+allows us to get or set
+ the value of that attribute. Let
+
+40
+00:02:33,440 --> 00:02:37,140
+me show you 
+How to define a property here? 
+So in
+
+41
+00:02:37,140 --> 00:02:40,770
+our product class. after we
+ define these two methods. we
+
+42
+00:02:40,770 --> 00:02:44,230
+define a class attribute
+ with the ideal name. In
+
+43
+00:02:44,230 --> 00:02:48,050
+that case. we want
+ to call that price. Here
+
+44
+00:02:48,050 --> 00:02:52,050
+we call they built in property function. This
+
+45
+00:02:52,050 --> 00:02:55,330
+function takes four parameters
+ and all these parameters are
+
+46
+00:02:55,340 --> 00:02:58,940
+optional. 
+The first parameter is a function for
+
+47
+00:02:58,940 --> 00:03:02,510
+getting the value of an attribute.
+ The second parameter is
+
+48
+00:03:02,510 --> 00:03:05,890
+a function for setting the value of the attribute. 
+The third
+
+49
+00:03:05,890 --> 00:03:09,140
+parameter is a function for
+ deleting that attribute. 
+ And the
+
+50
+00:03:09,140 --> 00:03:12,370
+last parameter is for documentation. In
+
+51
+00:03:12,370 --> 00:03:15,590
+this case. we need to
+ supply two arguments. The first one
+
+52
+00:03:15,590 --> 00:03:18,750
+is going to be get price
+ and the second is going to
+
+53
+00:03:18,750 --> 00:03:22,330
+be set price.
+ Know that I'm not calling these
+
+54
+00:03:22,330 --> 00:03:25,570
+methods. I'm simply passing
+ a reference to them. So
+
+55
+00:03:25,570 --> 00:03:29,310
+when we call the built
+ in property function with those arguments
+
+56
+00:03:29,570 --> 00:03:32,860
+. this function will
+ return a property object. That
+
+57
+00:03:32,860 --> 00:03:36,200
+property object will use
+ this function for reading the
+
+58
+00:03:36,200 --> 00:03:39,510
+value of the price attributes.
+ Now. by adding this
+
+59
+00:03:39,510 --> 00:03:42,880
+line. we can come
+ back to our product. Let's
+
+60
+00:03:42,880 --> 00:03:46,120
+set the initial price to 10 here.
+ When we use
+
+61
+00:03:46,120 --> 00:03:50,250
+the data operator. you can
+ see we have this price property
+
+62
+00:03:50,360 --> 00:03:53,760
+and we can use it
+ like a regular field so we
+
+63
+00:03:53,760 --> 00:03:57,620
+can simply print it here and we
+
+64
+00:03:57,620 --> 00:04:01,590
+see 10 on the terminal. and
+
+65
+00:04:01,600 --> 00:04:05,130
+also we can set it. But
+
+66
+00:04:05,130 --> 00:04:08,960
+if you set it to a negative value.
+ this will throw an exception. Let's
+
+67
+00:04:08,960 --> 00:04:13,240
+run our program.
+ There you go value error. So
+
+68
+00:04:13,240 --> 00:04:16,610
+a property looks like a
+ regular attributes from the outside. But
+
+69
+00:04:16,620 --> 00:04:19,900
+internally. it has two methods
+ that we call a getter and
+
+70
+00:04:19,900 --> 00:04:23,550
+setter. No. While this price property solved
+
+71
+00:04:23,550 --> 00:04:27,560
+our problem. the two methods that
+ we wrote are still accessible. So
+
+72
+00:04:28,240 --> 00:04:31,620
+if it I product dot you
+
+73
+00:04:31,620 --> 00:04:35,380
+can see we have get
+ price and set price methods. These
+
+74
+00:04:35,380 --> 00:04:39,100
+methods are polluting the
+ interface of our object as
+
+75
+00:04:39,100 --> 00:04:42,760
+a metaphor. Think of a remote
+ control with 50 buttons. Nobody likes
+
+76
+00:04:42,760 --> 00:04:46,120
+that kind of remote control.
+ It's so confusing. It's much better to
+
+77
+00:04:46,120 --> 00:04:49,900
+have a remote control with few
+ buttons that can do a lot. We
+
+78
+00:04:49,900 --> 00:04:53,090
+want our objects or our classes
+ to be the same. We want
+
+79
+00:04:53,090 --> 00:04:56,880
+them to have minimal number
+ of functions or methods exposed
+
+80
+00:04:56,880 --> 00:05:00,270
+to the outside. So to hide these one
+
+81
+00:05:00,270 --> 00:05:04,410
+solution is to come back and make
+
+82
+00:05:04,410 --> 00:05:07,760
+them private. But again.
+ this adds extra noise in
+
+83
+00:05:07,760 --> 00:05:11,040
+our code. There is a better.
+ shorter and cleaner way to
+
+84
+00:05:11,040 --> 00:05:15,160
+achieve the same result.
+ we can use a decorator. Remember decorators
+
+85
+00:05:15,640 --> 00:05:19,460
+Earlier we use a decorator called classmethod to
+
+86
+00:05:19,460 --> 00:05:22,660
+convert an instance method
+ to a class method. We
+
+87
+00:05:22,660 --> 00:05:26,290
+have another decorator for creating a property. So
+
+88
+00:05:26,590 --> 00:05:30,090
+instead of explicitly calling the property function to
+
+89
+00:05:30,090 --> 00:05:33,750
+create a property object, 
+we can apply the
+
+90
+00:05:33,750 --> 00:05:37,580
+property decorator to this method. 
+Then we
+
+91
+00:05:37,580 --> 00:05:40,780
+rename this method to the ideal name.
+In this case we want to call it
+
+92
+00:05:40,780 --> 00:05:44,100
+price. 
+When Python interpreter sees this
+
+93
+00:05:44,100 --> 00:05:47,750
+code, it will automatically
+ create a property object called
+
+94
+00:05:47,850 --> 00:05:52,090
+Price. Similarly. we need to apply another
+
+95
+00:05:52,090 --> 00:05:55,800
+decorator to this method.
+ The name of that decorator starts
+
+96
+00:05:55,960 --> 00:05:59,600
+with the name of our
+ property in this case price and
+
+97
+00:05:59,600 --> 00:06:03,490
+then dot set her also. Similarly
+
+98
+00:06:03,490 --> 00:06:07,200
+. we need to rename this
+ method to price. So our implementation is
+
+99
+00:06:07,200 --> 00:06:10,530
+cleaner. It's less noisy.
+ We don't have to get underline and
+
+100
+00:06:10,530 --> 00:06:13,870
+set Underline. This is
+ much better now. How this
+
+101
+00:06:13,870 --> 00:06:17,080
+works internally is a little bit complicated.
+ and we're going to look at
+
+102
+00:06:17,080 --> 00:06:20,800
+that later in the future. For now.
+ all you need to take away is
+
+103
+00:06:20,800 --> 00:06:24,530
+that with these two decorators.
+ we can easily create a property. Now
+
+104
+00:06:24,530 --> 00:06:27,960
+there's one more place that we
+ need to modify here. and that
+
+105
+00:06:27,960 --> 00:06:31,590
+is our constructor because
+ we no longer have set
+
+106
+00:06:31,590 --> 00:06:35,600
+price. But the good thing is
+ that we can use our price property
+
+107
+00:06:35,690 --> 00:06:39,350
+like a regular attribute.
+ So we said self that
+
+108
+00:06:39,350 --> 00:06:43,300
+price to price with this new implementation. If
+
+109
+00:06:43,300 --> 00:06:47,160
+we try to create a
+ product with a negative price. our
+
+110
+00:06:47,160 --> 00:06:50,420
+code will throw an exception.
+ Let's take a look. There you
+
+111
+00:06:50,420 --> 00:06:53,860
+go. Value era now one last
+ thing before I finish this lecture
+
+112
+00:06:54,240 --> 00:06:57,540
+. When defining properties.
+ you don't always have to define a
+
+113
+00:06:57,550 --> 00:07:01,450
+getter and setter. In this case.
+ if we comment out
+
+114
+00:07:01,940 --> 00:07:05,220
+these few lines. we'll have
+ a read only property. so
+
+115
+00:07:05,220 --> 00:07:08,500
+we can only read the value
+ of this price. Once we set it,
+
+116
+00:07:08,510 --> 00:07:12,110
+we cannot change it.
+ so we can initially set it to. let's
+
+117
+00:07:12,110 --> 00:07:15,510
+say. 10. But if
+ we try to update it
+
+118
+00:07:15,510 --> 00:07:19,310
+later. we'll get an exception.
+ So if it's a product that
+
+119
+00:07:19,310 --> 00:07:22,660
+price to two and
+ run this program. we get
+
+120
+00:07:22,660 --> 00:07:30,000
+an attribute error because 
+we can't set that attribute. 
+So this is all about properties.
+

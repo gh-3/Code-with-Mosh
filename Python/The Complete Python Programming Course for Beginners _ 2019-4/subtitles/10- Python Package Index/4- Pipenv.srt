@@ -1,0 +1,281 @@
+2
+00:00:04,000 --> 00:00:07,910
+So you have learned about pip and creating virtual environments. 
+As
+
+3
+00:00:07,910 --> 00:00:11,420
+you have noticed, using these tools 
+requires memorizing various commands and
+
+4
+00:00:11,420 --> 00:00:14,810
+arguments. 
+There is a lot to remember. 
+That's where pipenv
+
+5
+00:00:14,810 --> 00:00:18,800
+comes into the picture. 
+pipenv is a tool that combines pip
+
+6
+00:00:18,810 --> 00:00:22,210
+and virtual environments into a single toolchain. 
+So
+
+7
+00:00:22,210 --> 00:00:25,800
+we don't have to use pip or virtual environments separately. 
+If
+
+8
+00:00:25,800 --> 00:00:29,580
+you're familiar with NPM or Node Package Manager, pipenv
+
+9
+00:00:29,590 --> 00:00:32,720
+is the equivalent tool in the python work. 
+So it's a
+
+10
+00:00:32,720 --> 00:00:35,920
+dependency manager for Python project. 
+Now you
+
+11
+00:00:35,920 --> 00:00:39,800
+might be curious 
+why I didn't start this section with pipenv? 
+Because
+
+12
+00:00:39,800 --> 00:00:43,580
+as I told you pipenv internally uses pip and virtual environments.
+
+13
+00:00:43,590 --> 00:00:47,880
+So you need to understand how exactly it works under the hood. 
+Also
+
+14
+00:00:47,890 --> 00:00:51,220
+as you look at various websites,
+you will come across pip or
+
+15
+00:00:51,220 --> 00:00:54,710
+virtual environments, so I wanted to
+ make sure that these tools are not
+
+16
+00:00:54,710 --> 00:00:58,160
+foreign to you. 
+Now let me show you how to use pipenv.
+
+17
+00:00:59,440 --> 00:01:04,010
+Here on the terminal first we need to install it. 
+So pipenv install
+
+18
+00:01:04,120 --> 00:01:07,890
+pipenv. 
+All
+
+19
+00:01:07,890 --> 00:01:11,100
+right. 
+Now back to VSCode. 
+I'm gonna
+
+20
+00:01:11,100 --> 00:01:14,870
+delete this env directory because we don't need it anymore. 
+We're
+
+21
+00:01:14,870 --> 00:01:19,450
+going to use pipenv to automatically create a virtual directory. 
+So
+
+22
+00:01:19,450 --> 00:01:22,800
+delete. 
+Good. 
+Now back
+
+23
+00:01:22,800 --> 00:01:26,420
+to the terminal. 
+Instead of using pip to install a package, we
+
+24
+00:01:26,420 --> 00:01:31,260
+use pipenv. 
+So pipenv install requests.
+
+25
+00:01:35,940 --> 00:01:39,180
+Now a few things happen here.
+This tool created a couple of
+
+26
+00:01:39,180 --> 00:01:42,440
+files: 
+Pipfile and Pipfile.lock. 
+We look
+
+27
+00:01:42,440 --> 00:01:45,980
+at this later. 
+It also created a virtual environment for us and
+
+28
+00:01:45,980 --> 00:01:49,660
+installed this request package
+ inside of that virtual environment.
+
+29
+00:01:49,680 --> 00:01:53,020
+But that virtual environment is not here.
+Where is it? 
+Let
+
+30
+00:01:53,020 --> 00:01:56,590
+me show you. 
+So here on the terminal, let's run pipenv
+
+31
+00:01:56,670 --> 00:02:00,040
+dash Dash venv. 
+This
+
+32
+00:02:00,040 --> 00:02:03,540
+is the path to our virtual environment directory. 
+As
+
+33
+00:02:03,540 --> 00:02:06,770
+you can tell, this directory is not part of our project, 
+and this is
+
+34
+00:02:06,770 --> 00:02:10,540
+a deliberate decision because 
+as we install various packages we'll
+
+35
+00:02:10,550 --> 00:02:13,930
+end up with hundreds or even thousands of files in this virtual
+
+36
+00:02:13,930 --> 00:02:17,320
+environment, 
+and this will increase the size of our project. 
+So
+
+37
+00:02:17,320 --> 00:02:21,620
+we want to exclude this virtual environment from our project directory. 
+Now
+
+38
+00:02:21,800 --> 00:02:24,930
+I'm going to uninstall the request package that we
+
+39
+00:02:24,930 --> 00:02:28,460
+installed globally using pip. 
+So pip
+
+40
+00:02:29,040 --> 00:02:33,150
+uninstall requests. 
+Let's
+
+41
+00:02:33,150 --> 00:02:36,940
+proceed. 
+Good. 
+So installed independently
+
+42
+00:02:36,940 --> 00:02:40,520
+using pipenv.
+Now let's run our application.
+But for this demo,
+
+43
+00:02:40,530 --> 00:02:43,960
+I'm not going to use code Runner.
+You will see why in a second. 
+So
+
+44
+00:02:43,960 --> 00:02:48,580
+let's run pythonapp.py. 
+We've
+
+45
+00:02:48,580 --> 00:02:52,950
+got a ModuleNotFoundError: No module named 'requests' ,
+
+46
+00:02:52,960 --> 00:02:56,960
+because we removed the requests package from the list of global packages,
+
+47
+00:02:57,540 --> 00:03:01,190
+and here python doesn't know where to locate this package. 
+It
+
+48
+00:03:01,190 --> 00:03:04,680
+has no knowledge of this new virtual environment. 
+So we
+
+49
+00:03:04,680 --> 00:03:08,400
+need to activate it. 
+So once again, we use the same tool that
+
+50
+00:03:08,400 --> 00:03:11,620
+is pipenv and
+as the first argument we
+
+51
+00:03:11,620 --> 00:03:14,840
+pass shell. 
+So as
+
+52
+00:03:14,840 --> 00:03:18,720
+you can see this activated the virtual environment
+
+53
+00:03:18,730 --> 00:03:24,120
+for this project. 
+Now let's run our program one more time. 
+We
+
+54
+00:03:24,120 --> 00:03:27,860
+got a response. 
+Beautiful.
+So python could successfully locate the
+
+55
+00:03:27,860 --> 00:03:31,580
+requests package. 
+So here we are currently in the virtual environment
+
+56
+00:03:31,580 --> 00:03:35,450
+for this project. 
+If you want to deactivate it, 
+simply type exit
+

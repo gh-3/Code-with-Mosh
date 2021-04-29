@@ -1,0 +1,314 @@
+2
+00:00:04,000 --> 00:00:07,860
+In Python. We have a utility called
+ Pi Doc that comes with python
+
+3
+00:00:07,860 --> 00:00:11,000
+installation. With this utility.
+ We can easily see the
+
+4
+00:00:11,000 --> 00:00:14,800
+documentation for a module. That module
+ can be one of the modules in
+
+5
+00:00:14,800 --> 00:00:18,230
+Python Standard Library or one
+ of our own modules. Let
+
+6
+00:00:18,230 --> 00:00:22,090
+me show you. So here on the terminal.
+ if you're on Windows type
+
+7
+00:00:22,090 --> 00:00:25,560
+I. doc. if you're on Mac
+ or Lenox type. I dock three
+
+8
+00:00:26,340 --> 00:00:30,240
+. Next. we add mass. So we're
+ going to look at the documentation for
+
+9
+00:00:30,240 --> 00:00:33,800
+the mass module in Python Standard Library. There
+
+10
+00:00:33,800 --> 00:00:37,680
+you go. So the name
+ of this module is math. Here's
+
+11
+00:00:37,680 --> 00:00:40,860
+the reference documentation. So you
+ can copy paste this into your
+
+12
+00:00:40,860 --> 00:00:44,090
+browser. and on this page.
+ you can see all the
+
+13
+00:00:44,090 --> 00:00:47,840
+details of the math module.
+ You can see all the functions and
+
+14
+00:00:47,840 --> 00:00:52,100
+their description. Alternatively. you can
+ see all the documentation here
+
+15
+00:00:52,100 --> 00:00:55,760
+in the terminal window. So look
+ at this cool in here. That
+
+16
+00:00:55,760 --> 00:00:59,170
+means this is a multiple of documentation
+ and you can go to the next
+
+17
+00:00:59,170 --> 00:01:02,500
+page by pressing space. So
+
+18
+00:01:02,500 --> 00:01:06,230
+here is the description for this module and
+ below that you can see all the functions
+
+19
+00:01:06,480 --> 00:01:10,000
+and the short description now to exit this
+
+20
+00:01:10,000 --> 00:01:13,510
+multiple documentation. We press Q. Now
+
+21
+00:01:13,510 --> 00:01:17,750
+let's take a look at the documentation
+ of our pdf to text module soap
+
+22
+00:01:17,750 --> 00:01:21,560
+. I ducked three March pdf dot pdf
+
+23
+00:01:21,570 --> 00:01:24,800
+to text. There you
+
+24
+00:01:24,800 --> 00:01:28,100
+go. So here's the
+ name of our module. Next
+
+25
+00:01:28,100 --> 00:01:31,510
+to that. you can see our
+ one line description. This module provides
+
+26
+00:01:31,510 --> 00:01:34,670
+functions to convert to pdf
+ to text below that. you can
+
+27
+00:01:34,670 --> 00:01:38,440
+see classes. so any classes
+ that we have documented will
+
+28
+00:01:38,440 --> 00:01:42,060
+end up here. As you can see.
+ we have this converted class that
+
+29
+00:01:42,060 --> 00:01:46,090
+derives from the object class
+ in Python Standard Library. So
+
+30
+00:01:46,090 --> 00:01:49,200
+here we can see the hierarchy of our class.
+ Below that. we have the
+
+31
+00:01:49,200 --> 00:01:52,940
+documentation for the converted class.
+ Here you can see our
+
+32
+00:01:52,940 --> 00:01:56,500
+short summary for the converted class.
+ After that. we have
+
+33
+00:01:56,510 --> 00:02:00,220
+methods defined here.
+ So here's our convert method. followed
+
+34
+00:02:00,220 --> 00:02:04,110
+by its short description.
+ Let's go to the next page. You
+
+35
+00:02:04,110 --> 00:02:08,700
+can see its parameters.
+ the return value and so on. Now
+
+36
+00:02:08,720 --> 00:02:12,010
+this pie dog has a
+ few interesting switch. Is one of
+
+37
+00:02:12,010 --> 00:02:15,560
+them is W. For writing
+ this documentation to an HTML file
+
+38
+00:02:16,040 --> 00:02:19,520
+so pie 0.3 dash W. Marsh
+
+39
+00:02:19,520 --> 00:02:23,650
+pdf the pdf to text Now
+
+40
+00:02:23,650 --> 00:02:27,480
+this generated this HTML file
+ that contains the documentation for
+
+41
+00:02:27,480 --> 00:02:32,070
+this module. Now let's
+ open this HTML file. There
+
+42
+00:02:32,070 --> 00:02:35,520
+you go. So here's our module.
+ It's short description the
+
+43
+00:02:35,520 --> 00:02:39,260
+classes hears are converted class
+ that derives from the object class
+
+44
+00:02:39,940 --> 00:02:44,300
+and you can see the convert method.
+ its parameters and so on. We
+
+45
+00:02:44,300 --> 00:02:47,920
+also have another interesting switch
+ for loading the documentation for
+
+46
+00:02:47,920 --> 00:02:51,260
+this application as well
+ as Python standard library in
+
+47
+00:02:51,260 --> 00:02:54,760
+a Web server. So we
+ run pie Dock three dash
+
+48
+00:02:54,760 --> 00:02:58,240
+p that is short for port
+ and then add a port number
+
+49
+00:02:58,250 --> 00:03:01,570
+like 1234 So you started a
+
+50
+00:03:01,570 --> 00:03:05,900
+web server at this address.
+ Local host port 1234
+
+51
+00:03:05,910 --> 00:03:09,210
+If you open this in a browser.
+ we see something like
+
+52
+00:03:09,210 --> 00:03:13,160
+this. So on the top.
+ we have a few built in modules. After
+
+53
+00:03:13,160 --> 00:03:16,420
+that. you can see the modules in our application.
+ So we have this APP
+
+54
+00:03:16,420 --> 00:03:19,720
+module you have to set up
+ module as well as March PdF. which
+
+55
+00:03:19,720 --> 00:03:22,960
+is a package. Let's go here.
+ In this package. we
+
+56
+00:03:22,960 --> 00:03:26,140
+have two modules.
+ pdf to image and pdf to
+
+57
+00:03:26,140 --> 00:03:29,370
+text. And this is
+ the documentation for pdf to
+
+58
+00:03:29,370 --> 00:03:33,580
+text module. Now let's go back below
+
+59
+00:03:33,580 --> 00:03:37,680
+this you can see the
+ documentation or Python Standard library. for
+
+60
+00:03:37,680 --> 00:03:40,800
+example. We have the past
+ lip module here. Let's take a
+
+61
+00:03:40,800 --> 00:03:44,200
+look. So in this module.
+ we have the past class
+
+62
+00:03:44,200 --> 00:03:47,650
+that you have worked with.
+ As you can see. this class derives from
+
+63
+00:03:47,650 --> 00:03:50,960
+another class called Pure Path.
+ which derives from the object
+
+64
+00:03:50,960 --> 00:03:54,970
+class. Also. PATH has to derivatives politics. path
+
+65
+00:03:54,980 --> 00:03:59,260
+and windows path. 
+Again here we can see the complete documentation
+
+66
+00:03:59,840 --> 00:04:03,410
+all the objects in this module.
+ So this is all about pydoc.
+

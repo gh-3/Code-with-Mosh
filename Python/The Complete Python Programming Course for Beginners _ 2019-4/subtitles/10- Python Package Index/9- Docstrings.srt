@@ -1,0 +1,437 @@
+2
+00:00:04,390 --> 00:00:07,680
+Let me publish our packages to
+ pype your repository. It's really
+
+3
+00:00:07,680 --> 00:00:10,930
+important to document our code so
+ other people know how to use
+
+4
+00:00:10,930 --> 00:00:14,400
+it. 
+For example, think of the math module. 
+Let
+
+5
+00:00:14,400 --> 00:00:17,680
+me import this on the top. 
+import math and then
+
+6
+00:00:17,680 --> 00:00:21,730
+call any of its methods.
+We see this little documentation here.
+
+7
+00:00:21,810 --> 00:00:25,150
+This is what we refer to as intelligence. 
+So VSCode
+
+8
+00:00:25,150 --> 00:00:28,600
+has this intelligence feature which
+ basically reached the documentation for
+
+9
+00:00:28,600 --> 00:00:32,290
+this method and displays it in
+ this little tool tip window. In
+
+10
+00:00:32,290 --> 00:00:36,550
+contrast. our convert function has no documentation. So
+
+11
+00:00:37,340 --> 00:00:41,240
+if we call it here.
+ it's not clear what this function does
+
+12
+00:00:41,260 --> 00:00:44,560
+that this is a very basic function.
+ But in a real application. we could
+
+13
+00:00:44,560 --> 00:00:47,800
+have a function with one or more parameters.
+ So people who use these
+
+14
+00:00:47,800 --> 00:00:51,210
+functions need to know what
+ these parameters are. what this function
+
+15
+00:00:51,210 --> 00:00:55,580
+does and what it returns.
+ So this is the purpose of documentation. Now
+
+16
+00:00:55,580 --> 00:00:59,350
+. in Python. we have a
+ special format for documenting our code called
+
+17
+00:00:59,360 --> 00:01:02,730
+Doc String or Documentation String. It's basically a
+
+18
+00:01:02,730 --> 00:01:06,610
+string with triple codes that
+ we add right after declaration
+
+19
+00:01:06,610 --> 00:01:09,980
+of function or class or variable.
+ This is different from
+
+20
+00:01:09,980 --> 00:01:13,780
+using comments because we should
+ use comments to explain why
+
+21
+00:01:13,780 --> 00:01:17,100
+we have done things in certain ways.
+ So we shouldn't use a comment to
+
+22
+00:01:17,100 --> 00:01:20,240
+explain what the function does.
+ What it does should be
+
+23
+00:01:20,240 --> 00:01:23,520
+reflected in the documentation string.
+ How it does what
+
+24
+00:01:23,520 --> 00:01:27,170
+it does or why we implemented
+ in a certain way should come in
+
+25
+00:01:27,170 --> 00:01:31,070
+the comment. So let me show
+ you how to document this module using
+
+26
+00:01:31,070 --> 00:01:34,450
+dark strength. So when
+
+27
+00:01:34,450 --> 00:01:38,040
+we publish a module for other
+ people to use. we should document the
+
+28
+00:01:38,040 --> 00:01:41,850
+module itself as well as
+ every object in it. Any classes
+
+29
+00:01:42,000 --> 00:01:45,220
+. any methods in those classes
+ or any standalone functions in that
+
+30
+00:01:45,220 --> 00:01:48,400
+module should be perfectly documented. So here are
+
+31
+00:01:48,400 --> 00:01:52,250
+the first line of the module should
+ be a dark string. We use triple coats
+
+32
+00:01:52,260 --> 00:01:55,750
+to define a dark string.
+ Here we can have a one line
+
+33
+00:01:55,780 --> 00:01:59,890
+description that ends with a period. This
+
+34
+00:01:59,890 --> 00:02:03,400
+is for simple cases. but if you want
+ to explain more. you should use a multi
+
+35
+00:02:03,400 --> 00:02:06,760
+line doc string By convention. The first
+
+36
+00:02:06,760 --> 00:02:10,240
+line should be a short summary.
+ followed by a black
+
+37
+00:02:10,240 --> 00:02:14,350
+line and then a more detailed explanation
+
+38
+00:02:15,440 --> 00:02:18,840
+. So if you want to use a
+ multi line doc string. this is the convention you
+
+39
+00:02:18,840 --> 00:02:22,720
+need to follow. The first line
+ should be a short description. followed
+
+40
+00:02:22,720 --> 00:02:26,300
+by a blank line followed
+ by multiple lines of text. But
+
+41
+00:02:26,300 --> 00:02:29,630
+if you're dealing with a simple case.
+ you can simply use a
+
+42
+00:02:29,630 --> 00:02:32,980
+one line dark string
+ that changes into something more
+
+43
+00:02:32,980 --> 00:02:37,190
+meaningful. Like this module provides functions
+
+44
+00:02:37,200 --> 00:02:41,980
+to convert a pdf to text. Now
+
+45
+00:02:41,980 --> 00:02:45,130
+. I wanted to document the convert function.
+ So right after the
+
+46
+00:02:45,130 --> 00:02:48,560
+declaration. we add triple coat. pay attention to
+
+47
+00:02:48,560 --> 00:02:52,350
+indentation and do it exactly like
+ what you see in this video. So
+
+48
+00:02:52,350 --> 00:02:55,950
+here we need a
+ short summary like convert the
+
+49
+00:02:55,950 --> 00:02:59,960
+given. Pdf to text. Next
+
+50
+00:02:59,960 --> 00:03:03,170
+. we need to have a blank line.
+ If you want to explain this
+
+51
+00:03:03,170 --> 00:03:06,430
+function in more details. we can do that here.
+ In this case. we don't need
+
+52
+00:03:06,430 --> 00:03:11,650
+it. So the next part is parameters. Currently
+
+53
+00:03:11,650 --> 00:03:14,970
+. we don't have any parameters.
+ But let's say we have this
+
+54
+00:03:14,970 --> 00:03:18,380
+past parameter here.
+ We need to explain what this
+
+55
+00:03:18,380 --> 00:03:22,090
+parameter is. what its type is
+ and what we use it for. So
+
+56
+00:03:22,090 --> 00:03:26,190
+pass of type string colon. the
+
+57
+00:03:26,190 --> 00:03:30,370
+past to a pdf file. Now
+
+58
+00:03:30,370 --> 00:03:33,760
+. if you have more parameters.
+ we will list them here. one on each line
+
+59
+00:03:34,540 --> 00:03:38,020
+. Next minute. a black line followed by
+
+60
+00:03:38,170 --> 00:03:41,360
+returns. What do we return here. Let's say
+
+61
+00:03:41,360 --> 00:03:45,220
+we return is strength.
+ and that is the content of
+
+62
+00:03:45,220 --> 00:03:49,370
+the pdf file. As text save
+
+63
+00:03:49,370 --> 00:03:52,780
+the changes via Scott automatically.
+ formats are coat. And
+
+64
+00:03:52,780 --> 00:03:56,240
+by the way. when we're dealing
+ with multiple in dark strings. we
+
+65
+00:03:56,240 --> 00:03:59,350
+can put the first line on
+ a new line. It's more of a
+
+66
+00:03:59,350 --> 00:04:02,870
+personal preference. I personally think
+ this is cleaner because we
+
+67
+00:04:02,870 --> 00:04:06,250
+have this triple double quotes on
+ the top and bottom of our dog
+
+68
+00:04:06,250 --> 00:04:09,960
+string. Let's save the changes now
+
+69
+00:04:09,970 --> 00:04:13,620
+to demonstrate what the consumer
+ of this module will see. Let's
+
+70
+00:04:13,620 --> 00:04:17,210
+go back to our project. And here
+ in the route I'm going to add and
+
+71
+00:04:17,210 --> 00:04:20,580
+you file app that pie. Let's
+
+72
+00:04:20,580 --> 00:04:24,360
+say we're going to consume this module.
+ So from March Pdf
+
+73
+00:04:25,040 --> 00:04:28,250
+. we impart pdf to text.
+ Now here you
+
+74
+00:04:28,250 --> 00:04:32,020
+can immediately see the documentation for module. This
+
+75
+00:04:32,020 --> 00:04:35,580
+module provides functions to convert
+ to PdF to text. so that's
+
+76
+00:04:35,580 --> 00:04:39,460
+the first benefit. Now pdf to text dot
+
+77
+00:04:39,470 --> 00:04:42,840
+convert again. Look at our documentation. Here's
+
+78
+00:04:42,840 --> 00:04:46,380
+a short summary of our function.
+ Convert the given PDF to text. You
+
+79
+00:04:46,380 --> 00:04:50,520
+can see the parameters.
+ The return time and so on. So
+
+80
+00:04:50,610 --> 00:04:53,850
+back to our module here
+ we currently have only a
+
+81
+00:04:53,850 --> 00:04:56,970
+single function. If we had classes again.
+ we'll have to
+
+82
+00:04:56,970 --> 00:05:00,650
+document them. So. as an example.
+ I'm going to define a class here
+
+83
+00:05:01,140 --> 00:05:04,610
+class converter. and
+
+84
+00:05:04,610 --> 00:05:09,170
+then I'm going to put this function
+ inside of the converted class. So let's
+
+85
+00:05:09,170 --> 00:05:13,100
+select it. And in that it here Now
+
+86
+00:05:13,100 --> 00:05:17,370
+we need to add the first parameter
+ that is self save the changes. So
+
+87
+00:05:17,380 --> 00:05:21,490
+here's our converted class. Right after declaration. we
+
+88
+00:05:21,490 --> 00:05:25,060
+need to add a dark string
+ that summarizes the behavior of this class
+
+89
+00:05:25,440 --> 00:05:29,750
+. In this case. we can go
+ with something like a simple converter for
+
+90
+00:05:29,750 --> 00:05:33,860
+converting PdF to text. Well
+
+91
+00:05:33,860 --> 00:05:37,270
+. we ended here. Now I know
+ that this may look a little bit
+
+92
+00:05:37,270 --> 00:05:40,650
+repetitive. but if you're providing code
+ for other studios. this is really
+
+93
+00:05:40,650 --> 00:05:48,000
+important. 
+Please document your code, because 
+nobody likes to use a libraty 
+that is not well documented.
+

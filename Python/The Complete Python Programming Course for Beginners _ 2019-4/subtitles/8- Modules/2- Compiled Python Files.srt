@@ -1,0 +1,189 @@
+2
+00:00:04,000 --> 00:00:07,750
+So these are the files or modules
+we're currently having in this folder. 
+We
+
+3
+00:00:07,750 --> 00:00:11,090
+have app.py which is our main module
+ or the entry point
+
+4
+00:00:11,090 --> 00:00:14,440
+to our program. 
+As well as the sales module. 
+Now when
+
+5
+00:00:14,440 --> 00:00:18,440
+I run this program, you will
+ see a new folder here. So
+
+6
+00:00:18,440 --> 00:00:22,520
+python app dot py. 
+There
+
+7
+00:00:22,520 --> 00:00:25,700
+you go. 
+We have this new folder __pycashe__ and
+
+8
+00:00:25,700 --> 00:00:28,940
+in this folder we have
+ the compiled version of the
+
+9
+00:00:28,940 --> 00:00:32,370
+modules that we import into our program. 
+So currently
+
+10
+00:00:32,370 --> 00:00:35,900
+we have the compiled version of the sales module. 
+The
+
+11
+00:00:35,900 --> 00:00:39,250
+reason Python Stores this compiled
+ files in this folder is
+
+12
+00:00:39,250 --> 00:00:43,320
+to speed up module loading.
+So next time we run our program Python
+
+13
+00:00:43,320 --> 00:00:46,790
+will look at the content of this folder and 
+if we do have the
+
+14
+00:00:46,790 --> 00:00:50,390
+compiled version of the sales module,
+ Python will simply load
+
+15
+00:00:50,390 --> 00:00:54,190
+that compiled version. 
+So it will skip that compilation step,
+
+16
+00:00:54,200 --> 00:00:58,120
+and this will result in
+ faster loading of the sales module.
+
+17
+00:00:58,130 --> 00:01:01,660
+Note that it only speeds up 
+the loading of this module, not
+
+18
+00:01:01,660 --> 00:01:05,120
+the actual performance of the application.
+ Now How does python
+
+19
+00:01:05,120 --> 00:01:08,400
+known If this compiled version
+ is up to date with the
+
+20
+00:01:08,400 --> 00:01:12,080
+latest code in the sales module?
+Well it basically checks
+
+21
+00:01:12,080 --> 00:01:15,620
+the date time of these two
+ files, the compiled version as
+
+22
+00:01:15,620 --> 00:01:19,060
+well as the source code,
+ If the daytime of this source file is
+
+23
+00:01:19,060 --> 00:01:22,690
+newer, it realizes that our
+source code is changed. 
+So
+
+24
+00:01:22,690 --> 00:01:26,160
+it will recompile it and
+ store it in this pycashe folder
+
+25
+00:01:27,040 --> 00:01:30,770
+So that's the basic idea.
+Now this cpython-37 you
+
+26
+00:01:30,770 --> 00:01:34,890
+see in the file name here 
+represents the python implementation used
+
+27
+00:01:34,900 --> 00:01:38,220
+to compile this file. 
+So we have compiled this file using C
+
+28
+00:01:38,220 --> 00:01:41,620
+Python version 3.7. 
+In this file
+
+29
+00:01:41,620 --> 00:01:45,030
+we have python byte code.
+ Let me quickly show you. So
+
+30
+00:01:45,030 --> 00:01:48,600
+when we click this, by default 
+VSCode doesn't show the content
+
+31
+00:01:48,600 --> 00:01:52,060
+of this file because it's binary.
+ But if you click this link here
+
+32
+00:01:52,540 --> 00:01:55,820
+we can see the Python byte code representation of
+
+33
+00:01:55,820 --> 00:01:59,020
+ourselves module. 
+Now back to this
+
+34
+00:01:59,020 --> 00:02:02,210
+__pycashe__ folder, 
+note that we don't have the compiled version of
+
+35
+00:02:02,210 --> 00:02:05,800
+the app module because 
+python always recompiles
+
+36
+00:02:05,810 --> 00:02:08,930
+the module that we load directly
+from the command line. 
+So in
+
+37
+00:02:08,930 --> 00:02:12,750
+this demo, 
+I passed the app.py as 
+the entry point to python,
+
+38
+00:02:12,780 --> 00:02:16,090
+and that's the reason 
+python didn't cash the compiled version of this module.
+

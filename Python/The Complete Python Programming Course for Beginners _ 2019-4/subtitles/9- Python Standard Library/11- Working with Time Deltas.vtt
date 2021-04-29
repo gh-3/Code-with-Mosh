@@ -1,0 +1,157 @@
+WEBVTT
+
+1
+00:00:04.000 --> 00:00:08.000
+In the last lecture you learned about date time objects, these objects represent
+
+2
+00:00:08.000 --> 00:00:12.000
+a point in time. In a date time module, we also have a
+
+3
+00:00:12.000 --> 00:00:16.000
+class called time delta, which represents a duration.
+
+4
+00:00:16.000 --> 00:00:20.000
+So let's import timedelta from here.
+
+5
+00:00:20.000 --> 00:00:24.000
+Now when we subtract these two dates, you get a time delta object.
+
+6
+00:00:24.000 --> 00:00:28.000
+So let's set duration to dt2-dt1.
+
+7
+00:00:28.000 --> 00:00:32.000
+And print it on the terminal,
+
+8
+00:00:32.000 --> 00:00:36.000
+so here is the difference between these two date times.
+
+9
+00:00:36.000 --> 00:00:40.000
+Now this time delta object has a few interesting attributes, we have
+
+10
+00:00:40.000 --> 00:00:44.000
+duration.days let's print that on the terminal,
+
+11
+00:00:44.000 --> 00:00:48.000
+and then label for clarity, you also
+
+12
+00:00:48.000 --> 00:00:52.000
+have seconds let's take a look,
+
+13
+00:00:52.000 --> 00:00:56.000
+and run the program, so we have
+
+14
+00:00:56.000 --> 00:01:00.000
+324 days, and 46000 seconds.
+
+15
+00:01:00.000 --> 00:01:04.000
+So this 46,000 represents this
+
+16
+00:01:04.000 --> 00:01:08.000
+value. 12 hours and 58 minutes is equivalent to
+
+17
+00:01:08.000 --> 00:01:12.000
+46000 seconds. We also have a method
+
+18
+00:01:12.000 --> 00:01:16.000
+called total seconds. This is a method
+
+19
+00:01:16.000 --> 00:01:20.000
+not an attribute. Let's see what this returns.
+
+20
+00:01:20.000 --> 00:01:24.000
+So this value you see here is the total
+
+21
+00:01:24.000 --> 00:01:28.000
+duration represented as seconds. So if you
+
+22
+00:01:28.000 --> 00:01:32.000
+calculate the number of seconds in 324 days and 4 hours
+
+23
+00:01:32.000 --> 00:01:36.000
+and 59 minutes we get this value.
+
+24
+00:01:36.000 --> 00:01:40.000
+So these are a few interesting members of the time delta class.
+
+25
+00:01:40.000 --> 00:01:44.000
+So in case you're wondering why we don't have month or year here,
+
+26
+00:01:44.000 --> 00:01:48.000
+the reason is that we can have a varying amount of time in a month or in a year,
+
+27
+00:01:48.000 --> 00:01:52.000
+that's why we only have days, seconds and microseconds.
+
+28
+00:01:52.000 --> 00:01:56.000
+Now we can also add a time delta object to a date time object,
+
+29
+00:01:56.000 --> 00:02:00.000
+let me show you. So for our first date time,
+
+30
+00:02:00.000 --> 00:02:04.000
+I'm going to add the time delta of warn date. Now if
+
+31
+00:02:04.000 --> 00:02:08.000
+we print this 1, we get,
+
+32
+00:02:08.000 --> 00:02:12.000
+january the second. And the difference is
+
+33
+00:02:12.000 --> 00:02:16.000
+323 days, however, someone who is looking at this code may
+
+34
+00:02:16.000 --> 00:02:20.000
+not be quite sure what this 1 here represents. Is it
+
+35
+00:02:20.000 --> 00:02:24.000
+1 day 1 hour, 1 second? So it's better to use keyword arguments
+
+36
+00:02:24.000 --> 00:02:28.000
+here, for clarity. Let's set days to 1.
+
+37
+00:02:28.000 --> 00:02:32.000
+We can also set seconds to 1000.
+
+38
+00:02:32.000 --> 00:02:36.000
+Now, let's run the program, so
+
+39
+00:02:36.000 --> 00:02:40.000
+that gives us 16 minutes after January the 2nd.

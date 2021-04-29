@@ -1,0 +1,285 @@
+WEBVTT
+
+1
+00:00:04.000 --> 00:00:08.000
+In this lecture, you're going to learn how to work with CSV files in python.
+
+2
+00:00:08.000 --> 00:00:12.000
+In case you don't know, CSV stands for comma separated value, and
+
+3
+00:00:12.000 --> 00:00:16.000
+it looks like a simplified spread sheet stored as a plain text file.
+
+4
+00:00:16.000 --> 00:00:20.000
+So, on the top we import the csv module.
+
+5
+00:00:20.000 --> 00:00:24.000
+First we need to open a file, so for this use the built in
+
+6
+00:00:24.000 --> 00:00:28.000
+open function, we cannot use the path class, so
+
+7
+00:00:28.000 --> 00:00:32.000
+open let's call this file data.csv. Now,
+
+8
+00:00:32.000 --> 00:00:36.000
+we want to open this in the write mode because  we want to write data to it. This
+
+9
+00:00:36.000 --> 00:00:40.000
+returns a file object so when you're done you should make sure
+
+10
+00:00:40.000 --> 00:00:44.000
+to close it or as I told you before, the better approach
+
+11
+00:00:44.000 --> 00:00:48.000
+is to use the width statement. So width
+
+12
+00:00:48.000 --> 00:00:52.000
+open as file. Now, we don't need to close the file,
+
+13
+00:00:52.000 --> 00:00:56.000
+and that is better, so this csv module has a method
+
+14
+00:00:56.000 --> 00:01:00.000
+for creating a csv writer, we call this and pass our
+
+15
+00:01:00.000 --> 00:01:04.000
+file object. So look at the first parameter here, it has to be file
+
+16
+00:01:04.000 --> 00:01:08.000
+object, that's why we cannot use the path class. So we pass the file
+
+17
+00:01:08.000 --> 00:01:12.000
+object here, and this gives use  csv writer and
+
+18
+00:01:12.000 --> 00:01:16.000
+with this we can simply write tabular data to our csv file. So,
+
+19
+00:01:16.000 --> 00:01:20.000
+writer.writerow.
+
+20
+00:01:20.000 --> 00:01:24.000
+Here we pass an aray of values, so for the first row I want to add
+
+21
+00:01:24.000 --> 00:01:28.000
+the headings of this table of data. So, let's say
+
+22
+00:01:28.000 --> 00:01:32.000
+we're going to have three columns transactions id
+
+23
+00:01:32.000 --> 00:01:36.000
+product id and
+
+24
+00:01:36.000 --> 00:01:40.000
+price. And one more time writer.
+
+25
+00:01:40.000 --> 00:01:44.000
+writerow. We pass an array of data so,
+
+26
+00:01:44.000 --> 00:01:48.000
+let's say transaction id is 1000 product id is 1,
+
+27
+00:01:48.000 --> 00:01:52.000
+price is 5 dollars, we can duplicate this, write another
+
+28
+00:01:52.000 --> 00:01:56.000
+row with different data. Now save
+
+29
+00:01:56.000 --> 00:02:00.000
+the changes and run this program, okay, so, here
+
+30
+00:02:00.000 --> 00:02:04.000
+in our project folder, we have data.csv
+
+31
+00:02:04.000 --> 00:02:08.000
+as you can see this is a simplified spreadsheet, so we have a table
+
+32
+00:02:08.000 --> 00:02:12.000
+of data each line represents a row and
+
+33
+00:02:12.000 --> 00:02:16.000
+our cells are separated using a comma, this is a very simple way to store data
+
+34
+00:02:16.000 --> 00:02:20.000
+and transfer it from one machine onto another. Now let me show you how
+
+35
+00:02:20.000 --> 00:02:24.000
+to read a csv file. So let's say we have a csv file called
+
+36
+00:02:24.000 --> 00:02:28.000
+data.csv now we should open this file in
+
+37
+00:02:28.000 --> 00:02:32.000
+read mode, so we don't want to supply the second argument,
+
+38
+00:02:32.000 --> 00:02:36.000
+next, instead of a csv writer, we need a csv reader,
+
+39
+00:02:36.000 --> 00:02:40.000
+so let's call the reader method, and rename
+
+40
+00:02:40.000 --> 00:02:44.000
+this variable to reader.
+
+41
+00:02:44.000 --> 00:02:48.000
+Now, we can call the list function to get all the data.
+
+42
+00:02:48.000 --> 00:02:52.000
+In this CSV file and convert it to a list object. Let's
+
+43
+00:02:52.000 --> 00:02:56.000
+take a look. So, run the program,
+
+44
+00:02:56.000 --> 00:03:00.000
+as you see we get a list of lists,
+
+45
+00:03:00.000 --> 00:03:04.000
+so each line in our csv file is a list of objects.
+
+46
+00:03:04.000 --> 00:03:08.000
+Note that the value of each cell is represented as a string,
+
+47
+00:03:08.000 --> 00:03:12.000
+even if you are dealing with a number, so you have to manually convert these strings
+
+48
+00:03:12.000 --> 00:03:16.000
+into integers, floats and so on. We can also iterate after this reader
+
+49
+00:03:16.000 --> 00:03:20.000
+object because it's iterable. So for row and reader
+
+50
+00:03:20.000 --> 00:03:24.000
+let's print row. Run the program
+
+51
+00:03:24.000 --> 00:03:28.000
+now we don't see anything here, we only see the output
+
+52
+00:03:28.000 --> 00:03:32.000
+of line 5, where we convert this reader to a list object
+
+53
+00:03:32.000 --> 00:03:36.000
+so what happened to these two lines? Well,
+
+54
+00:03:36.000 --> 00:03:40.000
+this reader object has a index or a position that is set
+
+55
+00:03:40.000 --> 00:03:44.000
+to the beginning of the file. When we convert this reader, to a list, that
+
+56
+00:03:44.000 --> 00:03:48.000
+position goes to the end of the file, so when we iterate over it,
+
+57
+00:03:48.000 --> 00:03:52.000
+we are already at the end of the file, that is why we cannot iterate
+
+58
+00:03:52.000 --> 00:03:56.000
+this reader twice. Let me comment out line 5,
+
+59
+00:03:56.000 --> 00:04:00.000
+and run the program one more time, there you go,
+
+60
+00:04:00.000 --> 00:04:04.000
+now we have three rows. Each row is an array of strings.
+
+61
+00:04:04.000 --> 00:04:08.000
+So as you see, working with csv files is pretty easy in python, with these
+
+62
+00:04:08.000 --> 00:04:12.000
+objects we can do some interesting things, for example, let's say we have
+
+63
+00:04:12.000 --> 00:04:16.000
+a directory of a hundred or a thousand csv files, we can
+
+64
+00:04:16.000 --> 00:04:20.000
+iterate this directory, open it's csv file, and
+
+65
+00:04:20.000 --> 00:04:24.000
+open the first row which is the header row. Or, perhaps we want to combine this csv
+
+66
+00:04:24.000 --> 00:04:28.000
+files into one file, you can easily do that here, another interesting thing  we can
+
+67
+00:04:28.000 --> 00:04:32.000
+do is to summarize the value of these csv values, let's say we have
+
+68
+00:04:32.000 --> 00:04:36.000
+10 csv files, and each csv file represents the transaction
+
+69
+00:04:36.000 --> 00:04:40.000
+for a given product. With only a few lines of code, we can read this
+
+70
+00:04:40.000 --> 00:04:44.000
+csv files, and calculate the sum of sales for each product.
+
+71
+00:04:44.000 --> 00:04:48.000
+And then store the result in another CSV file, the possibilities are endless!

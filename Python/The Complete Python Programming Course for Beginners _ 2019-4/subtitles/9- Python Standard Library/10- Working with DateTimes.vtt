@@ -1,0 +1,301 @@
+WEBVTT
+
+1
+00:00:04.000 --> 00:00:08.000
+In this lecture you're going to learn how to work with date time objects in Python.
+
+2
+00:00:08.000 --> 00:00:12.000
+So on the top let's import the date time module.
+
+3
+00:00:12.000 --> 00:00:16.000
+This module has a class called date time.
+
+4
+00:00:16.000 --> 00:00:20.000
+There are a few different ways to create a date time object. Here's one way.
+
+5
+00:00:20.000 --> 00:00:24.000
+You can pass the year and the month and the date
+
+6
+00:00:24.000 --> 00:00:28.000
+and optionally we can pass the hour minute and second as well.
+
+7
+00:00:28.000 --> 00:00:32.000
+So this returns a date time object, let's call that
+
+8
+00:00:32.000 --> 00:00:36.000
+dt. Now what I don't like about this code, that you see in a lot of
+
+9
+00:00:36.000 --> 00:00:40.000
+tutorials, is this datetime.datetime. That's just ugly.
+
+10
+00:00:40.000 --> 00:00:44.000
+It is better to import the date time class from this module.
+
+11
+00:00:44.000 --> 00:00:48.000
+So from date time let's import date time.
+
+12
+00:00:48.000 --> 00:00:52.000
+Now you can create a date time object like this.
+
+13
+00:00:52.000 --> 00:00:56.000
+This is especially important if you're creating multiple date time objects.
+
+14
+00:00:56.000 --> 00:01:00.000
+You don't want to repeat datetime.datetime.
+
+15
+00:01:00.000 --> 00:01:04.000
+So this is one way to create a date time object, we can also call
+
+16
+00:01:04.000 --> 00:01:08.000
+datetime.now, so this is a method defined in the date time class.
+
+17
+00:01:08.000 --> 00:01:12.000
+And this returns the current date time.
+
+18
+00:01:12.000 --> 00:01:16.000
+We also have date time.str
+
+19
+00:01:16.000 --> 00:01:20.000
+time. That is for parsing or converting a date time string.
+
+20
+00:01:20.000 --> 00:01:24.000
+This is particularly useful when we get input from the user or read it from the file.
+
+21
+00:01:24.000 --> 00:01:28.000
+In both these scenarios we're dealing with strings. So our date time value
+
+22
+00:01:28.000 --> 00:01:32.000
+are represented on strings, and we need to convert them to
+
+23
+00:01:32.000 --> 00:01:36.000
+date time objects. So let's say we have a string like this.
+
+24
+00:01:36.000 --> 00:01:40.000
+2018 01 01. Now
+
+25
+00:01:40.000 --> 00:01:44.000
+we need to tell Python how to parse or how to convert these into an
+
+26
+00:01:44.000 --> 00:01:48.000
+date time object. So we need to tell it what parts represent
+
+27
+00:01:48.000 --> 00:01:52.000
+the year, the month, and the date. For that we use
+
+28
+00:01:52.000 --> 00:01:56.000
+directives. So, as the second argument we pass
+
+29
+00:01:56.000 --> 00:02:00.000
+format string, that includes the directives that specify
+
+30
+00:02:00.000 --> 00:02:04.000
+in various components of this date time string. So we use
+
+31
+00:02:04.000 --> 00:02:08.000
+a percent capital y to represent a 4 digit here.
+
+32
+00:02:08.000 --> 00:02:12.000
+Then we have a /% lower case n,
+
+33
+00:02:12.000 --> 00:02:16.000
+to represent a two digit month, and %d
+
+34
+00:02:16.000 --> 00:02:20.000
+to represent a two digit date, you also have directives for hour
+
+35
+00:02:20.000 --> 00:02:24.000
+minute and second. Don't worry about memorizing these, you can always find
+
+36
+00:02:24.000 --> 00:02:28.000
+this in documentation. So if you search for Python 3,
+
+37
+00:02:28.000 --> 00:02:32.000
+sql keytime, on this page,
+
+38
+00:02:32.000 --> 00:02:36.000
+down on the bottom,
+
+39
+00:02:36.000 --> 00:02:40.000
+we have this table of directives, so you can see various directives and their
+
+40
+00:02:40.000 --> 00:02:44.000
+meaning. So as an example here, we have this
+
+41
+00:02:44.000 --> 00:02:48.000
+% capital y, which represents a 4 digit year.
+
+42
+00:02:48.000 --> 00:02:52.000
+If you use a lower case y, that represents a two digit year.
+
+43
+00:02:52.000 --> 00:02:56.000
+Okay? Now back here, so this method returns
+
+44
+00:02:56.000 --> 00:03:00.000
+a date time object and store it here. We can also
+
+45
+00:03:00.000 --> 00:03:04.000
+convert a time stamp into a date time object, so on the top,
+
+46
+00:03:04.000 --> 00:03:08.000
+let me import the time module,
+
+47
+00:03:08.000 --> 00:03:12.000
+we call time.time let's say we have this timestamp somewhere in our program
+
+48
+00:03:12.000 --> 00:03:16.000
+perhaps we read it from a file. Now, you want to convert it to a
+
+49
+00:03:16.000 --> 00:03:20.000
+date time object. So this date time class
+
+50
+00:03:20.000 --> 00:03:24.000
+has another class method called from
+
+51
+00:03:24.000 --> 00:03:28.000
+timestamp. You can pass this time stamp here, this
+
+52
+00:03:28.000 --> 00:03:32.000
+returns a date time object, so we store it here, and now this
+
+53
+00:03:32.000 --> 00:03:36.000
+printed to see what it is. So this is the
+
+54
+00:03:36.000 --> 00:03:40.000
+current date time on my machine. So these are a few different ways
+
+55
+00:03:40.000 --> 00:03:44.000
+to create a date time object, now, our date time object
+
+56
+00:03:44.000 --> 00:03:48.000
+has attributes like year, month,
+
+57
+00:03:48.000 --> 00:03:52.000
+date and so on. So you can print a formatted screen
+
+58
+00:03:52.000 --> 00:03:56.000
+like this. You see the dt.year/
+
+59
+00:03:56.000 --> 00:04:00.000
+dt.month so run this program, there you
+
+60
+00:04:00.000 --> 00:04:04.000
+go, so, 2018/11. We also have
+
+61
+00:04:04.000 --> 00:04:08.000
+a method for formatting date times, so dt
+
+62
+00:04:08.000 --> 00:04:12.000
+.strftime. This method is the
+
+63
+00:04:12.000 --> 00:04:16.000
+opposite of strp time. So with this method we convert
+
+64
+00:04:16.000 --> 00:04:20.000
+a string into a date time object but as with our f time, we
+
+65
+00:04:20.000 --> 00:04:24.000
+convert a date time object into a string. So,
+
+66
+00:04:24.000 --> 00:04:28.000
+we need to specify our directives here. Let's say
+
+67
+00:04:28.000 --> 00:04:32.000
+percent y / percent n. Now,
+
+68
+00:04:32.000 --> 00:04:36.000
+let's print the result. To get the exact
+
+69
+00:04:36.000 --> 00:04:40.000
+same output. We can also compare date time objects
+
+70
+00:04:40.000 --> 00:04:44.000
+for example, let's change this variable to dt1
+
+71
+00:04:44.000 --> 00:04:48.000
+and this one to dt2. You can see if dt
+
+72
+00:04:48.000 --> 00:04:52.000
+2 is greater than dt1. Let's run the
+
+73
+00:04:52.000 --> 00:04:56.000
+program, obviously that is true because today is november 23.
+
+74
+00:04:56.000 --> 00:05:00.000
+So this is all about date time objects. Next we'll look at
+
+75
+00:05:00.000 --> 00:05:04.000
+time delta which represents a duration.

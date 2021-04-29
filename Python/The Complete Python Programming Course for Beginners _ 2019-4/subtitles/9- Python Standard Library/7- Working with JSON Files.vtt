@@ -1,0 +1,233 @@
+WEBVTT
+
+1
+00:00:04.000 --> 00:00:08.000
+In this lecture you're going to learn how to work with json files in python.
+
+2
+00:00:08.000 --> 00:00:12.000
+JSON stands for JavaScript Object Notation and is a popular
+
+3
+00:00:12.000 --> 00:00:16.000
+way to format data in a human readable way. These days
+
+4
+00:00:16.000 --> 00:00:20.000
+it's very important to know json because a lot of popular websites like Facebook
+
+5
+00:00:20.000 --> 00:00:24.000
+Twitter, Yelp, YouTube, etc provide their data
+
+6
+00:00:24.000 --> 00:00:28.000
+in Jason format. Also, if you have a website, you can provide your
+
+7
+00:00:28.000 --> 00:00:32.000
+data in json format. So let me show you how to work
+
+8
+00:00:32.000 --> 00:00:36.000
+with json files. On the top, import the json module.
+
+9
+00:00:36.000 --> 00:00:40.000
+Now let's create an array of movie objects.
+
+10
+00:00:40.000 --> 00:00:44.000
+So movies we set it to array, each item in this array,
+
+11
+00:00:44.000 --> 00:00:48.000
+is going to be a dictionary, because each movie object has properties like ID.
+
+12
+00:00:48.000 --> 00:00:52.000
+Title, year, and so on. So each movie is essentially
+
+13
+00:00:52.000 --> 00:00:56.000
+a collection of key value pairs. So
+
+14
+00:00:56.000 --> 00:01:00.000
+let's add a dictionary the first key is id we map that to 1,
+
+15
+00:01:00.000 --> 00:01:04.000
+the second is title, the second is title, we map that to
+
+16
+00:01:04.000 --> 00:01:08.000
+Terminator, the third is year and map that to
+
+17
+00:01:08.000 --> 00:01:12.000
+let's say 1989. Now let's add
+
+18
+00:01:12.000 --> 00:01:16.000
+another object, change the ID to 2,
+
+19
+00:01:16.000 --> 00:01:20.000
+title to Kindergarten Cop, and year to
+
+20
+00:01:20.000 --> 00:01:24.000
+1993. So here we have the movies
+
+21
+00:01:24.000 --> 00:01:28.000
+the object, now we can call json.dumps
+
+22
+00:01:28.000 --> 00:01:32.000
+pass this movies object here, and get a string that includes
+
+23
+00:01:32.000 --> 00:01:36.000
+movies data formatted as json. Let's take a look.
+
+24
+00:01:36.000 --> 00:01:40.000
+So data, you print it on the terminal,
+
+25
+00:01:40.000 --> 00:01:44.000
+there you go. So this is an example of json data.
+
+26
+00:01:44.000 --> 00:01:48.000
+Now in this case what you see here happens to be identical
+
+27
+00:01:48.000 --> 00:01:52.000
+syntax that we use to define an array of dictionary
+
+28
+00:01:52.000 --> 00:01:56.000
+in python. But this is not the case when working with other languages.
+
+29
+00:01:56.000 --> 00:02:00.000
+Now, back here so we have this data variable which is
+
+30
+00:02:00.000 --> 00:02:04.000
+a simple string, now we can write it to a file, so on the top,
+
+31
+00:02:04.000 --> 00:02:08.000
+from the path lib module, let's import
+
+32
+00:02:08.000 --> 00:02:12.000
+the path class. Then instead of printing
+
+33
+00:02:12.000 --> 00:02:16.000
+this on the terminal, we're going to create path object
+
+34
+00:02:16.000 --> 00:02:20.000
+let's say movies.json and then call
+
+35
+00:02:20.000 --> 00:02:24.000
+write text on it and pass this data string.
+
+36
+00:02:24.000 --> 00:02:28.000
+Let's run this program. Okay. Now here in our
+
+37
+00:02:28.000 --> 00:02:32.000
+project folder we have movies.json.
+
+38
+00:02:32.000 --> 00:02:36.000
+Beautiful. So you learned how to write data in a json file.
+
+39
+00:02:36.000 --> 00:02:40.000
+Now let's imagine we get this json file from somewhere else, this would be
+
+40
+00:02:40.000 --> 00:02:44.000
+the data we get from Facebook, twitter, IMDB, Yelp
+
+41
+00:02:44.000 --> 00:02:48.000
+YouTube and so on. So we should be able to read this data in Python.
+
+42
+00:02:48.000 --> 00:02:52.000
+Back to app.py. I'm going to delete this movies array.
+
+43
+00:02:52.000 --> 00:02:56.000
+As well as the line where we dump it to a json string.
+
+44
+00:02:56.000 --> 00:03:00.000
+So we start with this file, movies.json
+
+45
+00:03:00.000 --> 00:03:04.000
+and read all it's text
+
+46
+00:03:04.000 --> 00:03:08.000
+and store it in this variable. So now data is a string,
+
+47
+00:03:08.000 --> 00:03:12.000
+that includes data formatted as json. Next we need to parse
+
+48
+00:03:12.000 --> 00:03:16.000
+this string into an array of objects. So we call json
+
+49
+00:03:16.000 --> 00:03:20.000
+.loads. Pass this string here,
+
+50
+00:03:20.000 --> 00:03:24.000
+and this will return an array of dictionaries. Let's
+
+51
+00:03:24.000 --> 00:03:28.000
+call movies and print it on the terminal
+
+52
+00:03:28.000 --> 00:03:32.000
+so this is the movies array that we
+
+53
+00:03:32.000 --> 00:03:36.000
+had earlier. An array of dictionaries.
+
+54
+00:03:36.000 --> 00:03:40.000
+So we can simply get any items in this array,
+
+55
+00:03:40.000 --> 00:03:44.000
+here's the first movie, now we have a dictionary, using a square bracket
+
+56
+00:03:44.000 --> 00:03:48.000
+we can get the value of any of these keys, for example let's get the
+
+57
+00:03:48.000 --> 00:03:52.000
+title of the first movie, run the program, we get
+
+58
+00:03:52.000 --> 00:03:56.000
+terminator, so this is all about working with json files in python.

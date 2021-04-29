@@ -1,0 +1,486 @@
+2
+00:00:04,000 --> 00:00:08,060
+To install a package from Pypi, 
+we use a tool called Pip.
+
+3
+00:00:08,540 --> 00:00:11,860
+Now If you're on Mac similar to Python,
+ you should use Pip3.
+
+4
+00:00:12,840 --> 00:00:16,720
+Now With this tool we can do various things
+such as installing packages,
+
+5
+00:00:16,720 --> 00:00:20,270
+uninstalling them, upgrading them,
+ or listing the currently installed
+
+6
+00:00:20,270 --> 00:00:23,660
+packages. 
+Let's take a look at a few examples. 
+So
+
+7
+00:00:23,660 --> 00:00:27,760
+here to install a package, 
+as the first argument we pass install
+
+8
+00:00:28,140 --> 00:00:32,470
+and as the second argument we specify
+the name of the target package. 
+So
+
+9
+00:00:32,470 --> 00:00:36,090
+here I'm going to install this requests package which
+
+10
+00:00:36,090 --> 00:00:39,540
+we're going to use to send http requests. 
+So let's
+
+11
+00:00:39,540 --> 00:00:43,060
+go ahead. 
+All right.
+
+12
+00:00:43,060 --> 00:00:46,240
+This is successfully installed, 
+but here down the bottom we have a
+
+13
+00:00:46,240 --> 00:00:49,960
+warning in yellow that is saying 
+you're using pip version 10
+
+14
+00:00:50,340 --> 00:00:53,720
+However version 18 is available.
+ So this version
+
+15
+00:00:53,720 --> 00:00:57,340
+10 is the version that came
+with my python installation. 
+But because
+
+16
+00:00:57,340 --> 00:01:00,580
+pip is developed independently, 
+we need to upgrade it from
+
+17
+00:01:00,580 --> 00:01:04,100
+time to time. 
+So right below that you can see the command that
+
+18
+00:01:04,100 --> 00:01:07,760
+you need to run to upgrade Pip that
+
+19
+00:01:07,760 --> 00:01:11,660
+is PIB Install Dash dash upgrade
+
+20
+00:01:12,140 --> 00:01:15,890
+Pip. 
+All
+
+21
+00:01:15,890 --> 00:01:19,090
+right. Now I have the latest version of Pip. 
+Let's look at
+
+22
+00:01:19,090 --> 00:01:22,650
+the packages that are currently installed on my machine. 
+So pip
+
+23
+00:01:23,040 --> 00:01:26,230
+list. 
+Here in
+
+24
+00:01:26,230 --> 00:01:30,690
+this list you can see we
+ have installed the version 2.20 point
+
+25
+00:01:30,690 --> 00:01:33,890
+one of the requests package.
+This version you see
+
+26
+00:01:33,890 --> 00:01:37,450
+here is what we call semantic versioning.
+The first number
+
+27
+00:01:37,450 --> 00:01:41,210
+represents the major version.
+The second number represents the
+
+28
+00:01:41,210 --> 00:01:44,620
+minor version. 
+and the third number represents the patches or
+
+29
+00:01:44,620 --> 00:01:48,720
+bug fixes. 
+Now back on pypi dot org. 
+let's
+
+30
+00:01:48,720 --> 00:01:51,820
+search for the request package. 
+So here we
+
+31
+00:01:51,820 --> 00:01:56,310
+have a few packages with a similar name.
+ We've got requests, requests3
+
+32
+00:01:56,310 --> 00:01:59,920
+and requests2 
+and they're not always in the same order, 
+so
+
+33
+00:01:59,920 --> 00:02:03,480
+make sure to pick the requests package without
+
+34
+00:02:03,490 --> 00:02:07,100
+2 or 3. 
+Now on this page on
+
+35
+00:02:07,100 --> 00:02:10,740
+the left side you can see
+the release history of this package. 
+So
+
+36
+00:02:10,740 --> 00:02:14,120
+the latest version that I have installed is 2.20 point one
+
+37
+00:02:14,130 --> 00:02:17,690
+at the time of recording this video.
+There are times that you want to install an
+
+38
+00:02:17,700 --> 00:02:21,450
+earlier version. 
+Perhaps the latest version has a bug or
+
+39
+00:02:21,460 --> 00:02:25,430
+is incompatible with the
+other packages you're referencing. 
+So
+
+40
+00:02:25,430 --> 00:02:29,120
+let me show you how to install an earlier version. 
+So
+
+41
+00:02:29,120 --> 00:02:33,620
+back on the terminal. 
+Let's say we want to install version 2.9 point
+
+42
+00:02:33,620 --> 00:02:37,960
+zero. 
+That is very easy.
+Just like before Pip install
+
+43
+00:02:38,340 --> 00:02:42,050
+requests. Now we add to equal sign
+
+44
+00:02:42,090 --> 00:02:47,800
+followed by the version 2.9 point zero. 
+So
+
+45
+00:02:47,800 --> 00:02:51,220
+as you can see
+this successfully uninstalled the latest version
+
+46
+00:02:51,220 --> 00:02:55,250
+that was version 2.20 point one and 
+then installed version
+
+47
+00:02:55,250 --> 00:02:58,920
+2.9 point zero. 
+Now here we can also use wild
+
+48
+00:02:58,920 --> 00:03:03,650
+cards. 
+For example pip install requests
+
+49
+00:03:04,040 --> 00:03:08,070
+equal 2.9 point asterisk. 
+That
+
+50
+00:03:08,070 --> 00:03:11,470
+means installed the latest compatible version with
+
+51
+00:03:11,470 --> 00:03:14,770
+version 2.9. 
+So if there are any patches or bug fixes
+
+52
+00:03:14,770 --> 00:03:18,110
+include those as well. 
+Now
+
+53
+00:03:18,110 --> 00:03:22,610
+here on pypi dot org 
+you can see we have three 2.9 versions
+
+54
+00:03:22,620 --> 00:03:26,470
+This is the base version,
+ and then we got a couple more versions before
+
+55
+00:03:26,480 --> 00:03:29,960
+version 2.10. 
+So when I run this command pip will
+
+56
+00:03:29,960 --> 00:03:33,590
+install the latest compatible version with 2.9 point
+
+57
+00:03:33,590 --> 00:03:37,010
+zero which is 2.9 point two. 
+Let's
+
+58
+00:03:37,010 --> 00:03:41,440
+take a look.
+Now we've got this message "Requirement
+
+59
+00:03:41,450 --> 00:03:45,750
+already satisfied" because we already have version 2.9
+
+60
+00:03:45,750 --> 00:03:49,230
+point zero installed. 
+So first we need to uninstall it before we
+
+61
+00:03:49,230 --> 00:03:52,860
+install the latest compatible version with this. 
+So
+
+62
+00:03:53,240 --> 00:03:56,530
+that is very easy. 
+pip, this
+
+63
+00:03:56,530 --> 00:04:00,040
+time we're going to use uninstall and then requests. 
+We
+
+64
+00:04:00,040 --> 00:04:03,440
+don't care about the version. 
+This is asking
+
+65
+00:04:03,440 --> 00:04:07,410
+for confirmation. 
+so let's go ahead. 
+Now Requests Version
+
+66
+00:04:07,410 --> 00:04:10,690
+2.9 point zero is uninstalled. 
+So now let's
+
+67
+00:04:10,690 --> 00:04:14,640
+install requests Version
+
+68
+00:04:14,640 --> 00:04:18,270
+2.9 point asterisk. 
+This will install
+
+69
+00:04:18,280 --> 00:04:21,830
+the latest compatible version with 2.9. 
+We
+
+70
+00:04:21,830 --> 00:04:25,990
+also have another syntax for installing the latest compatible version.
+
+71
+00:04:26,090 --> 00:04:29,350
+So instead of two equal sign, we use a
+
+72
+00:04:29,350 --> 00:04:32,800
+tilde equal sign.
+And then here we specify a
+
+73
+00:04:32,800 --> 00:04:36,830
+specific version. 
+Let's say 2.9 point zero. 
+Once
+
+74
+00:04:36,830 --> 00:04:40,170
+again this will install the latest compatible version with
+
+75
+00:04:40,170 --> 00:04:43,990
+2.9 point zero, which
+
+76
+00:04:43,990 --> 00:04:47,290
+is 2.9 point two.
+Now we can use this
+
+77
+00:04:47,290 --> 00:04:50,770
+asterisk with the minor version as well. 
+For example
+
+78
+00:04:50,770 --> 00:04:54,750
+let me uninstall this first.
+ so pip uninstall
+
+79
+00:04:54,880 --> 00:04:58,360
+requests. 
+Okay. 
+let's go ahead.
+
+80
+00:04:58,510 --> 00:05:02,380
+Good. 
+Now pip install
+
+81
+00:05:02,410 --> 00:05:06,240
+requests two point asterisk. 
+This
+
+82
+00:05:06,240 --> 00:05:09,760
+will install the latest compatible version with version two.
+
+83
+00:05:11,140 --> 00:05:14,650
+So back to the release history.
+If your scroll to the very top,
+
+84
+00:05:15,740 --> 00:05:20,250
+you can see the latest compatible version with version two is 2.20
+
+85
+00:05:20,430 --> 00:05:23,860
+point one. 
+Let's go ahead and run this.
+
+86
+00:05:25,140 --> 00:05:29,110
+There you go.
+So we successfully installed requests
+
+87
+00:05:29,140 --> 00:05:32,390
+to 0.20 point one. 
+Now we can use
+
+88
+00:05:32,390 --> 00:05:36,130
+this package just like the modules and python standard library.
+
+89
+00:05:36,230 --> 00:05:39,960
+So we import requests. 
+Now
+
+90
+00:05:39,960 --> 00:05:43,500
+we have a module object with these
+
+91
+00:05:43,500 --> 00:05:47,040
+members. 
+You can read about this on the documentation for
+
+92
+00:05:47,040 --> 00:05:50,840
+this package. 
+So back on pypi dot org. 
+Here
+
+93
+00:05:50,840 --> 00:05:54,550
+on the page for the request package,
+If you scroll down, you
+
+94
+00:05:54,550 --> 00:05:59,440
+can see a link to the documentation. 
+Now
+
+95
+00:05:59,450 --> 00:06:03,600
+back to our code. 
+I'm going to call the get method. 
+Let's
+
+96
+00:06:03,600 --> 00:06:07,010
+send an http request to google dot
+
+97
+00:06:07,010 --> 00:06:11,040
+com. 
+This returns a response object. 
+For
+
+98
+00:06:11,040 --> 00:06:14,910
+now let's simply print the response on the terminal. 
+Let's
+
+99
+00:06:14,910 --> 00:06:23,000
+run the program.
+So we got a response with the status two hundred 
+which indicates success.
+

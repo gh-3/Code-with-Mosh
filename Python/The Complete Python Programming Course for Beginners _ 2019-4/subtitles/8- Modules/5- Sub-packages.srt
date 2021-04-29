@@ -1,0 +1,77 @@
+2
+00:00:04,000 --> 00:00:07,810
+As your programs grown, 
+you may want to 
+break down a package into sub
+
+3
+00:00:07,810 --> 00:00:11,090
+packages. 
+For example let's imagine our
+
+4
+00:00:11,100 --> 00:00:14,620
+ecommerce package has grown a lot.
+We have so many files and modules
+
+5
+00:00:14,620 --> 00:00:17,880
+here. So we decided to break
+ this package into a few sub
+
+6
+00:00:17,880 --> 00:00:21,560
+packages. 
+So I'm going to
+add a new folder here
+
+7
+00:00:22,640 --> 00:00:25,880
+call it shopping. 
+And then move the
+
+8
+00:00:25,880 --> 00:00:30,200
+sales module in this folder. 
+So
+
+9
+00:00:30,200 --> 00:00:33,840
+on the top we have the ecommerce package and 
+under that we have
+
+10
+00:00:34,030 --> 00:00:37,600
+the shopping package. 
+Now currently shopping is not a package because
+
+11
+00:00:37,610 --> 00:00:41,300
+in this folder we don't have 
+the init file. 
+So
+
+12
+00:00:41,470 --> 00:00:44,950
+let's add a new file double underscore init
+
+13
+00:00:44,950 --> 00:00:48,490
+double underscore dot py. 
+Now
+
+14
+00:00:48,490 --> 00:00:51,940
+back to app dot py
+Once again python cannot find our sales
+
+15
+00:00:51,940 --> 00:00:55,230
+module. 
+So to fix this issue, we need to add the
+
+16
+00:00:55,230 --> 00:00:59,360
+name of our new sub package here.
+so ecommerce dot shopping.
+

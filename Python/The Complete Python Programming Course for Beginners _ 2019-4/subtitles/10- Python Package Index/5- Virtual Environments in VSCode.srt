@@ -1,0 +1,296 @@
+2
+00:00:04,000 --> 00:00:08,080
+So in the last lecture, 
+I didn't run this program using the code runner. I
+
+3
+00:00:08,080 --> 00:00:11,220
+used the terminal. 
+Now let's see what happens when we were
+
+4
+00:00:11,220 --> 00:00:14,880
+on this program using the code runner extension. 
+So there
+
+5
+00:00:14,880 --> 00:00:18,670
+you go. 
+We get the same error,
+No module named
+
+6
+00:00:18,700 --> 00:00:22,040
+requests, because Code Runner is running this program using
+
+7
+00:00:22,040 --> 00:00:25,350
+the python interpreter that is installed globally, 
+and
+
+8
+00:00:25,350 --> 00:00:29,240
+that python interpreter cannot 
+find the requests module. 
+To
+
+9
+00:00:29,240 --> 00:00:33,320
+fix this problem, We need to tell code Runner to 
+use the python interpreter
+
+10
+00:00:33,320 --> 00:00:36,420
+in our virtual environment. 
+So back in
+
+11
+00:00:36,420 --> 00:00:39,960
+the terminal.
+let's find the virtual environment directory for this project,
+
+12
+00:00:40,440 --> 00:00:44,870
+pipenv Dash Dash venv. 
+There
+
+13
+00:00:44,870 --> 00:00:49,530
+you go. 
+Now let's open this. 
+So
+
+14
+00:00:49,530 --> 00:00:52,710
+this is our directory structure that you have seen before. 
+Here in
+
+15
+00:00:52,710 --> 00:00:56,260
+this virtual environment inside of the bin folder, we've
+
+16
+00:00:56,260 --> 00:01:00,220
+got python3. 
+If you're on Windows, you have python. 
+So
+
+17
+00:01:00,220 --> 00:01:03,400
+we need to get the past so
+ this python interpreter and give it to the
+
+18
+00:01:03,400 --> 00:01:06,730
+code runner extension. 
+Back in VSCode, on the
+
+19
+00:01:06,730 --> 00:01:11,460
+top, let's go to the code menu.
+ then preferences and
+
+20
+00:01:11,470 --> 00:01:15,100
+settings. Here. click this dot. dot. dot
+
+21
+00:01:15,110 --> 00:01:19,220
+An open settings that Jason if
+
+22
+00:01:19,220 --> 00:01:22,450
+you scroll down somewhere here. you should see
+
+23
+00:01:22,450 --> 00:01:25,890
+Code Runner that execute her map. We said
+
+24
+00:01:25,890 --> 00:01:29,880
+this earlier in the course in
+ case you missed that step. Simply add
+
+25
+00:01:29,890 --> 00:01:33,230
+a new key value pair.
+ Here. The key is code that
+
+26
+00:01:33,230 --> 00:01:37,060
+runner that execute er map. When
+
+27
+00:01:37,060 --> 00:01:41,010
+you press enter. it automatically
+ generates all these settings. Now
+
+28
+00:01:41,010 --> 00:01:44,300
+. here we have the
+ path to Python. As you
+
+29
+00:01:44,300 --> 00:01:47,510
+can see. I've changed this
+ to Python three. Now we need
+
+30
+00:01:47,510 --> 00:01:50,770
+to replace this with the
+ past to the Python interpreter in
+
+31
+00:01:50,770 --> 00:01:54,190
+a virtual environment.
+ So this is the path our
+
+32
+00:01:54,190 --> 00:01:57,900
+virtual environment. 
+Let's copy this. 
+then back
+
+33
+00:01:57,900 --> 00:02:01,560
+to user settings and
+
+34
+00:02:01,940 --> 00:02:05,480
+replace this with this past slash Bin
+
+35
+00:02:05,650 --> 00:02:09,510
+slash. So we're referencing the python interpreter in
+
+36
+00:02:09,510 --> 00:02:12,910
+our virtual environment that save the changes back
+
+37
+00:02:12,910 --> 00:02:16,130
+to abduct pie. Let's run
+ this program using the code runner
+
+38
+00:02:16,130 --> 00:02:20,310
+extension. There you go. So
+
+39
+00:02:20,310 --> 00:02:23,520
+we fixed the issue with code Runner.
+ but we have a read on the line
+
+40
+00:02:23,520 --> 00:02:27,170
+here unable to import requests. 
+So
+
+41
+00:02:27,170 --> 00:02:30,360
+VSCode cannot find our requests module. 
+To
+
+42
+00:02:30,360 --> 00:02:33,900
+fix this problem, we need to tell VSCode which 
+python interpreter to
+
+43
+00:02:33,900 --> 00:02:37,870
+use. 
+Now if you look at the status part here, you can see Python
+
+44
+00:02:37,880 --> 00:02:41,020
+3.7. 
+Click this. 
+In this list you
+
+45
+00:02:41,020 --> 00:02:44,960
+should see various Python interpreters.
+Now look at the last one here. 
+This
+
+46
+00:02:44,960 --> 00:02:48,870
+is the path to the python interpreter in a virtual environment. 
+If
+
+47
+00:02:48,870 --> 00:02:51,980
+you don't see this on your machine,
+ you need to go back to the user settings
+
+48
+00:02:51,980 --> 00:02:55,460
+page and add
+
+49
+00:02:55,470 --> 00:03:00,120
+a new setting that is python dot
+
+50
+00:03:00,280 --> 00:03:03,960
+python pass. We said this to the
+
+51
+00:03:03,960 --> 00:03:07,680
+past to the Python interpreter
+ in a virtual environment. So
+
+52
+00:03:07,680 --> 00:03:11,290
+let's pace the path to
+ the virtual environment. then slash
+
+53
+00:03:11,290 --> 00:03:15,070
+bin slash python three. 
+Now
+
+54
+00:03:15,070 --> 00:03:18,500
+after we add this,
+we need to restart VSCode. 
+Then
+
+55
+00:03:18,500 --> 00:03:22,310
+when we go back to app.py,
+here in the list of virtual environments,
+
+56
+00:03:22,450 --> 00:03:25,850
+you should see this new python interpreter. 
+So let's
+
+57
+00:03:25,850 --> 00:03:29,600
+select this. 
+You can see the compilation error is gone. 
+but
+
+58
+00:03:29,600 --> 00:03:33,590
+we got this other error 
+Linter pylint is not installed, 
+because
+
+59
+00:03:33,600 --> 00:03:37,530
+earlier we install this globally,
+and now it's not available in this isolated
+
+60
+00:03:37,540 --> 00:03:41,430
+virtual environment. 
+So we need to go ahead and install
+
+61
+00:03:41,430 --> 00:03:45,880
+it here. 
+All right. 
+The error is gone.
+

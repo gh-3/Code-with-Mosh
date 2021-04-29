@@ -1,0 +1,127 @@
+2
+00:00:04,000 --> 00:00:08,180
+There are times that you want to
+import modules from sibling packages. 
+For
+
+3
+00:00:08,180 --> 00:00:11,340
+example here in our ecommerce package
+I have added a
+
+4
+00:00:11,340 --> 00:00:14,520
+new sub package customer in this package. we
+
+5
+00:00:14,520 --> 00:00:18,960
+have this contact module
+for contacting our customers. 
+Now
+
+6
+00:00:18,960 --> 00:00:22,130
+let's say in our sales module 
+we want to use the 
+
+7
+00:00:22,130 --> 00:00:25,310
+contact module in the customer package.
+Let me show you how
+
+8
+00:00:25,310 --> 00:00:28,660
+to do this.
+So we open this. 
+To import
+
+9
+00:00:28,660 --> 00:00:32,320
+a module from another package, 
+we can use an absolute or 
+
+10
+00:00:32,320 --> 00:00:36,410
+relative import statement. 
+So, here
+
+11
+00:00:36,410 --> 00:00:39,680
+is an absolute import: 
+from our top level
+
+12
+00:00:39,680 --> 00:00:43,360
+packages eccommerce, so we start there, then
+
+13
+00:00:43,520 --> 00:00:47,540
+we go to the customer sub package and 
+now we import
+
+14
+00:00:47,550 --> 00:00:50,900
+the contact module. 
+So this
+
+15
+00:00:50,900 --> 00:00:54,310
+contact object has a method
+ we can use anywhere in
+
+16
+00:00:54,310 --> 00:00:57,720
+this module. 
+So this is the absolute importance. 
+We
+
+17
+00:00:57,720 --> 00:01:01,760
+can also use a relative import. 
+So from
+
+18
+00:01:02,140 --> 00:01:05,580
+dot this represents the current package, 
+dat dat
+
+19
+00:01:05,610 --> 00:01:09,290
+takes us one level up, 
+so now we're at the ecommerce package
+
+20
+00:01:09,290 --> 00:01:12,950
+level. 
+In this package we have two sub packages: 
+customer and
+
+21
+00:01:12,950 --> 00:01:16,650
+shopping, so we can go to 
+the customers sub package and
+
+22
+00:01:16,650 --> 00:01:20,100
+then import the contact module. 
+As
+
+23
+00:01:20,100 --> 00:01:23,570
+a best practice prefer to use absolutely imports, and 
+that's what pep
+
+24
+00:01:23,580 --> 00:01:27,390
+eight also recommends. 
+But if your absolutely import gets really verbals
+
+25
+00:01:27,390 --> 00:01:30,710
+like a.b.c.d.e , then you
+
+26
+00:01:30,710 --> 00:01:35,000
+might be able to simplify the import statement 
+by using a relative import.
+

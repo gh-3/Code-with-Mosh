@@ -1,0 +1,371 @@
+2
+00:00:04,350 --> 00:00:08,320
+So you have learned that 
+we use classes to bundle data and functionality
+
+3
+00:00:08,330 --> 00:00:11,620
+into one unit. 
+Now as you work on larger programs, you
+
+4
+00:00:11,620 --> 00:00:14,900
+may come across classes that
+don't have any behavior. 
+They don't
+
+5
+00:00:14,900 --> 00:00:18,940
+have any methods. 
+They only have data.
+Here's an example. 
+We
+
+6
+00:00:18,940 --> 00:00:22,320
+have this point class that has
+two attributes X and Y. 
+It
+
+7
+00:00:22,320 --> 00:00:26,260
+doesn't have any methods Now.
+ With this we can create two point objects
+
+8
+00:00:26,490 --> 00:00:29,790
+Soapy Juan. 
+We said it two point of one
+
+9
+00:00:29,790 --> 00:00:34,670
+and two and p two the same. Now
+
+10
+00:00:34,670 --> 00:00:37,840
+. when we compare these
+ two objects and print the
+
+11
+00:00:37,840 --> 00:00:41,170
+result. we get false because these
+
+12
+00:00:41,170 --> 00:00:44,970
+two objects are stored in
+ different locations in memory. So
+
+13
+00:00:44,970 --> 00:00:48,410
+by default. Python compares objects based on
+
+14
+00:00:48,410 --> 00:00:52,020
+where they are stored in memory.
+ If two variables are
+
+15
+00:00:52,020 --> 00:00:55,860
+referencing the same object in memory.
+ they are considered equal. In
+
+16
+00:00:55,860 --> 00:00:59,020
+this example. our point objects are
+ in two different locations. even though
+
+17
+00:00:59,020 --> 00:01:02,300
+they have the same attributes.
+ So to prove this
+
+18
+00:01:02,300 --> 00:01:06,140
+to you. I'm going to call
+ this built in i d function. This
+
+19
+00:01:06,140 --> 00:01:09,380
+returns the address of the
+ memory location where an object is
+
+20
+00:01:09,380 --> 00:01:13,010
+stored. So let's look at
+ the address of P one and
+
+21
+00:01:13,010 --> 00:01:16,710
+also P two. As you can see.
+ these objects are
+
+22
+00:01:16,710 --> 00:01:20,100
+in two different locations in memory.
+ So to solve the issue
+
+23
+00:01:20,100 --> 00:01:24,140
+with comparing point objects.
+ we need to come back here and
+
+24
+00:01:24,150 --> 00:01:28,700
+implement a magic method. E Q. This
+
+25
+00:01:28,700 --> 00:01:32,900
+method takes self and other.
+ and here we should compare self
+
+26
+00:01:32,900 --> 00:01:36,240
+that eggs with other that eggs and self
+
+27
+00:01:36,240 --> 00:01:39,750
+taught wine with other than wine. Now. when
+
+28
+00:01:39,750 --> 00:01:43,690
+we compare these two objects P one MP two. we
+
+29
+00:01:43,690 --> 00:01:48,270
+get true. so the problem is solved. 
+However
+
+30
+00:01:48,280 --> 00:01:52,020
+writing all this code fordata classes is 
+a little bit tedious.
+
+31
+00:01:52,030 --> 00:01:55,670
+If you're dealing with classes that 
+have no behavior, no methods, 
+
+32
+00:01:55,680 --> 00:01:59,350
+they only have data, 
+you can use a named tuple instead.
+
+33
+00:01:59,740 --> 00:02:03,080
+Let me show you how that works.
+So let's delete these. 
+On the
+
+34
+00:02:03,080 --> 00:02:06,420
+top from the collections module. we
+
+35
+00:02:06,420 --> 00:02:10,590
+should impart the named topple function. 
+We
+
+36
+00:02:10,590 --> 00:02:14,040
+call this function. 
+As the first argument, we specify the
+
+37
+00:02:14,040 --> 00:02:17,210
+name for this new type you want to create. 
+so we're going
+
+38
+00:02:17,210 --> 00:02:20,340
+to call that Point.
+So note that I'm passing a
+
+39
+00:02:20,340 --> 00:02:24,290
+string here. 
+Now as the second argument, we pass an
+
+40
+00:02:24,300 --> 00:02:27,780
+array of field names or attributes names. 
+We
+
+41
+00:02:27,780 --> 00:02:32,070
+want our point objects to
+ have two attributes: x and y.
+
+42
+00:02:32,070 --> 00:02:35,530
+So this returns a named tuple that
+
+43
+00:02:35,530 --> 00:02:39,120
+we can store here.
+Note that I'm using Pascal
+
+44
+00:02:39,120 --> 00:02:42,430
+naming convention because 
+Point here represents a type, like
+
+45
+00:02:42,430 --> 00:02:46,020
+a class, 
+so we can call it to create a
+
+46
+00:02:46,020 --> 00:02:50,290
+new Point object. 
+However instead of passing these
+
+47
+00:02:50,290 --> 00:02:54,200
+arbitrary values here,
+we should pass keyword arguments. 
+So
+
+48
+00:02:54,200 --> 00:02:57,770
+we said x 21 and Y 22 The
+
+49
+00:02:57,770 --> 00:03:01,200
+first improvement here is that
+ our code is more clear and
+
+50
+00:03:01,200 --> 00:03:04,510
+less ambiguous. 
+We don't have to wonder what are these
+
+51
+00:03:04,510 --> 00:03:08,010
+values. 
+The point is a simple concept,
+it's easy to guess
+
+52
+00:03:08,020 --> 00:03:11,570
+that 1 and 2 represent x and y here. 
+But sometimes
+
+53
+00:03:11,570 --> 00:03:14,890
+when creating objects, 
+you might have to pass some magical values and
+
+54
+00:03:14,890 --> 00:03:19,060
+someone else reading that code,
+they don't know what these values represent. 
+So
+
+55
+00:03:19,440 --> 00:03:23,090
+these keyword arguments make our code more clear. 
+The
+
+56
+00:03:23,090 --> 00:03:26,740
+second benefit is that 
+we don't have to explicitly implement
+
+57
+00:03:26,750 --> 00:03:29,930
+a magic method to compare two objects.
+ So if you
+
+58
+00:03:29,930 --> 00:03:33,820
+have two point objects with
+the exact same attributes, we
+
+59
+00:03:33,820 --> 00:03:37,090
+can easily compare them and 
+we get
+
+60
+00:03:37,090 --> 00:03:40,670
+the result that we expect.
+So if you're working with classes that
+
+61
+00:03:40,670 --> 00:03:43,950
+have only data and no method,
+you might want to use a
+
+62
+00:03:43,950 --> 00:03:47,270
+name tuple instead,
+you will write less code. 
+And
+
+63
+00:03:47,270 --> 00:03:50,550
+these named tuples are better than 
+regular tuples because here
+
+64
+00:03:50,550 --> 00:03:54,100
+we'll have attributes in this Point object
+just like the attributes we
+
+65
+00:03:54,100 --> 00:03:57,750
+have in our classes.
+So if we print p1 dot
+
+66
+00:03:57,760 --> 00:04:01,640
+x, we see one. 
+Just
+
+67
+00:04:01,640 --> 00:04:05,170
+be aware that 
+these named tuples are immutable 
+which means
+
+68
+00:04:05,290 --> 00:04:09,500
+once we create them, 
+we cannot modify them, We cannot mutate them. 
+So
+
+69
+00:04:09,510 --> 00:04:13,470
+if I said p one dot
+ x to a new value and
+
+70
+00:04:13,470 --> 00:04:16,610
+run the program. 
+we get an attribute error because we
+
+71
+00:04:16,610 --> 00:04:20,190
+can't set an attribute of a named tuple after we
+
+72
+00:04:20,190 --> 00:04:23,340
+initialize it. 
+So if you really need to modify one of
+
+73
+00:04:23,340 --> 00:04:26,560
+these values, 
+you need to create a new Point object. 
+So we
+
+74
+00:04:26,560 --> 00:04:30,020
+said P one to a
+ new point with exit to 10
+
+75
+00:04:30,020 --> 00:04:33,680
+and y set to 2.
+So this is all about named tuples.
+

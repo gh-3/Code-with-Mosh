@@ -1,0 +1,645 @@
+2
+00:00:04,000 --> 00:00:07,910
+In this lecture, I'm going to show you
+how to publish your own packages to
+
+3
+00:00:07,910 --> 00:00:11,280
+pypi dot org.
+The first step is to create a new
+
+4
+00:00:11,280 --> 00:00:14,630
+account. 
+So pause the video,
+create a new account, 
+Make
+
+5
+00:00:14,630 --> 00:00:17,980
+sure to activate it by clicking on the link that they send you, and
+
+6
+00:00:17,980 --> 00:00:26,060
+then come back continue watching. 
+Next
+
+7
+00:00:26,060 --> 00:00:29,930
+here on the terminal,
+We need to install three tools globally. 
+So
+
+8
+00:00:29,930 --> 00:00:33,560
+pip or pip3 install set
+
+9
+00:00:33,560 --> 00:00:37,560
+up tools wheel and twine.
+
+10
+00:00:38,240 --> 00:00:44,540
+You will see these in action momentarily.
+So let's go ahead. 
+Alright.
+
+11
+00:00:44,550 --> 00:00:47,870
+Now I'm going to start with a brand new project. 
+Let's say
+
+12
+00:00:47,870 --> 00:00:51,640
+we're going to create a package to work with PDF files. 
+So
+
+13
+00:00:51,640 --> 00:00:55,760
+I'm going to create a new directory,
+call it marshpdf.
+
+14
+00:00:56,840 --> 00:01:00,900
+Now let's go to this directory and open VSCode
+
+15
+00:01:00,900 --> 00:01:04,480
+Now as a best practice, we
+
+16
+00:01:04,480 --> 00:01:09,160
+should create a high level directory with
+the same name as our package. 
+So
+
+17
+00:01:09,210 --> 00:01:12,730
+I'm going to call that mashpdf. 
+Here
+
+18
+00:01:12,730 --> 00:01:16,170
+potentially we could have another directory for unit
+
+19
+00:01:16,170 --> 00:01:19,760
+tests. 
+We're going to look at unit tests in the future. 
+Perhaps
+
+20
+00:01:19,760 --> 00:01:23,180
+we could have another top
+ level directory for some sample
+
+21
+00:01:23,180 --> 00:01:26,560
+data and so on. 
+All our source code will end up here.
+
+22
+00:01:27,240 --> 00:01:30,620
+Now in this directory, we should add an
+
+23
+00:01:30,630 --> 00:01:34,360
+__init__ file, 
+so python will see this as a package
+
+24
+00:01:35,740 --> 00:01:38,920
+Now let's add a couple of modules.
+So I'm going to add a
+
+25
+00:01:38,920 --> 00:01:42,770
+new file call that pdf2text
+
+26
+00:01:42,850 --> 00:01:46,860
+dot py. 
+Here I'm going to write a basic function like
+
+27
+00:01:46,860 --> 00:01:50,210
+convert, so convert that simply
+
+28
+00:01:50,210 --> 00:01:54,790
+prints pdf2text. 
+Okay,
+
+29
+00:01:54,790 --> 00:01:58,020
+I got this error message: 
+Formatter autopep8 is not
+
+30
+00:01:58,020 --> 00:02:01,690
+installed. 
+And I realized that VSCode is still referencing the
+
+31
+00:02:01,690 --> 00:02:05,010
+virtual environment for our previous project.
+So make sure
+
+32
+00:02:05,010 --> 00:02:09,020
+to change that to
+ the main python interpreter installed
+
+33
+00:02:09,020 --> 00:02:12,930
+on your machine because now we are
+ in the context of a completely different
+
+34
+00:02:12,930 --> 00:02:17,370
+project. 
+So let's ignore that. 
+So
+
+35
+00:02:17,370 --> 00:02:21,360
+here's our pdf2text module.
+ We can add another module.
+
+36
+00:02:22,140 --> 00:02:26,100
+Let's say pdf2image dot py. 
+Again
+
+37
+00:02:26,100 --> 00:02:29,480
+here we could have some code.
+Let's not worry about that. 
+So this
+
+38
+00:02:29,480 --> 00:02:32,990
+is a basic structure for a package. 
+Now in
+
+39
+00:02:32,990 --> 00:02:36,540
+order to publish this to pypi,
+we need to add three files
+
+40
+00:02:36,540 --> 00:02:39,800
+here. 
+The most important one is setup dot
+
+41
+00:02:39,800 --> 00:02:43,620
+py. 
+So at the root of this project, add
+
+42
+00:02:43,630 --> 00:02:48,010
+a new file setup.py. 
+Here
+
+43
+00:02:48,010 --> 00:02:52,510
+on the top, we should import setup tools that we installed earlier. 
+This
+
+44
+00:02:52,510 --> 00:02:57,160
+module has a method called setup. 
+We
+
+45
+00:02:57,160 --> 00:03:00,760
+call this method and pass
+a few keyword arguments. 
+Here
+
+46
+00:03:00,760 --> 00:03:04,240
+are the essential ones: 
+The first one is name. 
+We
+
+47
+00:03:04,240 --> 00:03:07,720
+should set this to 
+a unique name for our package, 
+So it doesn't conflict with
+
+48
+00:03:07,730 --> 00:03:11,060
+another package in pypi repository. 
+In
+
+49
+00:03:11,060 --> 00:03:15,150
+this demo I'm going to say this to mashpdf. 
+Next
+
+50
+00:03:15,150 --> 00:03:18,460
+one is version. 
+I'm going to set this to version one point oh.
+
+51
+00:03:20,840 --> 00:03:24,180
+we need a long description. 
+For now I'm going to set this
+
+52
+00:03:24,180 --> 00:03:28,150
+to an empty string. 
+We're going to come back to this in a second. 
+And
+
+53
+00:03:28,150 --> 00:03:31,790
+finally, we need to tell what packages are
+
+54
+00:03:31,790 --> 00:03:35,510
+going to be distributed, because 
+in this project currently we have one
+
+55
+00:03:35,510 --> 00:03:38,690
+package that is mashpdf, and 
+in this package we
+
+56
+00:03:38,690 --> 00:03:41,800
+have these two modules, 
+so we need to
+
+57
+00:03:41,800 --> 00:03:45,560
+tell setup tools about 
+the modules and packages 
+that we're going to publish.
+
+58
+00:03:46,040 --> 00:03:49,950
+So here we add packages and we
+
+59
+00:03:49,950 --> 00:03:54,150
+set it to setuptools dot find underlyine
+
+60
+00:03:54,190 --> 00:03:57,540
+packages. 
+This method
+
+61
+00:03:57,540 --> 00:04:00,650
+will look at our project and
+automatically discover the packages that we
+
+62
+00:04:00,650 --> 00:04:04,000
+have defined. 
+However we need to tell it to exclude two
+
+63
+00:04:04,000 --> 00:04:07,500
+directories: 
+tests and data, 
+because they don't include
+
+64
+00:04:07,500 --> 00:04:11,410
+source code. 
+So we pass an array here with
+
+65
+00:04:11,410 --> 00:04:15,150
+a couple of strings tests and data.
+
+66
+00:04:16,940 --> 00:04:20,310
+So this is our setup file.
+Now we should create a read me
+
+67
+00:04:20,310 --> 00:04:24,000
+file. 
+What we put in the read me file, 
+will be displayed in the homepage of
+
+68
+00:04:24,000 --> 00:04:27,760
+our package on pypi. 
+So here
+
+69
+00:04:27,770 --> 00:04:31,700
+in the root of the project,
+let's add README, 
+And
+
+70
+00:04:31,700 --> 00:04:35,070
+by convention, 
+we use all capital to read me and then
+
+71
+00:04:35,070 --> 00:04:38,260
+lower case md,
+which is short for markdown. 
+So here
+
+72
+00:04:38,260 --> 00:04:41,390
+we can use the markdown syntax.
+For now I'm just going to go with a
+
+73
+00:04:41,390 --> 00:04:45,100
+simple example. 
+This is the homepage of
+
+74
+00:04:45,110 --> 00:04:48,650
+our project. 
+Save the changes. 
+We
+
+75
+00:04:48,660 --> 00:04:51,880
+also need a license file.
+So once again in the root of
+
+76
+00:04:51,880 --> 00:04:57,130
+the project, let's add LICENSE. 
+Now
+
+77
+00:04:57,130 --> 00:05:00,300
+if you head over to choose a license dot com, 
+you can
+
+78
+00:05:00,300 --> 00:05:03,510
+find a basic template for this license file. 
+So let's
+
+79
+00:05:03,510 --> 00:05:06,960
+say you care about sharing improvements. 
+Click that.
+
+80
+00:05:07,740 --> 00:05:11,600
+Here we can see a basic license agreement template on
+
+81
+00:05:11,600 --> 00:05:15,780
+the top. 
+I'm going to click this button to copy this to Clipboard and
+
+82
+00:05:15,780 --> 00:05:19,080
+then paste it into this file. 
+That's
+
+83
+00:05:19,080 --> 00:05:22,990
+where license. 
+Now back to setup dot py. 
+We
+
+84
+00:05:22,990 --> 00:05:26,170
+should set this long description to
+the content of our README
+
+85
+00:05:26,170 --> 00:05:29,560
+file. 
+So on the top, from path lib
+
+86
+00:05:30,040 --> 00:05:33,760
+we should import the Path class and then
+
+87
+00:05:35,040 --> 00:05:38,590
+create a path Object,
+set it to README dot
+
+88
+00:05:38,590 --> 00:05:42,250
+md and then call read_text.
+
+89
+00:05:44,140 --> 00:05:48,370
+There you go.
+So here's the final result. 
+Actually
+
+90
+00:05:48,370 --> 00:05:52,040
+I realized I forgot the keyword argument here. 
+So
+
+91
+00:05:52,170 --> 00:05:55,920
+exclude equals. 
+So we call find_packages
+
+92
+00:05:55,920 --> 00:05:59,860
+and tell it to exclude these two directories. 
+Now
+
+93
+00:06:00,240 --> 00:06:03,750
+let's quickly recap. 
+We added three files to our project:
+
+94
+00:06:03,750 --> 00:06:07,490
+A README file, 
+a LICENSE file, and 
+a setup py.
+Now
+
+95
+00:06:07,490 --> 00:06:10,960
+we need to generate a distribution package, and 
+that's pretty easy.
+
+96
+00:06:11,440 --> 00:06:15,180
+You open up the terminal and 
+run python setup
+
+97
+00:06:15,180 --> 00:06:19,610
+dot py and pass two arguments sdist,
+
+98
+00:06:19,510 --> 00:06:22,890
+which is short for source distribution and
+
+99
+00:06:22,890 --> 00:06:27,050
+bdist underline wheel,
+which is short for built distribution.
+
+100
+00:06:27,440 --> 00:06:31,250
+So with this command, we're going to generate 
+two distribution packages:
+
+101
+00:06:31,250 --> 00:06:34,580
+a source distribution and 
+a built distribution. 
+Let's
+
+102
+00:06:34,580 --> 00:06:38,010
+go ahead. 
+All right.
+Now here we have two
+
+103
+00:06:38,010 --> 00:06:41,940
+new directories: 
+build and dist. 
+In the dist directory,
+
+104
+00:06:42,150 --> 00:06:46,120
+we have a wheel file,
+which is a built distribution and a
+
+105
+00:06:46,120 --> 00:06:49,630
+source distribution. 
+Both these are zip files. 
+You
+
+106
+00:06:49,630 --> 00:06:53,690
+can unzip them and see what is inside, If you're adventurous. 
+Now
+
+107
+00:06:53,690 --> 00:06:57,240
+that we have these two distribution packages, 
+the final step is
+
+108
+00:06:57,240 --> 00:07:00,560
+to upload them to pypi dot org. 
+Back in
+
+109
+00:07:00,560 --> 00:07:04,860
+the terminal, we use twine to do that. 
+So twine upload
+
+110
+00:07:05,240 --> 00:07:08,810
+dist slash asterisk. 
+So
+
+111
+00:07:08,810 --> 00:07:12,550
+we're telling twine to upload all
+ the files in the dist directory.
+
+112
+00:07:12,840 --> 00:07:17,280
+Let's go ahead. 
+It's asking for my username, so mash. 
+And
+
+113
+00:07:17,280 --> 00:07:20,730
+then the password. 
+Alright. 
+My
+
+114
+00:07:20,730 --> 00:07:24,130
+packages uploaded to pypi dot org. 
+So
+
+115
+00:07:24,130 --> 00:07:27,350
+back here, if we search for moshpdf, we can
+
+116
+00:07:27,350 --> 00:07:31,070
+find that here, the current version is version one. 
+Here
+
+117
+00:07:31,070 --> 00:07:34,810
+on the homepage, we have the
+content of our README file. 
+So
+
+118
+00:07:34,810 --> 00:07:38,670
+we can easily install this package
+ just like the other packages on
+
+119
+00:07:38,670 --> 00:07:41,970
+pypi. 
+For example, here in
+
+120
+00:07:41,970 --> 00:07:45,780
+our HelloWorld project, 
+I'm going to use pepenv to install
+
+121
+00:07:45,860 --> 00:07:51,230
+moshpdf. 
+Okay.
+
+122
+00:07:51,230 --> 00:07:55,250
+It's installed here. 
+So on the top, we can import mosh
+
+123
+00:07:55,250 --> 00:07:58,490
+pdf. 
+you can see mashpdf has these
+
+124
+00:07:58,490 --> 00:08:02,260
+two modules. 
+So I'm going to import the pdf2text module.
+
+125
+00:08:02,640 --> 00:08:06,680
+So from mashpdf let's import pdf
+
+126
+00:08:06,680 --> 00:08:09,870
+2text. 
+Now we can call pdf2
+
+127
+00:08:09,870 --> 00:08:13,880
+text dot convert. 
+Run the program and
+
+128
+00:08:13,880 --> 00:08:23,000
+here's the output. 
+So this verifies that we successfully published our package to pypi and 
+then installed it and used it.
+

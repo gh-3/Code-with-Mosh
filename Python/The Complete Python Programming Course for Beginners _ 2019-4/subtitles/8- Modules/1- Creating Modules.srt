@@ -1,0 +1,336 @@
+2
+00:00:04,560 --> 00:00:08,150
+So far we have written all our
+ code in one file app.py.
+
+3
+00:00:08,170 --> 00:00:11,770
+But that's not how we build real programs, 
+because a real program
+
+4
+00:00:11,770 --> 00:00:15,090
+can contain tens of thousands of lines of code. We
+
+5
+00:00:15,090 --> 00:00:18,280
+don't want to write all that code in one file. 
+That is like going to
+
+6
+00:00:18,280 --> 00:00:21,880
+a supermarket without any sections. 
+All products are
+
+7
+00:00:21,880 --> 00:00:25,200
+in one place. 
+Finding a product in a supermarket like that is
+
+8
+00:00:25,200 --> 00:00:28,620
+really hard. right?
+That's why in supermarkets we have
+
+9
+00:00:28,630 --> 00:00:31,890
+various oils or sections or departments. 
+We have
+
+10
+00:00:31,890 --> 00:00:35,630
+the same concept in programming.
+So as our program grows, we
+
+11
+00:00:35,630 --> 00:00:39,010
+should split our code across multiple files. 
+We refer to
+
+12
+00:00:39,010 --> 00:00:42,740
+each file a module. 
+So a module is a file that contains
+
+13
+00:00:42,750 --> 00:00:45,900
+some python code.
+Now here's the question. 
+How do
+
+14
+00:00:45,900 --> 00:00:49,290
+we decide what functions or what classes 
+we should put in what
+
+15
+00:00:49,290 --> 00:00:53,420
+modules? 
+Once again let's go back to our supermarket example. 
+In
+
+16
+00:00:53,420 --> 00:00:57,200
+a supermarket each section contains 
+highly related products,
+
+17
+00:00:57,210 --> 00:01:00,530
+so when you go to the fruit sectionyou only see fruits. 
+You don't
+
+18
+00:01:00,530 --> 00:01:04,170
+see cleaning products there. right?
+By the same token a module
+
+19
+00:01:04,170 --> 00:01:07,810
+should contain highly related objects.
+ These objects can be functions
+
+20
+00:01:07,820 --> 00:01:10,930
+classes, variables and so on.
+ So here. as an
+
+21
+00:01:10,930 --> 00:01:14,180
+example. I have defined two functions.
+ These functions have
+
+22
+00:01:14,180 --> 00:01:17,590
+no implementation. but they are both
+ highly related to the concept of
+
+23
+00:01:17,590 --> 00:01:21,770
+sales. We have calculate
+ tax and calculate shipping. So
+
+24
+00:01:21,770 --> 00:01:25,550
+let's go ahead and put these
+ functions in a separate module called Sales
+
+25
+00:01:27,240 --> 00:01:30,720
+. Here in the Project folder.
+ I'm going to add and you file and call
+
+26
+00:01:30,720 --> 00:01:34,550
+it Sales of Pie. This
+
+27
+00:01:34,550 --> 00:01:38,350
+is our sales module. Note that
+ in terms of naming convention just
+
+28
+00:01:38,350 --> 00:01:42,030
+like variables and functions.
+ we use all lower case letters. And
+
+29
+00:01:42,030 --> 00:01:46,260
+if you have multiple words to
+ separate them using an underscore No
+
+30
+00:01:47,440 --> 00:01:51,950
+. back to Abdel Pie.
+ Let's get all this card and
+
+31
+00:01:51,950 --> 00:01:55,140
+move it to sales module.
+ Okay. Now back to
+
+32
+00:01:55,140 --> 00:01:58,400
+that module we need
+ to import one or two
+
+33
+00:01:58,400 --> 00:02:01,870
+functions from our sales module.
+ There are a couple of different ways
+
+34
+00:02:01,900 --> 00:02:05,040
+to achieve this. You have
+ seen one way before. so we
+
+35
+00:02:05,040 --> 00:02:08,200
+start with from then.
+ we add the name of our
+
+36
+00:02:08,200 --> 00:02:11,750
+module. which is sales. Not that
+ it's not sales. That pie. it's
+
+37
+00:02:11,760 --> 00:02:15,850
+only the name of the file.
+ Okay. so from sales import
+
+38
+00:02:16,540 --> 00:02:19,850
+now. if you press control
+ and space here. you can
+
+39
+00:02:19,850 --> 00:02:23,210
+see all the objects defined
+ in this module. Currently. we
+
+40
+00:02:23,210 --> 00:02:26,860
+have these two functions. as well
+ as a bunch of variables that
+
+41
+00:02:26,860 --> 00:02:30,360
+python automatically creates.
+ We'll look at this later. so
+
+42
+00:02:30,360 --> 00:02:33,940
+let's say you want to
+ import the calculate shipping function. There
+
+43
+00:02:33,940 --> 00:02:37,070
+you go. Now we can
+ call this function just like a
+
+44
+00:02:37,070 --> 00:02:41,550
+function that we have defined in
+ our APP module. So calculate shipping
+
+45
+00:02:41,940 --> 00:02:45,490
+as simple as that. Now.
+ if you want to import multiple objects from
+
+46
+00:02:45,490 --> 00:02:48,850
+a module. you can separate
+ them using a comma. So here
+
+47
+00:02:48,850 --> 00:02:52,270
+we can also import calculate tags and then
+
+48
+00:02:52,270 --> 00:02:55,470
+call it here. Now there are some
+
+49
+00:02:55,470 --> 00:02:58,790
+tutorials out there that
+ teach you a shortcut to
+
+50
+00:02:58,790 --> 00:03:02,700
+import multiple objects. Using an asterisk. 
+While
+
+51
+00:03:02,700 --> 00:03:06,470
+this makes your code shorter,
+is actually a bad practice. because
+
+52
+00:03:06,470 --> 00:03:10,310
+in that module you could have
+ several different functions or variables and
+
+53
+00:03:10,310 --> 00:03:13,600
+if you blindly import them
+ into the current module, some
+
+54
+00:03:13,600 --> 00:03:16,730
+of those objects may
+ overwrite the objects with the
+
+55
+00:03:16,730 --> 00:03:20,150
+same name in the current module.
+ So don't import
+
+56
+00:03:20,160 --> 00:03:24,270
+all objects like this only
+ important the stuff that you need. So
+
+57
+00:03:24,270 --> 00:03:27,850
+let's put. calculate. shipping and calculate tax here
+
+58
+00:03:28,340 --> 00:03:31,950
+. There is also another
+ way to import a module instead
+
+59
+00:03:31,950 --> 00:03:35,680
+of starting with From you
+ start with import. and then we
+
+60
+00:03:35,680 --> 00:03:39,100
+add the name of the module.
+Now in this module we
+
+61
+00:03:39,100 --> 00:03:42,250
+have an object called sales
+ and we can use the
+
+62
+00:03:42,250 --> 00:03:45,700
+dot operator to access its members. So
+
+63
+00:03:45,700 --> 00:03:50,220
+our calculate shipping function is now
+ a method in this object. and
+
+64
+00:03:50,220 --> 00:03:54,010
+we call it like this.
+ So basically. you can either import the
+
+65
+00:03:54,010 --> 00:03:57,910
+entire module as an object
+ or you can import specific
+
+66
+00:03:57,920 --> 00:04:01,400
+objects from that module.
+ What approach you choose is purely your
+
+67
+00:04:01,400 --> 00:04:04,570
+personal preference, there is no right or wrong here. 
+There's not even
+
+68
+00:04:04,570 --> 00:04:08,040
+a performance difference because 
+whenever we wanna import one object
+
+69
+00:04:08,040 --> 00:04:11,520
+from a module that entire module needs to be loaded. 
+Now we can pick one object or every object in that module.
+

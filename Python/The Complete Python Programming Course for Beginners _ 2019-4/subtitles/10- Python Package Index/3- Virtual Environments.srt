@@ -1,0 +1,304 @@
+2
+00:00:04,000 --> 00:00:08,150
+In the last lecture you learned 
+how to install a package using pip. 
+Now
+
+3
+00:00:08,160 --> 00:00:11,880
+let's run pip list. You
+
+4
+00:00:11,880 --> 00:00:17,000
+can see currently we have installed requests version 2.20.1
+
+5
+00:00:17,000 --> 00:00:20,340
+There is a problem here.
+Let's say we have another
+
+6
+00:00:20,340 --> 00:00:23,770
+project and in that project we 
+want to use an earlier version of
+
+7
+00:00:23,770 --> 00:00:27,620
+this package. 
+With the current structure we cannot have two versions
+
+8
+00:00:27,680 --> 00:00:31,020
+of any of these packages side by side. 
+We can have only
+
+9
+00:00:31,020 --> 00:00:34,700
+a single version. 
+To solve this problem, we need to create an
+
+10
+00:00:34,710 --> 00:00:38,210
+isolated virtual environment for each application and
+
+11
+00:00:38,220 --> 00:00:42,520
+install these dependencies into that virtual isolated environment.
+
+12
+00:00:42,730 --> 00:00:46,010
+Let me show you how to do that. 
+So here in
+
+13
+00:00:46,010 --> 00:00:50,040
+the project folder,
+we run Python Dash m venv 
+
+14
+00:00:50,040 --> 00:00:53,840
+and then specify the name of a directory for containing
+
+15
+00:00:53,840 --> 00:00:57,950
+this virtual environment.
+By convention we call that env.
+
+16
+00:00:58,340 --> 00:01:01,830
+Now don't worry about memorizing any of these
+ because later I'm going to show you a
+
+17
+00:01:01,830 --> 00:01:05,110
+better and simpler way. 
+So technically you're never going to execute this
+
+18
+00:01:05,110 --> 00:01:08,180
+command after I show you the latest tools.
+I'm just going to
+
+19
+00:01:08,180 --> 00:01:11,990
+take you on a step by step journey.
+So you understand exactly how
+
+20
+00:01:11,990 --> 00:01:15,500
+these various tools come together. 
+So let's
+
+21
+00:01:15,500 --> 00:01:19,880
+go ahead and run this command. 
+Good. Now
+
+22
+00:01:19,880 --> 00:01:24,250
+here on the file Explorer panel,
+you can see we have a new directory and
+
+23
+00:01:24,840 --> 00:01:28,020
+in this directory we have this conflict file with these
+
+24
+00:01:28,020 --> 00:01:31,460
+parameters: 
+home is referencing the directory where my
+
+25
+00:01:31,460 --> 00:01:34,870
+python interpreter is installed,
+and here's
+
+26
+00:01:34,870 --> 00:01:39,260
+the version of that interpreter.
+So I'm using C Python version 3.7.
+
+27
+00:01:40,740 --> 00:01:44,360
+We also have this bin or binary directory where
+
+28
+00:01:44,360 --> 00:01:48,020
+we have a bunch of tools like pip, pip3, python,
+
+29
+00:01:48,150 --> 00:01:51,320
+python3 and so on.
+Next to that we have includ which is
+
+30
+00:01:51,320 --> 00:01:54,760
+currently empty. 
+You have lib, inside of
+
+31
+00:01:54,760 --> 00:01:58,060
+this directory we have python3.7 and inside
+
+32
+00:01:58,060 --> 00:02:01,650
+of that we have site-packages.
+Now this directory
+
+33
+00:02:01,650 --> 00:02:05,400
+structure is slightly different on Windows.
+So if you're a Windows user,
+
+34
+00:02:05,400 --> 00:02:08,680
+don't get hung up on these subtle differences. 
+Focus on the big
+
+35
+00:02:08,680 --> 00:02:12,370
+picture. 
+What matters here is that this site-packages
+
+36
+00:02:12,370 --> 00:02:15,780
+directory is where, we'll install the packages for
+
+37
+00:02:15,780 --> 00:02:19,110
+this application. 
+So a virtual directory is an
+
+38
+00:02:19,120 --> 00:02:22,940
+isolated environment where we have a specific Python interpreter,
+
+39
+00:02:22,940 --> 00:02:26,330
+in this case C Python version 3.7, as well
+
+40
+00:02:26,330 --> 00:02:30,090
+as a bunch of packages that this application needs. 
+Okay
+
+41
+00:02:30,090 --> 00:02:33,700
+now that we have a virtual environment, 
+we need to activate it. 
+Here
+
+42
+00:02:33,700 --> 00:02:37,550
+in the bin folder we have the script called activate. 
+We
+
+43
+00:02:37,550 --> 00:02:41,130
+need to run this from the terminal. 
+So back
+
+44
+00:02:41,130 --> 00:02:44,890
+in the terminal. 
+if you're on windows,
+you execute this script directly
+
+45
+00:02:44,900 --> 00:02:49,040
+So you reference it like this env backslash bin
+
+46
+00:02:49,050 --> 00:02:53,080
+back slash activate that bat. 
+If
+
+47
+00:02:53,080 --> 00:02:57,110
+you're on Mac or Linux,
+you will have to type source env
+
+48
+00:02:57,370 --> 00:03:01,390
+slash bin slash activate. 
+There
+
+49
+00:03:01,390 --> 00:03:05,480
+you go. 
+Now we can see the name of the currently active virtual
+
+50
+00:03:05,480 --> 00:03:08,770
+environment, in this case that is env. 
+We could
+
+51
+00:03:08,770 --> 00:03:12,240
+call this anything but by convention we use env. 
+So
+
+52
+00:03:12,240 --> 00:03:15,660
+now that we are in the virtual environment for this application, 
+let's go
+
+53
+00:03:15,660 --> 00:03:19,790
+ahead and install an earlier version of requests package. 
+So
+
+54
+00:03:19,790 --> 00:03:25,550
+pip install requests 2.9
+
+55
+00:03:25,620 --> 00:03:29,130
+point asterisk. 
+So
+
+56
+00:03:29,130 --> 00:03:32,840
+as you can see,
+we have installed requests version 2.9
+
+57
+00:03:32,840 --> 00:03:35,960
+point two which is different
+ from the request package that we
+
+58
+00:03:35,960 --> 00:03:39,380
+installed globally on this machine.
+This is specific to
+
+59
+00:03:39,380 --> 00:03:42,510
+this application. 
+Now back to our directory 
+
+60
+00:03:42,510 --> 00:03:46,300
+structure. 
+Now under the site-packages directory, we
+
+61
+00:03:46,300 --> 00:03:49,520
+have this new directory requests.
+ This is where we
+
+62
+00:03:49,520 --> 00:03:54,880
+have installed the request package for this application. 
+Finally
+
+63
+00:03:54,970 --> 00:03:58,620
+whenever we're done,
+we need to deactivate this virtual environment
+
+64
+00:03:58,630 --> 00:04:04,000
+So we run deactivate. 
+Done.
+
