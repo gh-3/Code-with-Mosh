@@ -1,0 +1,478 @@
+2
+00:00:04,410 --> 00:00:08,070
+In this lecture you're going to learn 
+how to work with PdF files in Python. As
+
+3
+00:00:08,070 --> 00:00:11,600
+I showed you earlier in the course,
+ there are several packages to work with pdf
+
+4
+00:00:11,600 --> 00:00:15,610
+files and unfortunately 
+most of these are either unstable or
+
+5
+00:00:15,610 --> 00:00:19,290
+poorly documented. 
+The one that is more popular is pypdf2
+
+6
+00:00:19,300 --> 00:00:22,430
+and that's what we're going to use in this lecture. 
+So here in
+
+7
+00:00:22,430 --> 00:00:26,650
+a brand new project under Terminal, let's install
+
+8
+00:00:27,140 --> 00:00:32,960
+pypdf2. Okay.
+
+9
+00:00:34,040 --> 00:00:37,480
+Now here in the app.py on the top, 
+let's import
+
+10
+00:00:37,480 --> 00:00:40,650
+pypdf2.
+ In this module we have a
+
+11
+00:00:40,650 --> 00:00:43,730
+few classes to work with PDF files. 
+let's take a
+
+12
+00:00:43,730 --> 00:00:47,540
+look. 
+We've got PdfFileReader, PdfFileWriter and
+
+13
+00:00:47,540 --> 00:00:51,200
+PdfFileMerger.
+I'm going to give you a quick overview of
+
+14
+00:00:51,200 --> 00:00:55,600
+each of these classes.
+Let's start with PdfFileReader. So
+
+15
+00:00:55,600 --> 00:00:58,880
+here when creating a PdfFileReader,
+ we need to pass a
+
+16
+00:00:58,880 --> 00:01:02,440
+file stream. 
+This is the object that the built in
+
+17
+00:01:02,450 --> 00:01:05,860
+open function returns. 
+So using the
+
+18
+00:01:05,860 --> 00:01:09,560
+open function, let's open, 
+here I got a couple of pdf files
+
+19
+00:01:09,570 --> 00:01:12,780
+first and second.
+You can download this as a
+
+20
+00:01:12,780 --> 00:01:16,230
+zip file attached to this lecture but
+there is nothing particularly about this. You
+
+21
+00:01:16,230 --> 00:01:19,870
+can use any PdF files you want. 
+So let's
+
+22
+00:01:19,870 --> 00:01:23,340
+open first.pdf. 
+It's very important to
+
+23
+00:01:23,350 --> 00:01:26,490
+open this file in the binary mode.
+ So as the
+
+24
+00:01:26,490 --> 00:01:29,860
+second argument, 
+we need to pass rb which is
+
+25
+00:01:29,860 --> 00:01:33,300
+short for read in binary.
+Now we get a file
+
+26
+00:01:33,300 --> 00:01:37,310
+stream object. 
+Let's use the with statement here. And
+
+27
+00:01:37,310 --> 00:01:41,510
+here's our file stream object.
+ So we pass this right
+
+28
+00:01:41,510 --> 00:01:44,870
+here and we get a file a
+
+29
+00:01:44,870 --> 00:01:48,270
+pdf file reader object.
+Now this reader object has
+
+30
+00:01:48,270 --> 00:01:52,700
+a few interesting members.
+ One of them is num pages
+
+31
+00:01:52,710 --> 00:01:56,280
+which returns the number
+ of pages in your pdf. Let's
+
+32
+00:01:56,280 --> 00:01:59,670
+print that. Yeah. so
+
+33
+00:01:59,670 --> 00:02:02,920
+in this file we have only a single page. 
+We
+
+34
+00:02:02,920 --> 00:02:06,020
+also have this method getPage that 
+takes a
+
+35
+00:02:06,020 --> 00:02:09,390
+page number, but more accurately 
+this parameter should
+
+36
+00:02:09,390 --> 00:02:13,090
+have been called Page Index because
+ the index of the first page
+
+37
+00:02:13,100 --> 00:02:16,910
+is zero. 
+So here we passed zero to get the first page. This
+
+38
+00:02:16,910 --> 00:02:20,210
+returns a page object. 
+This page
+
+39
+00:02:20,210 --> 00:02:24,710
+object has a few interesting members.
+ like rotate clockwise
+
+40
+00:02:24,720 --> 00:02:28,250
+as well as rotate counterclockwise. We also have
+
+41
+00:02:28,260 --> 00:02:32,350
+a scale as well as
+ scaled by a given factor or
+
+42
+00:02:32,360 --> 00:02:35,830
+scaled to a given width and height.
+ You can read about this
+
+43
+00:02:35,840 --> 00:02:39,080
+in the documentation for this package.
+ In this demo. I'm
+
+44
+00:02:39,080 --> 00:02:42,860
+going to use the rotate method.
+ So let's rotate this
+
+45
+00:02:43,540 --> 00:02:46,720
+90 degrees clockwise. 
+Now what you need to
+
+46
+00:02:46,720 --> 00:02:51,230
+understand here is that this
+ does not modify the original pdf
+
+47
+00:02:51,240 --> 00:02:54,860
+. This is only rotating
+ the page object in memory. So
+
+48
+00:02:54,860 --> 00:02:58,210
+we need to write this
+ to a separate pdf file. For
+
+49
+00:02:58,210 --> 00:03:02,180
+that we need a PdfFileWriter. 
+So PyPDF2
+
+50
+00:03:02,190 --> 00:03:06,230
+.PdfFileWriter. 
+Now
+
+51
+00:03:06,230 --> 00:03:10,130
+here we don't pass any arguments.
+It simply creates a writer object,
+
+52
+00:03:10,140 --> 00:03:13,700
+so we're dealing with a 
+writer object in memory, not a file on
+
+53
+00:03:13,700 --> 00:03:17,580
+disk. 
+So now we call 
+
+54
+00:03:17,590 --> 00:03:21,100
+writer.addPage and
+
+55
+00:03:21,100 --> 00:03:24,610
+then we pass this page object here.
+ This method will
+
+56
+00:03:24,620 --> 00:03:27,840
+add this page object at the
+ end of this new pdf in
+
+57
+00:03:27,840 --> 00:03:31,910
+memory. 
+We also have another method insert
+
+58
+00:03:31,920 --> 00:03:35,220
+page that takes an index. So if you
+
+59
+00:03:35,220 --> 00:03:38,740
+want to reorder PDFs, you can
+use this method to add pages at
+
+60
+00:03:38,740 --> 00:03:44,000
+specific indexes. 
+We also have insertBlankPage
+
+61
+00:03:44,000 --> 00:03:47,490
+that doesn't take any arguments. 
+So
+
+62
+00:03:47,500 --> 00:03:50,730
+let's regard this back to addPage and pass this
+
+63
+00:03:50,730 --> 00:03:54,070
+page object. 
+Now finally we need to write this
+
+64
+00:03:54,070 --> 00:03:57,450
+Pdf in memory to
+ a file on disk. For
+
+65
+00:03:57,450 --> 00:04:01,300
+that. we need another five stream
+ so we can use the with statement
+
+66
+00:04:01,300 --> 00:04:04,760
+here to open another file like
+
+67
+00:04:04,760 --> 00:04:08,210
+Rotated that PdF and as the second
+
+68
+00:04:08,210 --> 00:04:11,720
+argument. But it to pass w B.
+ which is short for write
+
+69
+00:04:11,730 --> 00:04:15,060
+binary. Very important to
+ pass this argument. Otherwise it's
+
+70
+00:04:15,060 --> 00:04:18,660
+not going to work.
+ Let's call this fine stream
+
+71
+00:04:19,040 --> 00:04:23,260
+output Now. Finally. we call writer that
+
+72
+00:04:23,260 --> 00:04:26,720
+. Write to this file strain. Let's
+
+73
+00:04:26,720 --> 00:04:30,680
+save the changes. 
+Run this program. So
+
+74
+00:04:30,680 --> 00:04:34,350
+here's my first pdf.
+ We have some basic text here. and
+
+75
+00:04:35,440 --> 00:04:38,630
+here's our rotated pdf.
+So as you can see with
+
+76
+00:04:38,630 --> 00:04:41,990
+Python, you can easily write
+ a script to iterate over all
+
+77
+00:04:41,990 --> 00:04:45,720
+the PDFs in the directory
+ and process them by rotating
+
+78
+00:04:45,720 --> 00:04:48,920
+them, scaling them, or combining them.
+ So let me show
+
+79
+00:04:48,920 --> 00:04:53,480
+you how to combine multiple
+ PDFs into a single PdF so
+
+80
+00:04:53,480 --> 00:04:57,020
+back to VSCode. 
+As I showed you earlier. in this module we
+
+81
+00:04:57,020 --> 00:05:00,840
+have this class PdfFileMerger and
+
+82
+00:05:00,840 --> 00:05:04,270
+we use this to merge multiple pdf files. 
+So let's
+
+83
+00:05:04,270 --> 00:05:08,170
+create a merger object. Now
+
+84
+00:05:08,170 --> 00:05:11,740
+let's say we have an array of file names. 
+
+
+85
+00:05:11,740 --> 00:05:15,940
+So file_names. 
+We set this to an array of two strings, 
+
+86
+00:05:15,940 --> 00:05:19,120
+first.pdf and second.pdf. 
+In a
+
+87
+00:05:19,120 --> 00:05:22,680
+real world application instead of 
+this hard coded area, you can iterate
+
+88
+00:05:22,680 --> 00:05:26,750
+over all the PDFs in the directory. 
+So here
+
+89
+00:05:26,750 --> 00:05:30,650
+we have all the final names.
+Let's iterate over this array. So
+
+90
+00:05:31,040 --> 00:05:35,060
+for file name in file names
+
+91
+00:05:36,140 --> 00:05:39,740
+we simply call merger.append and
+
+92
+00:05:39,740 --> 00:05:43,690
+pass this fine name as simple as that. So
+
+93
+00:05:43,690 --> 00:05:47,340
+up to this point we're merging
+ these PDFs in memory. Finally we
+
+94
+00:05:47,340 --> 00:05:51,160
+need to write the result to a file on disk. 
+And
+
+95
+00:05:51,940 --> 00:05:56,290
+that is pretty easy.
+So merger.write. Now
+
+96
+00:05:56,290 --> 00:05:59,890
+here we can pass a file
+ object or a string that specifies
+
+97
+00:05:59,890 --> 00:06:03,900
+the name of the file.
+ So let's call that combined the
+
+98
+00:06:03,900 --> 00:06:07,990
+PdF and run this program. So
+
+99
+00:06:07,990 --> 00:06:11,340
+here's our combined PdF.
+ It has two pages. The first page
+
+100
+00:06:11,340 --> 00:06:18,000
+comes from our first PdF,
+and here's the second page that 
+comes from the second pdf.
+

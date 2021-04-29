@@ -1,0 +1,206 @@
+2
+00:00:04,000 --> 00:00:08,000
+In this lecture we're going to have a
+ quick look at yelp a P I. So
+
+3
+00:00:08,000 --> 00:00:11,450
+if you search for Yelp API.
+ you can find this website yelp dot
+
+4
+00:00:11,450 --> 00:00:15,050
+com slash developers. Let's have a quick look
+
+5
+00:00:15,050 --> 00:00:18,790
+here. So we have this yelp fusion
+
+6
+00:00:18,800 --> 00:00:22,310
+. which is the
+ rest api for yelp. when
+
+7
+00:00:22,310 --> 00:00:25,850
+working with APIs quite
+ often you see this term rest. which
+
+8
+00:00:25,850 --> 00:00:30,050
+is basically a technical jargon
+ that stands for representational state
+
+9
+00:00:30,050 --> 00:00:33,320
+transfer. Basically. it's a
+ bunch of conventions and rules
+
+10
+00:00:33,320 --> 00:00:36,900
+that we have to follow to
+ build or consume APIs for
+
+11
+00:00:36,900 --> 00:00:40,850
+exchanging data. So let's take
+ a look at this yelp fusion
+
+12
+00:00:41,640 --> 00:00:46,970
+on this page. You should
+ see this documentation link. Here
+
+13
+00:00:46,970 --> 00:00:50,780
+we have various end points
+ for working with businesses. For example
+
+14
+00:00:50,780 --> 00:00:54,690
+. we have endpoints for
+ finding businesses by keyword location
+
+15
+00:00:54,690 --> 00:00:57,940
+category or using a phone number.
+ We also have
+
+16
+00:00:57,940 --> 00:01:02,060
+an endpoint forgetting details
+ about a particular business or
+
+17
+00:01:02,070 --> 00:01:05,690
+reviews. These are all business endpoints now on
+
+18
+00:01:05,690 --> 00:01:09,260
+the left side. If you look.
+ we also have 10
+
+19
+00:01:09,260 --> 00:01:13,250
+points for working with events
+ as well as categories. So
+
+20
+00:01:13,250 --> 00:01:17,560
+there are so many different things that we
+ can do with Yelp. a P I no
+
+21
+00:01:17,940 --> 00:01:23,810
+to get started. First.
+ we should create an app. So let's
+
+22
+00:01:23,810 --> 00:01:27,650
+give our application a name.
+ I'm gonna call this pie. Yup
+
+23
+00:01:29,040 --> 00:01:31,890
+. Now. if we do have a website.
+ we can put that here. But in this case
+
+24
+00:01:31,890 --> 00:01:35,740
+. we don't have a website.
+ We simply have a python program. Next
+
+25
+00:01:35,740 --> 00:01:39,960
+. We need to specify
+ the industry for this application. I'm
+
+26
+00:01:39,960 --> 00:01:43,240
+going to set that to business.
+ The next piece of
+
+27
+00:01:43,240 --> 00:01:47,060
+information admitted to supply is
+ the contact email and some description
+
+28
+00:01:47,440 --> 00:01:50,770
+. So I'm going to
+ type programming with Marsh at
+
+29
+00:01:50,770 --> 00:01:54,340
+gmail dot com and some description.
+ It doesn't really matter
+
+30
+00:01:54,340 --> 00:01:58,480
+. We can always come back and
+ change this in the future. So obviously
+
+31
+00:01:58,480 --> 00:02:01,570
+. we need to accept their terms and conditions.
+ And I don't want to
+
+32
+00:02:01,570 --> 00:02:05,220
+get any emails about their
+ product news and so on. So
+
+33
+00:02:05,330 --> 00:02:08,990
+let's go ahead with this and create
+
+34
+00:02:09,070 --> 00:02:12,850
+a new app. All right. Our applications created
+
+35
+00:02:13,230 --> 00:02:16,540
+Now we have a client ID that uniquely identifies our
+
+36
+00:02:16,540 --> 00:02:20,110
+application. This is like a
+ user name for an application. We
+
+37
+00:02:20,110 --> 00:02:23,780
+also have an API key.
+ which is kind of like a password for
+
+38
+00:02:23,780 --> 00:02:27,110
+an application. We'll need
+ this API key whenever we
+
+39
+00:02:27,110 --> 00:02:31,720
+want to talk to any of the
+ endpoints on Yell. This is for security. So
+
+40
+00:02:31,740 --> 00:02:35,500
+Yelp wants to know who's
+ calling their API endpoints. With
+
+41
+00:02:35,500 --> 00:02:39,500
+this basic information that we provided.
+ at least they have a contact information. They
+
+42
+00:02:39,500 --> 00:02:42,870
+know who is the creator of this application.
+ All right. we have created our
+
+43
+00:02:42,870 --> 00:02:51,000
+application. 
+Next I'm going to show you 
+How to send an http request to yelp API 
+to get the list of buisinesses.
+

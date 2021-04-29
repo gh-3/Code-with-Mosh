@@ -1,0 +1,301 @@
+2
+00:00:04,000 --> 00:00:07,740
+All right. 
+Now let's modify this page and
+add a link to each movie. 
+So we
+
+3
+00:00:07,740 --> 00:00:11,220
+can navigate and see its details. So
+
+4
+00:00:11,220 --> 00:00:14,410
+here on index dot html.
+ this is where we are rendering our
+
+5
+00:00:14,410 --> 00:00:17,700
+movies. Here's our first column
+ where we render the movie
+
+6
+00:00:17,700 --> 00:00:21,530
+title. Let's add an HTML anchor
+
+7
+00:00:21,530 --> 00:00:24,970
+here. So here
+
+8
+00:00:24,970 --> 00:00:29,180
+we set a trap to slash movies slash
+
+9
+00:00:29,190 --> 00:00:32,690
+. Now we want to render
+ the idea of the movie dynamically. So
+
+10
+00:00:32,690 --> 00:00:36,040
+once again we use
+ double Curly braces movie dot
+
+11
+00:00:36,040 --> 00:00:40,480
+Heidi and then we
+ move movie that title right
+
+12
+00:00:40,490 --> 00:00:43,600
+between the anchor tax. Save the
+
+13
+00:00:43,600 --> 00:00:46,890
+changes back here. Let's go to the movies
+
+14
+00:00:46,890 --> 00:00:50,840
+Page Refresh. So now we
+ have the links here. Beautiful.
+
+15
+00:00:50,850 --> 00:00:55,340
+We can click and 
+see the detail for each movie. 
+However while
+
+16
+00:00:55,340 --> 00:00:58,910
+this implementation works, it's not
+ the best way to reference URLs.
+
+17
+00:00:58,910 --> 00:01:02,310
+Because earlier I told
+ you that tomorrow it is possible that
+
+18
+00:01:02,310 --> 00:01:06,230
+we change all these URLs
+to something like this old
+
+19
+00:01:06,240 --> 00:01:09,710
+system slash movies. 
+Now technically we should not change
+
+20
+00:01:09,710 --> 00:01:13,220
+URLs because a URL is a contract of
+
+21
+00:01:13,220 --> 00:01:16,570
+an application. 
+So if we change URLs any applications that
+
+22
+00:01:16,580 --> 00:01:19,760
+depend on those URLs are going to break. 
+But you know
+
+23
+00:01:19,760 --> 00:01:23,040
+the real world is unpredictable.
+ so sometimes these things
+
+24
+00:01:23,040 --> 00:01:26,420
+happen. 
+So let me show you 
+a better way to reference the URL. 
+
+25
+00:01:26,420 --> 00:01:29,730
+Back to  our URLs module. 
+Earlier we 
+
+26
+00:01:29,730 --> 00:01:33,080
+assigned a name to each URL. 
+Now we can reference these
+
+27
+00:01:33,080 --> 00:01:36,510
+URLs using their names.
+ So back in the index at
+
+28
+00:01:36,510 --> 00:01:39,850
+HTML. let's delete what we have in
+
+29
+00:01:39,850 --> 00:01:43,100
+the h ref attribute. 
+Here we're going to use the
+
+30
+00:01:43,100 --> 00:01:46,390
+url template tag.
+So we had curly
+
+31
+00:01:46,390 --> 00:01:50,010
+braces. Percent and type. You are. This
+
+32
+00:01:50,010 --> 00:01:53,170
+is our URL template tag. 
+With this tag
+
+33
+00:01:53,170 --> 00:01:56,340
+we can get an actual URL like this. 
+So first we
+
+34
+00:01:56,340 --> 00:02:00,560
+pass the name of our URL, in this case movies_detail,
+
+35
+00:02:01,240 --> 00:02:04,460
+and then optionally we
+can pass any parameters if
+
+36
+00:02:04,460 --> 00:02:08,260
+they exist, In this case we want to pass movie.id.
+
+37
+00:02:09,440 --> 00:02:13,350
+Save the changes. 
+Back to the movies page. 
+Refresh.
+
+38
+00:02:13,740 --> 00:02:17,080
+We still get the same result. Beautiful. 
+Now let's
+
+39
+00:02:17,080 --> 00:02:21,120
+take this to the next level. 
+Back to the urls module. 
+Earlier
+
+40
+00:02:21,120 --> 00:02:24,600
+I told you that it's a
+ good practice to prefix all these names
+
+41
+00:02:24,610 --> 00:02:27,940
+with the name of our app like movies underline. 
+We did that,
+
+42
+00:02:27,940 --> 00:02:31,570
+so Django wouldn't accidentally pick 
+a URL with the same name from
+
+43
+00:02:31,570 --> 00:02:35,110
+a different app. 
+Just like how we name spaced our views. 
+So
+
+44
+00:02:35,110 --> 00:02:39,790
+this was a good practice. 
+However let me show you a better way. 
+Here
+
+45
+00:02:39,790 --> 00:02:43,390
+we can set a known variable, app underline
+
+46
+00:02:43,390 --> 00:02:47,370
+name, to the name of this app, lets say movies. 
+Django
+
+47
+00:02:47,370 --> 00:02:50,660
+is aware of this variable name.
+Now when we set this
+
+48
+00:02:50,660 --> 00:02:54,390
+app name here we don't
+ have to repeat movies underline
+
+49
+00:02:54,390 --> 00:02:57,670
+in multiple places. 
+Now here we have only two URL patterns. 
+It's
+
+50
+00:02:57,670 --> 00:03:00,370
+not a big deal. 
+But if you have a large number of URLs this
+
+51
+00:03:00,370 --> 00:03:03,660
+is going to get a little bit messy. 
+So let's delete
+
+52
+00:03:03,660 --> 00:03:08,250
+this and also here. Now
+
+53
+00:03:08,640 --> 00:03:12,550
+we go back to
+ our index dot html and
+
+54
+00:03:12,780 --> 00:03:16,830
+instead of using an underline, we use a colon. 
+When
+
+55
+00:03:16,830 --> 00:03:20,530
+Django sees this it knows that
+ we're talking about the movies app
+
+56
+00:03:20,540 --> 00:03:24,040
+and in that app we should have a URL named detail. 
+But
+
+57
+00:03:24,040 --> 00:03:27,280
+this will only work
+ if we set the app
+
+58
+00:03:27,280 --> 00:03:31,040
+name variable to movies.
+ So as you learn about Django. you
+
+59
+00:03:31,040 --> 00:03:34,420
+realize that there are various ways to
+ write less code. But of course that
+
+60
+00:03:34,420 --> 00:03:37,650
+means there are a lot of conventions
+ that you have to learn about. So
+
+61
+00:03:37,650 --> 00:03:41,540
+for sure there is a learning curve at the beginning.
+ But once you learn these conventions
+
+62
+00:03:41,550 --> 00:03:44,830
+you can quickly build applications
+ and deliver a lot in less time
+

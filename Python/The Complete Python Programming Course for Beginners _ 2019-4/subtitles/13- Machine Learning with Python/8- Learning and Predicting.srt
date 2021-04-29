@@ -1,0 +1,331 @@
+1
+00:00:04,240 --> 00:00:08,080
+The next step is to build a
+model using a machine learning algorithm. 
+There's
+
+2
+00:00:08,080 --> 00:00:11,760
+so many algorithms out there and 
+each algorithm has its pros and cons
+
+3
+00:00:12,010 --> 00:00:15,230
+in terms of the performance and accuracy.
+In this lecture we're
+
+4
+00:00:15,230 --> 00:00:18,790
+going to use a very
+simple algorithm called Decision Tree. 
+Now
+
+5
+00:00:18,790 --> 00:00:22,080
+the good news is that
+we don't have to explicitly program these
+
+6
+00:00:22,080 --> 00:00:25,610
+algorithms. 
+They're already implemented for
+us in the library called
+
+7
+00:00:25,620 --> 00:00:30,900
+scikit-learn.
+So here on the top from
+
+8
+00:00:30,910 --> 00:00:34,290
+sklearn.tree let's
+
+9
+00:00:34,290 --> 00:00:39,060
+import the DecisionTreeClassifier.
+
+10
+00:00:39,840 --> 00:00:43,590
+So sklearn is the package that comes with scikit-learn
+
+11
+00:00:43,590 --> 00:00:46,570
+library this is 
+the most popular machine learning library in
+
+12
+00:00:46,570 --> 00:00:50,190
+Python. 
+In this package we have a module called tree
+
+13
+00:00:50,460 --> 00:00:54,760
+and in this module we have
+a class called DecisionTreeClassifier. 
+This
+
+14
+00:00:54,760 --> 00:00:58,260
+class implements the decision tree algorithm. 
+Okay?
+
+15
+00:00:58,740 --> 00:01:02,260
+So now we need to
+ create a new instance of this class.
+
+16
+00:01:02,840 --> 00:01:06,840
+So at the end, 
+let's create an object called model
+
+17
+00:01:06,840 --> 00:01:11,900
+and set it to a new instance of DecisionTreeClassifier
+
+18
+00:01:11,840 --> 00:01:15,240
+like this. 
+So
+
+19
+00:01:15,240 --> 00:01:18,900
+now we have a model. 
+Next we need to train it, so it learns patterns
+
+20
+00:01:18,900 --> 00:01:23,130
+in the data. 
+And that is pretty easy.
+We call model dot
+
+21
+00:01:23,130 --> 00:01:26,790
+fit. 
+This method takes two data sets: 
+the input
+
+22
+00:01:26,790 --> 00:01:30,380
+set and the output set. 
+So they are
+
+23
+00:01:30,480 --> 00:01:34,450
+Capital X and y. 
+Now finally
+
+24
+00:01:34,450 --> 00:01:37,650
+we need to ask our model to make a prediction, 
+so we can ask it
+
+25
+00:01:37,660 --> 00:01:41,400
+What is the kind of music that a 21 year old male likes? 
+Now
+
+26
+00:01:41,400 --> 00:01:45,280
+before we do that
+let's temporarily inspect our
+
+27
+00:01:45,290 --> 00:01:49,460
+initial data set. That is music data. So
+
+28
+00:01:49,940 --> 00:01:53,230
+look what we got here.
+As I told you earlier I have
+
+29
+00:01:53,230 --> 00:01:56,840
+assumed that men between 20 and 25 like
+
+30
+00:01:56,840 --> 00:02:00,610
+hip hop music. 
+But here we only have three samples for
+
+31
+00:02:00,610 --> 00:02:04,270
+men aged 20, 23 and 25. 
+We
+
+32
+00:02:04,270 --> 00:02:07,550
+don't have a sample for a 21 year old men. 
+So if you ask our
+
+33
+00:02:07,550 --> 00:02:11,040
+model to predict the kind of music
+ that a 21 year old man likes? we
+
+34
+00:02:11,040 --> 00:02:15,150
+expected to say hip hop. 
+Similarly I've
+
+35
+00:02:15,150 --> 00:02:18,740
+assumed that women between 20
+and 25 like dance music. 
+But
+
+36
+00:02:18,740 --> 00:02:22,010
+we don't have a sample for
+a 22 year old female. 
+So once
+
+37
+00:02:22,010 --> 00:02:25,200
+again if you ask our model to
+ predict the kind of music that a
+
+38
+00:02:25,210 --> 00:02:29,650
+22 year old woman likes? 
+we expected to say dance. 
+So 
+
+39
+00:02:30,040 --> 00:02:33,350
+with these assumptions, 
+let's goahead and 
+ask our model to
+
+40
+00:02:33,350 --> 00:02:37,440
+make predictions. 
+So let's
+
+41
+00:02:37,440 --> 00:02:40,660
+remove the last line. 
+And instead we're
+
+42
+00:02:40,660 --> 00:02:44,440
+going to call model.predict. 
+This
+
+43
+00:02:44,440 --> 00:02:47,970
+method takes a two dimensional array. 
+So here's
+
+44
+00:02:47,970 --> 00:02:51,350
+the outer array. 
+In this array each element is an array.
+
+45
+00:02:51,840 --> 00:02:55,020
+So I'm going to pass another array here and 
+in this
+
+46
+00:02:55,020 --> 00:02:58,480
+array I'm going to pass a new input set, 
+a 21 year
+
+47
+00:02:58,480 --> 00:03:02,060
+old male, so 21 comma one. 
+That
+
+48
+00:03:02,060 --> 00:03:06,160
+is like a new record in this table. Okay? 
+So
+
+49
+00:03:06,160 --> 00:03:09,660
+this is one input set.
+Let's pass another input set for a 22
+
+50
+00:03:09,660 --> 00:03:13,250
+year old female. 
+So here's another array. 
+Here
+
+51
+00:03:13,250 --> 00:03:16,470
+we add 22 comma zero. 
+So we're
+
+52
+00:03:16,480 --> 00:03:19,940
+asking our model to make two predictions at the same time. 
+We
+
+53
+00:03:19,940 --> 00:03:23,560
+get the result and 
+store it in a variable called
+
+54
+00:03:23,560 --> 00:03:27,780
+predictions. 
+And finally let's inspect that in
+
+55
+00:03:27,780 --> 00:03:31,660
+our notebook. 
+Run. 
+Look
+
+56
+00:03:31,660 --> 00:03:35,210
+what we got. 
+Our model is saying that a 21
+
+57
+00:03:35,210 --> 00:03:38,640
+year old male likes hip hop and 
+a 22 year old female
+
+58
+00:03:38,640 --> 00:03:42,140
+likes dance music.
+So our model could successfully make
+
+59
+00:03:42,140 --> 00:03:45,370
+predictions here. Beautiful.
+But wait a second. 
+Building a
+
+60
+00:03:45,370 --> 00:03:48,940
+model that makes predictions accurately, 
+it's not always that easy. 
+As
+
+61
+00:03:48,940 --> 00:03:52,180
+I told you earlier after we build a model
+ we need to measure its
+
+62
+00:03:52,190 --> 00:03:55,730
+accuracy and 
+if it's not accurate enough,
+we should either fine
+
+63
+00:03:55,730 --> 00:03:58,940
+tun it or 
+build a model using a different algorithm. 
+So
+
+64
+00:03:58,940 --> 00:04:04,000
+in the next lecture 
+I'm going to show you 
+how to measure the accuracy of a model.
+

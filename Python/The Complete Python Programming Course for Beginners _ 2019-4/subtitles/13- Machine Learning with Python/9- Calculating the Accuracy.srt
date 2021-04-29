@@ -1,0 +1,509 @@
+1
+00:00:04,240 --> 00:00:08,120
+In this lecture I'm going to show you
+how to measure the accuracy of your models.
+
+2
+00:00:08,130 --> 00:00:11,690
+Now in order to do so,
+first we need to split our data set into
+
+3
+00:00:11,690 --> 00:00:15,580
+two sets: 
+one for training and 
+the other for testing. 
+Because
+
+4
+00:00:15,580 --> 00:00:18,940
+right now we're passing
+ the entire data set for
+
+5
+00:00:18,940 --> 00:00:22,530
+training the model and 
+we're using two samples for making
+
+6
+00:00:22,530 --> 00:00:25,940
+predictions. 
+That is not enough to calculate the accuracy of
+
+7
+00:00:25,940 --> 00:00:29,650
+a model. 
+A general rule of thumb is to allocate 70
+
+8
+00:00:29,650 --> 00:00:33,060
+to 80% of our data for training and 
+the other 20
+
+9
+00:00:33,060 --> 00:00:36,500
+to 30% for testing.
+Then instead of passing only
+
+10
+00:00:36,500 --> 00:00:39,920
+two samples for making predictions,
+ we can pass the data set
+
+11
+00:00:39,920 --> 00:00:43,500
+we have for testing, 
+we'll get the predictions and 
+then we can compare
+
+12
+00:00:43,500 --> 00:00:46,760
+these predictions with the actual
+ values in the test set.
+
+13
+00:00:47,240 --> 00:00:50,730
+Based on that we can calculate the accuracy. 
+That's really easy.
+
+14
+00:00:50,740 --> 00:00:54,060
+All we have to do is to
+import a couple of functions and 
+call them
+
+15
+00:00:54,060 --> 00:00:58,500
+in this code. 
+Let me show you.
+So first on the top from
+
+16
+00:00:58,510 --> 00:01:02,730
+sklearn.model_selection
+
+17
+00:01:02,730 --> 00:01:06,610
+module, we import a function called train
+
+18
+00:01:06,850 --> 00:01:10,160
+test split. 
+With this function,
+we can easily split our
+
+19
+00:01:10,160 --> 00:01:13,660
+data set into two sets: 
+for training and testing.
+
+20
+00:01:14,940 --> 00:01:18,320
+Now right here after we define X and
+
+21
+00:01:18,320 --> 00:01:23,030
+y sets we call this function.
+So train test
+
+22
+00:01:23,040 --> 00:01:27,550
+split. 
+We give it three arguments X, y
+
+23
+00:01:27,720 --> 00:01:31,260
+and a keyword argument that
+ specifies the size of our test
+
+24
+00:01:31,270 --> 00:01:35,270
+data set. 
+So test_size, we
+
+25
+00:01:35,270 --> 00:01:38,510
+set it to 0.2.
+So we are allocated 20% of
+
+26
+00:01:38,510 --> 00:01:42,080
+our data for testing. 
+Now this function returns
+
+27
+00:01:42,220 --> 00:01:46,090
+a tuple, 
+so we can unpack it into four variables right
+
+28
+00:01:46,090 --> 00:01:50,030
+here. 
+X_train,
+
+29
+00:01:50,140 --> 00:01:54,000
+X_test, y_train and
+
+30
+00:01:54,000 --> 00:01:57,110
+y_test. 
+So the
+
+31
+00:01:57,110 --> 00:02:00,530
+first two variables are the
+ input sets for training and
+
+32
+00:02:00,530 --> 00:02:04,010
+testing and 
+the other are the output
+
+33
+00:02:04,010 --> 00:02:07,630
+sets for training and testing. 
+Now when
+
+34
+00:02:07,630 --> 00:02:11,080
+training our model,
+instead of passing the entire data
+
+35
+00:02:11,080 --> 00:02:15,760
+set we want to pass only the training data set. 
+So X
+
+36
+00:02:16,090 --> 00:02:19,610
+_train and 
+y_
+
+37
+00:02:19,610 --> 00:02:23,210
+train. 
+Also when making predictions instead
+
+38
+00:02:23,210 --> 00:02:26,880
+of passing these two samples
+ we pass X_
+
+39
+00:02:26,960 --> 00:02:30,580
+test. 
+So that is the data set that contains input
+
+40
+00:02:30,580 --> 00:02:33,780
+values for testing. 
+Now we get the
+
+41
+00:02:33,780 --> 00:02:37,260
+predictions. 
+To calculate the accuracy,
+we simply have to compare
+
+42
+00:02:37,260 --> 00:02:41,000
+these predictions with the
+ actual values we have in
+
+43
+00:02:41,000 --> 00:02:44,900
+our output set for testing.
+That is very easy. 
+First
+
+44
+00:02:44,900 --> 00:02:48,420
+on the top we need to import a function. 
+ So from
+
+45
+00:02:48,430 --> 00:02:52,550
+sklearn.metrics import
+
+46
+00:02:53,240 --> 00:02:56,710
+accuracy_score. 
+Now at
+
+47
+00:02:56,710 --> 00:03:00,560
+the very end we call this function.
+So accuracy score
+
+48
+00:03:01,840 --> 00:03:05,450
+and give it two arguments: y
+
+49
+00:03:05,460 --> 00:03:09,360
+underline test which contains the expected values and
+
+50
+00:03:10,040 --> 00:03:13,960
+predictions which contains the actual values.
+
+51
+00:03:14,540 --> 00:03:18,160
+Now this function returns an
+ accuracy score between 0 to 1.
+
+52
+00:03:18,540 --> 00:03:22,350
+So we can store it here and simply
+
+53
+00:03:22,460 --> 00:03:25,870
+displayed on the console. 
+So let's go ahead
+
+54
+00:03:26,010 --> 00:03:29,940
+and run this program. 
+So the accuracy score
+
+55
+00:03:29,950 --> 00:03:33,410
+is one or 100%. 
+But if you run this one more time, we're
+
+56
+00:03:33,410 --> 00:03:36,790
+going to see a different result because 
+every time we split our data
+
+57
+00:03:36,790 --> 00:03:40,310
+set into training and test set, 
+we'll have different data set
+
+58
+00:03:40,320 --> 00:03:43,700
+because this function randomly
+ picks data for training and
+
+59
+00:03:43,700 --> 00:03:47,020
+testing. 
+Let me show you.
+So put the cursor in the
+
+60
+00:03:47,020 --> 00:03:50,180
+cell. 
+Now you can see this cell is activated. 
+Note that if you
+
+61
+00:03:50,180 --> 00:03:54,070
+click this button here, 
+it will run this cell and also insert
+
+62
+00:03:54,080 --> 00:03:57,660
+a new cell below this cell.
+Let me show you. 
+So if I go
+
+63
+00:03:57,670 --> 00:04:01,400
+to the second cell press escape button. 
+Now
+
+64
+00:04:01,400 --> 00:04:04,900
+we are in the command mode.
+Press d twice. Okay. 
+Now
+
+65
+00:04:04,900 --> 00:04:08,990
+it's deleted. 
+If we click the run button, you
+
+66
+00:04:08,990 --> 00:04:13,140
+can see this code was executed and 
+now we have a new cell. 
+So
+
+67
+00:04:13,140 --> 00:04:16,210
+if you want to run our first cell multiple times, 
+every time we have to click
+
+68
+00:04:16,210 --> 00:04:19,490
+this and then run it and
+then click again and run it. 
+It's
+
+69
+00:04:19,490 --> 00:04:22,840
+a little bit tedious. 
+So I show you a shortcut. 
+Activate the
+
+70
+00:04:22,840 --> 00:04:27,570
+first cell and press control and enter. 
+This
+
+71
+00:04:27,570 --> 00:04:31,130
+runs the current cell 
+without adding a new cell below
+
+72
+00:04:31,130 --> 00:04:34,690
+it. 
+So back here.
+Let's try it multiple times. Okay.
+
+73
+00:04:34,690 --> 00:04:38,520
+Now look, the accuracy dropped to 0.75. 
+It's
+
+74
+00:04:38,520 --> 00:04:42,270
+still good. 
+So the accuracy score here is somewhere between
+
+75
+00:04:42,280 --> 00:04:46,430
+75% to 100%. 
+But let me show you something. 
+If
+
+76
+00:04:46,430 --> 00:04:51,390
+I change the test size from 0.2 to 0.8,
+
+77
+00:04:51,400 --> 00:04:55,050
+so essentially we're using
+ only 20% more data for training
+
+78
+00:04:55,050 --> 00:04:58,960
+this model and 
+we're using the other 80% for testing. 
+Now
+
+79
+00:04:58,960 --> 00:05:03,140
+let's see what happens when we
+run the cell multiple times. 
+So control
+
+80
+00:05:03,140 --> 00:05:06,440
+and enter. 
+Look. 
+The accuracy immediately dropped to
+
+81
+00:05:06,440 --> 00:05:11,700
+0.4. 
+One more time. 
+Now 46%, 40%.
+
+82
+00:05:11,710 --> 00:05:15,600
+26%, It's really really bad. 
+The
+
+83
+00:05:15,600 --> 00:05:19,400
+reason this is happening is because
+we are using very little data for
+
+84
+00:05:19,400 --> 00:05:22,570
+training this model. 
+This is one of the key concept in
+
+85
+00:05:22,570 --> 00:05:26,040
+machine learning: 
+The more data we give to our model and the cleaner
+
+86
+00:05:26,040 --> 00:05:29,940
+the data is, we get the better result.
+So if you have duplicates, 
+
+87
+00:05:29,960 --> 00:05:33,220
+irrelevant data or incomplete values, our model will
+
+88
+00:05:33,220 --> 00:05:36,520
+learn bad patterns in our data.
+That is why it's really important to
+
+89
+00:05:36,520 --> 00:05:40,180
+clean our data before
+training our model. 
+Now let's
+
+90
+00:05:40,180 --> 00:05:43,320
+change this back to 0.2. 
+Run this
+
+91
+00:05:43,320 --> 00:05:47,950
+one more time. 
+Okay. Now the accuracy is one, 75%.
+
+92
+00:05:48,440 --> 00:05:51,740
+Now we dropped to 50%. 
+Again the reason this is happening is
+
+93
+00:05:51,740 --> 00:05:55,780
+because we don't have enough data.
+ Some machine learning problems require
+
+94
+00:05:55,830 --> 00:05:59,460
+thousands or even millions of
+samples to train a model.
+
+95
+00:05:59,840 --> 00:06:03,450
+The more complex the problem is, 
+the more data we need. 
+For example here
+
+96
+00:06:03,450 --> 00:06:06,590
+we're only dealing with the table of three columns, 
+but if you want
+
+97
+00:06:06,590 --> 00:06:09,900
+to build a model to tell if a
+picture is a cat or a dog or
+
+98
+00:06:09,900 --> 00:06:13,040
+a horse or a lion
+will need millions of pictures. 
+The
+
+99
+00:06:13,040 --> 00:06:21,000
+more animals we want to support,
+the more pictures we need. 
+In the next lecture we're gonna talk about model persistence.
+

@@ -1,0 +1,855 @@
+2
+00:00:04,000 --> 00:00:08,020
+let's say you get hired as a test
+ engineering at a Web development company. Every
+
+3
+00:00:08,020 --> 00:00:11,590
+day you have to test various
+ functions of a website. Doing so requires
+
+4
+00:00:11,600 --> 00:00:15,660
+a lot of manual and repetitive work.
+ You have to launch your browser directed
+
+5
+00:00:15,660 --> 00:00:19,470
+to the address of your website.
+ click on a few lengths here and there. perhaps
+
+6
+00:00:19,470 --> 00:00:23,230
+fill out the form and repeat
+ all these with different values several
+
+7
+00:00:23,230 --> 00:00:27,100
+times a day. This is very time consuming.
+ and it doesn't scale. So
+
+8
+00:00:27,110 --> 00:00:30,360
+that's where selenium comes in the picture.
+ With selenium. we
+
+9
+00:00:30,360 --> 00:00:34,060
+can automate our browser so we
+ can write a bunch of scripts to
+
+10
+00:00:34,060 --> 00:00:37,790
+test various functions of our website.
+ Here's an example. Let's
+
+11
+00:00:37,790 --> 00:00:41,050
+say we want to test the
+ logging functionality of git hub dot com
+
+12
+00:00:41,640 --> 00:00:44,830
+so we'll have to launch our browser
+ head over to get a job dot
+
+13
+00:00:44,830 --> 00:00:48,440
+com. click on the sign in link. then
+
+14
+00:00:48,440 --> 00:00:52,400
+fill out this form and
+
+15
+00:00:52,400 --> 00:00:55,660
+finally click on this avatar and check to
+
+16
+00:00:55,660 --> 00:00:59,050
+see if our user name is displayed
+ here or not. If not. that means
+
+17
+00:00:59,050 --> 00:01:02,220
+there's something wrong with the
+ log in functionality. So this
+
+18
+00:01:02,220 --> 00:01:05,690
+is an example of automated testing.
+ Now let me show you how
+
+19
+00:01:05,690 --> 00:01:09,430
+to do this with Python and Selenia. So
+
+20
+00:01:09,430 --> 00:01:13,160
+here in the brand new
+ project called Pi Selenium under Terminal
+
+21
+00:01:13,540 --> 00:01:17,350
+. let's run Pip and install Cellini. Um
+
+22
+00:01:21,040 --> 00:01:24,340
+. next we need a driver.
+ A driver is a piece of software to
+
+23
+00:01:24,350 --> 00:01:28,070
+automate a specific browser
+ for all these popular browsers
+
+24
+00:01:28,080 --> 00:01:31,230
+like chrome firefox and so on.
+ We have a web driver that we need to
+
+25
+00:01:31,230 --> 00:01:34,680
+manually download. So head over two
+
+26
+00:01:34,680 --> 00:01:39,820
+pi pi dot org
+ and search for selenium Here
+
+27
+00:01:39,820 --> 00:01:44,320
+it is Now on this page.
+ if you scroll down under
+
+28
+00:01:44,330 --> 00:01:47,880
+drivers. you can see this table.
+ So here are the drivers
+
+29
+00:01:47,880 --> 00:01:51,360
+for chrome edge Firefox and Safari. In
+
+30
+00:01:51,360 --> 00:01:54,960
+this demo I'm going to automate chrome
+ So let me show you how to install
+
+31
+00:01:54,970 --> 00:01:58,130
+Chrome Driver Let's go here Now you can
+
+32
+00:01:58,130 --> 00:02:02,790
+see the latest release
+ is Chrome Driver version 2.44
+
+33
+00:02:02,800 --> 00:02:06,010
+Let's click this here In this director.
+ you can see
+
+34
+00:02:06,010 --> 00:02:09,240
+the chrome driver for
+ various operating systems. I use
+
+35
+00:02:09,240 --> 00:02:12,480
+a Mac so I'm going
+ to download this here we get
+
+36
+00:02:12,480 --> 00:02:17,140
+a zip file Let's extracted here So
+
+37
+00:02:17,140 --> 00:02:20,340
+we get an executable called chromedriver. 
+We need
+
+38
+00:02:20,340 --> 00:02:23,550
+to put this somewhere in the path. 
+If you're on windows, you
+
+39
+00:02:23,550 --> 00:02:27,000
+need to put this 
+in the Windows folder on C Drive. 
+If
+
+40
+00:02:27,000 --> 00:02:31,380
+you're on Mac or Linux, you need
+to copy at your local BIN directory. 
+So
+
+41
+00:02:31,390 --> 00:02:35,460
+here on a terminal we can run.
+ Copy Chrome driver
+
+42
+00:02:35,840 --> 00:02:40,320
+two slash user slash local slash bin. That's
+
+43
+00:02:40,320 --> 00:02:43,480
+it. Now back to the school.
+ First. we need to
+
+44
+00:02:43,480 --> 00:02:47,360
+change our virtual environment to pi selenium. Beautiful
+
+45
+00:02:49,440 --> 00:02:52,870
+. Now on the top
+ from the selenium module. we
+
+46
+00:02:52,870 --> 00:02:56,370
+need to import the Web driver module in
+
+47
+00:02:56,370 --> 00:03:00,130
+this module. We have classes that
+ represent all the popular browsers like
+
+48
+00:03:00,130 --> 00:03:03,700
+Chrome, Firefox and so on.
+ So to automate chrome. we
+
+49
+00:03:03,700 --> 00:03:06,950
+need to create an instance
+ of the chrome class. So Web
+
+50
+00:03:06,950 --> 00:03:10,600
+driver dot chrome.
+ This is actually a class. but
+
+51
+00:03:10,600 --> 00:03:14,120
+we escaped. Intelligence shows it
+ as a module. so don't
+
+52
+00:03:14,120 --> 00:03:17,850
+worry about that. Let's create
+ an instance of chrome. and
+
+53
+00:03:17,850 --> 00:03:21,760
+this returns a browser object. Now
+
+54
+00:03:22,440 --> 00:03:26,110
+let's call browser that
+ get and head over to
+
+55
+00:03:26,120 --> 00:03:30,020
+https. get hub dot com. save
+
+56
+00:03:30,020 --> 00:03:34,750
+the changes and
+
+57
+00:03:34,750 --> 00:03:38,350
+run this program.
+ So this opened a new instance
+
+58
+00:03:38,350 --> 00:03:42,060
+of the chrome browser. and as you can see.
+ we're on git hub dot com. Beautiful
+
+59
+00:03:42,740 --> 00:03:46,000
+. Next minute to click on this
+ signing link So we need to tell
+
+60
+00:03:46,000 --> 00:03:49,210
+selenium to find this element
+ and click it. Now. when
+
+61
+00:03:49,210 --> 00:03:52,570
+it comes to finding elements.
+ we have a few different options. We can
+
+62
+00:03:52,570 --> 00:03:56,010
+find elements by their
+ i d class. name and
+
+63
+00:03:56,010 --> 00:04:00,390
+tag. So let's right click this element and
+
+64
+00:04:00,390 --> 00:04:03,850
+inspected. So here's our signing link
+
+65
+00:04:03,860 --> 00:04:07,500
+. We have an anchor with these classes.
+ None of these classes
+
+66
+00:04:07,510 --> 00:04:10,890
+uniquely identify this link because
+ we have header menu Dash
+
+67
+00:04:10,890 --> 00:04:14,620
+link which can be reused somewhere else.
+ We also have no underlying
+
+68
+00:04:14,620 --> 00:04:18,380
+as well as m R.
+ Three. So these are pretty generic classes
+
+69
+00:04:18,390 --> 00:04:22,040
+. so we cannot find
+ this element using its class. Also
+
+70
+00:04:22,040 --> 00:04:25,310
+. as you can see here.
+ we don't have the idea attribute. So
+
+71
+00:04:25,310 --> 00:04:28,500
+in this particular case. the only
+ way to find this element is
+
+72
+00:04:28,500 --> 00:04:31,750
+by its text. Let me show
+ you how to do that. So back
+
+73
+00:04:31,750 --> 00:04:36,200
+in the escort.
+ let's call browser that find element
+
+74
+00:04:36,210 --> 00:04:40,020
+by Lenk text. So
+
+75
+00:04:40,020 --> 00:04:43,320
+our link text is signing.
+ Make sure to spell this
+
+76
+00:04:43,330 --> 00:04:46,720
+exactly as you see on the Web page.
+ In this case. if we use a
+
+77
+00:04:46,720 --> 00:04:50,220
+lower case s. this method is
+ going to raise an exception. telling
+
+78
+00:04:50,220 --> 00:04:54,640
+us that there is no element
+ with this link text. So sign
+
+79
+00:04:54,640 --> 00:04:58,610
+in. Now this returns a web element. We
+
+80
+00:04:58,610 --> 00:05:02,460
+can get that and store it
+ in a variable like sign in link
+
+81
+00:05:04,740 --> 00:05:08,090
+. Now. to click this.
+ we can simply call the click Method. so
+
+82
+00:05:08,090 --> 00:05:11,570
+sinan dot click. save
+
+83
+00:05:11,570 --> 00:05:16,130
+the changes. Run the program again. 
+Okay,
+
+84
+00:05:16,130 --> 00:05:19,210
+we're heading over to get hub.
+ And now we are on the sign in
+
+85
+00:05:19,210 --> 00:05:22,720
+page. Beautiful. 
+The next step is to fill out this form. We're
+
+86
+00:05:22,720 --> 00:05:25,900
+going to follow the same approach.
+ so we inspect this
+
+87
+00:05:25,900 --> 00:05:30,450
+element. Right. Click and go to inspect. All
+
+88
+00:05:30,450 --> 00:05:33,750
+right. here's our input. Phil. As you
+ can see here. we have an i d
+
+89
+00:05:33,750 --> 00:05:37,500
+and this uniquely identify as this
+ element on our web page. So
+
+90
+00:05:37,500 --> 00:05:40,810
+this time we can find
+ this element by its ID. The
+
+91
+00:05:40,810 --> 00:05:45,170
+idea is. log in filled.
+ So I'm gonna copy this Now
+
+92
+00:05:45,170 --> 00:05:49,260
+. back in V s code.
+ let's call browser that find element
+
+93
+00:05:49,740 --> 00:05:53,260
+by i d. We passed the idea here
+
+94
+00:05:53,520 --> 00:05:57,760
+. This time we
+ get the user name box
+
+95
+00:05:58,140 --> 00:06:01,960
+. Okay. Now we want
+ to fill this out. So
+
+96
+00:06:01,960 --> 00:06:05,490
+here we have a method called
+ Sant Keys that simulates a user
+
+97
+00:06:05,490 --> 00:06:09,940
+typing in the text box.
+ So username box that
+
+98
+00:06:09,940 --> 00:06:13,720
+send keys. I'm going to type this
+
+99
+00:06:13,720 --> 00:06:17,750
+username ninja coder 22. Similarly
+
+100
+00:06:17,750 --> 00:06:20,920
+. we need to fill out
+ the password field. So here's our
+
+101
+00:06:20,920 --> 00:06:24,040
+password field. And as you can see.
+ the idea of
+
+102
+00:06:24,040 --> 00:06:27,460
+this field is passport.
+ So back in the U. S. Code
+
+103
+00:06:28,440 --> 00:06:31,880
+. I'm gonna duplicate there's two alliance and
+
+104
+00:06:31,880 --> 00:06:35,670
+change this to password box. Let's
+
+105
+00:06:35,670 --> 00:06:40,060
+change the idea to password and also
+
+106
+00:06:40,060 --> 00:06:43,800
+in line 12. Let's change
+ this to password box and
+
+107
+00:06:43,800 --> 00:06:47,330
+the password I'm going to pass
+ year is Today is Monday one
+
+108
+00:06:47,340 --> 00:06:51,120
+. Don't try this because I'm going
+ to change this after recording this lecture. What
+
+109
+00:06:51,120 --> 00:06:54,260
+. You can trade with your own
+ user and password. So we filled out the
+
+110
+00:06:54,260 --> 00:06:58,090
+farm. Now we need to submit it.
+ That is pretty easy. So
+
+111
+00:06:58,090 --> 00:07:03,110
+we call password box dot Submit. Save
+
+112
+00:07:03,110 --> 00:07:07,710
+the changes. Let's run the
+ program one more time. Okay
+
+113
+00:07:07,710 --> 00:07:11,150
+. We're going to get hub.
+ We logged in. and here
+
+114
+00:07:11,150 --> 00:07:14,430
+we are. So this
+ is my avatar. You saw
+
+115
+00:07:14,430 --> 00:07:18,580
+that happened pretty quickly. No human
+ can do it that fast. Finally
+
+116
+00:07:18,580 --> 00:07:21,870
+. to ensure that this
+ logging function works properly. You want
+
+117
+00:07:21,870 --> 00:07:25,190
+to make an assertion.
+ So when we click on this
+
+118
+00:07:25,190 --> 00:07:28,450
+avatar. we see our user
+ name displayed here. So here
+
+119
+00:07:28,450 --> 00:07:32,130
+we can make an assertion
+ that Ninja Coder 22 is rendered
+
+120
+00:07:32,130 --> 00:07:35,500
+in the html of this web page.
+ Here's one way. So
+
+121
+00:07:35,500 --> 00:07:38,900
+let me show you back
+ in the S code. So this
+
+122
+00:07:38,900 --> 00:07:42,620
+browser object has an attribute called Page Source
+
+123
+00:07:42,630 --> 00:07:45,910
+Again. we s code is making
+ a mistake here is displaying this
+
+124
+00:07:45,910 --> 00:07:49,070
+as a function. but it's
+ an attribute and this returns the
+
+125
+00:07:49,080 --> 00:07:52,680
+html content of this web page.
+ Now. in Python
+
+126
+00:07:52,680 --> 00:07:55,950
+. we have this
+ statement called Assert. and with
+
+127
+00:07:55,950 --> 00:07:59,780
+this. we can verify something.
+ For example. we want to verify that
+
+128
+00:07:59,780 --> 00:08:03,710
+Ninja Coder 22 is
+
+129
+00:08:03,720 --> 00:08:07,080
+in this string. So page source returns a
+
+130
+00:08:07,080 --> 00:08:11,040
+string that is the HTML content of this web page. Now
+
+131
+00:08:11,040 --> 00:08:14,490
+. if we do have ninja coder
+ 20 to hear our program will continue
+
+132
+00:08:14,490 --> 00:08:17,810
+execution without any problems. Otherwise. if we
+
+133
+00:08:17,810 --> 00:08:21,000
+don't have this text in our HTML.
+ this is going to throw an
+
+134
+00:08:21,000 --> 00:08:24,290
+exception. So to simulate that. let me change
+
+135
+00:08:24,290 --> 00:08:27,700
+22 to 23.
+ Obviously. we don't have this. So
+
+136
+00:08:27,700 --> 00:08:31,660
+let's run the program
+ and see what happens. So
+
+137
+00:08:31,660 --> 00:08:35,340
+we're gonna log in
+ one more time. Beautiful. Now
+
+138
+00:08:35,340 --> 00:08:38,620
+back Invesco here on the terminal.
+ You can see. we have an
+
+139
+00:08:38,620 --> 00:08:43,070
+assertion error. So we asserted
+ that Ninja Code A 23 is
+
+140
+00:08:43,080 --> 00:08:46,660
+in the html of this Web page.
+ and that assertion failed
+
+141
+00:08:47,340 --> 00:08:51,760
+. However. if we change
+ that Tunisia Coder 22 and
+
+142
+00:08:51,760 --> 00:08:57,340
+run the program again this
+
+143
+00:08:57,340 --> 00:09:00,980
+time we don't have any exceptions on the terminal.
+ So this is the idea behind
+
+144
+00:09:00,980 --> 00:09:04,450
+assertions and automated testing. Now this assertion
+
+145
+00:09:04,450 --> 00:09:08,560
+is kind of general. Let me
+ show you a more specific assertion. Back
+
+146
+00:09:08,560 --> 00:09:11,920
+to git hub dot com. 
+When we click on this avatar, we see this drop
+
+147
+00:09:11,920 --> 00:09:15,680
+down box. Let's right
+ click and this element and
+
+148
+00:09:15,680 --> 00:09:19,470
+inspected. Okay. here's our label. It's inside
+
+149
+00:09:19,610 --> 00:09:22,780
+of a strong tag.
+ and the strong tag is part of
+
+150
+00:09:22,780 --> 00:09:26,070
+this anchor. which is part of
+ this list item. To do a more
+
+151
+00:09:26,070 --> 00:09:30,000
+specific assertion. we can find this anchor look
+
+152
+00:09:30,000 --> 00:09:33,980
+at its inner HTML and
+ ensure that here we have Ninja
+
+153
+00:09:33,980 --> 00:09:37,420
+Coder 22. This is more
+ specific than searching for ninja
+
+154
+00:09:37,420 --> 00:09:41,420
+Coder 22 in the entire HTML. right. So
+
+155
+00:09:41,430 --> 00:09:45,410
+look at our anchor.
+ Here we have this class user profile
+
+156
+00:09:45,420 --> 00:09:49,390
+link so we can find
+ this element using its class so
+
+157
+00:09:49,390 --> 00:09:55,550
+browser dot find element by class user
+
+158
+00:09:55,550 --> 00:09:59,960
+profile link. So
+
+159
+00:09:59,960 --> 00:10:03,400
+let's store that in profile link. Now
+
+160
+00:10:03,400 --> 00:10:06,690
+we need to get the inner HTML of this link. so we call
+
+161
+00:10:06,690 --> 00:10:10,130
+profile link that get attribute. The
+
+162
+00:10:10,130 --> 00:10:13,320
+attribute name is inner HTML. Now
+
+163
+00:10:13,320 --> 00:10:17,250
+we get the result and
+ store it and link labour
+
+164
+00:10:19,040 --> 00:10:23,380
+. Finally. we can
+ assert that Ninja Coder 22
+
+165
+00:10:23,390 --> 00:10:27,950
+is in link label. So
+
+166
+00:10:27,950 --> 00:10:31,600
+that was the basics of using
+ selenium to automate our browser. Now
+
+167
+00:10:31,600 --> 00:10:35,270
+there are more advanced topics
+ about automatic testing with selenium that
+
+168
+00:10:35,270 --> 00:10:38,830
+goes beyond the scope of this course.
+ So if you want to learn more. search
+
+169
+00:10:38,830 --> 00:10:42,360
+for python selenium on this page. 
+
+170
+00:10:42,360 --> 00:10:46,480
+selenium-python.readthedocs.io ,
+we
+
+171
+00:10:46,480 --> 00:10:49,890
+can read about these advance scenarios. 
+The two sections that
+
+172
+00:10:49,890 --> 00:10:53,790
+I highly encourage you to
+ read about are Waits and Page Objects.
+
+173
+00:10:53,790 --> 00:10:56,880
+This is a pattern that
+ helps you organize your code in a
+
+174
+00:10:56,880 --> 00:11:00,160
+reusable fashion. and it's
+ extremely important when testing a
+
+175
+00:11:00,160 --> 00:11:03,840
+real application with tens
+ or hundreds of functions. You
+
+176
+00:11:03,840 --> 00:11:07,140
+don't want to write all your test
+ code in a linear fashion like this
+
+177
+00:11:07,150 --> 00:11:10,540
+. you want to organize it into
+ classes with methods that you can reuse
+
+178
+00:11:10,540 --> 00:11:13,870
+in many different scenarios.
+ and one last thing before we finish
+
+179
+00:11:13,870 --> 00:11:17,430
+this lecture. Whenever you're done
+ with your browser object. you
+
+180
+00:11:17,430 --> 00:11:21,100
+need to call the quit method. Otherwise.
+ you will end up with so many open browser
+
+181
+00:11:21,100 --> 00:11:24,970
+windows. So down the bottom 
+recall browser dot quit
+

@@ -1,0 +1,281 @@
+2
+00:00:04,000 --> 00:00:08,160
+In this lecture you're going to learn 
+how to share a base template across multiple apps.
+
+3
+00:00:08,640 --> 00:00:12,340
+So currently. in our movies app.
+ we have this base template. We
+
+4
+00:00:12,340 --> 00:00:16,060
+want to take this out of this
+ app and put it somewhere central. So
+
+5
+00:00:16,540 --> 00:00:19,600
+let's collapse this full there and create a
+
+6
+00:00:19,600 --> 00:00:24,550
+new folder in the root.
+ We're going to call that templates. Now
+
+7
+00:00:24,940 --> 00:00:29,160
+let's go to the movies app
+ and get this base template and
+
+8
+00:00:29,160 --> 00:00:32,980
+move it into the
+ new templates folder. So drag
+
+9
+00:00:32,980 --> 00:00:36,750
+and drop move Beautiful. Now
+
+10
+00:00:37,240 --> 00:00:41,140
+let's go to the index
+ template of the movies App. Currently
+
+11
+00:00:41,140 --> 00:00:44,580
+. we're referencing the base template
+ in the movies app. but this template
+
+12
+00:00:44,580 --> 00:00:48,060
+is no longer there. So let's remove the
+
+13
+00:00:48,060 --> 00:00:51,800
+prefix or name space. Save the changes back
+
+14
+00:00:51,800 --> 00:00:55,370
+in the browser.
+ Let's see what we get. So
+
+15
+00:00:55,380 --> 00:00:59,370
+Django cannot find this
+ based on HTML template. And
+
+16
+00:00:59,370 --> 00:01:02,920
+if you scroll up. you can see
+ the paths that jangle search for to
+
+17
+00:01:02,920 --> 00:01:06,400
+find this template. As you can
+ see in this list. Jenko by
+
+18
+00:01:06,400 --> 00:01:10,110
+default only looks inside the installed apps
+
+19
+00:01:10,120 --> 00:01:13,910
+. So currently. the installed
+ apps that have templates are admin
+
+20
+00:01:13,920 --> 00:01:17,410
+. auth and movies. But this templates folder
+
+21
+00:01:17,410 --> 00:01:20,550
+that we just created doesn't belong
+ to any apps. So we need
+
+22
+00:01:20,550 --> 00:01:24,580
+to tell Django to search in
+ this folder as well. So let's
+
+23
+00:01:24,590 --> 00:01:28,130
+open up our settings file
+ that is inside the widely app
+
+24
+00:01:28,140 --> 00:01:31,500
+. Or we can press command
+ on P on Mac or control P
+
+25
+00:01:31,500 --> 00:01:36,120
+on windows and search for settings pie. Now
+
+26
+00:01:36,120 --> 00:01:39,440
+. in this file. somewhere we have the
+
+27
+00:01:39,450 --> 00:01:42,580
+templates settings. There you go. So look at
+
+28
+00:01:42,580 --> 00:01:46,190
+these properties. The back end
+ is set to jangle the
+
+29
+00:01:46,190 --> 00:01:50,150
+template that back ends the jangle jangle templates
+
+30
+00:01:50,160 --> 00:01:53,470
+. So this is the engine
+ that comes with jangle that processes are
+
+31
+00:01:53,470 --> 00:01:57,020
+template files. This is the engine
+ that is aware of those double curly
+
+32
+00:01:57,020 --> 00:02:00,990
+brace syntax or the template tax. Okay. Now
+
+33
+00:02:00,990 --> 00:02:04,230
+. the second property here
+ is the directories that Django should
+
+34
+00:02:04,230 --> 00:02:07,560
+look for to find templates.
+ This is set to an empty list
+
+35
+00:02:07,560 --> 00:02:11,670
+by default. So we'll have to
+ add our new templates folder here. Below
+
+36
+00:02:11,670 --> 00:02:14,940
+that. we have up directory set to true.
+ And this is telling
+
+37
+00:02:14,940 --> 00:02:18,400
+Django to search in the
+ templates folder of the installed apps
+
+38
+00:02:18,840 --> 00:02:22,970
+. And finally we
+ have this context processors. So
+
+39
+00:02:22,970 --> 00:02:26,460
+by default we have
+ four context processors. The first
+
+40
+00:02:26,460 --> 00:02:30,080
+one debug adds debugging information to the context
+
+41
+00:02:30,080 --> 00:02:33,850
+object that is passed from
+ the view to the template. The
+
+42
+00:02:33,850 --> 00:02:37,130
+second processor. It's called Request and this adds
+
+43
+00:02:37,130 --> 00:02:40,250
+the request object to our
+ context so we can access it
+
+44
+00:02:40,250 --> 00:02:43,730
+in our templates. Similarly. we have another context
+
+45
+00:02:43,730 --> 00:02:46,960
+processor us. and this is
+ used to bring information about the
+
+46
+00:02:46,960 --> 00:02:51,100
+current user in our templates.
+ And finally we have messages and
+
+47
+00:02:51,100 --> 00:02:54,400
+this is used in scenarios where
+ the user creates a new movie and
+
+48
+00:02:54,400 --> 00:02:59,360
+we want to display a message like
+ the new movie was created successfully. So
+
+49
+00:03:00,340 --> 00:03:03,920
+back to the business Here.
+ here. we need to add our new templates
+
+50
+00:03:03,920 --> 00:03:07,730
+folder. So this is the
+ code that money too. right. We
+
+51
+00:03:07,730 --> 00:03:10,880
+need to go in the OS module.
+ From there we go to the
+
+52
+00:03:10,880 --> 00:03:14,560
+path module. Here we have
+ a function Join for joining
+
+53
+00:03:14,560 --> 00:03:19,030
+multiple paths. We want
+ to get the base directory
+
+54
+00:03:19,040 --> 00:03:22,400
+of this application. This is
+ a known predefined variable in
+
+55
+00:03:22,400 --> 00:03:26,320
+Django applications. Now we
+ want to join this with
+
+56
+00:03:26,320 --> 00:03:29,740
+the templates folder that we just created. Save
+
+57
+00:03:29,740 --> 00:03:33,540
+the changes. So with
+ this jangle will start searching
+
+58
+00:03:33,540 --> 00:03:36,770
+here. and if it can't find a template.
+ then it will look at the
+
+59
+00:03:36,770 --> 00:03:40,270
+installed applications. So back in the browser. Let's
+
+60
+00:03:40,270 --> 00:03:48,000
+refresh. 
+There you go.
+Now we have a base template that 
+we can share across multiple applications.
+

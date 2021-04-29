@@ -1,0 +1,459 @@
+1
+00:00:04,140 --> 00:00:07,430
+In this section I'm going to show
+you some of the most useful shortcuts in
+
+2
+00:00:07,430 --> 00:00:10,670
+jupyter. 
+Now the first thing I want you to pay attention to is
+
+3
+00:00:10,670 --> 00:00:13,990
+this green bar on the left.
+This indicates that
+
+4
+00:00:13,990 --> 00:00:17,330
+this cell is currently in the edit mode, so 
+we can write code
+
+5
+00:00:17,330 --> 00:00:21,050
+here. 
+Now if we press the escape key,
+
+6
+00:00:21,540 --> 00:00:25,040
+green turns to blue and
+that means this cell is currently in
+
+7
+00:00:25,040 --> 00:00:28,630
+the command mode.
+So basically the activated cell can
+
+8
+00:00:28,630 --> 00:00:32,360
+be either in the edit mode or 
+the command mode. 
+Depending
+
+9
+00:00:32,360 --> 00:00:35,770
+on the mode we have different shortcuts.
+So here we are currently
+
+10
+00:00:35,770 --> 00:00:39,490
+in the command mode.
+If we press h we
+
+11
+00:00:39,490 --> 00:00:43,860
+can see the list of all the keyboard shortcuts. 
+Right
+
+12
+00:00:43,860 --> 00:00:47,760
+above this list,
+ you can see Mac OS modifier
+
+13
+00:00:47,760 --> 00:00:51,600
+keys. 
+These are the extra keys that
+we have on a Mac keyboard. 
+If
+
+14
+00:00:51,600 --> 00:00:55,630
+you're a Windows user, 
+you're not going to see this. 
+So as an example here
+
+15
+00:00:55,640 --> 00:00:59,440
+is the shape of the command key,
+this is control, 
+this
+
+16
+00:00:59,440 --> 00:01:02,940
+is option and so on.
+With this guideline you can easily
+
+17
+00:01:02,940 --> 00:01:06,150
+understand the shortcut associated with each command. 
+Let me
+
+18
+00:01:06,150 --> 00:01:09,980
+show you. 
+So here we have all the commands when
+
+19
+00:01:09,980 --> 00:01:13,740
+a cell is in the command mode.
+For example we have this command: 
+
+20
+00:01:13,750 --> 00:01:17,110
+open the command palette.
+This is exactly like the command
+
+21
+00:01:17,110 --> 00:01:20,720
+palette that we have in VSCode.
+ Here's a shortcut to
+
+22
+00:01:20,730 --> 00:01:24,800
+execute this command that is 
+command, shift and f
+
+23
+00:01:24,800 --> 00:01:27,850
+Okay?
+So here we have lots of
+
+24
+00:01:27,850 --> 00:01:31,320
+shortcuts. 
+Of course you're not going to
+ use all of them all the time, But
+
+25
+00:01:31,320 --> 00:01:34,660
+it's good to have a quick look here
+to see what is available for you. 
+With
+
+26
+00:01:34,660 --> 00:01:37,920
+these shortcuts you can write code much faster.
+So let me show you some of
+
+27
+00:01:37,920 --> 00:01:41,860
+the most useful ones.
+I'm gonna close this. 
+Now
+
+28
+00:01:42,640 --> 00:01:46,130
+with our first cell in the command mode, 
+I'm going to press
+
+29
+00:01:46,140 --> 00:01:49,800
+b and this insert a new cell
+
+30
+00:01:49,810 --> 00:01:53,180
+below this cell. 
+You can also go back to our first
+
+31
+00:01:53,180 --> 00:01:56,350
+cell. 
+Press escape.
+Now the cell is in the
+
+32
+00:01:56,350 --> 00:01:59,550
+command mode. 
+We can insert an empty cell above this
+
+33
+00:01:59,550 --> 00:02:03,180
+cell by pressing a, so either a
+
+34
+00:02:03,190 --> 00:02:06,920
+or b, a for above
+and b for below. Okay? 
+Now
+
+35
+00:02:06,920 --> 00:02:11,180
+if you don't want this cell, 
+you can press d twice to delete it. 
+Like
+
+36
+00:02:11,180 --> 00:02:14,590
+this. 
+Now in this cell I'm going to print a hello world
+
+37
+00:02:14,590 --> 00:02:18,860
+message. 
+So print hello world.
+
+38
+00:02:19,540 --> 00:02:23,020
+Now to run the code in this cell, 
+we can click on
+
+39
+00:02:23,020 --> 00:02:27,160
+the run button here. 
+So here's
+
+40
+00:02:27,160 --> 00:02:30,920
+our print function and 
+right below that you can see the output
+
+41
+00:02:31,000 --> 00:02:34,280
+of this function. 
+But note that when you run a cell, this will
+
+42
+00:02:34,290 --> 00:02:37,610
+only execute the code in that cell. 
+In other
+
+43
+00:02:37,610 --> 00:02:41,130
+words the code in other cells will not be executed. 
+Let
+
+44
+00:02:41,130 --> 00:02:44,440
+me show you what I mean.
+So in the cell below this cell, I'm
+
+45
+00:02:44,440 --> 00:02:48,030
+going to delete the call to the describe method. 
+Instead I'm
+
+46
+00:02:48,030 --> 00:02:51,960
+going to print ocean. 
+Now
+
+47
+00:02:52,640 --> 00:02:55,790
+I'm going to put the cursor
+ back in this cell where we
+
+48
+00:02:55,790 --> 00:03:00,100
+print the hello world message
+and run this cell. 
+So
+
+49
+00:03:00,100 --> 00:03:03,680
+you can see hello world is displayed here,  but 
+the cell below
+
+50
+00:03:03,680 --> 00:03:06,970
+is still displaying that describe table.
+So we don't see
+
+51
+00:03:06,970 --> 00:03:10,520
+the changes here.
+Now to solve this problem we
+
+52
+00:03:10,520 --> 00:03:13,950
+can go to cell menu on the top and 
+run all 
+
+53
+00:03:13,950 --> 00:03:17,150
+cells together. 
+This can work for
+
+54
+00:03:17,150 --> 00:03:20,590
+small projects but 
+sometimes you're working with a large data set.
+
+55
+00:03:20,600 --> 00:03:23,860
+So if you want to run all these cells together, 
+it's going to take a lot
+
+56
+00:03:23,860 --> 00:03:27,080
+of time. 
+That is the reason jupyter saves the
+
+57
+00:03:27,090 --> 00:03:30,750
+output of each cell. 
+So we don't have to rerun that code 
+if it hasn't changed.
+
+58
+00:03:31,740 --> 00:03:35,130
+So this notebook file that we have here 
+includes our source code
+
+59
+00:03:35,140 --> 00:03:38,540
+organized in cells as well as 
+the output for each
+
+60
+00:03:38,540 --> 00:03:42,130
+cell. 
+That is why it's different
+ from a regular py file where
+
+61
+00:03:42,130 --> 00:03:45,820
+we only have the source code. 
+Here we also have auto
+
+62
+00:03:45,820 --> 00:03:50,290
+completion and intellisense. 
+So in this cell let's
+
+63
+00:03:50,290 --> 00:03:54,420
+call df data frame dot, now
+
+64
+00:03:54,420 --> 00:03:58,220
+if you press tab,
+ you can see all the attributes and methods
+
+65
+00:03:58,230 --> 00:04:02,150
+in this object. 
+So let's call describe.
+
+66
+00:04:02,740 --> 00:04:06,390
+Now with the cursor on the name of the method, 
+we can press shift and
+
+67
+00:04:06,390 --> 00:04:09,800
+tab to see this tool tip that 
+describes what this
+
+68
+00:04:09,800 --> 00:04:13,060
+method does and what parameter it takes.
+So here in front
+
+69
+00:04:13,060 --> 00:04:16,590
+of signature you can see the describe method. 
+These are the
+
+70
+00:04:16,590 --> 00:04:20,030
+parameters and their default value.
+And right below that
+
+71
+00:04:20,030 --> 00:04:23,480
+you can see the description
+of what this method does. 
+In
+
+72
+00:04:23,480 --> 00:04:26,990
+this case it generates descriptive statistics that summarize
+
+73
+00:04:26,990 --> 00:04:30,280
+the central tendency and so on. 
+Similar to
+
+74
+00:04:30,280 --> 00:04:34,400
+VSCode we can also convert
+ a line to comment by pressing command
+
+75
+00:04:34,520 --> 00:04:38,420
+and slash on Mac or
+control slash on windows. 
+Like
+
+76
+00:04:38,420 --> 00:04:41,530
+this. 
+Now this line is a comment.
+We can press the
+
+77
+00:04:41,530 --> 00:04:45,640
+same shortcut one more time
+to remove the comments. 
+So
+
+78
+00:04:45,640 --> 00:04:48,950
+these were some of the most useful shortcuts in Jupiter. 
+Now over
+
+79
+00:04:48,950 --> 00:04:52,750
+the next few lectures we're going to
+work on a real machine learning project. 
+But
+
+80
+00:04:52,750 --> 00:04:56,160
+before we get there let's delete all the cells here, 
+so we start with
+
+81
+00:04:56,170 --> 00:04:59,460
+only a single empty cell.
+So here in this
+
+82
+00:04:59,460 --> 00:05:02,630
+cell first I'm going to
+ press the escape button. Now the
+
+83
+00:05:02,630 --> 00:05:06,000
+cell is blue. 
+So we are in the command mode and 
+we can delete this
+
+84
+00:05:06,000 --> 00:05:09,580
+cell by pressing d twice.
+There you go. 
+Now
+
+85
+00:05:09,580 --> 00:05:13,080
+the next cell is activated and
+it's in the command mode. 
+So let's
+
+86
+00:05:13,080 --> 00:05:16,350
+delete this as well.
+We have two more cells
+
+87
+00:05:16,350 --> 00:05:20,200
+to delete. 
+There you go.
+And the last one like
+
+88
+00:05:20,200 --> 00:05:26,000
+this. 
+So now we have an empty notebook with a single cell.
+

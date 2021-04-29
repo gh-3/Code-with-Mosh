@@ -1,0 +1,791 @@
+2
+00:00:04,000 --> 00:00:07,860
+This vidly application we have built is useless, 
+if it's going to sit on our 
+
+3
+00:00:07,860 --> 00:00:11,320
+machine. 
+So we should upload or 
+deploy this somewhere where 
+
+4
+00:00:11,330 --> 00:00:14,830
+other people can use. 
+So in this lecture I'm going to show you 
+how to deploy 
+
+5
+00:00:14,830 --> 00:00:18,760
+this application to a very popular 
+cloud platform called 
+
+6
+00:00:18,770 --> 00:00:22,080
+heroku. 
+heroku is not the only platform for 
+
+7
+00:00:22,080 --> 00:00:25,540
+deploying Django applications.
+You can also use Google Cloud
+
+8
+00:00:25,540 --> 00:00:29,870
+Platform, Amazon Web services or AWS, Microsoft
+
+9
+00:00:29,880 --> 00:00:33,270
+Azure and so on. 
+The steps that I'm going to show you to deploy this
+
+10
+00:00:33,270 --> 00:00:36,400
+application, 
+some of them are specific to heroku. 
+So if 
+
+11
+00:00:36,400 --> 00:00:39,610
+you want to deploy this application to
+a different cloud platform, some of these
+
+12
+00:00:39,610 --> 00:00:42,710
+steps are going to be different.
+So the first thing I 
+
+13
+00:00:42,710 --> 00:00:46,710
+want you to do is to 
+open up your browser and
+
+14
+00:00:46,710 --> 00:00:50,400
+head over to heroku.com. 
+Now
+
+15
+00:00:50,400 --> 00:00:53,870
+go ahead and 
+create a new account.
+It's going to take only a few seconds and
+
+16
+00:00:53,870 --> 00:00:57,020
+you don't need to provide a credit card to sign up. 
+So you can try it
+
+17
+00:00:57,020 --> 00:01:01,190
+first and if you like it, 
+you can upgrade to get additional capacity. 
+The
+
+18
+00:01:01,190 --> 00:01:05,550
+next thing I want you to do is to install heroku cli. 
+So
+
+19
+00:01:06,240 --> 00:01:10,070
+search for heroku cli. 
+CLI stands
+
+20
+00:01:10,070 --> 00:01:13,250
+for Command Line Interface
+and it's basically a program that we
+
+21
+00:01:13,250 --> 00:01:16,450
+run on the command line on the terminal
+and with this program we're going
+
+22
+00:01:16,450 --> 00:01:19,700
+to perform some administrative tasks
+ such as logging into our
+
+23
+00:01:19,700 --> 00:01:23,220
+account, settings some configuration, looking at the logs
+
+24
+00:01:23,220 --> 00:01:26,490
+and so on. 
+So on this page you
+
+25
+00:01:26,490 --> 00:01:30,150
+should be able to find heroku cli
+for your operating system.
+
+26
+00:01:30,540 --> 00:01:34,390
+So you can see we have 
+various implementations for Mac, Windows
+
+27
+00:01:34,390 --> 00:01:38,210
+Linux and so on. 
+And the third thing I want you to install is git
+
+28
+00:01:38,220 --> 00:01:41,560
+which is the most popular Version Control System. 
+So with
+
+29
+00:01:41,560 --> 00:01:44,950
+that we can version our code.
+So we're going to check our code into
+
+30
+00:01:44,950 --> 00:01:48,280
+a repository and 
+every time we make changes to our code we're
+
+31
+00:01:48,280 --> 00:01:51,440
+going to commit that code to our repository.
+And with this we can
+
+32
+00:01:51,440 --> 00:01:54,740
+look at the history of changes to our code.
+We can see who has
+
+33
+00:01:54,740 --> 00:01:58,490
+made what changes when. 
+It's really really powerful. 
+Now
+
+34
+00:01:58,490 --> 00:02:02,110
+the explanation of git is beyond the
+ scope of this tutorial that requires its
+
+35
+00:02:02,110 --> 00:02:06,560
+own tutorial or course. 
+But in this tutorial you're going to learn the basics. 
+So
+
+36
+00:02:07,040 --> 00:02:11,750
+to download git, 
+head over to git-scm.com.
+
+37
+00:02:11,750 --> 00:02:15,230
+Here go to downloads
+
+38
+00:02:15,440 --> 00:02:18,820
+and download git installer for your
+
+39
+00:02:18,820 --> 00:02:22,050
+operating system. 
+So positive video. 
+Now do these three
+
+40
+00:02:22,050 --> 00:02:28,180
+steps. 
+When you're done, come back continue watching. 
+All
+
+41
+00:02:28,180 --> 00:02:32,530
+right. 
+First let's make sure that 
+you have installed all the prerequisit properly. 
+So
+
+42
+00:02:32,530 --> 00:02:36,560
+here on the terminal,
+let's run git --version.
+
+43
+00:02:37,740 --> 00:02:41,420
+So I have installed git version 2.19. 
+And also
+
+44
+00:02:41,420 --> 00:02:45,170
+heroku --version. 
+Currently
+
+45
+00:02:45,170 --> 00:02:49,060
+I have heroku version 6.13.
+But there's an update available.
+
+46
+00:02:49,070 --> 00:02:52,260
+I'm not going to worry about that in this tutorial. 
+So let's go ahead and prepare
+
+47
+00:02:52,260 --> 00:02:55,680
+this application for deployment. 
+Now first you need to install
+
+48
+00:02:55,680 --> 00:02:59,270
+a package called gunicorn
+which is a popular Web server for
+
+49
+00:02:59,270 --> 00:03:02,910
+python applications.
+Because the Web server that we have used so far is
+
+50
+00:03:02,910 --> 00:03:06,080
+purely a simple, lightweight, development server,
+we're not
+
+51
+00:03:06,080 --> 00:03:09,610
+going to use that in a production environment.
+In case you're not familiar with
+
+52
+00:03:09,610 --> 00:03:13,080
+the term production environment
+ that is basically the environment where
+
+53
+00:03:13,090 --> 00:03:16,400
+our customers access our application.
+In this case it's
+
+54
+00:03:16,400 --> 00:03:19,640
+going to be an application in heroku.
+We can also have a
+
+55
+00:03:19,640 --> 00:03:23,050
+testing environment where we give
+ our application to a limited number
+
+56
+00:03:23,050 --> 00:03:27,020
+of users for testing.
+So back to the business. 
+Let's
+
+57
+00:03:27,020 --> 00:03:31,830
+install Unicorn. 
+So pipenv install gunicorn.
+
+58
+00:03:31,810 --> 00:03:37,330
+Make sure to spell it properly. 
+All
+
+59
+00:03:37,330 --> 00:03:41,070
+right. 
+Next in the root of our project we
+
+60
+00:03:41,070 --> 00:03:44,410
+need to add a new file.
+So here in the root let's
+
+61
+00:03:44,410 --> 00:03:47,920
+add a new file Procfile. 
+Make
+
+62
+00:03:47,920 --> 00:03:51,130
+sure to spell this properly.
+ So P is capital and this
+
+63
+00:03:51,130 --> 00:03:54,960
+is really important. 
+So Proc which is short for process file.
+
+64
+00:03:55,340 --> 00:03:58,700
+This is a special file that
+heroku looks at to start our
+
+65
+00:03:58,700 --> 00:04:02,100
+application. 
+In this file we should write:
+
+66
+00:04:02,170 --> 00:04:06,760
+web collon gunicorn vidly
+
+67
+00:04:07,150 --> 00:04:10,280
+dot wsgi. 
+What is
+
+68
+00:04:10,280 --> 00:04:13,760
+going on here? 
+Well with this we're telling heroku that
+
+69
+00:04:13,760 --> 00:04:17,000
+we need a web process, that is
+a kind of process used for Web
+
+70
+00:04:17,000 --> 00:04:20,450
+applications. 
+And to start that process, 
+we need to load
+
+71
+00:04:20,700 --> 00:04:23,900
+gunicorn that is our Web server.
+And here is the name of
+
+72
+00:04:23,900 --> 00:04:28,040
+the module that gunicorn should
+use to start our application. 
+In
+
+73
+00:04:28,040 --> 00:04:31,470
+this case that is vidly.wsgi
+
+74
+00:04:31,470 --> 00:04:34,600
+So here's our vidly folder
+that is our vidly package. 
+In
+
+75
+00:04:34,600 --> 00:04:38,170
+this package we have
+this module wsgi
+
+76
+00:04:38,170 --> 00:04:42,760
+which is short for
+Web Server Gateway Interface. 
+So
+
+77
+00:04:43,440 --> 00:04:47,070
+save the changes. 
+Now the next step is to prepare the static files
+
+78
+00:04:47,070 --> 00:04:50,910
+for deployment. 
+Static files are like CSS files, images,
+
+79
+00:04:50,920 --> 00:04:54,080
+JavaScript files and so on.
+Now in this application we don't
+
+80
+00:04:54,080 --> 00:04:57,390
+currently have any static files.
+ But this admin interface that
+
+81
+00:04:57,390 --> 00:05:00,660
+we have used so far, 
+has a number of static files that give
+
+82
+00:05:00,660 --> 00:05:04,070
+this application this look and feel.
+So we need to bring those
+
+83
+00:05:04,070 --> 00:05:07,650
+static files into our current
+project and deploy them to heroku.
+
+84
+00:05:08,540 --> 00:05:12,530
+So back in VSCode. 
+First we need to go to vidly and
+
+85
+00:05:12,530 --> 00:05:16,210
+open up the settings module. 
+Now
+
+86
+00:05:16,210 --> 00:05:19,960
+let's go to the bottom.
+Here we have a variable STATIC
+
+87
+00:05:19,960 --> 00:05:24,760
+URL. 
+Next to that I'm going to define another variable STATIC
+
+88
+00:05:25,140 --> 00:05:28,810
+underlying ROOT. 
+Now we could put this variable anywhere
+
+89
+00:05:28,810 --> 00:05:32,200
+in this module. 
+It doesn't have to be right after STATIC_URL.
+
+90
+00:05:32,230 --> 00:05:35,440
+But to keep our code clean and well organized,
+I decided to put that
+
+91
+00:05:35,440 --> 00:05:38,630
+here. 
+Now we should set this variable to the path to
+
+92
+00:05:38,630 --> 00:05:42,000
+a folder that contains our static files. 
+Now
+
+93
+00:05:42,000 --> 00:05:45,250
+currently we don't have that folder here. 
+So let's
+
+94
+00:05:45,250 --> 00:05:48,330
+add that to the root of our project. 
+So here a
+
+95
+00:05:48,330 --> 00:05:51,560
+new folder static. 
+Now we
+
+96
+00:05:51,560 --> 00:05:54,970
+want to get the complete path to
+this folder and put it here. 
+We
+
+97
+00:05:54,970 --> 00:05:58,320
+don't wanna hard code that like C drive backslash whatever. 
+Because
+
+98
+00:05:58,320 --> 00:06:01,950
+this can change on different
+machines where we deploy our application.
+
+99
+00:06:02,440 --> 00:06:06,460
+So earlier we set the path to the templates folder.
+
+100
+00:06:06,840 --> 00:06:11,260
+Let's scroll up. 
+So here
+
+101
+00:06:11,260 --> 00:06:14,540
+it is. 
+Look at this templates variable. 
+Here we
+
+102
+00:06:14,540 --> 00:06:18,960
+set the path to the
+templates folder using this expression. 
+So
+
+103
+00:06:19,340 --> 00:06:22,800
+using the joint method
+ of the path class in os
+
+104
+00:06:22,800 --> 00:06:26,380
+module. 
+We're joining the base directory
+which is the path to
+
+105
+00:06:26,380 --> 00:06:29,470
+this project, with the templates folder.
+ So I want to
+
+106
+00:06:29,470 --> 00:06:32,840
+copy this and then back
+
+107
+00:06:32,840 --> 00:06:36,410
+here. 
+Paste it here and
+
+108
+00:06:36,410 --> 00:06:39,750
+then change templates to static. 
+All right.
+
+109
+00:06:39,760 --> 00:06:43,350
+Now let's save the changes.
+Open up the terminal window.
+
+110
+00:06:43,740 --> 00:06:49,000
+Run python manage.py collectstatic. 
+
+111
+00:06:48,320 --> 00:06:51,910
+This comment will look
+ at all the installed apps.
+
+112
+00:06:51,920 --> 00:06:55,400
+It will get all their static files and 
+copy them into
+
+113
+00:06:55,400 --> 00:06:59,250
+our static folder. 
+Let me show you.
+So let's go ahead. 
+As
+
+114
+00:06:59,250 --> 00:07:03,160
+you can see 119 static files were copied
+
+115
+00:07:03,280 --> 00:07:06,820
+to our static folder.
+Let's have a quick Look here. 
+So
+
+116
+00:07:06,820 --> 00:07:10,180
+here's our static folder. 
+Let me close that
+
+117
+00:07:10,180 --> 00:07:13,320
+and zoom in. 
+So here we
+
+118
+00:07:13,320 --> 00:07:16,700
+have this admin folder
+and inside this folder we have all
+
+119
+00:07:16,700 --> 00:07:19,990
+the static files for the admin app.
+So as you can see we
+
+120
+00:07:19,990 --> 00:07:23,220
+have quite a few number of CSS files as
+
+121
+00:07:23,220 --> 00:07:26,520
+well as fonts, images and JavaScript files. 
+Now in
+
+122
+00:07:26,520 --> 00:07:30,630
+our movies app we could also have
+ a bunch of CSS files, images, JavaScript
+
+123
+00:07:30,630 --> 00:07:34,370
+files and 
+then when we run collectstatic they will all end
+
+124
+00:07:34,370 --> 00:07:38,760
+up inside the static folder. Okay? 
+Now
+
+125
+00:07:39,140 --> 00:07:42,850
+to serve this static files in heroku,
+we should also install a
+
+126
+00:07:42,850 --> 00:07:46,160
+package called White Noise.
+ This step is specific to
+
+127
+00:07:46,160 --> 00:07:49,700
+Haruko, 
+so if you want to use a different cloud platform, 
+you may not necessarily have
+
+128
+00:07:49,700 --> 00:07:53,950
+to do this. 
+So one more time open
+
+129
+00:07:53,950 --> 00:08:02,900
+up the terminal and 
+run pipenv install whitenoise. 
+Now
+
+130
+00:08:02,900 --> 00:08:06,380
+here on pypi.org 
+let's search for white 
+
+131
+00:08:06,390 --> 00:08:09,840
+noise. 
+Here's the package. 
+So this package is 
+
+132
+00:08:09,840 --> 00:08:14,620
+used for serving static files.
+Let's go here and
+
+133
+00:08:14,630 --> 00:08:18,450
+find their documentation. 
+Now
+
+134
+00:08:18,450 --> 00:08:22,950
+let's go to using white noise with Django. 
+On
+
+135
+00:08:22,950 --> 00:08:26,480
+this page you can see the steps that
+you need to follow to use this package.
+
+136
+00:08:26,490 --> 00:08:30,110
+So first it's telling us
+ to set the STATIC_ROOT variable which
+
+137
+00:08:30,110 --> 00:08:33,420
+we already did. 
+Now this documentation is suggesting to use
+
+138
+00:08:33,420 --> 00:08:36,700
+the folder staticfiles.
+We call it static. 
+It doesn't
+
+139
+00:08:36,700 --> 00:08:40,250
+really matter. 
+Now the second step is to enable white
+
+140
+00:08:40,250 --> 00:08:43,940
+noise by adding it in
+the list of middleware. 
+So
+
+141
+00:08:43,940 --> 00:08:47,480
+in our settings file we have
+ this variable middleware which is set to 
+
+142
+00:08:47,480 --> 00:08:50,930
+a list of middleware objects.
+ These middleware objects are used as
+
+143
+00:08:50,930 --> 00:08:54,320
+part of processing the http requests that 
+we receive
+
+144
+00:08:54,320 --> 00:08:58,390
+in our web server. 
+So here we need to install this middleware: white
+
+145
+00:08:58,390 --> 00:09:02,300
+noise dot middleware dot white noise middleware. 
+With
+
+146
+00:09:02,300 --> 00:09:05,520
+this middleware, 
+we'll be able to serve static files. 
+So when
+
+147
+00:09:05,520 --> 00:09:08,770
+there is a request for a
+ static file like a CSS file or
+
+148
+00:09:08,770 --> 00:09:12,250
+an image, 
+this middleware will kick in and 
+do all the hard work.
+
+149
+00:09:12,740 --> 00:09:16,200
+So basically we need to copy this line and
+
+150
+00:09:16,200 --> 00:09:20,350
+put it right below security middleware. 
+So
+
+151
+00:09:20,840 --> 00:09:24,560
+back to the settings module.
+ Here's our middleware variable. The
+
+152
+00:09:24,560 --> 00:09:27,730
+first middleware is for security.
+ Right after that. we
+
+153
+00:09:27,730 --> 00:09:31,440
+need to add the white noise middleware. 
+So
+
+154
+00:09:31,440 --> 00:09:35,360
+copy, 
+also add a comma at the end. 
+Save the changes. Done.
+
+155
+00:09:36,240 --> 00:09:44,000
+So with these changes,
+we have prepared our application for deployment. 
+In the next lecture, I will show you 
+how to deploy this application to heroku.
+

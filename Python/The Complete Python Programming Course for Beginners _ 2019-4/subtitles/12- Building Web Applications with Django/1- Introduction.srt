@@ -1,0 +1,134 @@
+1
+00:00:00,240 --> 00:00:04,320
+in this
+
+2
+00:00:04,320 --> 00:00:07,750
+section you're going to learn how to
+ build a simple Web application using a
+
+3
+00:00:07,750 --> 00:00:11,390
+super popular Web framework called Django. I
+
+4
+00:00:11,390 --> 00:00:15,010
+love their tagline,
+The Web framework for perfectionists with
+
+5
+00:00:15,010 --> 00:00:18,540
+deadlines. 
+And that's absolutely true.
+ If you're a perfectionist and
+
+6
+00:00:18,540 --> 00:00:22,610
+want to build a real enterprise
+ Web application that is fast, secure,
+
+7
+00:00:22,620 --> 00:00:25,960
+and scalable, Jangle is your best friend. 
+Here's
+
+8
+00:00:25,960 --> 00:00:30,270
+some of the popular websites that
+ are built with Django like Instagram. Spotify
+
+9
+00:00:30,280 --> 00:00:33,850
+. YouTube. Washington Post.
+ Dropbox and so on. So
+
+10
+00:00:33,850 --> 00:00:37,530
+in this section we're going to use
+ Jango to build a simple imaginary video
+
+11
+00:00:37,530 --> 00:00:40,820
+rental application called lately. So here
+
+12
+00:00:40,820 --> 00:00:44,150
+we have a list of movies.
+ Each movie has properties like
+
+13
+00:00:44,150 --> 00:00:47,640
+title genre. number in stock and daily rental
+
+14
+00:00:47,640 --> 00:00:51,350
+rate. We can click on
+ each movie to see more details
+
+15
+00:00:51,360 --> 00:00:54,610
+Now I know this is not 
+a fascinating looking application because our
+
+16
+00:00:54,610 --> 00:00:58,120
+focus in this section is not
+ to build a full featured application that
+
+17
+00:00:58,120 --> 00:01:01,230
+looks fancy. 
+We just want to learn how jangle works. 
+So I'm
+
+18
+00:01:01,230 --> 00:01:04,950
+gonna walk you through the process
+of building applications with Django. 
+So
+
+19
+00:01:04,950 --> 00:01:08,540
+in this application we have these two pages. 
+We also have
+
+20
+00:01:08,550 --> 00:01:12,360
+an API that is available at api/movies.
+
+21
+00:01:12,940 --> 00:01:16,330
+So this API returns the list of our movies as JSON. 
+Now
+
+22
+00:01:16,330 --> 00:01:19,570
+if you're not familiar with APIs, don't worry 
+you're gonna learn everything from
+
+23
+00:01:19,570 --> 00:01:23,420
+scratch. 
+So in this section will build this application and
+
+24
+00:01:23,420 --> 00:01:27,360
+more importantly deploy it to
+ a cloud platform called Harajuku.
+
+25
+00:01:27,840 --> 00:01:31,410
+So you will see the process of 
+building a simplified web application from
+
+26
+00:01:31,420 --> 00:01:35,150
+A to Z. 
+Are you excited? 
+I hope you are. 
+And let's
+
+27
+00:01:35,150 --> 00:01:38,540
+get started.
+

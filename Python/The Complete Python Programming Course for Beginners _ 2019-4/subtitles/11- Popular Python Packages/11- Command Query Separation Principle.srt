@@ -1,0 +1,368 @@
+2
+00:00:04,600 --> 00:00:08,560
+In this lecture I'm going to talk about
+ a very important principle in computer programming
+
+3
+00:00:08,560 --> 00:00:12,110
+called Command Querey Separation. This principle states
+
+4
+00:00:12,120 --> 00:00:15,900
+that our methods or functions
+ should either be commands that
+
+5
+00:00:15,900 --> 00:00:20,030
+perform an action and change the
+ state of a system or queries
+
+6
+00:00:20,040 --> 00:00:23,760
+that return answer to the caller 
+without changing the state or
+
+7
+00:00:23,760 --> 00:00:27,480
+causing side effects. 
+So our methods should either be commands or
+
+8
+00:00:27,480 --> 00:00:31,290
+queries but not both.
+ Let's see this principle in action. So
+
+9
+00:00:31,290 --> 00:00:34,780
+in the last lecture you learned that
+ this workbook object has a method called
+
+10
+00:00:34,780 --> 00:00:38,360
+create sheet. This is an
+ example of a command method
+
+11
+00:00:38,370 --> 00:00:41,710
+because it's responsible for performing a task.
+ The task of
+
+12
+00:00:41,710 --> 00:00:45,000
+creating a sheet. 
+As a result of calling this method the
+
+13
+00:00:45,000 --> 00:00:49,040
+state of our system, in this case our workbook, changes. 
+So
+
+14
+00:00:49,040 --> 00:00:52,940
+every time we call it, we get
+ a new sheet in this workbook. Now
+
+15
+00:00:52,940 --> 00:00:56,700
+. let's take a look at an example
+ of a query method. So here we have this
+
+16
+00:00:56,700 --> 00:01:00,190
+sheet that represents the first
+ sheet in my workbook. In
+
+17
+00:01:00,190 --> 00:01:03,490
+the last lecture. you learned about
+ the cell method. We use this
+
+18
+00:01:03,490 --> 00:01:06,910
+to access a cell in this sheet.
+ This is an example of
+
+19
+00:01:06,910 --> 00:01:11,280
+a query method. 
+We use it to access a given cell. 
+However
+
+20
+00:01:11,470 --> 00:01:15,050
+this method violates the
+ command query separation principle. Let
+
+21
+00:01:15,050 --> 00:01:18,300
+me show you why. 
+I'm going to write a loop to print the value of
+
+22
+00:01:18,310 --> 00:01:22,160
+all the cells in
+ the first column. So for
+
+23
+00:01:22,170 --> 00:01:25,640
+role in range one. let's
+
+24
+00:01:25,640 --> 00:01:29,260
+say to 10. We want
+ to call sheet that cell
+
+25
+00:01:30,100 --> 00:01:34,500
+Castro here and one as the collar we
+
+26
+00:01:34,500 --> 00:01:38,110
+get the cell. Now we print sell that
+
+27
+00:01:38,110 --> 00:01:41,830
+value. 
+Let's run this program. So
+
+28
+00:01:41,830 --> 00:01:45,180
+here are the values we've got.
+transaction id followed by
+
+29
+00:01:45,180 --> 00:01:49,160
+three rows of data and
+a bunch of None objects. 
+Now
+
+30
+00:01:50,240 --> 00:01:53,810
+after this loop,
+I'm going to call sheet dot
+
+31
+00:01:53,810 --> 00:01:57,810
+appened to add a new row 
+with these values and
+
+32
+00:01:57,810 --> 00:02:01,670
+finally saved the workbook 
+as transactions2. 
+Let's
+
+33
+00:02:01,670 --> 00:02:05,940
+see what happens when we run this program. 
+So run. Okay. Now
+
+34
+00:02:05,940 --> 00:02:09,220
+I'm going to open up this transactions2. 
+Here's the
+
+35
+00:02:09,220 --> 00:02:12,820
+result. 
+This new row that we added ended up here. 
+But
+
+36
+00:02:12,820 --> 00:02:16,610
+didn't we expect it to be right here after the last row? 
+This
+
+37
+00:02:16,610 --> 00:02:21,250
+is the result of violation of 
+Command Query Separation principle. 
+Here's
+
+38
+00:02:21,250 --> 00:02:24,370
+the reason: in this for loop.
+ we're iterating over the
+
+39
+00:02:24,370 --> 00:02:27,760
+1st 10 rolls to get
+ the cell in the first column
+
+40
+00:02:28,440 --> 00:02:32,250
+. Now. in our original spreadsheet.
+ we only had four rows
+
+41
+00:02:32,940 --> 00:02:36,450
+. These are the roads. so the
+ heading row followed by three data rose
+
+42
+00:02:37,040 --> 00:02:41,000
+. So when we use the for loop
+ to iterate over the 1st 10 rolls. the
+
+43
+00:02:41,000 --> 00:02:44,400
+cell method magically created these new
+
+44
+00:02:44,400 --> 00:02:47,570
+cells. In other words. when we call this
+
+45
+00:02:47,570 --> 00:02:50,840
+method to access a cell
+ at a given coordinate. if that
+
+46
+00:02:50,840 --> 00:02:54,140
+cell doesn't exist. this method
+ will create it for us. And
+
+47
+00:02:54,140 --> 00:02:57,950
+this is the violation of
+ command query separation principle. because
+
+48
+00:02:57,950 --> 00:03:01,530
+this is a query method.
+ so it should not change the state of
+
+49
+00:03:01,530 --> 00:03:04,820
+our system in this case.
+ the workbook. In other words. you should not
+
+50
+00:03:04,820 --> 00:03:08,100
+have a side effect.
+ So the developer who implemented this
+
+51
+00:03:08,100 --> 00:03:11,240
+method probably had no idea
+ of this very important principle in
+
+52
+00:03:11,240 --> 00:03:14,980
+programming. So. as you can see.
+ the violation of this principle can
+
+53
+00:03:14,980 --> 00:03:18,220
+create unexpected issues in your program.
+ It makes it hard to
+
+54
+00:03:18,220 --> 00:03:21,390
+reason about your code and figure
+ out what is happening. So it
+
+55
+00:03:21,390 --> 00:03:24,630
+would be better if this method
+ raised an exception if we try to
+
+56
+00:03:24,640 --> 00:03:27,780
+access a cell that didn't exist similar to
+
+57
+00:03:27,780 --> 00:03:31,190
+accessing the force item in
+ a list of three items. Let
+
+58
+00:03:31,190 --> 00:03:35,500
+me show you. So here we
+ have a list of numbers. 123
+
+59
+00:03:35,580 --> 00:03:39,320
+If we try to access
+ the fourth element. what happens. Our
+
+60
+00:03:39,320 --> 00:03:42,870
+list will raise an exception.
+ Or. if you have a dictionary and
+
+61
+00:03:42,870 --> 00:03:46,400
+try to access an item
+ with an invalid key again
+
+62
+00:03:46,400 --> 00:03:49,990
+. our dictionary raises an exception.
+ It doesn't magically create
+
+63
+00:03:50,000 --> 00:03:53,180
+a key value pair with this key.
+ because here requiring our
+
+64
+00:03:53,180 --> 00:03:56,410
+dictionary so earlier in the course.
+ you learn that when we
+
+65
+00:03:56,410 --> 00:04:00,080
+use square brackets to get an item.
+ but it's key. A
+
+66
+00:04:00,080 --> 00:04:03,860
+magic method called __getitem__ will
+
+67
+00:04:03,860 --> 00:04:07,020
+be alled. This is a quarry method.
+ It should not change the
+
+68
+00:04:07,020 --> 00:04:10,380
+state of the system or it
+ should not have side effects. In other
+
+69
+00:04:10,380 --> 00:04:14,610
+words. asking a question should
+ not change the answer. So
+
+70
+00:04:14,640 --> 00:04:17,820
+I thought this was a great
+ opportunity for me to talk about the
+
+71
+00:04:17,820 --> 00:04:21,100
+Command Corey separation principle.
+ It's very important. make sure
+
+72
+00:04:21,100 --> 00:04:24,690
+your methods are either
+ commands or queries. And when
+
+73
+00:04:24,690 --> 00:04:28,080
+using open pie Excel.
+ be aware of how this cell
+
+74
+00:04:28,080 --> 00:04:31,550
+method works. 
+So if you generate an Excel spreadsheet and
+
+75
+00:04:31,550 --> 00:04:35,080
+see some blank rows or columns,
+go back, check your code and
+make sure you didn't accidently refrence those cells.
+

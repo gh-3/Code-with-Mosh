@@ -1,0 +1,633 @@
+2
+00:00:04,000 --> 00:00:08,930
+So to declare application to heroku, we need 
+to add it to a git repository. 
+
+3
+00:00:09,270 --> 00:00:12,870
+A git repository is basically a 
+ database that contains our source code 
+
+4
+00:00:12,880 --> 00:00:16,220
+and all its versions. 
+So every time we change our code, we 
+
+5
+00:00:16,220 --> 00:00:19,420
+commit it to this repository. 
+Now this repository is 
+
+6
+00:00:19,420 --> 00:00:22,550
+local on our machine. 
+So as part of
+
+7
+00:00:22,550 --> 00:00:26,210
+the deployment process, we need to 
+set up another git repository in 
+
+8
+00:00:26,210 --> 00:00:30,020
+heroku that mirrors our local repository. 
+When 
+
+9
+00:00:30,020 --> 00:00:34,000
+we are ready to deploy, we push
+the changes from our local repository to
+
+10
+00:00:34,000 --> 00:00:37,520
+the repository in heroku.
+Now heroku has a process that
+
+11
+00:00:37,520 --> 00:00:41,680
+sits in the background
+It's constantly watching this git repository. 
+Whenever
+
+12
+00:00:41,680 --> 00:00:45,100
+it detects changes in this repository, 
+it will check out the latest
+
+13
+00:00:45,100 --> 00:00:48,670
+source code from this repository and
+copy it to the right folders. 
+That
+
+14
+00:00:48,670 --> 00:00:52,870
+is a big picture. 
+Now let's see this process in action. 
+So
+
+15
+00:00:53,050 --> 00:00:56,340
+the first step is to add
+our code to a git repository. 
+So here
+
+16
+00:00:56,340 --> 00:00:59,720
+on the terminal run git init. 
+With
+
+17
+00:00:59,720 --> 00:01:04,260
+this we're initializing a git repository in the current folder. 
+Now
+
+18
+00:01:04,260 --> 00:01:08,010
+here you see this message
+ re initialized existing git repository, because
+
+19
+00:01:08,010 --> 00:01:11,660
+I already created a git repository
+ early on when I created this project.
+
+20
+00:01:12,140 --> 00:01:15,580
+So this is a command that
+ you run only once the very first time
+
+21
+00:01:15,590 --> 00:01:19,430
+you want to initialize a git repository. 
+Now every
+
+22
+00:01:19,430 --> 00:01:23,460
+time you make changese to your code, 
+you run git add period.
+
+23
+00:01:23,840 --> 00:01:27,380
+This adds all the modified
+ and new files in the current directory
+
+24
+00:01:27,380 --> 00:01:30,890
+and all its subdirectories to
+ the staging area and prepares them
+
+25
+00:01:30,890 --> 00:01:34,180
+to be included in the next commit. 
+So let's
+
+26
+00:01:34,180 --> 00:01:38,070
+go ahead. 
+Now all these files are in the staging area
+
+27
+00:01:38,150 --> 00:01:41,670
+and they will be included in the next commit. 
+So now
+
+28
+00:01:41,670 --> 00:01:45,260
+to commit, we run git commit -m
+
+29
+00:01:45,260 --> 00:01:49,210
+for adding a message to this commit,
+we're going to say initial
+
+30
+00:01:49,510 --> 00:01:53,370
+commit. 
+Next time we change our code,
+ we make small changes
+
+31
+00:01:53,380 --> 00:01:56,950
+and do a commit to git. 
+In that comment we should give a proper label
+
+32
+00:01:56,950 --> 00:02:00,110
+to that commit, so we know 
+what changes we made. 
+Did we
+
+33
+00:02:00,110 --> 00:02:03,330
+fix a bug? 
+Did we add a new feature?
+What did we do? 
+With this
+
+34
+00:02:03,330 --> 00:02:06,960
+we can build a history of changes to our code 
+which is very valuable.
+
+35
+00:02:07,540 --> 00:02:10,980
+So now we committed all these files in git. 
+So
+
+36
+00:02:10,980 --> 00:02:15,170
+our local git repository is now updated. 
+Beautiful. 
+Now
+
+37
+00:02:15,220 --> 00:02:18,760
+we're done with all the git work.
+Next we need to create a heroku app
+
+38
+00:02:18,770 --> 00:02:21,870
+using heroku cli. 
+So first we need to
+
+39
+00:02:21,870 --> 00:02:25,950
+login. 
+So run heroku loggin. 
+Type
+
+40
+00:02:25,950 --> 00:02:29,420
+your email, programwithmosh@gmail.com.
+
+41
+00:02:29,430 --> 00:02:33,000
+Obviously you're going to use your own not mine. 
+Then
+
+42
+00:02:33,000 --> 00:02:36,330
+enter your password. Okay. You
+
+43
+00:02:36,330 --> 00:02:40,340
+can see I'm logged in as programwithmosh@gmail.com. 
+So
+
+44
+00:02:40,340 --> 00:02:44,360
+next we run heroku create
+
+45
+00:02:44,740 --> 00:02:48,550
+to create a new heroku app. 
+So
+
+46
+00:02:48,560 --> 00:02:52,050
+heroku created an app and
+ it give it a random unique name.
+
+47
+00:02:52,050 --> 00:02:56,160
+In this case my app is limitless-crag-
+
+48
+00:02:56,170 --> 00:02:59,740
+337 Whatever. 
+On your machine is going to be different.
+
+49
+00:02:59,800 --> 00:03:03,290
+We can also give a name while creating heroku app. 
+For example
+
+50
+00:03:03,290 --> 00:03:07,120
+heroku create vidly, 
+but that name has to be unique. 
+And
+
+51
+00:03:07,120 --> 00:03:10,770
+here you can see the address of your app in the cloud. 
+So
+
+52
+00:03:10,770 --> 00:03:14,030
+currently if you head over to this address, 
+we see this
+
+53
+00:03:14,030 --> 00:03:18,210
+default page because we haven't
+deployed our application yet. 
+Now
+
+54
+00:03:18,210 --> 00:03:21,660
+when we run heroku create,
+three things happen: 
+First heroku
+
+55
+00:03:21,660 --> 00:03:25,280
+creates this app at this address.
+Second it creates a
+
+56
+00:03:25,280 --> 00:03:28,570
+git repository at this address,
+so it's git.heroku dot
+
+57
+00:03:28,570 --> 00:03:32,840
+com slash the name of
+our application dot git. 
+And
+
+58
+00:03:32,840 --> 00:03:36,320
+third it tells our current local git repository in
+
+59
+00:03:36,320 --> 00:03:39,760
+this folder about this new remote git
+
+60
+00:03:39,760 --> 00:03:43,680
+repository. 
+So now to deploy our application, all
+
+61
+00:03:43,680 --> 00:03:48,960
+we have to do is to run git push heroku
+
+62
+00:03:48,960 --> 00:03:52,780
+master. 
+This will push the changes in our local repository in
+
+63
+00:03:52,780 --> 00:03:56,560
+the master branch to the heroku repository. 
+Now
+
+64
+00:03:56,670 --> 00:04:00,670
+let's see what happens. 
+So
+
+65
+00:04:00,680 --> 00:04:04,240
+all our code is now pushed into heroku. 
+heroku detected a
+
+66
+00:04:04,240 --> 00:04:08,540
+python app. 
+It's installing Python version 3.7.1.
+
+67
+00:04:08,540 --> 00:04:11,860
+Then it detected the dependencies of
+
+68
+00:04:11,860 --> 00:04:15,280
+our application from our Pipfile.
+In this case we have a dependency to
+
+69
+00:04:15,280 --> 00:04:19,540
+django, whitenoise and a
+bunch of other packages. So
+
+70
+00:04:19,540 --> 00:04:23,590
+heroku is automatically downloading and 
+installing them from pypi. 
+Next
+
+71
+00:04:23,590 --> 00:04:26,970
+it's installing our SQLite database. 
+Now as
+
+72
+00:04:26,970 --> 00:04:30,400
+I told you before SQLite is 
+a very simple and lightweight database. 
+We
+
+73
+00:04:30,400 --> 00:04:33,940
+shouldn't really use it in a cloud
+ environment because it doesn't have security and
+
+74
+00:04:33,940 --> 00:04:37,320
+it cannot serve multiple users.
+But for the purpose of this tutorial. it
+
+75
+00:04:37,320 --> 00:04:41,150
+gets the job done. 
+In a real application you should use an enterprise database
+
+76
+00:04:41,150 --> 00:04:44,440
+engine like mySQL, Postgres, Microsoft sequel
+
+77
+00:04:44,440 --> 00:04:48,050
+server and so on. 
+But that's a topic for a different video. 
+So
+
+78
+00:04:48,440 --> 00:04:51,840
+now you can see our application 
+is deployed to heroku and
+
+79
+00:04:51,840 --> 00:04:55,230
+here is the address of our application.
+Now for some reason
+
+80
+00:04:55,230 --> 00:04:58,850
+that I don't know
+ this address magically changed while I
+
+81
+00:04:58,850 --> 00:05:02,560
+recording this video. 
+Let's not worry about that and go ahead. 
+Next we need
+
+82
+00:05:02,560 --> 00:05:06,310
+to tell heroku to allocate one
+Web server to this application. 
+So
+
+83
+00:05:06,310 --> 00:05:13,7700
+we run heroku ps:scale web=1
+So
+
+85
+00:05:13,770 --> 00:05:16,960
+we're allocating one Web server 
+through this application. 
+In the 
+
+86
+00:05:16,960 --> 00:05:20,420
+future if you have apopular application 
+with thousands or hundreds 
+
+87
+00:05:20,420 --> 00:05:23,980
+of thousands of users, 
+you can simply come back and allocate
+
+88
+00:05:23,990 --> 00:05:29,120
+more Web servers by increasing this number. 
+Okay.
+
+89
+00:05:29,120 --> 00:05:36,560
+we're done. 
+Now finally we can open our application 
+by running heroku open.
+This
+
+91
+00:05:36,560 --> 00:05:40,340
+simply opens a Web
+browser pointing to our application. 
+Now
+
+92
+00:05:40,350 --> 00:05:44,030
+by default you're going to
+get this error DisallowedHost. 
+This
+
+93
+00:05:44,030 --> 00:05:48,080
+is to prevent a common security attack called http Host
+
+94
+00:05:48,080 --> 00:05:51,580
+header attacks. 
+The explanation of that 
+goes beyond the scope of this tutorial.
+
+95
+00:05:51,580 --> 00:05:54,760
+You can read about it on your own.
+But to fix this problem, we
+
+96
+00:05:54,760 --> 00:05:58,330
+need to come back here.
+Open up our settings file and
+
+97
+00:05:58,330 --> 00:06:01,560
+search for allowed hosts. 
+Here
+
+98
+00:06:01,560 --> 00:06:05,430
+in this list we need to add 
+the address of our website. 
+That
+
+99
+00:06:05,430 --> 00:06:08,630
+is this address here.
+So this web page is telling us
+
+100
+00:06:08,630 --> 00:06:12,080
+you may need to add 'mighty-oasis ...
+whatever that is, on
+
+101
+00:06:12,080 --> 00:06:16,050
+your machine is going to be different.
+So let's copy the string and
+
+102
+00:06:16,050 --> 00:06:19,650
+add it here. 
+So note that this is a string. Okay.
+
+103
+00:06:20,040 --> 00:06:23,340
+Save the changes. 
+Now as I told you before every time you change your
+
+104
+00:06:23,340 --> 00:06:26,630
+code, you need to commit your
+ code to your local repository and when
+
+105
+00:06:26,630 --> 00:06:30,250
+you're ready to deploy, you need
+to push it to heroku. 
+So
+
+106
+00:06:31,040 --> 00:06:35,160
+back in the terminal. 
+To commit our code to our local repository,
+
+107
+00:06:35,160 --> 00:06:39,120
+type git add period. 
+git commit. give
+
+108
+00:06:39,120 --> 00:06:43,210
+it a proper descriptive
+ label like "Add Heroku app
+
+109
+00:06:43,260 --> 00:06:47,240
+to allowed hosts."
+Now
+
+110
+00:06:47,240 --> 00:06:50,890
+our local repository is updated.
+Before we get ready to deploy, you
+
+111
+00:06:50,890 --> 00:06:54,370
+might have to make several changes.
+Different developers in our team might
+
+112
+00:06:54,370 --> 00:06:57,460
+make tens or hundreds of commit.
+Now when we
+
+113
+00:06:57,460 --> 00:07:05,420
+are ready to commit, we simply
+run git push heroku master. 
+Alright.
+
+114
+00:07:05,430 --> 00:07:08,950
+heroku went through all these steps one more time. 
+Now let's
+
+115
+00:07:08,950 --> 00:07:12,080
+get back here and
+refresh this page. 
+There you
+
+116
+00:07:12,080 --> 00:07:15,360
+go. 
+This is our vidly application in heroku. 
+Let's go to
+
+117
+00:07:15,360 --> 00:07:19,210
+the list of movies. 
+So our SQLite databases also deployed.
+
+118
+00:07:19,220 --> 00:07:22,640
+In my local database I had two movies, 
+that's why they also
+
+119
+00:07:22,640 --> 00:07:26,250
+exist in the production environment.
+But these two databases are different
+
+120
+00:07:26,640 --> 00:07:31,930
+So here in our production environment
+ we can head over to admin and
+
+121
+00:07:32,140 --> 00:07:36,460
+log in with the same credentials and
+
+122
+00:07:36,460 --> 00:07:40,400
+then go to the list of movies
+and add a new movie here. 
+We
+
+123
+00:07:40,410 --> 00:07:43,630
+also have a fully working restful API 
+that we can
+
+124
+00:07:43,630 --> 00:07:47,020
+access at slash api slash
+
+125
+00:07:47,020 --> 00:07:50,910
+movies. 
+So here are the movies in our database represented
+
+126
+00:07:50,910 --> 00:07:59,000
+as JSON. 
+And that concludes our Django tutorial. 
+I hope you learned a lot and thank you for watching.

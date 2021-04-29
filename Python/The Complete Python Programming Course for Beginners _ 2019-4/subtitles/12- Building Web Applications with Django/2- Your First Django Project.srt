@@ -1,0 +1,321 @@
+2
+00:00:04,400 --> 00:00:07,620
+In this lecture you're going to learn
+how to install Django and create your
+
+3
+00:00:07,620 --> 00:00:11,350
+first Django project. 
+So here on the command line or terminal
+
+4
+00:00:11,740 --> 00:00:15,290
+let's create a new directory called vidly, that
+
+5
+00:00:15,290 --> 00:00:19,510
+is the name of our imaginary video rental application. Okay.
+
+6
+00:00:19,510 --> 00:00:23,110
+Now let's go in this directory and 
+install Django using
+
+7
+00:00:23,110 --> 00:00:27,170
+pipenv. 
+So pipenv install django
+
+8
+00:00:27,410 --> 00:00:30,700
+and let's set the version to 2.1, 
+to make sure we're
+
+9
+00:00:30,700 --> 00:00:34,250
+using the exact same version.
+So there are no surprises later on
+
+10
+00:00:34,260 --> 00:00:40,660
+as you go through the videos.
+Okay. let's go ahead. Beautiful.
+
+11
+00:00:41,040 --> 00:00:44,490
+Now we need to activate our virtual environment. 
+That is pretty easy.
+
+12
+00:00:44,500 --> 00:00:48,440
+So pipenv shell. Okay.
+
+13
+00:00:48,600 --> 00:00:52,420
+As you can see, the virtual environment 
+for this project is activated.
+
+14
+00:00:52,430 --> 00:00:56,180
+Beautiful. 
+So next we're going to use 
+a tool called Django Admin
+
+15
+00:00:56,210 --> 00:00:59,720
+for creating a new Django project. So let's
+
+16
+00:00:59,720 --> 00:01:03,650
+run django-admin startproject.
+
+17
+00:01:03,760 --> 00:01:08,090
+I'm going to call this project vidly, and
+
+18
+00:01:08,090 --> 00:01:11,210
+we want to create it in the current directory. 
+So let's add a
+
+19
+00:01:11,210 --> 00:01:14,810
+period at the end.
+When we run this command, django
+
+20
+00:01:14,810 --> 00:01:18,380
+admin is going to create a
+basic website with some boilerplate code.
+
+21
+00:01:18,600 --> 00:01:22,870
+You're going to see that in a second.
+So let's go ahead. Beautiful.
+
+22
+00:01:23,080 --> 00:01:27,360
+Now let's open this in VSCode. 
+So code period.
+
+23
+00:01:28,140 --> 00:01:31,560
+All right. 
+Here's what we got.
+Django Admin created this vidly
+
+24
+00:01:31,560 --> 00:01:34,820
+directory as well as this
+manage.py file. 
+We
+
+25
+00:01:34,820 --> 00:01:38,440
+use this manage.py
+to perform some administrative tasks, such
+
+26
+00:01:38,440 --> 00:01:42,900
+as starting our web server, or 
+migrating our database, 
+populating
+
+27
+00:01:42,900 --> 00:01:45,790
+it with data and so on. 
+You're going to learn about these as we go through
+
+28
+00:01:45,790 --> 00:01:49,390
+these tutorials. 
+Now what is this vidly directory and why
+
+29
+00:01:49,390 --> 00:01:52,780
+do we have two vidly directories, the outer one and
+
+30
+00:01:52,780 --> 00:01:56,350
+the inner one? 
+Well the other one is the one that we created and
+
+31
+00:01:56,350 --> 00:01:59,520
+that's the container for this project.
+The inner one is simply a
+
+32
+00:01:59,520 --> 00:02:02,690
+package that is essentially the core of our project. 
+It has a 
+
+33
+00:02:02,690 --> 00:02:06,400
+bunch of settings and
+that's where everything gets started. 
+So
+
+34
+00:02:06,410 --> 00:02:09,660
+what do we have here?
+We have __init__.py. 
+We have
+
+35
+00:02:09,660 --> 00:02:12,850
+seen this before. 
+This tells Python to treat this directory as
+
+36
+00:02:12,850 --> 00:02:16,420
+a package. 
+Below that we have settings up I
+
+37
+00:02:16,440 --> 00:02:20,260
+and in this file we have 
+various configuration settings for our project. Next
+
+38
+00:02:20,260 --> 00:02:24,500
+we have urls and this is 
+where we define various urln points
+
+39
+00:02:24,500 --> 00:02:28,000
+for our application.
+And finally we have wsgi
+
+40
+00:02:28,000 --> 00:02:31,440
+which is short for 
+Web server Gateway interface. The
+
+41
+00:02:31,440 --> 00:02:34,970
+purpose of this file is
+to represent a standard interface between
+
+42
+00:02:34,970 --> 00:02:38,150
+applications written in python and Web servers. 
+That is
+
+43
+00:02:38,150 --> 00:02:41,340
+an advanced topic and goes beyond
+the scope of this tutorial. 
+So for
+
+44
+00:02:41,340 --> 00:02:44,880
+now don't worry about it. 
+Now we're going to use this manage.py to
+
+45
+00:02:44,880 --> 00:02:48,500
+start our development Web server.
+So open up manage.py.
+
+46
+00:02:48,500 --> 00:02:51,650
+Now with our python code open In VSCode,
+
+47
+00:02:51,810 --> 00:02:55,410
+we can select our Python interpreter.
+So click this python on
+
+48
+00:02:55,410 --> 00:02:59,280
+the status bar. 
+This is the Python interpreter that is installed globally.
+
+49
+00:02:59,360 --> 00:03:02,830
+We need to change this to the Python interpreter installed in
+
+50
+00:03:02,830 --> 00:03:06,440
+our virtual environment that is this one here. We
+
+51
+00:03:06,440 --> 00:03:09,980
+get this familiar message:
+Linter pylint is not installed. 
+So
+
+52
+00:03:09,980 --> 00:03:15,360
+let's go ahead and install that. 
+All
+
+53
+00:03:15,360 --> 00:03:19,650
+right. 
+Now in this terminal window with 
+vidly Virtual environment activated,
+
+54
+00:03:20,140 --> 00:03:27,000
+let's run python or python3 manage.py runserver. Now
+
+56
+00:03:27,000 --> 00:03:31,060
+by default this is going to
+start a development server on Port 8000.
+
+57
+00:03:31,070 --> 00:03:34,550
+If you have an application that
+is already listening on that port, you
+
+58
+00:03:34,550 --> 00:03:37,940
+can specify a different port number here.
+In this tutorial, I'm
+
+59
+00:03:37,940 --> 00:03:42,270
+going to go with the standard port.
+so let's run this. Okay.
+
+60
+00:03:42,270 --> 00:03:46,290
+You get this warning:
+you have 15 unapplied migration(s).
+
+61
+00:03:46,300 --> 00:03:49,420
+Don't worry about that. 
+We're going to get to that shortly. 
+So as you can
+
+62
+00:03:49,420 --> 00:03:53,070
+see, we have a web server 
+listening at this address and
+
+63
+00:03:53,070 --> 00:03:56,510
+we can stop it at any
+time by pressing control z. 
+So
+
+64
+00:03:56,510 --> 00:03:59,950
+now let's navigate to this address.
+All right. 
+Here's
+
+65
+00:03:59,950 --> 00:04:03,680
+our first Django project. Beautiful. 
+Over the next few lectures we're
+
+66
+00:04:03,680 --> 00:04:11,000
+going to modify this application bit by bit and 
+implement our imaginary video rental application.
+

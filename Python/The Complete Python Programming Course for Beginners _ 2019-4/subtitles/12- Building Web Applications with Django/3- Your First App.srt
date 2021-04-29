@@ -1,0 +1,296 @@
+2
+00:00:04,000 --> 00:00:07,910
+In Django a project can contain multiple apps. 
+These
+
+3
+00:00:07,910 --> 00:00:11,060
+apps don't represent an entire application.
+They represent a
+
+4
+00:00:11,060 --> 00:00:14,850
+small part of an application that
+is focused on one functional area.
+
+5
+00:00:15,340 --> 00:00:19,180
+For example let's say we're going
+ to build a website like Amazon. Amazon
+
+6
+00:00:19,180 --> 00:00:23,290
+has a lot of different functional areas,
+such as customer service, orders,
+
+7
+00:00:23,360 --> 00:00:27,140
+shipping and so on.
+Each functional area includes a
+
+8
+00:00:27,140 --> 00:00:31,030
+bunch of highly related functions.
+So with this architecture we
+
+9
+00:00:31,030 --> 00:00:34,930
+can break down a large
+ complex project into smaller, more
+
+10
+00:00:34,930 --> 00:00:38,190
+manageable and more maintainable apps. 
+Also we
+
+11
+00:00:38,190 --> 00:00:41,560
+can reuse these apps in other Django projects. 
+For
+
+12
+00:00:41,560 --> 00:00:44,960
+example we can build an app
+ that represents a blog and then
+
+13
+00:00:44,960 --> 00:00:49,060
+reuse this app in any
+ websites that needs a blog. Okay.
+
+14
+00:00:49,440 --> 00:00:53,390
+So in this lecture we're going
+to create a new app called Movies. In
+
+15
+00:00:53,390 --> 00:00:56,570
+this small app we're going to 
+have all the functionality for displaying the
+
+16
+00:00:56,570 --> 00:01:00,360
+list of the movies as well as
+ the details for a given movie. So
+
+17
+00:01:00,740 --> 00:01:04,150
+let's open up a terminal window.
+First we need to stop our
+
+18
+00:01:04,150 --> 00:01:07,950
+development server so control c. Now
+
+19
+00:01:07,950 --> 00:01:11,460
+here. let's run python. Manage that
+
+20
+00:01:11,460 --> 00:01:14,630
+pie. Start up and we're going
+
+21
+00:01:14,630 --> 00:01:17,930
+to call that app movies.
+ All right. let's go
+
+22
+00:01:17,930 --> 00:01:21,170
+ahead. 
+So this created a
+
+23
+00:01:21,170 --> 00:01:24,820
+new directory here, movies. 
+Don't worry about the issues here.
+
+24
+00:01:24,890 --> 00:01:28,580
+The reason you see this is because 
+I added this project under source control. 
+You're
+
+25
+00:01:28,580 --> 00:01:31,610
+not going to see this on your machine
+and don't worry about it. 
+So what do
+
+26
+00:01:31,610 --> 00:01:35,170
+we have in this directory?
+We have a directory called Migrations. We're
+
+27
+00:01:35,170 --> 00:01:38,640
+going to look at that shortly. 
+Below that we have our __init__ file
+
+28
+00:01:38,650 --> 00:01:42,160
+and again this tells Python that this is a package. 
+So potentially
+
+29
+00:01:42,160 --> 00:01:45,760
+in the future we can distribute
+ this package on pypi.org,
+
+30
+00:01:45,770 --> 00:01:49,070
+so other developers can download
+ this package and added to their
+
+31
+00:01:49,070 --> 00:01:52,470
+applications. 
+Below that we have admin and this
+
+32
+00:01:52,470 --> 00:01:55,930
+is where we define how
+ the administration area for managing the
+
+33
+00:01:55,930 --> 00:01:59,910
+movies will look like.
+Next We have apps.py. 
+Now
+
+34
+00:01:59,910 --> 00:02:03,380
+the name of this file is
+ a little bit confusing because here we are
+
+35
+00:02:03,390 --> 00:02:06,470
+within the boundary of one app.
+So why do we have a
+
+36
+00:02:06,470 --> 00:02:09,790
+file called apps.py.
+ But basically we use this to
+
+37
+00:02:09,790 --> 00:02:12,970
+store various configuration settings for this app. A
+
+38
+00:02:12,970 --> 00:02:16,390
+better name would be config.py.
+ So I'm not sure why
+
+39
+00:02:16,390 --> 00:02:19,670
+Django developers name this file apps.py. 
+But
+
+40
+00:02:19,670 --> 00:02:22,790
+that aside, after that we have models.
+And here we
+
+41
+00:02:22,790 --> 00:02:26,300
+define classes that represent the domain of this app. 
+For
+
+42
+00:02:26,300 --> 00:02:30,290
+example in the domain of movies.
+ we could have classes like movie, genre
+
+43
+00:02:30,290 --> 00:02:33,700
+and so on. 
+Below that we have tests.py
+
+44
+00:02:33,700 --> 00:02:37,450
+and this is where we
+ write automated tests for this app. And
+
+45
+00:02:37,450 --> 00:02:40,960
+finally we have views.py
+ and this is where we define our
+
+46
+00:02:40,960 --> 00:02:44,900
+view functions. 
+What is the view function?
+Well here's
+
+47
+00:02:44,900 --> 00:02:48,940
+an example. 
+Let's say we head over to our website slash
+
+48
+00:02:48,950 --> 00:02:52,800
+movies. 
+when we send a request to this end point, Django
+
+49
+00:02:52,890 --> 00:02:56,390
+is going to take this request,
+pass it to a function which we call
+
+50
+00:02:56,400 --> 00:02:59,740
+a view function. 
+That view function takes our requests and
+
+51
+00:02:59,740 --> 00:03:03,610
+returns our response. 
+That response could be simple
+
+52
+00:03:03,620 --> 00:03:08,200
+plain text like what you see here,
+it could also be an HTML, JSON
+
+53
+00:03:08,210 --> 00:03:11,970
+XML, image and so on.
+So a view function or
+
+54
+00:03:11,970 --> 00:03:15,500
+view in short is a function
+ that takes a request and returns
+
+55
+00:03:15,500 --> 00:03:19,150
+a response. 
+Now if you're familiar with MVC Architectural pattern,
+
+56
+00:03:19,540 --> 00:03:23,380
+here in Django we have a
+ variation of this pattern called MTV
+
+57
+00:03:23,390 --> 00:03:27,110
+or Model View Template.
+The views in Django are
+
+58
+00:03:27,110 --> 00:03:30,960
+like controllers in MVC. 
+If you're not familiar with this concept don't
+
+59
+00:03:30,960 --> 00:03:34,000
+worry. 
+Let's move on. 
+
+60
+00:03:34,360 --> 00:03:41,000
+So views.py is the module
+where we define our view functions,
+and that's what I'm gonna show you next.
+

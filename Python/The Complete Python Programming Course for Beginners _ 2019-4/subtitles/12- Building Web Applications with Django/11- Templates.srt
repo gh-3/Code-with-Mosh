@@ -1,0 +1,851 @@
+2
+00:00:04,370 --> 00:00:07,530
+In this material you're going to learn
+how to return HTML Content from your
+
+3
+00:00:07,530 --> 00:00:11,230
+view functions. 
+So here on the top, you can see we're 
+
+4
+00:00:11,230 --> 00:00:14,440
+importing this render function.
+ We use this function to
+
+5
+00:00:14,440 --> 00:00:18,550
+render a template.
+So in our index view let's
+
+6
+00:00:18,550 --> 00:00:22,260
+delete line 8. 
+We don't want
+ to format the result as a string.
+
+7
+00:00:22,640 --> 00:00:26,560
+So we have the list of movies.
+Now instead of returning an HttpResponse,
+
+8
+00:00:26,940 --> 00:00:30,410
+we want to call the render function. 
+The first parameter here is
+
+9
+00:00:30,410 --> 00:00:33,590
+the request. 
+So we pass this request object that we get
+
+10
+00:00:33,590 --> 00:00:36,900
+here. 
+The second parameter is the name of
+
+11
+00:00:36,900 --> 00:00:40,560
+our template. 
+We haven't created this yet
+but for now let's just pass
+
+12
+00:00:40,940 --> 00:00:44,780
+index dot html and 
+the third parameter
+
+13
+00:00:44,790 --> 00:00:48,310
+which is optional because 
+it has a default value of None is the
+
+14
+00:00:48,310 --> 00:00:51,710
+context object which is basically
+ a dictionary that we use to
+
+15
+00:00:51,710 --> 00:00:54,800
+pass data to our template.
+So in this case we want to
+
+16
+00:00:54,800 --> 00:00:58,700
+pass the list of movies 
+to render as html. 
+So
+
+17
+00:00:58,700 --> 00:01:02,310
+here we pass a dictionary.
+In this dictionary we add a
+
+18
+00:01:02,310 --> 00:01:05,530
+key called movies and 
+we set this to
+
+19
+00:01:05,530 --> 00:01:10,040
+our movies object. 
+Now finally
+
+20
+00:01:10,040 --> 00:01:14,180
+we need to return the result of the render function. 
+Save
+
+21
+00:01:14,180 --> 00:01:18,650
+the changes. Okay. 
+The next step is to create our template. 
+So
+
+22
+00:01:19,840 --> 00:01:23,470
+here in the movies up,
+let's add a new folder. 
+By
+
+23
+00:01:23,470 --> 00:01:26,890
+convention we should call that 
+templates because that's
+
+24
+00:01:26,890 --> 00:01:30,470
+the name that django looks for. Okay. 
+In
+
+25
+00:01:30,470 --> 00:01:34,600
+this folder let's add a new file index
+
+26
+00:01:34,730 --> 00:01:38,350
+dot html. 
+For now let's just render something
+
+27
+00:01:38,350 --> 00:01:41,950
+really basic to make sure
+all the plumbing is working. 
+So
+
+28
+00:01:42,440 --> 00:01:47,090
+let's add an h1 Hello World. Okay.
+
+29
+00:01:47,150 --> 00:01:50,470
+Save the changes. 
+Now back in the browser. 
+Let's refresh this
+
+30
+00:01:50,470 --> 00:01:53,790
+page. 
+Okay. All the plumbing is working.
+So now let's
+
+31
+00:01:53,790 --> 00:01:57,580
+render the list of movies in this HTML template. 
+Now
+
+32
+00:01:57,580 --> 00:02:00,980
+back in VSCode. 
+Look at the language that is currently selected to edit
+
+33
+00:02:00,980 --> 00:02:04,850
+this document by default.
+ This is set to django html
+
+34
+00:02:04,860 --> 00:02:08,310
+which brings a bunch of
+ snippets for quickly generating some Django
+
+35
+00:02:08,310 --> 00:02:12,180
+code. 
+You're going to see this in a minute. 
+but let's temporarily change
+
+36
+00:02:12,180 --> 00:02:15,950
+this to HTML. 
+So click this and type
+
+37
+00:02:15,960 --> 00:02:19,490
+HTML. 
+Now here I want to show you a powerful
+
+38
+00:02:19,490 --> 00:02:22,800
+feature that is not available
+ when using Django HTML as
+
+39
+00:02:22,800 --> 00:02:26,260
+the language to edit this file.
+And that feature is called Zen
+
+40
+00:02:26,260 --> 00:02:30,130
+coding. 
+With that we can quickly 
+generate some HTML markup. 
+See
+
+41
+00:02:30,130 --> 00:02:34,350
+what I'm going to do. 
+Let's say we want a table with the class table,
+
+42
+00:02:34,840 --> 00:02:38,630
+inside this table 
+you want to have a thead section, and
+
+43
+00:02:38,640 --> 00:02:41,960
+inside the thead section
+we want a tr, 
+inside this
+
+44
+00:02:41,960 --> 00:02:46,310
+tag we want to have
+three th tags, so th times
+
+45
+00:02:46,320 --> 00:02:49,640
+three.
+Press the tab.
+There you go. 
+This is
+
+46
+00:02:49,640 --> 00:02:53,310
+what we call Zen coding.
+ So the first column
+
+47
+00:02:53,320 --> 00:02:57,660
+is the title of the movie.
+ The second is genre. Then
+
+48
+00:02:57,660 --> 00:03:02,100
+we have stock. Let's add one
+ more column and call it daily
+
+49
+00:03:02,130 --> 00:03:05,740
+rate. So this is our table heading now
+
+50
+00:03:05,740 --> 00:03:09,360
+. Let's create our table body.
+ So one more time t body
+
+51
+00:03:09,840 --> 00:03:13,590
+inside this tag. we want to
+ have a TR with four TD tax
+
+52
+00:03:13,600 --> 00:03:16,970
+. So TD times four tab. There
+
+53
+00:03:16,970 --> 00:03:20,040
+you go. 
+Now we want to
+
+54
+00:03:20,040 --> 00:03:23,440
+render this tr dynamically. 
+So basically
+
+55
+00:03:23,440 --> 00:03:26,620
+we want to iterate over all 
+the movies that we get in this 
+
+56
+00:03:26,620 --> 00:03:30,060
+template and for each movie 
+we want to render a table row. 
+
+57
+00:03:30,440 --> 00:03:33,820
+That's where we use Django template syntax. 
+So in Django
+
+58
+00:03:33,820 --> 00:03:37,290
+templates we can execute some
+ logic using template tags like
+
+59
+00:03:37,290 --> 00:03:41,590
+this: 
+So we open a curly brace. 
+Add a percent and
+
+60
+00:03:41,590 --> 00:03:45,390
+also close it with a percent. 
+Now in between these 
+
+61
+00:03:45,390 --> 00:03:49,130
+braces we can write some 
+logic like an if statement 
+
+62
+00:03:49,140 --> 00:03:53,290
+or a loop. 
+So here we want to use a for loop for movie
+
+63
+00:03:53,300 --> 00:03:56,710
+in movies. 
+Now earlier we used a context object to
+
+64
+00:03:56,710 --> 00:04:00,400
+pass a dictionary to this template 
+and in the dictionary we had 
+
+65
+00:04:00,410 --> 00:04:03,920
+a key called movies. 
+That is why we can access this object
+
+66
+00:04:03,920 --> 00:04:07,260
+here. 
+Now writing logic using template tags can be
+
+67
+00:04:07,260 --> 00:04:10,930
+a little bit tedious. 
+So that's where we switch the language from
+
+68
+00:04:10,940 --> 00:04:14,760
+HTML to django html which
+
+69
+00:04:14,760 --> 00:04:18,380
+brings a bunch of snippets for automatically generating
+
+70
+00:04:18,380 --> 00:04:22,580
+some code. 
+So let's delete this line and type for. 
+Look
+
+71
+00:04:22,580 --> 00:04:26,120
+at these items here. 
+Anytime you see an item with this square icon, 
+that
+
+72
+00:04:26,120 --> 00:04:30,040
+represents a code snippet.
+ So here I can press enter and
+
+73
+00:04:30,040 --> 00:04:33,610
+this automatically generates a code
+ snippet for four loop. So
+
+74
+00:04:33,610 --> 00:04:36,930
+here we can type for movie press tab, 
+now we
+
+75
+00:04:36,930 --> 00:04:40,350
+are in the second place holder movies. Now
+
+76
+00:04:40,350 --> 00:04:43,500
+press tab. 
+Now we are in the third place holder. 
+and this is
+
+77
+00:04:43,500 --> 00:04:47,030
+where we want to render our table row. 
+So I'm
+
+78
+00:04:47,030 --> 00:04:50,540
+going to select this tr and 
+move it right
+
+79
+00:04:50,540 --> 00:04:54,410
+here. 
+Now let's also indent it. 
+There
+
+80
+00:04:54,410 --> 00:04:57,770
+you go. 
+So this is what we call a template tag and
+
+81
+00:04:57,770 --> 00:05:01,160
+we use it to execute some logic. 
+Now here
+
+82
+00:05:01,160 --> 00:05:05,250
+in our tr you want
+ to render some content inside
+
+83
+00:05:05,260 --> 00:05:09,330
+each td tag.
+So we use another syntax with
+
+84
+00:05:09,330 --> 00:05:13,330
+double curly braces to render
+the value of a variable. 
+So
+
+85
+00:05:13,470 --> 00:05:16,890
+in this case we want to render movie dot title. 
+Similarly we
+
+86
+00:05:16,890 --> 00:05:21,920
+want to render movie that genre. Next
+
+87
+00:05:21,920 --> 00:05:26,050
+is stock. so movie that number in
+
+88
+00:05:26,060 --> 00:05:29,810
+stock. 
+Unfortunately we don't have intelligence here. 
+So that's
+
+89
+00:05:29,810 --> 00:05:32,960
+something that you'll have to live with.
+And finally we want
+
+90
+00:05:32,960 --> 00:05:36,860
+to render movie dot daily underline
+
+91
+00:05:36,870 --> 00:05:40,770
+rate. 
+So essentially in Django templates we have two
+
+92
+00:05:40,770 --> 00:05:44,250
+special notations: 
+one is double curly braces for rendering a
+
+93
+00:05:44,250 --> 00:05:47,570
+value and 
+one is curly brace followed by a percent to
+
+94
+00:05:47,580 --> 00:05:50,920
+execute some logic,
+use that to execute loops as
+
+95
+00:05:50,920 --> 00:05:54,580
+well as conditional statements.
+And finally you can see that
+
+96
+00:05:54,590 --> 00:05:58,500
+our for loop is terminated
+ with an end for template
+
+97
+00:05:58,500 --> 00:06:02,360
+tag. 
+So save the changes. 
+Back
+
+98
+00:06:02,360 --> 00:06:05,980
+in the browser. 
+Refresh the page and 
+here's
+
+99
+00:06:05,980 --> 00:06:09,640
+our imaginary table of movies. 
+Currently it has no styles
+
+100
+00:06:09,650 --> 00:06:13,290
+but if you inspect
+ any of these elements. you
+
+101
+00:06:13,290 --> 00:06:16,770
+can see that here we
+ have an HTML table now
+
+102
+00:06:16,770 --> 00:06:19,990
+back in this template on the top.
+ Let's remove this heading. We
+
+103
+00:06:19,990 --> 00:06:23,360
+don't really need this.
+ Save the changes and one
+
+104
+00:06:23,360 --> 00:06:26,680
+last thing before I finish this lecture.
+Let's open up the views
+
+105
+00:06:26,680 --> 00:06:30,640
+model. 
+Look at this red underline. 
+Pylint
+
+106
+00:06:30,640 --> 00:06:34,940
+is complaining that the movie
+class has no objects member. 
+Basically
+
+107
+00:06:34,940 --> 00:06:38,280
+the reason this is happening
+ is that Pylint is not familiar with
+
+108
+00:06:38,290 --> 00:06:41,420
+django object. 
+But this is pretty easy to fix. 
+We need to
+
+109
+00:06:41,420 --> 00:06:45,060
+install a package called Pilot Django. 
+So
+
+110
+00:06:45,640 --> 00:06:49,130
+let's open up a new terminal window and
+
+111
+00:06:49,130 --> 00:06:58,090
+run pipenv install pylint-django. 
+Okay.
+
+112
+00:06:58,100 --> 00:07:01,300
+The packages installed.
+Now the next step is to
+
+113
+00:07:01,300 --> 00:07:04,890
+create a file in the
+ root of our project. So let's
+
+114
+00:07:04,890 --> 00:07:08,310
+collapse this folder. 
+Here in the root let's add a
+
+115
+00:07:08,310 --> 00:07:12,890
+new file. 
+We're going to call that .pylintrc
+
+116
+00:07:12,890 --> 00:07:17,260
+So this file has no name,
+it only has an extension .pylintrc
+
+117
+00:07:18,740 --> 00:07:21,990
+This is the configuration file for pylint. 
+Here we need to tell
+
+118
+00:07:21,990 --> 00:07:26,000
+pylint to load this plug in 
+that we just installed pylint-django
+
+119
+00:07:26,000 --> 00:07:29,300
+So we set load dash
+
+120
+00:07:29,300 --> 00:07:33,260
+plug ins to pilot dash Jango
+
+121
+00:07:33,840 --> 00:07:37,090
+save the changes. 
+Now back in the views, you can
+
+122
+00:07:37,090 --> 00:07:40,180
+see the compilation error is gone.
+And one more thing before I
+
+123
+00:07:40,180 --> 00:07:43,650
+finish this lecture. 
+Here we passed index dot html as
+
+124
+00:07:43,650 --> 00:07:46,910
+the name of our template.
+While this works there is a problem with
+
+125
+00:07:46,910 --> 00:07:50,740
+this approach that he may face
+in a real enterprise application. 
+Let
+
+126
+00:07:50,740 --> 00:07:54,520
+me show you. 
+So temporarily I'm going to change this to index2.
+
+127
+00:07:54,530 --> 00:07:57,780
+Obviously we don't have this file on disk, so we're
+
+128
+00:07:57,780 --> 00:08:01,150
+going to get an error. 
+Back to the browser. 
+Let's refresh this
+
+129
+00:08:01,150 --> 00:08:04,720
+page. 
+We got this error: TemplateDoesNotExist. 
+Now
+
+130
+00:08:04,720 --> 00:08:08,200
+if you scroll down here.
+ we can see the parts that
+
+131
+00:08:08,200 --> 00:08:11,440
+django searches for to find this template.
+ So here we
+
+132
+00:08:11,440 --> 00:08:14,920
+have three paths. 
+The first one is for the admin app. 
+So
+
+133
+00:08:14,930 --> 00:08:18,990
+admin/templates/ index2.html. 
+The
+
+134
+00:08:18,990 --> 00:08:22,470
+second one is for the auth app.
+So here's the auth app. 
+It
+
+135
+00:08:22,470 --> 00:08:26,000
+looks in the auth app/templates/index2.html.
+
+136
+00:08:26,000 --> 00:08:28,980
+Now the source code
+ for these two apps is not
+
+137
+00:08:28,980 --> 00:08:32,760
+part of our project but they
+ actually exist in our virtual environment.
+
+138
+00:08:32,860 --> 00:08:36,360
+So here is the path to our virtual environment, somewhere
+
+139
+00:08:36,360 --> 00:08:40,020
+here we have this directory site packages slash django
+
+140
+00:08:40,020 --> 00:08:43,190
+slash contrib slash auth and so on. 
+Now
+
+141
+00:08:43,190 --> 00:08:47,180
+the third path here is for our movies app. So vidly
+
+142
+00:08:47,230 --> 00:08:50,820
+slash movies slash templates slash index2. 
+Why
+
+143
+00:08:50,820 --> 00:08:54,050
+does this matter? 
+Well in a real project we're going
+
+144
+00:08:54,050 --> 00:08:57,350
+to have multiple apps. 
+As you can see when we try to render
+
+145
+00:08:57,350 --> 00:09:00,850
+a template Jangle looks at
+ the templates folder of all the
+
+146
+00:09:00,860 --> 00:09:03,990
+installed apps in the order. 
+So here in
+
+147
+00:09:03,990 --> 00:09:07,670
+our settings module you have seen
+the list of installed apps before. 
+So
+
+148
+00:09:07,670 --> 00:09:11,030
+we have admin, auth and so on.
+ So when Django
+
+149
+00:09:11,030 --> 00:09:14,410
+tries to find a template,
+it starts here on the top. 
+It
+
+150
+00:09:14,410 --> 00:09:17,700
+looks at each app, 
+If that APP has a templates folder, 
+it
+
+151
+00:09:17,700 --> 00:09:21,660
+will search the templates folder of that 
+app to find the given template. 
+And
+
+152
+00:09:21,660 --> 00:09:25,310
+that means if we
+ use a general name like
+
+153
+00:09:25,320 --> 00:09:29,110
+index.html, it is possible that django loads
+
+154
+00:09:29,110 --> 00:09:33,140
+the index.html of
+ another app that is installed first,
+
+155
+00:09:33,150 --> 00:09:36,650
+not the app that we are currently working with. 
+So as a best practice
+
+156
+00:09:36,650 --> 00:09:39,880
+we should give a name space to these templates. 
+Here's how we
+
+157
+00:09:39,880 --> 00:09:43,380
+do it. 
+In our templates folder we
+
+158
+00:09:43,380 --> 00:09:47,730
+add another folder movies. 
+That
+
+159
+00:09:47,730 --> 00:09:51,810
+is our name space.
+Now we move index.html inside
+
+160
+00:09:51,810 --> 00:09:55,260
+this folder. 
+Move. 
+And then
+
+161
+00:09:55,840 --> 00:10:00,110
+in our code we always prefix
+ our template name with movies slash
+
+162
+00:10:00,120 --> 00:10:03,610
+Well that depends on the
+app you're currently working with. 
+So
+
+163
+00:10:03,620 --> 00:10:07,060
+all the templates for the movies APP 
+should be prefixed with movies slash.
+
+164
+00:10:07,740 --> 00:10:11,210
+Now save the changes.
+Back in the browser. 
+Refresh
+
+165
+00:10:11,210 --> 00:10:14,550
+the page. 
+Problem is solved.
+So this is our table, but
+
+166
+00:10:14,550 --> 00:10:18,070
+that looks pretty boring. 
+In the next lecture, I'm going to show you 
+how to install
+
+167
+00:10:18,070 --> 00:10:21,260
+Bootstrap and give this page
+a nice and modern look.
+

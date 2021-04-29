@@ -1,0 +1,242 @@
+1
+00:00:04,240 --> 00:00:07,680
+The second step in a machine
+ learning project is cleaning or preparing the
+
+2
+00:00:07,680 --> 00:00:11,860
+data and 
+that involves tasks such as 
+removing duplicates, null
+
+3
+00:00:11,860 --> 00:00:15,000
+values and so on. 
+Now in this particular data set we don't have to do
+
+4
+00:00:15,000 --> 00:00:18,300
+any kind of cleaning because 
+we don't have any duplicates and as
+
+5
+00:00:18,300 --> 00:00:22,010
+you can see all rows
+have values for all columns. 
+So
+
+6
+00:00:22,010 --> 00:00:26,610
+we don't have null values. 
+But there is one thing we need to do. 
+We
+
+7
+00:00:26,610 --> 00:00:30,570
+should split this data set into 
+two separate data sets, one
+
+8
+00:00:30,570 --> 00:00:34,310
+with the first two columns which we
+ refer to as the input set and
+
+9
+00:00:34,310 --> 00:00:37,750
+the other with the last column
+ which we refer to as the output set.
+
+10
+00:00:38,140 --> 00:00:41,650
+So when we train a model 
+we give it to separate data sets: 
+
+11
+00:00:41,870 --> 00:00:45,710
+the input set and 
+the output set. 
+The output set which 
+
+12
+00:00:45,710 --> 00:00:49,680
+is in this case the genre column contains the predictions.
+
+13
+00:00:49,700 --> 00:00:53,150
+So we're telling our model that
+ if we have a user was 20
+
+14
+00:00:53,150 --> 00:00:56,750
+years old and is a male, 
+they like hip hop. 
+Once
+
+15
+00:00:56,750 --> 00:01:00,090
+we train our model, then 
+we give it a new input set. 
+For
+
+16
+00:01:00,090 --> 00:01:03,450
+example we say Hey we have
+a new user who is 21 years
+
+17
+00:01:03,450 --> 00:01:06,840
+old and it's a male,
+ What is the genre of the music that
+
+18
+00:01:06,840 --> 00:01:10,410
+this user probably likes? 
+As you can see in our input set
+
+19
+00:01:10,420 --> 00:01:13,900
+we don't have a sample for a 21 year old male. 
+So we're
+
+20
+00:01:13,900 --> 00:01:17,160
+going to ask our model to predict that. 
+That is the
+
+21
+00:01:17,160 --> 00:01:20,900
+reason we need to split this
+ data set into two separate sets:
+
+22
+00:01:21,200 --> 00:01:24,660
+input and output.
+So back to our code
+
+23
+00:01:25,340 --> 00:01:30,660
+this data frame object has 
+a method called drop. 
+Now
+
+24
+00:01:31,240 --> 00:01:35,060
+if you put the cursor on
+the method name and press shift and
+
+25
+00:01:35,060 --> 00:01:38,200
+tab you can see this tool tip.
+So this is
+
+26
+00:01:38,200 --> 00:01:41,500
+the signature of this drop method.
+These are the parameters that
+
+27
+00:01:41,500 --> 00:01:45,270
+we can pass here. 
+The parameter we're going to use in this lecture is columns
+
+28
+00:01:45,280 --> 00:01:48,390
+which is set to None by default.
+With this parameter
+
+29
+00:01:48,390 --> 00:01:52,540
+we can specify the columns
+we want to drop. 
+So in
+
+30
+00:01:52,540 --> 00:01:56,610
+this case reset columns to an array
+
+31
+00:01:56,860 --> 00:02:00,430
+with one string, genre. 
+Now this method doesn't
+
+32
+00:02:00,440 --> 00:02:03,630
+actually modify the original data set.
+In fact it will
+
+33
+00:02:03,630 --> 00:02:07,750
+create a new data set but without this column. 
+So
+
+34
+00:02:08,440 --> 00:02:11,650
+by convention we use a
+capital X to represent that
+
+35
+00:02:11,650 --> 00:02:15,070
+data set. 
+So capital X equals this
+
+36
+00:02:15,070 --> 00:02:18,660
+expression. 
+Now let's inspect X.
+
+37
+00:02:20,040 --> 00:02:23,430
+So as you can see our input set or X includes these
+
+38
+00:02:23,430 --> 00:02:26,850
+two columns: age and gender.
+It doesn't have the output or
+
+39
+00:02:26,850 --> 00:02:31,150
+predictions. 
+Next we need to create our output set. 
+So
+
+40
+00:02:31,740 --> 00:02:35,250
+once again we start with
+ our data frame music_data.
+
+41
+00:02:35,740 --> 00:02:38,800
+Using square brackets we can
+ get all the values in a
+
+42
+00:02:38,800 --> 00:02:42,590
+given column, in this case genre. 
+Once
+
+43
+00:02:42,590 --> 00:02:45,910
+again this returns a new data set. 
+By convention we
+
+44
+00:02:45,910 --> 00:02:49,200
+use a lowercase y to represent that. 
+So that
+
+45
+00:02:49,200 --> 00:02:52,860
+is our output dataset.
+Let's inspect that as well.
+
+46
+00:02:54,340 --> 00:02:58,350
+So in this data set
+we only have the predictions or
+
+47
+00:02:58,360 --> 00:03:05,000
+the answers. 
+So we have prepared our data. 
+Next we need to create a model using an algorithm.
+

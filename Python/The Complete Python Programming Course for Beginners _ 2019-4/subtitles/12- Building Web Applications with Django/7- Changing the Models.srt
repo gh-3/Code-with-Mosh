@@ -1,0 +1,442 @@
+2
+00:00:04,000 --> 00:00:07,990
+Let's go through this workflow one more time.
+So here in our movies app, let's
+
+3
+00:00:07,990 --> 00:00:11,630
+open up models that pipe.
+ Here's our movie class.
+
+4
+00:00:11,750 --> 00:00:16,050
+I'm going to add a
+ new attribute called Date Created So
+
+5
+00:00:16,540 --> 00:00:20,630
+date underline created.
+ We said this to models that
+
+6
+00:00:20,640 --> 00:00:24,440
+daytime field. and here we can optionally supply
+
+7
+00:00:24,450 --> 00:00:28,130
+at default value.
+ Now here we can import the
+
+8
+00:00:28,130 --> 00:00:31,320
+daytime class from Python Standard Library and write
+
+9
+00:00:31,320 --> 00:00:35,140
+some code like this daytime.now. But
+
+10
+00:00:35,140 --> 00:00:39,000
+the problem with this approach is
+ that this daytime object is not aware
+
+11
+00:00:39,010 --> 00:00:42,490
+of Time zone. 
+A better approach is to use the time zone object
+
+12
+00:00:42,490 --> 00:00:46,000
+in Django because that object is
+ aware of the time zone. And later
+
+13
+00:00:46,000 --> 00:00:49,450
+in the future. when we display
+ this daytime value to the user. that
+
+14
+00:00:49,450 --> 00:00:53,000
+object will automatically take care
+ of translating that daytime to
+
+15
+00:00:53,000 --> 00:00:56,820
+the user's time zone.
+ So I still eat this on
+
+16
+00:00:56,820 --> 00:01:00,680
+the top from django dot you
+
+17
+00:01:00,680 --> 00:01:04,560
+tilt. Let's import the time zone class
+
+18
+00:01:05,240 --> 00:01:10,420
+now down upon him.
+ we said the default argument
+
+19
+00:01:10,420 --> 00:01:14,470
+two time zone dot Now note
+
+20
+00:01:14,470 --> 00:01:18,350
+that here I'm not calling this method.
+ I'm simply passing a reference
+
+21
+00:01:18,420 --> 00:01:21,630
+to the now method. If I
+
+22
+00:01:21,630 --> 00:01:25,020
+call this method when I create a migration. the current data
+
+23
+00:01:25,020 --> 00:01:28,910
+would be hard coded in our migration.
+Let me show you what happens. 
+So here
+
+24
+00:01:28,910 --> 00:01:32,300
+I'm going to call this method.
+Save the changes. 
+Now we
+
+25
+00:01:32,300 --> 00:01:35,700
+need to create a migration.
+ So here on the terminal. let's
+
+26
+00:01:35,700 --> 00:01:39,620
+run python. Manage that pie. Make
+
+27
+00:01:39,650 --> 00:01:42,720
+migrations. 
+We got a
+
+28
+00:01:42,720 --> 00:01:46,240
+warning: 
+"It seems you set a fixed datetime value
+
+29
+00:01:46,240 --> 00:01:49,890
+as a default for this field."
+What does this mean? 
+Well
+
+30
+00:01:49,900 --> 00:01:53,230
+we'll have to look at
+ this migration Migration number two and
+
+31
+00:01:53,230 --> 00:01:57,020
+it's called Movie Date created. So let's
+
+32
+00:01:57,020 --> 00:02:00,820
+go to our project here
+ in the Migrations folder. Let's
+
+33
+00:02:00,820 --> 00:02:04,090
+have a look at this migration. So
+
+34
+00:02:04,090 --> 00:02:07,240
+in the list of operations.
+ we have this operation for adding a
+
+35
+00:02:07,240 --> 00:02:10,770
+field to an existing table.
+ Here's the name of our model
+
+36
+00:02:10,770 --> 00:02:14,390
+or table. and this is
+ the name of the new field
+
+37
+00:02:14,400 --> 00:02:18,210
+. and you can see it's
+ type is set to datetime field
+
+38
+00:02:18,220 --> 00:02:22,390
+So far so good.
+But look at the default value. It's
+
+39
+00:02:22,390 --> 00:02:26,140
+hard coded here. and that is
+ the current daytime on my machine
+
+40
+00:02:26,230 --> 00:02:29,690
+. We don't want this to happen.
+ We want this value to be calculated at
+
+41
+00:02:29,690 --> 00:02:33,760
+one time when we insert a
+ new record in this table. So
+
+42
+00:02:34,140 --> 00:02:37,280
+to fix that. we need
+ to come back to our
+
+43
+00:02:37,280 --> 00:02:40,600
+movie class. And instead of
+ calling the now method. we
+
+44
+00:02:40,600 --> 00:02:43,890
+simply pass a reference to it. Save the
+
+45
+00:02:43,890 --> 00:02:47,850
+changes. Now we need to
+ create a new migration. So
+
+46
+00:02:48,240 --> 00:02:51,420
+let's open up the terminal
+ and run python. Manage the
+
+47
+00:02:51,420 --> 00:02:54,870
+pie. Make migrations one more time. All
+
+48
+00:02:54,870 --> 00:02:58,220
+right. 
+Now we have migration number three. Let's
+
+49
+00:02:58,220 --> 00:03:02,340
+take a quick look at this migration.
+ There you go. So
+
+50
+00:03:02,340 --> 00:03:06,500
+here we have an operation of type alter
+
+51
+00:03:06,510 --> 00:03:09,670
+filled. So this operation
+ is going to go to
+
+52
+00:03:09,670 --> 00:03:13,490
+the movie table.
+ an alter a field called Date created
+
+53
+00:03:13,500 --> 00:03:16,670
+. and this is how it's going
+ to alter this field. So it's going
+
+54
+00:03:16,670 --> 00:03:20,350
+to set the default to django
+ that you tells the Time zone
+
+55
+00:03:20,440 --> 00:03:23,660
+that now. 
+So note that the current daytime is
+
+56
+00:03:23,660 --> 00:03:27,830
+not hard coded in our migration. 
+Okay? 
+So
+
+57
+00:03:27,840 --> 00:03:31,180
+let's go ahead and apply these
+ to migrations to our database. and by
+
+58
+00:03:31,180 --> 00:03:35,210
+the way. make sure to never
+ delete any of these migrations. Otherwise
+
+59
+00:03:35,210 --> 00:03:38,990
+. you're going to run into all sorts
+ of issues because the purpose of each migration
+
+60
+00:03:39,000 --> 00:03:42,190
+is to take the database
+ one step forward. When you
+
+61
+00:03:42,190 --> 00:03:45,590
+delete one of these migrations.
+ there would be a missing step. So
+
+62
+00:03:45,590 --> 00:03:49,370
+do not ever.
+ ever. ever. ever. ever delete a
+
+63
+00:03:49,370 --> 00:03:52,950
+migration here. 
+So back in the terminal. 
+Let's run
+
+64
+00:03:52,960 --> 00:03:58,540
+Python managed that pie migrate. Okay
+
+65
+00:03:58,540 --> 00:04:02,370
+. the 2nd and 3rd
+ migrations are applied. Beautiful. Now
+
+66
+00:04:02,370 --> 00:04:06,560
+. here in our database.
+ you can see our movie table as
+
+67
+00:04:06,940 --> 00:04:10,670
+this new field date created. Beautiful. 
+Now
+
+68
+00:04:10,670 --> 00:04:14,200
+one more thing before I finish this lecture. 
+As you have seen 
+
+69
+00:04:14,210 --> 00:04:17,990
+each migration is essentially
+a python class that determines
+
+70
+00:04:18,000 --> 00:04:21,250
+how our database should be updated. 
+Now 
+
+71
+00:04:21,250 --> 00:04:24,730
+when we run the migrate command, 
+Django is going to look at 
+
+72
+00:04:25,000 --> 00:04:28,790
+these migrations that are not applied 
+ and based on the operations that
+
+73
+00:04:28,790 --> 00:04:32,130
+they define, It's going to
+ generate some sequel statements to
+
+74
+00:04:32,130 --> 00:04:35,740
+send to the database.
+ If you're curious what sequel statements are
+
+75
+00:04:35,740 --> 00:04:39,060
+sent to the database, you can
+use the sequel migrate command. 
+Let
+
+76
+00:04:39,060 --> 00:04:42,600
+me show you. 
+So let's say we want to know 
+what sequel statements are
+
+77
+00:04:42,600 --> 00:04:46,650
+generated as a result
+ of applying these third migration.
+
+78
+00:04:47,140 --> 00:04:51,790
+So here on the terminal,
+we run python manage
+
+79
+00:04:51,800 --> 00:04:55,070
+dot py. 
+Instead of migrate, we're going
+
+80
+00:04:55,070 --> 00:04:59,030
+to pass sequel migrate,
+and then we specify our
+
+81
+00:04:59,030 --> 00:05:02,420
+app, in this case the movies app. 
+So we're going this
+
+82
+00:05:02,420 --> 00:05:06,240
+app and pick a specific migration. 
+So here
+
+83
+00:05:06,240 --> 00:05:09,450
+in the movies app,
+inside the migrations folder, we
+
+84
+00:05:09,450 --> 00:05:12,840
+have three migrations and 
+they are prefixed with a number that
+
+85
+00:05:12,840 --> 00:05:16,030
+uniquely identifies each migration.
+ So I'm going to pick the
+
+86
+00:05:16,030 --> 00:05:19,600
+first migration. 
+So back to the terminal. 
+Let's
+
+87
+00:05:19,600 --> 00:05:23,450
+add triple 0, 1. 
+All
+
+88
+00:05:23,450 --> 00:05:27,750
+right. 
+This is the exact sequel statement
+that is sent to the database. 
+So
+
+89
+00:05:27,760 --> 00:05:31,090
+for creating the movie's table,
+ we have this create table
+
+90
+00:05:31,090 --> 00:05:38,000
+statement. 
+Here is the name of the table.
+Next to that you can see 
+all the columns, their types and so on.
+

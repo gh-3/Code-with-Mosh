@@ -1,0 +1,759 @@
+2
+00:00:04,350 --> 00:00:08,470
+In this lecture you're going to learn 
+how to work with Excel spreadsheets in Python. 
+Out
+
+3
+00:00:08,470 --> 00:00:12,130
+of all the lecturers in this course,
+this is one of my absolute favorites
+
+4
+00:00:12,140 --> 00:00:15,740
+because it has a lot of applications in the real world. 
+So here
+
+5
+00:00:15,750 --> 00:00:19,200
+I have a brand new project called PyExcel. 
+In
+
+6
+00:00:19,200 --> 00:00:22,900
+this project, I have a spreadsheet 
+called Transactions. You
+
+7
+00:00:22,900 --> 00:00:26,480
+can download this as a zip
+ file attached to this lecture. When
+
+8
+00:00:26,480 --> 00:00:29,940
+you open this.
+ you're going to say something like
+
+9
+00:00:29,940 --> 00:00:33,300
+this. So we have three columns Transaction I
+
+10
+00:00:33,300 --> 00:00:36,710
+D. Product idea and Price
+ as well as three rows of
+
+11
+00:00:36,710 --> 00:00:39,960
+data. Pretty straightforward. So back
+
+12
+00:00:39,960 --> 00:00:43,570
+to the U. S. Code.
+ The package we're going to install is open
+
+13
+00:00:43,570 --> 00:00:47,660
+pie Excel. So let's run pip and install
+
+14
+00:00:48,040 --> 00:00:54,320
+open pie X l All
+
+15
+00:00:54,320 --> 00:00:57,750
+right. Beautiful. Now let's
+ select our virtual environment from
+
+16
+00:00:57,750 --> 00:01:02,940
+the status bar and set
+ it to pi Excel. Next
+
+17
+00:01:02,940 --> 00:01:09,340
+. we're going to install
+ pilot just like before. All
+
+18
+00:01:09,340 --> 00:01:12,890
+right now on the top.
+ we start by importing open
+
+19
+00:01:12,890 --> 00:01:16,670
+pie exile. 
+Now when working with spreadsheets,
+
+20
+00:01:16,940 --> 00:01:20,540
+we need to start with a workbook object.
+We can either create an
+
+21
+00:01:20,550 --> 00:01:24,100
+empty workbook in memory or
+load an existing workbook on disk. 
+
+22
+00:01:24,100 --> 00:01:27,800
+So this module open Pie Excel
+
+23
+00:01:27,810 --> 00:01:31,170
+has this workbook class We can create a
+
+24
+00:01:31,170 --> 00:01:34,880
+new workbook object like this.
+ Now we have an empty workbook with
+
+25
+00:01:34,880 --> 00:01:39,090
+one sheet. 
+Later I will show you how to save this to disc. 
+We
+
+26
+00:01:39,100 --> 00:01:43,160
+also have this function open pie excel dot
+
+27
+00:01:43,170 --> 00:01:47,350
+load workbook for loading an existing workbook. So
+
+28
+00:01:47,350 --> 00:01:51,590
+in this demo. I'm going
+ to load transactions dot XLs
+
+29
+00:01:51,600 --> 00:01:56,250
+X and 
+this gives us a workbook object. 
+So
+
+30
+00:01:56,250 --> 00:01:59,610
+I'm going to comment out this line because 
+we're not going to use it. 
+So
+
+31
+00:01:59,610 --> 00:02:03,310
+we have a workbook. 
+Now this workbook has an attribute called
+
+32
+00:02:03,320 --> 00:02:06,480
+sheet names. 
+This is actually an attribute even though
+
+33
+00:02:06,480 --> 00:02:10,170
+VSCode is showing it as a function.
+let's print this
+
+34
+00:02:10,180 --> 00:02:16,710
+on the terminal. So
+
+35
+00:02:16,710 --> 00:02:20,150
+in this workbook, 
+we have only a single sheet that is sheet1.
+
+36
+00:02:20,740 --> 00:02:23,950
+Let's go ahead and access that. 
+That is
+
+37
+00:02:23,950 --> 00:02:27,280
+pretty easy. 
+We use square brackets, just like how we work
+
+38
+00:02:27,290 --> 00:02:30,660
+with dictionaries. 
+So sheet1. 
+And
+
+39
+00:02:30,660 --> 00:02:33,970
+by the way, this is case sensitive,
+so if you use a lower case
+
+40
+00:02:33,980 --> 00:02:37,560
+s, you're going to get an exception
+ telling you that this sheet doesn't exist.
+
+41
+00:02:37,940 --> 00:02:41,280
+So make sure to spell it properly. 
+Now
+
+42
+00:02:41,280 --> 00:02:44,640
+we have a sheet object.
+ We can also create a new sheet
+
+43
+00:02:44,650 --> 00:02:48,560
+or remove an existing one.
+ So our workbook object has
+
+44
+00:02:48,570 --> 00:02:52,760
+a couple of methods you should be aware of. 
+One is create_sheet
+
+45
+00:02:53,940 --> 00:02:57,690
+Here we pass the name of the new sheet 
+like Sheet2 
+and
+
+46
+00:02:57,700 --> 00:03:00,850
+optionally, we can pass an index,
+for example we
+
+47
+00:03:00,850 --> 00:03:04,160
+can pass zero to put this 
+before sheet one.
+
+48
+00:03:04,940 --> 00:03:08,680
+We also have remove underlined
+
+49
+00:03:08,680 --> 00:03:12,060
+sheet that takes a sheet object like this
+
+50
+00:03:12,440 --> 00:03:16,080
+and it will remove it. 
+Now I'm not going to use these methods in this demo.
+
+51
+00:03:16,090 --> 00:03:20,390
+Just be aware of them in case
+you need them in the future. 
+So we
+
+52
+00:03:20,390 --> 00:03:24,050
+have a sheet. 
+Next we need to access an individual cell
+
+53
+00:03:24,060 --> 00:03:27,780
+or a range of cells.
+That is pretty easy. 
+So using
+
+54
+00:03:27,780 --> 00:03:30,920
+square brackets, we can
+pass the coordinate of a
+
+55
+00:03:30,920 --> 00:03:34,300
+cell. 
+So we can pass a1 and
+
+56
+00:03:34,300 --> 00:03:37,890
+that refers to this cell here, a 1. 
+So first
+
+57
+00:03:37,890 --> 00:03:41,210
+row, first column.
+So here we get a cell
+
+58
+00:03:41,210 --> 00:03:44,610
+object. 
+Now this cell object has a few attributes you
+
+59
+00:03:44,610 --> 00:03:48,130
+should know about. 
+One is value.
+We can print
+
+60
+00:03:48,130 --> 00:03:51,910
+this on the terminal.
+So the value of this cell is
+
+61
+00:03:51,910 --> 00:03:55,330
+transaction_id, you have seen that before.
+We can also change the
+
+62
+00:03:55,330 --> 00:03:59,370
+value here. 
+Pretty straightforward, right? 
+We
+
+63
+00:03:59,370 --> 00:04:02,690
+also have row. 
+Let's print that
+
+64
+00:04:02,690 --> 00:04:07,020
+on the terminal. 
+We have column and
+
+65
+00:04:07,120 --> 00:04:11,180
+coordinate. 
+Let's have a look. So
+
+66
+00:04:11,180 --> 00:04:14,730
+the row of the cell is one.
+The column is A and
+
+67
+00:04:14,730 --> 00:04:18,570
+the coordinate is A1. 
+Now
+
+68
+00:04:18,570 --> 00:04:22,230
+we also have another approach
+ to access an individual cell and
+
+69
+00:04:22,230 --> 00:04:25,480
+that is using the cell method
+of the sheet object. 
+Let me show
+
+70
+00:04:25,480 --> 00:04:29,040
+you. 
+So instead of using square brackets
+
+71
+00:04:29,040 --> 00:04:33,100
+and passing the coordinate. we can call sheet
+
+72
+00:04:33,350 --> 00:04:36,480
+that cell and pass a role and a
+
+73
+00:04:36,480 --> 00:04:39,700
+column. So one and one
+ Now we can make this
+
+74
+00:04:39,700 --> 00:04:42,970
+code more readable by using
+ keyword arguments because it's not
+
+75
+00:04:42,970 --> 00:04:46,920
+quite clear what row or what
+ column we're working with here. So
+
+76
+00:04:46,920 --> 00:04:50,420
+we said. roll to one and column to
+
+77
+00:04:50,420 --> 00:04:54,320
+one. 
+and this gives us
+the exact same cell. 
+Now
+
+78
+00:04:54,330 --> 00:04:57,690
+obviously this code is shorter and easier to use, 
+but the second
+
+79
+00:04:57,690 --> 00:05:00,940
+approach is useful when
+ we're iterating over all the
+
+80
+00:05:00,940 --> 00:05:04,660
+rows and all the columns.
+ and we want to dynamically access various
+
+81
+00:05:04,660 --> 00:05:08,260
+cells. Let me show you so this sheet
+
+82
+00:05:08,640 --> 00:05:12,210
+has a couple of attributes.
+ One is Max Row. Let's
+
+83
+00:05:12,210 --> 00:05:16,560
+print that on a terminal.
+ We also have Max column
+
+84
+00:05:17,340 --> 00:05:20,760
+Let's run the program. So in
+ this sheet we have four rows and
+
+85
+00:05:20,760 --> 00:05:24,020
+three columns. Now we
+ can easily iterate over all
+
+86
+00:05:24,020 --> 00:05:28,930
+these rows and columns so we
+
+87
+00:05:28,930 --> 00:05:33,200
+can write a for loop
+ like this four row in sheet
+
+88
+00:05:33,210 --> 00:05:37,220
+that max on the line row.
+ Now this returns a number. so
+
+89
+00:05:37,220 --> 00:05:40,430
+we need to pass that to the range function. 
+Now as
+
+90
+00:05:40,430 --> 00:05:44,440
+you know this function generates
+ numbers starting from zero. So
+
+91
+00:05:44,440 --> 00:05:47,930
+we need to set the start index to one 
+because we don't have
+
+92
+00:05:47,930 --> 00:05:51,450
+row zero in a spreadsheet.
+The first row is one.
+
+93
+00:05:52,440 --> 00:05:55,770
+Also for this reason, we need
+ to increment this way one so we
+
+94
+00:05:55,770 --> 00:05:59,000
+can access the last row. 
+Now using the
+
+95
+00:05:59,000 --> 00:06:02,640
+same technique we can iterate
+over all the columns. 
+So
+
+96
+00:06:02,640 --> 00:06:05,980
+for column in range of
+
+97
+00:06:05,980 --> 00:06:10,110
+one and sheet. But Max underlined
+
+98
+00:06:10,110 --> 00:06:13,720
+column plus one. Now
+
+99
+00:06:13,720 --> 00:06:17,070
+we can call sheet
+ dot cell and pass the
+
+100
+00:06:17,070 --> 00:06:20,460
+row and column here. And with this
+
+101
+00:06:20,700 --> 00:06:24,950
+. we can print the
+ value of each cell. save
+
+102
+00:06:24,950 --> 00:06:28,450
+the changes and run the program.
+ So these are all the
+
+103
+00:06:28,450 --> 00:06:32,150
+values we have in the spreadsheet. Now
+
+104
+00:06:32,150 --> 00:06:35,440
+using square brackets,
+we can also access a range of
+
+105
+00:06:35,440 --> 00:06:38,950
+cells. 
+So let me delete this for loop.
+
+106
+00:06:40,040 --> 00:06:43,650
+Here are a few examples. 
+we can access sheet of
+
+107
+00:06:43,660 --> 00:06:46,820
+a and 
+this will return all the cells in the
+
+108
+00:06:46,830 --> 00:06:51,030
+a column. 
+So here's the A column, It will return all
+
+109
+00:06:51,030 --> 00:06:54,470
+these cells. 
+We can store the result
+
+110
+00:06:54,470 --> 00:06:59,830
+in column. 
+Let's print that and see what we get. So
+
+111
+00:06:59,830 --> 00:07:03,200
+we get to tuple because here
+we have parenthesis. 
+In this tuple
+
+112
+00:07:03,200 --> 00:07:06,710
+We have four cell objects.
+ Sell a one a two
+
+113
+00:07:06,710 --> 00:07:11,210
+a3 and a4.
+Pretty self explanatory. 
+We
+
+114
+00:07:11,210 --> 00:07:14,740
+can also work with a
+range of columns. so sheet of
+
+115
+00:07:14,750 --> 00:07:18,290
+A to C This will return all
+
+116
+00:07:18,290 --> 00:07:21,760
+the cells in columns. A to see
+
+117
+00:07:22,740 --> 00:07:26,220
+Now let's do that
+ here so cells and then
+
+118
+00:07:26,220 --> 00:07:30,550
+print it on the terminal.
+ Let's see what we get. Note
+
+119
+00:07:30,550 --> 00:07:33,980
+that we get a tuple of tuples. 
+So each topple
+
+120
+00:07:33,980 --> 00:07:37,160
+in this topple will represent one column.
+ Let me show you
+
+121
+00:07:37,540 --> 00:07:41,290
+. So here's one of our inner
+ topples in this topple. We have cells
+
+122
+00:07:41,300 --> 00:07:44,890
+. A one a two. a three
+ and a four. So this inner topple
+
+123
+00:07:44,900 --> 00:07:48,290
+represents the A column that
+ is this column here. So a
+
+124
+00:07:48,290 --> 00:07:51,390
+one all the way to a four.
+ This is one of
+
+125
+00:07:51,390 --> 00:07:54,800
+the inner topples. Next to
+ that we have another topple and
+
+126
+00:07:54,800 --> 00:07:58,450
+then another topple. And these
+ three couples are packed inside
+
+127
+00:07:58,450 --> 00:08:01,750
+of another topple. Okay? 
+Now we can also use
+
+128
+00:08:01,750 --> 00:08:05,500
+coordinates here. 
+So sheet of, let's say a1 to
+
+129
+00:08:05,500 --> 00:08:09,830
+c3, and this will
+return all the cells in
+
+130
+00:08:09,830 --> 00:08:14,690
+this area. So a
+ 12 C three. OK? 
+Using 
+
+131
+00:08:14,690 --> 00:08:18,120
+the same technique we can also 
+access the cells in a given row 
+
+132
+00:08:18,130 --> 00:08:22,040
+or a range of rows. 
+So sheet 
+
+133
+00:08:22,310 --> 00:08:26,060
+of one returns all the
+ cells in the first row
+
+134
+00:08:26,640 --> 00:08:30,300
+. Or. if you use
+ 123 this will return all
+
+135
+00:08:30,300 --> 00:08:33,480
+the cells in row
+ one all the way to
+
+136
+00:08:33,480 --> 00:08:36,850
+go three. So this is
+ how we can access a
+
+137
+00:08:36,850 --> 00:08:40,350
+range of cells. 
+Now this sheet object has
+
+138
+00:08:40,360 --> 00:08:44,280
+a few methods you should be aware of.
+ One of them is a pan. and
+
+139
+00:08:44,280 --> 00:08:47,550
+we use that to add a row
+ at the end of the sheet. So
+
+140
+00:08:47,550 --> 00:08:54,870
+here we pass a list or a tuple of values. 
+Let's say 1 2 3. 
+We
+
+141
+00:08:54,870 --> 00:08:58,380
+also have insert rows,
+and we use this to insert
+
+142
+00:08:58,380 --> 00:09:02,260
+a row at a given index.
+ We also have insert columns
+
+143
+00:09:02,300 --> 00:09:06,490
+. as well as delete
+ rows and delayed columns so
+
+144
+00:09:06,490 --> 00:09:10,070
+you can perform various kinds
+ of operations in a spreadsheet. You
+
+145
+00:09:10,070 --> 00:09:13,730
+can also add charts. sort and
+ filter data and so on. I
+
+146
+00:09:13,730 --> 00:09:17,160
+live it up to you to look
+ at the documentation of open pie. Excel and
+
+147
+00:09:17,160 --> 00:09:20,520
+learn about the features that you
+ need in your applications. Now. to
+
+148
+00:09:20,520 --> 00:09:24,810
+finish this lecture. let's save this workbook. So
+
+149
+00:09:24,820 --> 00:09:28,200
+workbook.save,
+ we're going to save it as
+
+150
+00:09:28,200 --> 00:09:33,000
+a new file, 
+so transactions2.xlsx.
+
+151
+00:09:33,000 --> 00:09:36,360
+Save the changes. 
+Run
+
+152
+00:09:36,360 --> 00:09:39,600
+the program. Now we have a
+
+153
+00:09:39,600 --> 00:09:42,920
+new spreadsheet here and in the spreadsheet.
+ We should have an
+
+154
+00:09:42,930 --> 00:09:52,000
+extra row of data.
+And here's our updated spreadsheet,
+we can see the row that we added using python.
+

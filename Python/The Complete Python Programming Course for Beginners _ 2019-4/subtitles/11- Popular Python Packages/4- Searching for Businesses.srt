@@ -1,0 +1,719 @@
+2
+00:00:04,370 --> 00:00:08,010
+All right. I'm starting with a brand
+ new project called Pie Young in
+
+3
+00:00:08,010 --> 00:00:11,860
+this project. Currently I only have
+ one file that is after pipe
+
+4
+00:00:12,340 --> 00:00:15,770
+. Now let's open up
+ the terminal window and using pip
+
+5
+00:00:15,770 --> 00:00:19,640
+and install the requests package. We
+
+6
+00:00:19,640 --> 00:00:23,020
+use this package to send http requests. Let's
+
+7
+00:00:23,020 --> 00:00:26,960
+go ahead. So this
+ is creating a virtual environment
+
+8
+00:00:28,540 --> 00:00:32,260
+. Our packag's installed. Beautiful. Now let's change
+
+9
+00:00:32,310 --> 00:00:35,970
+the virtual environment in VSCode
+ to the one that is created for
+
+10
+00:00:35,970 --> 00:00:39,240
+our PyYelp project. Now. this
+
+11
+00:00:39,240 --> 00:00:42,700
+college is telling us that
+ letter pilot is not installed. So
+
+12
+00:00:42,700 --> 00:00:48,670
+let's go ahead and
+ install this as well. All
+
+13
+00:00:48,670 --> 00:00:51,930
+right. now in after
+ pie on the top. Let's
+
+14
+00:00:51,930 --> 00:00:55,760
+import the requests module. This
+
+15
+00:00:55,770 --> 00:00:59,350
+object has a method called get, 
+for sending
+
+16
+00:00:59,350 --> 00:01:02,480
+an http get request to an end point. 
+As I
+
+17
+00:01:02,480 --> 00:01:05,760
+told you before, every http request has a method and
+
+18
+00:01:05,760 --> 00:01:09,190
+that method determines what we want
+ to use the request for. So
+
+19
+00:01:09,200 --> 00:01:12,570
+get is for getting data. So here
+
+20
+00:01:12,570 --> 00:01:17,330
+we need to pass the URL or the address of an endpoint. 
+Back
+
+21
+00:01:17,330 --> 00:01:21,560
+to yelp Documentation here under Yelp fusion
+
+22
+00:01:22,040 --> 00:01:26,190
+. Let's take a look
+ at business and points here
+
+23
+00:01:26,190 --> 00:01:29,980
+. We have this business search endpoint that
+
+24
+00:01:29,980 --> 00:01:33,540
+is right here. 
+So you can see we have to send
+
+25
+00:01:33,550 --> 00:01:36,760
+a get request to the send point.
+ I'm going to copy this
+
+26
+00:01:36,760 --> 00:01:41,280
+address and then paste it here. Now
+
+27
+00:01:41,280 --> 00:01:45,290
+this get method returns a response object. Now
+
+28
+00:01:45,290 --> 00:01:49,050
+let's save the changes. Yes.
+ God is telling us that for matter. Auto
+
+29
+00:01:49,050 --> 00:01:52,360
+. Pepe is not installed in
+ our virtual environment. So let's go
+
+30
+00:01:52,360 --> 00:01:56,940
+ahead and install this as well. All
+
+31
+00:01:56,940 --> 00:02:00,640
+right. Now let's print this response. Save
+
+32
+00:02:00,640 --> 00:02:04,240
+the changes and run the program.
+ We got a response with
+
+33
+00:02:04,240 --> 00:02:08,210
+the status 401 which is
+ one of the standard http
+
+34
+00:02:08,210 --> 00:02:12,070
+. Error codes. So here on Google.
+ if you search for http
+
+35
+00:02:12,080 --> 00:02:15,580
+401 you can see that for one
+
+36
+00:02:15,590 --> 00:02:19,320
+represents unauthorized in this case.
+ we got this error because
+
+37
+00:02:19,320 --> 00:02:22,550
+we didn't tell Yelp who we are.
+So every time you
+
+38
+00:02:22,550 --> 00:02:26,420
+want to call one of the endpoints of yelp,
+we should send our API key
+
+39
+00:02:26,430 --> 00:02:31,360
+to tell yelp who we are.
+This is what we call authentication. 
+Now
+
+40
+00:02:31,940 --> 00:02:35,250
+back on yelp documentation, 
+here under
+
+41
+00:02:35,250 --> 00:02:39,060
+yelp fusion, 
+let's take a look at the introduction document
+
+42
+00:02:40,140 --> 00:02:43,850
+under authentication. We have a
+ link to the authentication Guide
+
+43
+00:02:45,340 --> 00:02:48,740
+So this page is telling us that
+ we should first create an app to
+
+44
+00:02:48,740 --> 00:02:52,500
+get an API key.
+We've already done that. Beautiful. 
+So
+
+45
+00:02:52,500 --> 00:02:56,050
+next is telling us to authenticate API calls
+
+46
+00:02:56,540 --> 00:03:00,010
+We need to set the Authorization HTTP header to
+
+47
+00:03:00,010 --> 00:03:03,670
+Bearer API_KEY. 
+What is going on here? 
+Well
+
+48
+00:03:03,790 --> 00:03:07,960
+these http requests have
+two sections or two components: 
+The 
+
+49
+00:03:07,960 --> 00:03:11,800
+header section and 
+the payload section. 
+In the header section we
+
+50
+00:03:11,800 --> 00:03:15,130
+have a few headers that
+ specifies some meta data about this
+
+51
+00:03:15,130 --> 00:03:18,670
+request. These headers are key value pairs. One
+
+52
+00:03:18,670 --> 00:03:21,850
+of these headers is
+ an authorization header which is
+
+53
+00:03:21,850 --> 00:03:25,500
+defined in the http protocol.
+ We use this header
+
+54
+00:03:25,620 --> 00:03:28,950
+to tell the web server who we are.
+ Let me show you how to do that.
+
+55
+00:03:30,340 --> 00:03:33,980
+So to make this code a little bit cleaner, 
+I'm gonna grab this
+
+56
+00:03:33,980 --> 00:03:37,570
+URL and store it in a separate variable. 
+Let's call
+
+57
+00:03:37,570 --> 00:03:42,160
+that url and then pass that here. 
+Now
+
+58
+00:03:42,740 --> 00:03:46,480
+this get method optionally takes keyword arguments. 
+One
+
+59
+00:03:46,480 --> 00:03:50,230
+of them is headers. 
+You can read this in the documentation of
+
+60
+00:03:50,230 --> 00:03:53,610
+the requests package on pypi.
+ We can set
+
+61
+00:03:53,610 --> 00:03:57,660
+this to a dictionary of key value pairs. 
+So
+
+62
+00:03:58,140 --> 00:04:01,880
+for clarity I'm going to
+ create that dictionary separately. Let's
+
+63
+00:04:01,880 --> 00:04:05,300
+set headers here to a new dictionary. In
+
+64
+00:04:05,300 --> 00:04:09,570
+this dictionary. we're going to
+ have a key called Authorization. And
+
+65
+00:04:09,570 --> 00:04:12,840
+we should set this to bear followed by
+
+66
+00:04:12,840 --> 00:04:16,760
+a space and our API key. So
+
+67
+00:04:16,760 --> 00:04:20,460
+back on Yelp here.
+ let's go to manage AB
+
+68
+00:04:21,440 --> 00:04:25,860
+and grab our topic. So copy this. And
+
+69
+00:04:25,860 --> 00:04:29,770
+now let's store that in a separate variable.
+ So a p I underline key
+
+70
+00:04:29,810 --> 00:04:33,080
+. We set this
+ to this strength. Make sure
+
+71
+00:04:33,080 --> 00:04:36,270
+you don't accidentally put a space here.
+ Otherwise. Yelp is going to tell
+
+72
+00:04:36,270 --> 00:04:39,760
+us that it didn't receive
+ a valid API key. So no
+
+73
+00:04:39,760 --> 00:04:43,660
+space here and also no
+ space at the beginning. Right
+
+74
+00:04:44,140 --> 00:04:47,410
+. So here's my API key. Now we
+
+75
+00:04:47,410 --> 00:04:52,460
+need to append that here. Epic. Finally
+
+76
+00:04:53,340 --> 00:04:57,130
+. we set the headers here.
+ save the changes. Let's
+
+77
+00:04:57,130 --> 00:05:00,410
+run the program one more time.
+ Okay. This time
+
+78
+00:05:00,410 --> 00:05:04,260
+we got a response with a
+different status code, that is 400.
+
+79
+00:05:05,140 --> 00:05:09,100
+Once again if you search for http 400, you
+
+80
+00:05:09,100 --> 00:05:12,870
+can see that 400 represents
+ a bad request. Which means
+
+81
+00:05:12,880 --> 00:05:16,430
+the server expected some data and 
+we didn't supply that.
+How
+
+82
+00:05:16,430 --> 00:05:19,700
+do we know what the server expected? 
+Well this
+
+83
+00:05:19,700 --> 00:05:24,190
+response object has an attribute called text. 
+With
+
+84
+00:05:24,190 --> 00:05:27,690
+that we can see the details of
+ what the server sent us. So let's
+
+85
+00:05:27,690 --> 00:05:31,460
+run the program one more time.
+ This is a JSON object
+
+86
+00:05:31,840 --> 00:05:35,700
+with a property called error.
+ which is set to another JSON
+
+87
+00:05:35,700 --> 00:05:39,600
+object and 
+hear the error message says "Please specify
+
+88
+00:05:39,600 --> 00:05:44,300
+a location or a latitude and longitude. So
+
+89
+00:05:44,300 --> 00:05:48,660
+back to yelp. 
+Let's look at the documentation for this endpoint. 
+That
+
+90
+00:05:48,670 --> 00:05:53,110
+is under business endpoints. Let's
+
+91
+00:05:53,110 --> 00:05:58,160
+expand this one more time.
+ It's right here. Business search. So
+
+92
+00:05:58,540 --> 00:06:01,830
+these are the parameters that we
+ can send to the server. One of
+
+93
+00:06:01,830 --> 00:06:05,700
+them is turned. which is optional.
+ Another one is location
+
+94
+00:06:05,710 --> 00:06:09,010
+. which is required. And here
+ are some examples. We can set that
+
+95
+00:06:09,010 --> 00:06:12,360
+to something like New York
+ City or N Y. C or
+
+96
+00:06:12,360 --> 00:06:16,540
+an address. so we can
+ either send the location or a
+
+97
+00:06:16,540 --> 00:06:20,080
+latitude and longitude. So now
+ let me show you how
+
+98
+00:06:20,080 --> 00:06:24,200
+to pass parameters when sending http requests. 
+This
+
+99
+00:06:24,200 --> 00:06:27,840
+get method of the request object. Optionally takes
+
+100
+00:06:27,870 --> 00:06:31,720
+another keyword argument, params. 
+Just
+
+101
+00:06:31,720 --> 00:06:34,920
+like the headers. We set this
+ to a dictionary. so I'm going
+
+102
+00:06:34,920 --> 00:06:39,180
+to define a dictionary here. perhaps. and
+
+103
+00:06:39,180 --> 00:06:42,760
+set the location key to.
+ let's say. in New York City
+
+104
+00:06:43,840 --> 00:06:47,990
+. And then it passed
+ this keyword argument here. Save
+
+105
+00:06:47,990 --> 00:06:53,750
+the changes around the
+ program one more time. 
+ Okay.
+
+106
+00:06:53,760 --> 00:06:57,680
+This time we didn't get an error.
+Instead we got a JSON object
+
+107
+00:06:57,690 --> 00:07:01,700
+that includes the list of
+businesses in New York City. 
+Now
+
+108
+00:07:01,700 --> 00:07:05,680
+let's filter this.
+So in our params object I
+
+109
+00:07:05,680 --> 00:07:10,060
+also want to set the term to Barber. So
+
+110
+00:07:10,060 --> 00:07:13,250
+I only want to see the barbers in New York City. 
+Save the
+
+111
+00:07:13,250 --> 00:07:16,550
+changes and run this one more time. 
+If
+
+112
+00:07:16,550 --> 00:07:19,870
+you scroll to the top,
+we can see that this JSON
+
+113
+00:07:19,870 --> 00:07:23,370
+object has a property called businesses. and this
+
+114
+00:07:23,370 --> 00:07:27,340
+is set to an array because here 
+we have square brackets. 
+In
+
+115
+00:07:27,340 --> 00:07:30,590
+this array we have a
+ bunch of JSON objects because we
+
+116
+00:07:30,590 --> 00:07:33,740
+have curly braces. so back to
+
+117
+00:07:33,740 --> 00:07:37,920
+our response object. Now.
+ instead of using the text attribute. I'm
+
+118
+00:07:37,920 --> 00:07:41,050
+going to call the Jason Method.
+ and this will convert the
+
+119
+00:07:41,050 --> 00:07:44,380
+result into a dictionary so we can
+
+120
+00:07:44,380 --> 00:07:48,850
+store that in a variable called result. Now
+
+121
+00:07:48,850 --> 00:07:52,460
+. as you saw. this dictionary
+ has a key called businesses that
+
+122
+00:07:52,460 --> 00:07:56,160
+is set to a list
+ so we can immediately access
+
+123
+00:07:56,160 --> 00:07:59,850
+this key businesses. And
+
+124
+00:07:59,860 --> 00:08:04,140
+let's rename this variable to businesses. Now
+
+125
+00:08:04,140 --> 00:08:08,020
+we have a list of dictionaries.
+ Now. in this print. the
+
+126
+00:08:08,020 --> 00:08:11,640
+business is variable. so
+
+127
+00:08:11,640 --> 00:08:15,780
+we get a list of dictionaries.
+ Each dictionary has
+
+128
+00:08:15,790 --> 00:08:19,430
+this key value pairs id, alias, name
+
+129
+00:08:19,430 --> 00:08:23,040
+and so on. 
+So this is the name of the business. 
+Now
+
+130
+00:08:23,040 --> 00:08:26,660
+let's say we only want to get
+the name of this businesses. 
+So
+
+131
+00:08:26,930 --> 00:08:30,820
+we can simply iterate over this list,
+get each dictionary
+
+132
+00:08:30,930 --> 00:08:34,330
+and extract the value of the name key. 
+So for
+
+133
+00:08:34,330 --> 00:08:38,700
+business and businesses. we
+
+134
+00:08:38,700 --> 00:08:42,250
+can print business of name.
+
+135
+00:08:43,040 --> 00:08:46,990
+Let's save the changes.
+Run the program one more time. 
+That
+
+136
+00:08:46,990 --> 00:08:50,580
+is better. 
+Now let's take this to the next level. 
+We
+
+137
+00:08:50,580 --> 00:08:53,990
+can use a list comprehension to
+ get the name of businesses that
+
+138
+00:08:53,990 --> 00:08:58,830
+are rated 4.5 stars or higher. 
+So remember
+
+139
+00:08:58,830 --> 00:09:02,650
+list comprehension. The syntax is like this item
+
+140
+00:09:02,650 --> 00:09:06,000
+for item enlist in this case. our list
+
+141
+00:09:06,000 --> 00:09:10,130
+as businesses. Each item is a business which
+
+142
+00:09:10,130 --> 00:09:14,870
+is a dictionary object now to
+ get the name of the business here
+
+143
+00:09:14,870 --> 00:09:18,690
+with type business of name. So
+
+144
+00:09:18,690 --> 00:09:22,490
+this list comprehension will return
+ the list of these businesses. Now
+
+145
+00:09:22,490 --> 00:09:27,050
+we want to filter. So if business
+
+146
+00:09:27,540 --> 00:09:30,720
+of grating that's another property
+ that we have in the
+
+147
+00:09:30,720 --> 00:09:34,790
+result. So if the rating
+ is greater than 4.5. then
+
+148
+00:09:34,790 --> 00:09:38,110
+we want to add the name of
+ the business to the list. Finally. we'll start
+
+149
+00:09:38,110 --> 00:09:41,270
+to result in names. and then we can
+
+150
+00:09:41,270 --> 00:09:45,340
+simply print the names variable. 
+Let's
+
+151
+00:09:45,340 --> 00:09:49,330
+run the program one more time. 
+So these are the highest rated barbers in New York City.
+

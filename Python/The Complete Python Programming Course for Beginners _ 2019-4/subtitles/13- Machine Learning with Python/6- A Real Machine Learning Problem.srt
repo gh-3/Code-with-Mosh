@@ -1,0 +1,269 @@
+1
+00:00:04,140 --> 00:00:08,530
+Over the next few lectures we're going to
+work on a real machine learning project. 
+Imagine
+
+2
+00:00:08,530 --> 00:00:11,910
+we have an online music store. 
+When our users sign up we
+
+3
+00:00:11,920 --> 00:00:15,680
+asked her age and gender
+and based on their profile we
+
+4
+00:00:15,680 --> 00:00:19,270
+recommend various music albums they are likely to buy. 
+So
+
+5
+00:00:19,270 --> 00:00:23,130
+in this project we want to
+use machine learning to increase sales. 
+So
+
+6
+00:00:23,130 --> 00:00:26,590
+we want to build a model.
+We feed this model with some sample
+
+7
+00:00:26,590 --> 00:00:30,130
+data based on the existing users.
+Our model will
+
+8
+00:00:30,130 --> 00:00:34,360
+learn the patterns in our data so
+we can ask it to make predictions. 
+When
+
+9
+00:00:34,360 --> 00:00:37,690
+a new user signs up we tell our model
+hey we have a new user with
+
+10
+00:00:37,690 --> 00:00:41,360
+this profile, 
+what is the kind of music that this user is interested in?
+
+11
+00:00:41,840 --> 00:00:45,340
+Our model will say jazz or hip hop or whatever. 
+and based
+
+12
+00:00:45,340 --> 00:00:48,800
+on that we can make suggestions to the user.
+ So this is the problem
+
+13
+00:00:48,800 --> 00:00:52,250
+we're going to solve. 
+Now back to the list of steps in a machine learning
+
+14
+00:00:52,250 --> 00:00:55,660
+project. 
+First we need to import our data. 
+Then we
+
+15
+00:00:55,660 --> 00:00:59,430
+should prepare or clean it.
+Next we select a machine learning algorithm
+
+16
+00:00:59,440 --> 00:01:02,590
+to build a model.
+We train our model. 
+And ask it
+
+17
+00:01:02,590 --> 00:01:06,310
+to make predictions. 
+And finally we evaluate our algorithm to
+
+18
+00:01:06,310 --> 00:01:09,830
+see its accuracy. 
+If it's not accurate, we either fine tune
+
+19
+00:01:09,830 --> 00:01:13,360
+our model or 
+select a different algorithm. 
+So
+
+20
+00:01:13,360 --> 00:01:17,370
+let's focus on the first step.
+Head over to bit.ly/
+
+21
+00:01:17,390 --> 00:01:20,900
+music-csv.
+This is a very basic csv
+
+22
+00:01:20,900 --> 00:01:24,250
+that I've created for this project.
+ It's just some random made up
+
+23
+00:01:24,250 --> 00:01:27,630
+data. 
+It's not real.
+So we have a table with
+
+24
+00:01:27,630 --> 00:01:31,810
+three columns: Age, gender and genre. 
+Gender
+
+25
+00:01:31,810 --> 00:01:35,380
+can either be one
+ which represents a male or zero
+
+26
+00:01:35,380 --> 00:01:39,210
+which represents a female.
+Here I'm making a few assumptions. 
+I'm
+
+27
+00:01:39,210 --> 00:01:42,420
+assuming that men between
+ 20 and 25 like hip
+
+28
+00:01:42,420 --> 00:01:45,700
+hop, men between 26 30 like
+
+29
+00:01:45,710 --> 00:01:49,450
+jazz and after the age
+ of 30 they like classical
+
+30
+00:01:49,450 --> 00:01:52,660
+music. 
+For women I'm assuming that
+
+31
+00:01:52,660 --> 00:01:55,970
+if they are between 20 and
+25 they like dance music, 
+If they're
+
+32
+00:01:55,970 --> 00:01:59,530
+between 26 30 they like acoustic music and
+
+33
+00:01:59,530 --> 00:02:03,340
+just like men after the age
+of 30 they like classical music. 
+Once
+
+34
+00:02:03,340 --> 00:02:06,960
+again this is a made up pattern.
+It's not the representation of the reality.
+
+35
+00:02:07,440 --> 00:02:10,660
+So let's go ahead and
+download this csv. 
+click on
+
+36
+00:02:10,660 --> 00:02:14,070
+this dot dot dot icon here and 
+download this
+
+37
+00:02:14,070 --> 00:02:17,520
+file. 
+In my downloads folder here we
+
+38
+00:02:17,520 --> 00:02:20,890
+have this music that csv.
+I'm going to drag and drop
+
+39
+00:02:20,890 --> 00:02:24,820
+this onto desktop because
+that's where I've stored this
+
+40
+00:02:24,820 --> 00:02:28,550
+HelloWorld notebook. 
+So I want you to put the csv file right next
+
+41
+00:02:28,550 --> 00:02:31,670
+your jupyter notebook. 
+Now back to our
+
+42
+00:02:31,670 --> 00:02:34,820
+notebook. 
+We need to read this csv file. 
+So just like
+
+43
+00:02:34,820 --> 00:02:38,420
+before first we need to import 
+the pandas module, so
+
+44
+00:02:38,420 --> 00:02:42,360
+import pandas as pd. 
+And
+
+45
+00:02:42,360 --> 00:02:45,680
+then we'll call pd dot read underline csv
+
+46
+00:02:45,680 --> 00:02:49,130
+and the name of the file is music dot
+
+47
+00:02:49,140 --> 00:02:52,640
+csv. 
+As you saw earlier this returns a data frame
+
+48
+00:02:52,640 --> 00:02:56,560
+which is a two dimensional array 
+similar to an Excel spreadsheet. 
+So
+
+49
+00:02:56,560 --> 00:03:00,260
+let's call that music_data.
+
+50
+00:03:01,940 --> 00:03:05,390
+Now let's inspect this music_data to make sure
+
+51
+00:03:05,390 --> 00:03:09,510
+we loaded everything properly. 
+So run. 
+So
+
+52
+00:03:09,510 --> 00:03:17,000
+here's our data frame. Beautiful. 
+Next we need to prepare or clean the data. 
+And that's the topic for the next lecture.
+

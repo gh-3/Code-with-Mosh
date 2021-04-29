@@ -1,0 +1,267 @@
+1
+00:00:04,240 --> 00:00:07,870
+So this is a very basic implementation of building and training
+
+2
+00:00:07,870 --> 00:00:11,410
+a model to make predictions. 
+Now to simplify things
+
+3
+00:00:11,420 --> 00:00:15,300
+I have removed all the code that
+ we wrote in the last lecture for calculating the
+
+4
+00:00:15,300 --> 00:00:19,380
+accuracy because in this lecture we're going
+to focus on a different topic. 
+So
+
+5
+00:00:19,380 --> 00:00:22,630
+basically we import our data set, 
+create a
+
+6
+00:00:22,630 --> 00:00:25,870
+model, train it and 
+then ask it to
+
+7
+00:00:25,870 --> 00:00:29,630
+make predictions. 
+Now this piece of code that you see here
+
+8
+00:00:29,640 --> 00:00:33,140
+is not what we want to run
+ every time we have a new user or
+
+9
+00:00:33,140 --> 00:00:37,050
+every time we want to make
+recommendations to an existing user because training
+
+10
+00:00:37,050 --> 00:00:40,500
+a model can sometimes be really time consuming. 
+In this example
+
+11
+00:00:40,500 --> 00:00:44,430
+we're dealing with a very small
+ data set that has only 20 records, but
+
+12
+00:00:44,430 --> 00:00:47,650
+in real applications we might have
+ a data set with thousands or
+
+13
+00:00:47,650 --> 00:00:51,300
+millions of samples. 
+Training a model for that might take seconds,
+
+14
+00:00:51,330 --> 00:00:55,380
+minutes or even hours.
+So that is why model persistence
+
+15
+00:00:55,380 --> 00:00:58,680
+is important. 
+Once in a while we build and train our
+
+16
+00:00:58,680 --> 00:01:01,990
+model and then we'll save it to a file. 
+Now next time
+
+17
+00:01:01,990 --> 00:01:05,600
+we want to make predictions, 
+we simply load the model from the file and
+
+18
+00:01:05,610 --> 00:01:09,290
+ask it to make predictions.
+That model is already trained. 
+We
+
+19
+00:01:09,290 --> 00:01:12,920
+don't need to retrain it.
+It's like an intelligent person. 
+So
+
+20
+00:01:12,920 --> 00:01:16,230
+let me show you how to do this.
+It's very very easy. 
+On
+
+21
+00:01:16,230 --> 00:01:19,730
+the top from sklearned dot
+
+22
+00:01:19,740 --> 00:01:24,510
+externals module, 
+we import joblib.
+
+23
+00:01:24,510 --> 00:01:28,120
+This joblib object has methods for saving
+
+24
+00:01:28,200 --> 00:01:31,550
+and loading models. 
+So after we
+
+25
+00:01:31,550 --> 00:01:35,050
+train our model, 
+we simply call joblib
+
+26
+00:01:35,740 --> 00:01:39,390
+dot dump and 
+give it two arguments: 
+our
+
+27
+00:01:39,390 --> 00:01:42,820
+model and 
+the name of the file in which we want to store this
+
+28
+00:01:42,820 --> 00:01:47,040
+model. 
+Let's call that music-recommender
+
+29
+00:01:47,040 --> 00:01:50,730
+dot joblib. 
+That's
+
+30
+00:01:50,740 --> 00:01:54,040
+all we have to do. 
+Now temporarily I'm going to comment out this
+
+31
+00:01:54,040 --> 00:01:57,560
+line. 
+We don't want to make any predictions.
+We just want to store our trained
+
+32
+00:01:57,560 --> 00:02:00,990
+model in a file.
+So let's run this cell with
+
+33
+00:02:00,990 --> 00:02:05,060
+control and slash. 
+Okay. Look.
+
+34
+00:02:05,540 --> 00:02:09,470
+In the output we have an array
+that contains the name of our model file. 
+So
+
+35
+00:02:09,470 --> 00:02:12,810
+this is the return value of the dump method. 
+Now
+
+36
+00:02:12,810 --> 00:02:16,270
+back to our desktop. 
+Right next to my notebook, 
+you can see our joblib
+
+37
+00:02:16,270 --> 00:02:19,960
+file. 
+This is where our model store. 
+It's simply a binary file.
+
+38
+00:02:20,740 --> 00:02:23,870
+Now back to Jupiter notebook. 
+As I told you before in a
+
+39
+00:02:23,870 --> 00:02:27,660
+real application we don't want to
+train a model every time. 
+So
+
+40
+00:02:28,140 --> 00:02:31,480
+let's comment out these few lines.
+So I've selected this
+
+41
+00:02:31,480 --> 00:02:35,110
+few lines, 
+on Macwe can press command and slash, 
+on
+
+42
+00:02:35,110 --> 00:02:38,420
+windows Control Slash. Okay. 
+These lines
+
+43
+00:02:38,430 --> 00:02:42,280
+are commented out. 
+Now this time instead of dumping our model, we're
+
+44
+00:02:42,280 --> 00:02:45,470
+gonna load it. 
+So we call the load method. 
+We don't have the
+
+45
+00:02:45,470 --> 00:02:49,390
+model. 
+We simply pass the name of our model file. 
+This
+
+46
+00:02:49,390 --> 00:02:53,150
+returns our trained model. 
+Now with
+
+47
+00:02:53,150 --> 00:02:57,410
+these two lines we can simply make predictions. 
+So earlier
+
+48
+00:02:57,410 --> 00:03:00,620
+we assume that men between 20 and 25, 
+like hip hop
+
+49
+00:03:00,620 --> 00:03:03,930
+music. 
+Let's print predictions and 
+see
+
+50
+00:03:03,930 --> 00:03:07,520
+if our model is behaving correctly or not. 
+So control
+
+51
+00:03:07,520 --> 00:03:11,360
+and enter. 
+There you go.
+So this is how we persist and load models.
+

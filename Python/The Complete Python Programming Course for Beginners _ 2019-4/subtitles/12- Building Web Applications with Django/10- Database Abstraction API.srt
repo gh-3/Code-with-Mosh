@@ -1,0 +1,302 @@
+2
+00:00:04,460 --> 00:00:07,850
+Earlier we built a view function to 
+respond to requests sent to 
+
+3
+00:00:07,850 --> 00:00:11,070
+this end point, slash movies. 
+Currently we're only 
+
+4
+00:00:11,070 --> 00:00:14,360
+displaying this hello world message.
+That's pretty boring. 
+So over the
+
+5
+00:00:14,360 --> 00:00:17,580
+next few lectures we're going to modify
+ this page and display the list of
+
+6
+00:00:17,580 --> 00:00:20,940
+movies in our database.
+So here's the movie class we
+
+7
+00:00:20,940 --> 00:00:24,320
+created earlier. 
+As you can see we derived this class from the
+
+8
+00:00:24,320 --> 00:00:27,610
+model class in Django. 
+But why? 
+Because this
+
+9
+00:00:27,610 --> 00:00:31,710
+model class gives us a
+ bunch of method for creating, retrieving,
+
+10
+00:00:31,760 --> 00:00:35,440
+updating and deleting objects from our database. 
+So
+
+11
+00:00:35,440 --> 00:00:38,810
+if you want to store a movie object in our database, 
+we simply call
+
+12
+00:00:38,820 --> 00:00:42,710
+one of these methods called save.
+That save method will internally
+
+13
+00:00:42,850 --> 00:00:46,270
+take care of generating the
+ right sequel statements to update our
+
+14
+00:00:46,270 --> 00:00:50,360
+database. 
+This is what we call a database abstraction API.
+
+15
+00:00:50,940 --> 00:00:55,330
+So this model class gives us an API
+ which is short for Application Programming
+
+16
+00:00:55,330 --> 00:00:59,150
+Interface and this API 
+abstracts away the complexity
+
+17
+00:00:59,150 --> 00:01:02,490
+of working with the database. 
+So now let me show you how to use this
+
+18
+00:01:02,490 --> 00:01:06,930
+API to get the list of movi objects from our database. 
+So
+
+19
+00:01:06,930 --> 00:01:11,290
+in our movies uplet's open up the views module. 
+So
+
+20
+00:01:11,290 --> 00:01:14,640
+Here's the index view function that we created earlier. 
+Currently we're
+
+21
+00:01:14,640 --> 00:01:18,230
+returning this Hello World. 
+Now we're going to use our model API
+
+22
+00:01:18,250 --> 00:01:22,190
+to get all the movie objects from our database. 
+So first
+
+23
+00:01:22,190 --> 00:01:25,400
+on the top from the Models module in
+
+24
+00:01:25,400 --> 00:01:31,180
+the current folder.
+ let's import the movie class Now
+
+25
+00:01:31,190 --> 00:01:35,020
+. In this function.
+ we simply write movie that objects
+
+26
+00:01:35,050 --> 00:01:38,250
+data. 
+With this statement we can get all the
+
+27
+00:01:38,250 --> 00:01:41,620
+movie objects in our database.
+So when we call this at some
+
+28
+00:01:41,620 --> 00:01:44,820
+point, Django is going to
+ generate a sequel statement like
+
+29
+00:01:44,820 --> 00:01:48,460
+this. 
+Select star from movies
+
+30
+00:01:48,720 --> 00:01:52,440
+underline movie. 
+We also have a method for filtering
+
+31
+00:01:52,440 --> 00:01:56,150
+records. 
+So that is movie dot objects dot
+
+32
+00:01:56,150 --> 00:02:00,030
+filter. 
+Here we can pass arbitrary keyword arguments like
+
+33
+00:02:00,030 --> 00:02:03,290
+give me all the movies
+ with release year set to
+
+34
+00:02:03,290 --> 00:02:06,410
+1984. 
+When we
+
+35
+00:02:06,410 --> 00:02:09,910
+call this, at some point,
+ Django is going to generate a sequel
+
+36
+00:02:09,910 --> 00:02:13,540
+statement like this: 
+select star from movies underline movie
+
+37
+00:02:13,550 --> 00:02:17,250
+where release year equals blah blah blah. 
+We
+
+38
+00:02:17,250 --> 00:02:20,670
+also have a method for getting a single object. 
+So movie dot
+
+39
+00:02:20,670 --> 00:02:24,470
+objects dot get and here
+we pass a keyword argument.
+
+40
+00:02:24,480 --> 00:02:27,860
+Let's say we want to get
+ the movie with id equal to 1.
+
+41
+00:02:28,540 --> 00:02:32,090
+We also have methods for
+ saving movie objects or deleting them
+
+42
+00:02:32,090 --> 00:02:36,470
+from our database. 
+So these methods represent our database abstraction
+
+43
+00:02:36,470 --> 00:02:40,310
+API that simplify a lot of cases. 
+Now sometimes
+
+44
+00:02:40,310 --> 00:02:43,650
+we're dealing with complex queries.
+If these methods don't do what
+
+45
+00:02:43,650 --> 00:02:48,140
+we need, we can always send
+raw sequel statements to our database. 
+Now
+
+46
+00:02:48,540 --> 00:02:51,880
+that aside.
+In this demo let's call the
+
+47
+00:02:51,880 --> 00:02:55,950
+all method to get the list of movies from our database. 
+So movies.
+
+48
+00:02:57,140 --> 00:03:00,700
+Now I'm going to use
+ a list comprehension to get the title
+
+49
+00:03:00,700 --> 00:03:04,310
+of these movies. 
+So m dot title for
+
+50
+00:03:04,310 --> 00:03:07,520
+em in movies. 
+So now we have a
+
+51
+00:03:07,520 --> 00:03:11,220
+list of strings. 
+We can join these strings using a comma
+
+52
+00:03:11,230 --> 00:03:14,400
+as a separator like this. 
+So a
+
+53
+00:03:14,400 --> 00:03:19,540
+string of comma dot join. So
+
+54
+00:03:19,540 --> 00:03:23,440
+this will combine all the elements in
+ our list and return a string. We
+
+55
+00:03:23,440 --> 00:03:26,870
+can store that here in output.
+ and finally. instead
+
+56
+00:03:26,870 --> 00:03:30,630
+of this hello world.
+ we can send the output. save
+
+57
+00:03:30,630 --> 00:03:34,740
+the changes back in the browser.
+ Let's refresh. There
+
+58
+00:03:34,740 --> 00:03:38,510
+you go. So just before
+ recording this video. I added another
+
+59
+00:03:38,510 --> 00:03:41,840
+movie hangover. So this verifies
+ that we could successfully get all
+
+60
+00:03:41,840 --> 00:03:45,520
+the movies from our database. 
+But we don't want to display them like this. 
+We
+
+61
+00:03:45,520 --> 00:03:51,000
+want to render them using some html markup. 
+And that's what I'm gonna show you next.
+

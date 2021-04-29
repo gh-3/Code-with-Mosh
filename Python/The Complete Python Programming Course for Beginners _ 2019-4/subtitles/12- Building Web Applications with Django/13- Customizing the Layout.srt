@@ -1,0 +1,169 @@
+2
+00:00:04,000 --> 00:00:07,330
+Now let's take this page to the next level.
+ Let me show you how to add a
+
+3
+00:00:07,330 --> 00:00:10,690
+bootstrap navigation bar on the top. So and
+
+4
+00:00:10,690 --> 00:00:15,050
+bootstrap documentation on the left side.
+ Look at components. Here
+
+5
+00:00:15,050 --> 00:00:18,510
+. We have various components.
+ like alert badges and so on. In
+
+6
+00:00:18,510 --> 00:00:22,350
+this list. you can find nav bar. Okay
+
+7
+00:00:22,840 --> 00:00:26,580
+. And on this page you can
+ see various examples of a bootstrap navigation
+
+8
+00:00:26,580 --> 00:00:31,460
+bar so we can have a
+ navigation bar with drop down lists. If
+
+9
+00:00:31,460 --> 00:00:35,020
+you scroll down. you can
+ see a very simple navigation
+
+10
+00:00:35,020 --> 00:00:38,280
+bar called Brandt. And below that.
+ you can see the
+
+11
+00:00:38,280 --> 00:00:41,840
+HTML markup to render
+ this navigation more. So let's
+
+12
+00:00:41,840 --> 00:00:45,010
+copy this Now back to our based on
+
+13
+00:00:45,010 --> 00:00:48,500
+HTML right after the body tag. Let's
+
+14
+00:00:48,500 --> 00:00:52,380
+paste this navigation bar and
+
+15
+00:00:52,380 --> 00:00:55,770
+then change nav bar too quickly. Save
+
+16
+00:00:55,770 --> 00:00:59,500
+the changes back here. Let's refresh. So
+
+17
+00:00:59,500 --> 00:01:03,080
+here's our navigation bar. That is better.
+ Now this table is currently taking
+
+18
+00:01:03,080 --> 00:01:07,450
+the entire width of the page.
+ Let's make it center. So
+
+19
+00:01:07,450 --> 00:01:11,080
+back to based on html.
+ we should wrap this content
+
+20
+00:01:11,080 --> 00:01:14,620
+block inside of a main
+ element with the container class
+
+21
+00:01:14,630 --> 00:01:17,980
+. So. in bootstrap.
+ you want to create a main
+
+22
+00:01:17,980 --> 00:01:22,500
+tag with the class container. And
+
+23
+00:01:22,500 --> 00:01:25,820
+then we want to
+ put this block inside of
+
+24
+00:01:25,820 --> 00:01:29,720
+the main task. Save the changes back
+
+25
+00:01:29,720 --> 00:01:34,000
+in the browser. Refresh.
+ There you go. That is better. Also
+
+26
+00:01:34,000 --> 00:01:38,420
+let's add the vertical borders to this table. 
+So back
+
+27
+00:01:38,420 --> 00:01:42,000
+to our template index at HTML.
+ Here's our table. Let's
+
+28
+00:01:42,000 --> 00:01:45,860
+add another class table. dash bordered
+
+29
+00:01:46,440 --> 00:01:50,230
+. save back in
+ the browser refresh. So that
+
+30
+00:01:50,230 --> 00:01:53,950
+looks better. Also.
+ I'm going to add another class
+
+31
+00:01:53,960 --> 00:01:58,100
+table. dash. hover. And with this we
+
+32
+00:01:58,100 --> 00:02:01,460
+get Let's refresh.
+ We get this nice effect here
+
+33
+00:02:02,240 --> 00:02:05,790
+. so our application looks better now.
+ But there is a problem. This base
+
+34
+00:02:05,790 --> 00:02:09,780
+template that we defined that
+ contains this navigation bar exists in
+
+35
+00:02:09,780 --> 00:02:13,490
+the movies. App. What if we had
+ several other apps in this project. We
+
+36
+00:02:13,490 --> 00:02:17,330
+don't want to redefine this bootstrap
+ template in every single app. So
+
+37
+00:02:17,330 --> 00:02:24,000
+in the next lecture. I will show
+ you how to share a base template across multiple apps.
+

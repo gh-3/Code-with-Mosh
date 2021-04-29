@@ -1,0 +1,517 @@
+1
+00:00:04,040 --> 00:00:07,550
+Alright. 
+In this lecture we're going to
+download a data set from a very popular
+
+2
+00:00:07,550 --> 00:00:11,020
+website called kaggle.com. 
+kaggle is basically
+
+3
+00:00:11,020 --> 00:00:14,120
+a place to the data science projects.
+So the first thing you need to
+
+4
+00:00:14,120 --> 00:00:17,920
+do is to create an account. 
+You can sign up with Facebook, Google or
+
+5
+00:00:17,930 --> 00:00:21,330
+using a custom email and password.
+Once you sign up, then
+
+6
+00:00:21,330 --> 00:00:25,440
+come back here on kaggle dot com.
+Here in the search bar search
+
+7
+00:00:25,440 --> 00:00:29,180
+for video game sales. 
+This
+
+8
+00:00:29,180 --> 00:00:32,050
+is the name of a very popular data
+ set that we're going to use in this
+
+9
+00:00:32,050 --> 00:00:35,540
+lecture. 
+So here in this list you can see the first
+
+10
+00:00:35,540 --> 00:00:38,820
+item with this kind of reddish icon. 
+So let's
+
+11
+00:00:38,820 --> 00:00:42,180
+go with that. 
+As you can see this data set includes the
+
+12
+00:00:42,180 --> 00:00:45,660
+sales data for more than 16,000 video games.
+
+13
+00:00:46,240 --> 00:00:49,540
+On this page you can see 
+the description of various columns in this data 
+
+14
+00:00:49,540 --> 00:00:53,430
+set. 
+We have rank, name, platform, year
+
+15
+00:00:53,430 --> 00:00:56,980
+and so on. 
+So here's our data source.
+It's a CSV file called
+
+16
+00:00:56,980 --> 00:01:00,820
+vgsales.csv.
+As you can see there are over
+
+17
+00:01:00,830 --> 00:01:04,110
+16,000 rows and 11 columns in
+
+18
+00:01:04,110 --> 00:01:08,000
+this data set. 
+Right below that you can see the first few records of this
+
+19
+00:01:08,000 --> 00:01:11,240
+data set. 
+So here's our first record.
+The ranking for this
+
+20
+00:01:11,240 --> 00:01:14,400
+game is one. 
+It's the Wii sports game for Wii as the
+
+21
+00:01:14,400 --> 00:01:18,190
+platform.and it was released in the year 2006. 
+Now
+
+22
+00:01:18,200 --> 00:01:21,630
+what I want you to do
+is to go ahead and download
+
+23
+00:01:21,630 --> 00:01:25,170
+this data set. 
+And as I told you before 
+you need to sign in before you
+
+24
+00:01:25,170 --> 00:01:28,450
+can download this. 
+So this will give you a zip file. 
+As
+
+25
+00:01:28,450 --> 00:01:32,110
+you can see here.
+Here's our CSV file. 
+Now
+
+26
+00:01:32,110 --> 00:01:35,500
+I want you to put
+ this right next your jupyter notebook. 
+ On
+
+27
+00:01:35,500 --> 00:01:38,880
+my machine that is on my desktop.
+So I want to drag and drop this
+
+28
+00:01:38,880 --> 00:01:42,560
+onto the desktop folder. 
+Now if
+
+29
+00:01:42,560 --> 00:01:46,060
+you look at the desktop,
+you can see Here's my jupyter HelloWarld
+
+30
+00:01:46,060 --> 00:01:49,800
+notebook. 
+And right next to that we have vgsales
+
+31
+00:01:49,810 --> 00:01:52,970
+dot csv.
+With that we go back to our
+
+32
+00:01:52,970 --> 00:01:56,750
+Jupiter notebook. 
+Let's remove the first line and instead
+
+33
+00:01:57,640 --> 00:02:01,350
+import pandas as
+
+34
+00:02:01,400 --> 00:02:04,940
+pd. 
+With this we're importing Pandas module and
+
+35
+00:02:04,940 --> 00:02:08,700
+renaming it to pd so we don't have to 
+type pandas dot several
+
+36
+00:02:08,700 --> 00:02:12,670
+times in this code.
+Now let's type pd dot
+
+37
+00:02:12,900 --> 00:02:16,650
+read underline csv and
+
+38
+00:02:16,660 --> 00:02:20,890
+pass the name of our csv file.
+That is vgsales
+
+39
+00:02:20,900 --> 00:02:24,510
+dot csv. 
+Now because the csv file is in the current folder right
+
+40
+00:02:24,510 --> 00:02:27,750
+next to jupyter notebook, we can easily load it otherwise 
+we'll have to
+
+41
+00:02:27,750 --> 00:02:32,080
+supply the full path to this file. 
+So this
+
+42
+00:02:32,080 --> 00:02:36,150
+returns a data frame object
+which is like an Excel spreadsheet.
+
+43
+00:02:36,160 --> 00:02:39,890
+Let me show you.
+So we store it here. and
+
+44
+00:02:39,890 --> 00:02:43,590
+then we can simply type df to inspect it. 
+So one
+
+45
+00:02:43,590 --> 00:02:46,870
+more time. let's run this program.
+ Here's our data frame
+
+46
+00:02:46,870 --> 00:02:50,830
+with those rows and columns.
+so we have rank, name, platform
+
+47
+00:02:50,830 --> 00:02:54,610
+and so on. 
+Now this data frame object has lots of attributes and
+
+48
+00:02:54,610 --> 00:02:57,990
+methods that we're not going to cover in this tutorial. 
+That's really beyond the
+
+49
+00:02:57,990 --> 00:03:00,540
+scope of what we're going to do.
+So I leave it up to you to read
+
+50
+00:03:00,550 --> 00:03:03,900
+pandas documentation or 
+follow other tutorials to learn about
+
+51
+00:03:03,900 --> 00:03:07,330
+pandas data frames. 
+But in this lecture I'm going to show you some of the most
+
+52
+00:03:07,330 --> 00:03:10,850
+useful methods and attributes.
+The first one is shape.
+
+53
+00:03:11,240 --> 00:03:14,450
+So shape. 
+Let's run this one more time. 
+So
+
+54
+00:03:14,450 --> 00:03:18,480
+here's the shape of this data set.
+We have over 16,000
+
+55
+00:03:18,480 --> 00:03:21,710
+records and 11 columns. 
+Technically this
+
+56
+00:03:21,710 --> 00:03:25,120
+is a two dimensional array of 16,000 and
+
+57
+00:03:25,120 --> 00:03:28,730
+11. Okay? 
+Now you can see here we have
+
+58
+00:03:28,740 --> 00:03:32,040
+another segment for writing code, so we
+ don't have to write all the code
+
+59
+00:03:32,040 --> 00:03:35,510
+in the first segment. 
+So here in the second segment we can call one
+
+60
+00:03:35,510 --> 00:03:39,650
+of the methods of the data frame.
+That is df dot describe.
+
+61
+00:03:41,440 --> 00:03:44,600
+Now let me run this program.
+You can see
+
+62
+00:03:44,600 --> 00:03:48,040
+the output for each segment right next to it. 
+So
+
+63
+00:03:48,040 --> 00:03:51,670
+here's our first segment. 
+Here we have these three lines and this
+
+64
+00:03:51,670 --> 00:03:54,950
+is the output of the last line. 
+Below that we
+
+65
+00:03:54,950 --> 00:03:58,340
+have our second segment, here
+we're calling the described method and
+
+66
+00:03:58,340 --> 00:04:02,200
+right below that we have output of this segment. 
+So
+
+67
+00:04:02,200 --> 00:04:05,660
+this is the beauty of jupyter.
+You can easily visualize our data
+
+68
+00:04:06,040 --> 00:04:09,660
+doing this with VSCode and terminal windows
+is really tedious and clunky.
+
+69
+00:04:10,140 --> 00:04:13,550
+So what does this describe method returning? 
+Basically it's returning some
+
+70
+00:04:13,550 --> 00:04:17,190
+basic information about each column in this data set. 
+So
+
+71
+00:04:17,190 --> 00:04:20,560
+as you saw earlier we have
+ columns like rank, year and so on.
+
+72
+00:04:21,140 --> 00:04:24,820
+These are the columns with numerical values.
+Now for each column,
+
+73
+00:04:24,820 --> 00:04:28,580
+we have the count which is
+the number of records in that column. 
+You
+
+74
+00:04:28,580 --> 00:04:33,640
+can see our Rank column has 16,598 records.
+
+75
+00:04:33,650 --> 00:04:38,560
+whereas the Year column has 16,327 records.
+
+76
+00:04:39,140 --> 00:04:42,470
+So this shows that some of
+ our records don't have the value for
+
+77
+00:04:42,470 --> 00:04:45,940
+the year column. 
+We have no values.
+So in a real data
+
+78
+00:04:45,940 --> 00:04:49,280
+science or machine learning project, 
+we'll have to use some techniques to clean
+
+79
+00:04:49,280 --> 00:04:52,550
+up our data set. 
+One option is to remove the records that
+
+80
+00:04:52,550 --> 00:04:56,140
+don't have a value for the year column.
+Or we can assign them
+
+81
+00:04:56,150 --> 00:05:00,110
+a default value. 
+That really depends on the project. 
+Now another
+
+82
+00:05:00,110 --> 00:05:03,500
+attribute for each column is mean.
+So this is the average of
+
+83
+00:05:03,510 --> 00:05:06,920
+all the values. 
+Now in the case of the Rank column, this value
+
+84
+00:05:06,920 --> 00:05:10,490
+doesn't really matter. 
+But look at the year. 
+So the average
+
+85
+00:05:10,490 --> 00:05:13,990
+year for all these video games
+ in our dataset is 2006,
+
+86
+00:05:13,990 --> 00:05:17,310
+and this might be important in
+the problem we're trying to solve. 
+We
+
+87
+00:05:17,310 --> 00:05:20,800
+also have standard deviation
+which is a measure to
+
+88
+00:05:20,800 --> 00:05:24,800
+quantify the amount of variation in our set of values. 
+Below
+
+89
+00:05:24,800 --> 00:05:28,140
+that we have min. 
+As an example the minimum value
+
+90
+00:05:28,140 --> 00:05:31,550
+for the Year column is 1980. 
+So
+
+91
+00:05:31,550 --> 00:05:35,330
+quite often when we work with a
+ new data set, we call the described method
+
+92
+00:05:35,340 --> 00:05:38,540
+to get some basic statistics about our data. 
+Let me
+
+93
+00:05:38,540 --> 00:05:42,190
+show you another useful attribute.
+ So in the next segment
+
+94
+00:05:42,190 --> 00:05:46,360
+let's type df dot values. 
+Let's
+
+95
+00:05:46,360 --> 00:05:50,350
+run this. 
+As you can see this returns a two dimensional array.
+
+96
+00:05:50,740 --> 00:05:54,570
+This square bracket indicates the outer array and the
+
+97
+00:05:54,570 --> 00:05:58,490
+second one represents the inner array.
+ So the first element
+
+98
+00:05:58,610 --> 00:06:02,310
+in our outer array is an array itself. 
+These
+
+99
+00:06:02,310 --> 00:06:05,440
+are the values in this array
+which basically represents the
+
+100
+00:06:05,440 --> 00:06:08,700
+first row in our dataset.
+So the video game with
+
+101
+00:06:08,700 --> 00:06:12,150
+ranking one which is called Wii Sports. 
+So
+
+102
+00:06:12,150 --> 00:06:21,000
+this was a basic overview
+of pandas data frames. 
+In the next lecture I'm gonna show you 
+some of the useful shortcuts of jupyter.
+

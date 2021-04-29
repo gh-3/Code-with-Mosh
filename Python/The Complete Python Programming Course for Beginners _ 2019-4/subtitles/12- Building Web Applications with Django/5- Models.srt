@@ -1,0 +1,388 @@
+2
+00:00:04,330 --> 00:00:07,620
+The next step is to create the
+ models for this movies app. These
+
+3
+00:00:07,620 --> 00:00:11,330
+models are Python classes that
+ we use to represent our application
+
+4
+00:00:11,330 --> 00:00:14,610
+data. 
+So here in our movies app,
+ we're going to have models like
+
+5
+00:00:14,610 --> 00:00:18,410
+genre and movie. 
+Let's go ahead and create them. So
+
+6
+00:00:18,420 --> 00:00:22,000
+here in the movies directory,
+ let's open up models.py.
+
+7
+00:00:21,000 --> 00:00:26,060
+Here I'm going to
+ create a class called Genre
+
+8
+00:00:26,540 --> 00:00:29,950
+and we should derive
+ this class from models dot
+
+9
+00:00:29,950 --> 00:00:33,710
+model. 
+What is going on here?
+ So in Django
+
+10
+00:00:33,730 --> 00:00:36,920
+we have this package, jango.db, this
+
+11
+00:00:36,920 --> 00:00:40,300
+package encapsulates all the functionality around working with
+
+12
+00:00:40,300 --> 00:00:44,040
+databases. 
+Now in this package,
+we have a module called
+
+13
+00:00:44,040 --> 00:00:47,990
+models and 
+in this module we have a class called Model. This
+
+14
+00:00:47,990 --> 00:00:51,430
+class encapsulates a lot
+ of functionality for storing a
+
+15
+00:00:51,430 --> 00:00:55,610
+model object in a database
+ or retrieving model objects, filter
+
+16
+00:00:55,610 --> 00:00:59,040
+them and so on. 
+You're going to learn about them soon. 
+So by
+
+17
+00:00:59,040 --> 00:01:02,740
+inheriting our genre class from the
+ base model class in Django, our
+
+18
+00:01:02,740 --> 00:01:06,080
+genre class will also
+ inherit all that functionality; which
+
+19
+00:01:06,080 --> 00:01:09,710
+means we don't really have to
+ write any code to store genre
+
+20
+00:01:09,710 --> 00:01:12,990
+objects in a database.
+Django will automatically take care
+
+21
+00:01:12,990 --> 00:01:16,660
+of that. 
+So think of the concept of genre.
+
+22
+00:01:17,040 --> 00:01:21,200
+What attributes should a genre have? 
+Well in a basic implementation
+
+23
+00:01:21,210 --> 00:01:24,840
+all we need to know about the
+ genre is its label or name. Is
+
+24
+00:01:24,840 --> 00:01:28,020
+this an action movie or comedy or what. 
+So here I'm
+
+25
+00:01:28,020 --> 00:01:32,400
+going to define a class attribute 
+called name and
+
+26
+00:01:32,400 --> 00:01:36,350
+we set it to an instance
+ of a field class in Django. So
+
+27
+00:01:36,840 --> 00:01:40,150
+in the models module, we have
+ a bunch of field classes. For
+
+28
+00:01:40,150 --> 00:01:43,620
+example we have CharField
+ to represent a database field
+
+29
+00:01:43,620 --> 00:01:47,540
+that can contain textual data.
+ We also have Integer
+
+30
+00:01:47,540 --> 00:01:50,950
+Field. 
+We have FloatFilled BooleanField
+
+31
+00:01:50,950 --> 00:01:54,100
+and so on. 
+So here I'm going to set this to an
+
+32
+00:01:54,110 --> 00:01:58,760
+instance of the CharField class and
+
+33
+00:01:58,760 --> 00:02:02,700
+here we should pass a keyword argument max_length. 
+Let's
+
+34
+00:02:02,700 --> 00:02:06,470
+set this to 255 characters.
+With this we can ensure
+
+35
+00:02:06,480 --> 00:02:10,980
+that no genre can have
+ a name longer than 255 characters,
+
+36
+00:02:11,020 --> 00:02:14,690
+and this is one way to 
+prevent security attacks in our application. 
+So
+
+37
+00:02:14,690 --> 00:02:18,340
+a hacker cannot attempt to create
+ a genre with a name that
+
+38
+00:02:18,340 --> 00:02:22,930
+is two billion characters long.
+So we enforce a limit here. 
+So
+
+39
+00:02:22,940 --> 00:02:26,140
+Here's our genre class now.
+Similarly we need to create a
+
+40
+00:02:26,140 --> 00:02:29,860
+movie class. 
+So once again class movie. 
+We
+
+41
+00:02:29,860 --> 00:02:33,190
+derive this from models.Model. 
+Now
+
+42
+00:02:33,190 --> 00:02:36,390
+What attributes of a movie do we need to know? 
+Well in our
+
+43
+00:02:36,400 --> 00:02:39,900
+imaginary video rental application,
+ we need to know the title
+
+44
+00:02:39,900 --> 00:02:43,320
+for each movie, 
+the year it was published, 
+the number of these movie
+
+45
+00:02:43,320 --> 00:02:46,460
+DVDs we have in the store
+or in the stock, as well as
+
+46
+00:02:46,460 --> 00:02:50,640
+the daily rental rate. 
+So let's go ahead and create these attributes. 
+We
+
+47
+00:02:50,640 --> 00:02:54,260
+set the title two models the Char Field
+
+48
+00:02:55,740 --> 00:02:59,520
+. Once again. we have
+ to set max length for consistency
+
+49
+00:02:59,520 --> 00:03:03,140
+. I'm going to set
+ this to to 55 next
+
+50
+00:03:03,140 --> 00:03:07,120
+week. Another attribute release year. We're
+
+51
+00:03:07,120 --> 00:03:12,680
+going to set that the
+ models that energy are filled. Now
+
+52
+00:03:12,680 --> 00:03:16,740
+let's create number in stock again
+
+53
+00:03:16,740 --> 00:03:21,070
+. We said this two
+ models not in anger filled and
+
+54
+00:03:21,070 --> 00:03:24,720
+finally daily. Great. Let's
+
+55
+00:03:24,720 --> 00:03:28,420
+say that two models that float field so
+
+56
+00:03:28,420 --> 00:03:32,060
+we can store values like $2.95. 
+Now
+
+57
+00:03:32,640 --> 00:03:36,410
+each movie needs to be
+associated with the genre. 
+How
+
+58
+00:03:36,410 --> 00:03:39,620
+do we do that? 
+Well here we should
+
+59
+00:03:39,620 --> 00:03:43,040
+add another attribute genre and we
+ set it to an instance of
+
+60
+00:03:43,040 --> 00:03:47,540
+models dot ForeignKey. 
+Now
+
+61
+00:03:47,540 --> 00:03:51,130
+with this we can create
+ a relationship between movies and genres.
+
+62
+00:03:51,140 --> 00:03:55,010
+So as the first argument,
+we need to pass the genre class because
+
+63
+00:03:55,010 --> 00:03:58,840
+we want to add a relationship
+ between the movie and the genre classes.
+
+64
+00:03:58,850 --> 00:04:02,410
+Right? 
+Now as the second argument, we need to pass a
+
+65
+00:04:02,410 --> 00:04:06,160
+keyword argument that is on_delete and
+
+66
+00:04:06,160 --> 00:04:09,500
+with this we tell Django
+ what should happen when a
+
+67
+00:04:09,500 --> 00:04:12,980
+genre is deleted. 
+For example if you have a genre called
+
+68
+00:04:12,980 --> 00:04:16,200
+comedy and we have five
+ movies in this genre, what should
+
+69
+00:04:16,200 --> 00:04:19,600
+happen if you accidentally or deliberately delete the
+
+70
+00:04:19,600 --> 00:04:23,020
+comedy genre? 
+In this tutorial let's assume that if the genre
+
+71
+00:04:23,020 --> 00:04:26,880
+is deleted, all the movies associated
+with it should also be deleted. 
+This
+
+72
+00:04:26,880 --> 00:04:30,560
+is what we call cascading.
+So here we set on_delete
+
+73
+00:04:30,710 --> 00:04:34,960
+to models.CASACADE. 
+So
+
+74
+00:04:34,960 --> 00:04:39,180
+let me zoom out so you
+ can see the complete code. 
+ So
+
+75
+00:04:39,180 --> 00:04:42,680
+after this point these are the
+ two model classes that we need in
+
+76
+00:04:42,680 --> 00:04:46,430
+the movies app. 
+In the future we can come back and add additional classes or
+
+77
+00:04:46,430 --> 00:04:50,000
+modify the existing ones. 
+The next step is to tell Django to
+
+78
+00:04:50,000 --> 00:04:57,000
+synchronize our database with the models 
+we have defined in the movies app;
+And that's the topic for the next lecture.
+

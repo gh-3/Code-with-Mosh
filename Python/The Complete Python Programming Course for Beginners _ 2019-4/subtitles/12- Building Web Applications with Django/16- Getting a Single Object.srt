@@ -1,0 +1,270 @@
+2
+00:00:04,000 --> 00:00:07,760
+So here's our detailed view function and
+this function we get the movie
+
+3
+00:00:07,760 --> 00:00:11,290
+id. 
+So we can use our movie model to
+
+4
+00:00:11,290 --> 00:00:15,600
+get the movie with the given id.
+It's a movie.objects earlier
+
+5
+00:00:15,600 --> 00:00:19,580
+you saw that all methods for getting
+ all the movies from the database. We
+
+6
+00:00:19,590 --> 00:00:23,050
+also have another method
+ for getting a single movie
+
+7
+00:00:23,940 --> 00:00:28,420
+. I hear we pass a
+ keyword argument like I d equals movie
+
+8
+00:00:28,430 --> 00:00:32,230
+i D. We also have
+ a known keyword PK. which
+
+9
+00:00:32,230 --> 00:00:35,660
+is short for primary key. You can
+ use either I d or P. K
+
+10
+00:00:36,240 --> 00:00:39,750
+So we get a movie
+ with this I d. Now
+
+11
+00:00:39,750 --> 00:00:43,950
+we need to put this in a template.
+ render it and return the result. So
+
+12
+00:00:44,340 --> 00:00:48,260
+here we return rent there
+ we pass a request object
+
+13
+00:00:48,940 --> 00:00:52,980
+. Then I'm more template is
+ going to be movies slash detail dot
+
+14
+00:00:52,980 --> 00:00:57,370
+html See the convention I'm following.
+ so I'm naming my templates based
+
+15
+00:00:57,380 --> 00:01:01,350
+on their view functions. Okay. So back
+
+16
+00:01:01,350 --> 00:01:05,680
+here finally we need to pass our context object.
+ which is a dictionary here
+
+17
+00:01:05,680 --> 00:01:08,950
+. We're gonna have a key called movie.
+ and we set it to this
+
+18
+00:01:08,950 --> 00:01:12,760
+movie object. Save the changes. Beautiful
+
+19
+00:01:13,240 --> 00:01:16,410
+. Now let's create our template.
+ So in the
+
+20
+00:01:16,410 --> 00:01:20,420
+template for their Inside the Movies folder.
+ Let's add and
+
+21
+00:01:20,420 --> 00:01:24,870
+your file detail dot html in
+
+22
+00:01:24,870 --> 00:01:28,330
+a stand plate on the top.
+ First. we need to extend the
+
+23
+00:01:28,330 --> 00:01:31,610
+base html template. Then we
+
+24
+00:01:31,610 --> 00:01:34,960
+need to define a block. So block the
+
+25
+00:01:34,960 --> 00:01:38,210
+blocks were going to use
+ is the content block. So here
+
+26
+00:01:38,210 --> 00:01:42,190
+I'm going to press the escape button
+ a couple of times to disable multi
+
+27
+00:01:42,190 --> 00:01:46,970
+cursor editing and type content. Now
+
+28
+00:01:46,970 --> 00:01:50,860
+. in this block. I want
+ to render a description list tag so
+
+29
+00:01:50,860 --> 00:01:54,440
+temporarily I want to change
+ the language of this file from
+
+30
+00:01:54,440 --> 00:01:57,570
+django dot html to HTML.
+ You also have a
+
+31
+00:01:57,570 --> 00:02:01,200
+shortcut for that. So you
+ can press shift command and
+
+32
+00:02:01,200 --> 00:02:05,260
+pee on Mac or shift
+ control p on windows here
+
+33
+00:02:05,260 --> 00:02:09,400
+type language and the
+ first item is change language
+
+34
+00:02:09,400 --> 00:02:13,950
+. Mod enter.
+ Let's change this to HTML. Okay
+
+35
+00:02:13,980 --> 00:02:17,270
+. Now. when we change the language to HTML.
+ you can see we don't get this syntax
+
+36
+00:02:17,270 --> 00:02:21,110
+highlighting. So these tags are not recognized Now
+
+37
+00:02:21,240 --> 00:02:24,420
+they want to create a d l tag.
+ Inside this tag. we
+
+38
+00:02:24,420 --> 00:02:27,560
+want to create a d.
+ T. And next to that. we
+
+39
+00:02:27,560 --> 00:02:31,100
+want to have a d.
+ D. So in this case. DL is
+
+40
+00:02:31,100 --> 00:02:34,860
+short for description list.
+ In the description list. we have one
+
+41
+00:02:34,860 --> 00:02:38,240
+or more pairs of DT and DD.
+ which are short
+
+42
+00:02:38,240 --> 00:02:41,830
+for term and description.
+ Now we want three of these
+
+43
+00:02:41,840 --> 00:02:45,510
+. so I'm going to
+ wrap these in parenthesis. then
+
+44
+00:02:45,510 --> 00:02:49,480
+multiplied by three tab. Beautiful. So
+
+45
+00:02:49,480 --> 00:02:53,240
+the first term went out. Here is
+ the title of the movie below that
+
+46
+00:02:53,240 --> 00:02:57,690
+will render the actual value.
+ So double Curly braces movie
+
+47
+00:02:57,700 --> 00:03:01,970
+the title. The second term is genre. and
+
+48
+00:03:01,970 --> 00:03:05,580
+similarly. we're going to
+ define it here. Movie. that
+
+49
+00:03:05,590 --> 00:03:11,460
+genre. And finally. let's add Stark so
+
+50
+00:03:11,530 --> 00:03:15,910
+movie that number and stuck save
+
+51
+00:03:15,910 --> 00:03:19,140
+the changes are formatting
+ is completely messed up. So
+
+52
+00:03:19,140 --> 00:03:23,400
+let's change the language back to
+ jangle html one more time. Change
+
+53
+00:03:23,400 --> 00:03:27,450
+language to jangle html. Now
+
+54
+00:03:27,450 --> 00:03:32,190
+I have to manually fix this formatting like
+
+55
+00:03:32,190 --> 00:03:35,350
+this. Okay. Yeah. Now let's test our
+
+56
+00:03:35,350 --> 00:03:38,800
+new view. So back in the browser.
+ let's refresh this
+
+57
+00:03:38,800 --> 00:03:42,090
+page. And here's how a description list is
+
+58
+00:03:42,090 --> 00:03:48,000
+rendered because also. add this
+ in a table that's a matter of personal preference
+

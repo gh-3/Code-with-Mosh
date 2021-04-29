@@ -1,0 +1,156 @@
+2
+00:00:04,000 --> 00:00:08,530
+So in our current implementation.
+ we have stored the api key in
+
+3
+00:00:08,530 --> 00:00:11,730
+our source code. There's a problem with this.
+ If you have this
+
+4
+00:00:11,730 --> 00:00:14,880
+code for version control system
+ like get and publish it
+
+5
+00:00:14,880 --> 00:00:18,150
+to get to this API key is visible to anyone who
+
+6
+00:00:18,150 --> 00:00:21,650
+has access to that Git hub repository.
+ And that means
+
+7
+00:00:21,660 --> 00:00:25,290
+they can create an application
+ and malicious application and use
+
+8
+00:00:25,300 --> 00:00:29,190
+our API key to pretend to be us.
+ That's not good. So
+
+9
+00:00:29,190 --> 00:00:33,060
+if they violate. any of the policies
+ of Yelp we';; be in trouble. So
+
+10
+00:00:33,180 --> 00:00:36,440
+How to prevent this?
+ Well. we need to extract this
+
+11
+00:00:36,440 --> 00:00:39,890
+API key. put it in a
+ separate file and exclude that file
+
+12
+00:00:39,890 --> 00:00:43,160
+from get Let me show you
+ how to do that. So that's
+
+13
+00:00:43,160 --> 00:00:46,560
+pretty easy. We add a
+ new file here. Let's call that
+
+14
+00:00:46,560 --> 00:00:49,870
+config. That pie in this
+ file will have all kinds
+
+15
+00:00:49,870 --> 00:00:54,310
+of configuration parameters or applications. So now
+
+16
+00:00:54,380 --> 00:00:57,670
+back to after pie.
+ I'm going to move line for into
+
+17
+00:00:57,670 --> 00:01:01,810
+conflict that pie so cut. then we'll
+
+18
+00:01:01,810 --> 00:01:05,110
+be here. Save the
+ changes now back to after
+
+19
+00:01:05,110 --> 00:01:08,350
+the pie on the top. we import this
+
+20
+00:01:08,350 --> 00:01:11,780
+conflict module in this module.
+ we have an attribute called
+
+21
+00:01:11,790 --> 00:01:15,130
+api key. right.
+ So we can access it using
+
+22
+00:01:15,130 --> 00:01:18,600
+the data operator. So this
+ is where we're referencing the API
+
+23
+00:01:18,600 --> 00:01:22,250
+key. We need to
+ prefix that with config dot
+
+24
+00:01:23,040 --> 00:01:26,340
+That was the first step.
+ Now. to exclude this file
+
+25
+00:01:26,340 --> 00:01:30,030
+from git, 
+we need to come to our project, 
+add
+
+26
+00:01:30,030 --> 00:01:34,250
+a new file and
+call it dot gitignore.
+
+27
+00:01:35,440 --> 00:01:39,170
+Here we can specify what
+ files and directors should be excluded from
+
+28
+00:01:39,170 --> 00:01:42,670
+our git repository. So currently. that
+
+29
+00:01:42,670 --> 00:01:46,660
+is config that point save the changes. So
+
+30
+00:01:46,660 --> 00:01:50,200
+now when we push our code to git hub Repository, 
+our config file
+
+31
+00:01:50,200 --> 00:01:53,940
+will not be there. 
+So if you're working in a team, every developer
+
+32
+00:01:53,980 --> 00:01:57,150
+needs to create this conflict file on their own machine. 
+So it's
+
+33
+00:01:57,150 --> 00:02:05,000
+the responsibility of the team leader
+who has access to the API key, 
+to give the API key to every developer in the team.
+

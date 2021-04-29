@@ -1,0 +1,196 @@
+2
+00:00:04,000 --> 00:00:08,470
+These days a lot of websites make
+ their data available to others while
+
+3
+00:00:08,470 --> 00:00:11,710
+what we call application programming
+ interfaces or APIs.
+
+4
+00:00:11,710 --> 00:00:15,260
+In simple terms
+ these APIs are endpoints that
+
+5
+00:00:15,260 --> 00:00:18,520
+are publicly accessible on the Internet.
+ So they have URLs
+
+6
+00:00:18,520 --> 00:00:21,760
+just like the
+ Web sites themselves. Here is
+
+7
+00:00:21,760 --> 00:00:25,200
+an example, 
+on yelp we have this API for searching for
+
+8
+00:00:25,200 --> 00:00:28,860
+businesses. 
+And this API has an endpoint at
+
+9
+00:00:28,860 --> 00:00:32,180
+this address or u r
+ l that is api dot yelp
+
+10
+00:00:32,180 --> 00:00:35,960
+dot com slash version
+ three slash businesses slash search
+
+11
+00:00:36,440 --> 00:00:39,620
+so we can send an http
+ request to this end point to
+
+12
+00:00:39,620 --> 00:00:43,110
+get the list of businesses
+ that match some criteria. In
+
+13
+00:00:43,110 --> 00:00:47,150
+case you're not familiar with http.
+ it's basically the protocol that
+
+14
+00:00:47,150 --> 00:00:50,540
+powers our web. So as
+ we're browsing the web. our
+
+15
+00:00:50,540 --> 00:00:53,940
+browser sends http requests various websites and
+
+16
+00:00:53,940 --> 00:00:57,650
+get something back. Let me show you.
+ So here in chrome. on
+
+17
+00:00:57,650 --> 00:01:01,490
+the top from the view menu.
+ go to developer and
+
+18
+00:01:01,500 --> 00:01:04,910
+open up develop are tools. Now
+
+19
+00:01:04,910 --> 00:01:08,880
+open up the network tab.
+ In case you don't see anything here. press
+
+20
+00:01:08,880 --> 00:01:12,490
+command and are on mac
+ or control and are on windows
+
+21
+00:01:12,490 --> 00:01:16,340
+to refresh the page. There you go. So
+
+22
+00:01:16,350 --> 00:01:19,560
+these are all the http
+ requests that my browser sent to
+
+23
+00:01:19,560 --> 00:01:23,540
+yell. Look at the
+ first request business search. That's
+
+24
+00:01:23,540 --> 00:01:27,110
+a request to get a document. Let's inspect
+
+25
+00:01:27,110 --> 00:01:31,100
+this request here in the header step.
+ you can see various attributes of
+
+26
+00:01:31,100 --> 00:01:34,360
+an http request. So this is the request.
+ U r l or
+
+27
+00:01:34,370 --> 00:01:38,140
+address. And that is the end point where
+
+28
+00:01:38,190 --> 00:01:42,540
+we're sending this request to. 
+Every http request has
+
+29
+00:01:42,750 --> 00:01:45,910
+a method. and that method
+ determines what we're going to
+
+30
+00:01:45,910 --> 00:01:49,470
+use this request for We
+ have a few standard http
+
+31
+00:01:49,470 --> 00:01:53,480
+request methods get for getting data post
+
+32
+00:01:53,500 --> 00:01:57,200
+for creating data put for updating data and
+
+33
+00:01:57,200 --> 00:02:00,340
+delayed for deleting data
+ below the request method. We
+
+34
+00:02:00,340 --> 00:02:03,560
+have status code. and that
+ is the status code of the
+
+35
+00:02:03,560 --> 00:02:07,530
+response that we get from the Web.
+ Server 200 indicates
+
+36
+00:02:07,540 --> 00:02:11,430
+success. Now here. If you
+ look at the response tab. you
+
+37
+00:02:11,430 --> 00:02:14,570
+can see the response that
+ this Web server sent to our
+
+38
+00:02:14,570 --> 00:02:18,440
+browser. This is basically
+ an HTML document that represents
+
+39
+00:02:18,450 --> 00:02:21,770
+its web page. If you
+ open the previous tab. you can
+
+40
+00:02:21,770 --> 00:02:26,160
+see a preview of this Web page. So
+
+41
+00:02:26,540 --> 00:02:29,920
+over the next few lectures you're
+ going to learn how to communicate with
+
+42
+00:02:29,920 --> 00:02:33,140
+yelp. AP to search for businesses based on some criteria.
+

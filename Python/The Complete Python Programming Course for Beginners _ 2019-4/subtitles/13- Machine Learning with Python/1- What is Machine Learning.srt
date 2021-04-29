@@ -1,0 +1,160 @@
+1
+00:00:04,040 --> 00:00:07,610
+Any section you're going to learn about machine learning
+ which is a subset of AI
+
+2
+00:00:07,610 --> 00:00:10,950
+or Artificial Intelligence, it's one
+ of the trending topics in
+
+3
+00:00:10,950 --> 00:00:14,450
+the world these days and 
+it's going to have a lot of applications in the future.
+
+4
+00:00:14,840 --> 00:00:18,310
+Here's an example: 
+Imagine I ask you to write a program to scan
+
+5
+00:00:18,310 --> 00:00:21,860
+an image until if it's a cat or a dog. 
+If
+
+6
+00:00:21,860 --> 00:00:25,490
+you want to build this program using 
+traditional programming techniques, your program
+
+7
+00:00:25,490 --> 00:00:28,900
+is going to get overly complex.
+You will have to come up with lots
+
+8
+00:00:28,900 --> 00:00:32,490
+of rules to look for a specific curves, edges and colors
+
+9
+00:00:32,490 --> 00:00:35,640
+in an image to tell if it's a cat or a dog. 
+But if I
+
+10
+00:00:35,640 --> 00:00:39,340
+give you a black and white photo,
+your rules may not work, they may break. 
+Then
+
+11
+00:00:39,340 --> 00:00:42,440
+you'll have to rewrite them. 
+Or I may give you a picture of a cat or
+
+12
+00:00:42,440 --> 00:00:46,520
+a dog from a different angle
+that you did not predict before. 
+So solving
+
+13
+00:00:46,520 --> 00:00:50,000
+this problem using traditional programming
+ technique is going to get overly
+
+14
+00:00:50,000 --> 00:00:53,250
+complex or sometimes impossible. 
+Now to make the
+
+15
+00:00:53,250 --> 00:00:57,140
+matter worse, what if in the future
+ask you to extend this program such
+
+16
+00:00:57,140 --> 00:01:00,850
+that it supports three kinds of animals: 
+cats, dogs,
+
+17
+00:01:00,860 --> 00:01:04,800
+and horses. 
+Once again you'll have to rewrite all those rules. 
+That's
+
+18
+00:01:04,800 --> 00:01:08,410
+not going to work. 
+So machine learning is a technique to solve these
+
+19
+00:01:08,410 --> 00:01:12,120
+kind of problems. 
+And this is how it works: 
+We build a model
+
+20
+00:01:12,130 --> 00:01:15,490
+or an engine and give it 
+lots and lots of data. 
+For 
+
+21
+00:01:15,490 --> 00:01:18,940
+example we give it thousands or 
+tens of thousands of pictures of 
+
+22
+00:01:18,940 --> 00:01:22,270
+cats and dogs. 
+Our model will then find and learn 
+
+23
+00:01:22,270 --> 00:01:25,670
+patterns in the input data,
+so we can give it a new picture
+
+24
+00:01:25,670 --> 00:01:29,060
+of a cat that it hasn't seen before and 
+ask it, is it a cat or
+
+25
+00:01:29,060 --> 00:01:32,660
+a dog or a horse? 
+And it will tell us with a certain level of accuracy.
+
+26
+00:01:33,040 --> 00:01:36,270
+The more input data we give it,
+the more accurate our model is
+
+27
+00:01:36,270 --> 00:01:39,620
+going to be. 
+So that was a very basic example. 
+But
+
+28
+00:01:39,620 --> 00:01:44,010
+machine Learning has other applications in 
+self driving cars, robotics,
+
+29
+00:01:44,020 --> 00:01:48,050
+language processing, vision processing, 
+forecasting things
+
+30
+00:01:48,050 --> 00:01:51,360
+like stock market, trends and
+the weather, games and so on.
+
+31
+00:01:51,740 --> 00:01:58,000
+So that's the basic idea about machine learning. 
+Next we'll look at machine learning in action.
+

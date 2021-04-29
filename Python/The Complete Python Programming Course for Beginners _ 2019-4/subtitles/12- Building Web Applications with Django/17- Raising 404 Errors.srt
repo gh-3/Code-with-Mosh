@@ -1,0 +1,293 @@
+2
+00:00:04,000 --> 00:00:08,070
+So our application is working out to this point.
+ But what if I pass an
+
+3
+00:00:08,080 --> 00:00:12,070
+invalid movie idea here. Let's say 10 we
+
+4
+00:00:12,070 --> 00:00:15,370
+get an exception of
+ type does not exist. That
+
+5
+00:00:15,370 --> 00:00:19,210
+is not good. So the common
+ pattern to handle these situations is
+
+6
+00:00:19,210 --> 00:00:23,170
+to return an http 404 error. 404
+
+7
+00:00:23,180 --> 00:00:26,460
+is the standard http error
+ that says the page or the
+
+8
+00:00:26,460 --> 00:00:30,280
+resource we're looking for
+ does not exist. So to
+
+9
+00:00:30,280 --> 00:00:33,650
+fix this problem. we need
+ to handle this exception and return
+
+10
+00:00:33,650 --> 00:00:37,110
+an http 404 error. So we wrap this
+
+11
+00:00:37,400 --> 00:00:41,890
+and a try block and
+ then catch the exception. So
+
+12
+00:00:41,890 --> 00:00:45,310
+here we accept.
+ The exception is of type does
+
+13
+00:00:45,310 --> 00:00:48,510
+not exist. and this
+ exception class is part of
+
+14
+00:00:48,510 --> 00:00:52,260
+our model. So movie dot
+
+15
+00:00:52,480 --> 00:00:55,740
+does not exist.
+ Let's have a quick look at
+
+16
+00:00:55,740 --> 00:00:59,290
+this class one more time.
+ so I'm going to go in the models
+
+17
+00:00:59,290 --> 00:01:02,670
+module. 
+Here's our movie class.
+We derive this from the model
+
+18
+00:01:02,670 --> 00:01:06,340
+class in Django.
+ This Model class defines this exception,
+
+19
+00:01:06,350 --> 00:01:09,820
+DoesNotExist, and that
+ is why it's inherited in
+
+20
+00:01:09,820 --> 00:01:13,660
+our movie class as well as
+ any other models in our project. So
+
+21
+00:01:14,140 --> 00:01:17,320
+we handle this exception. and here will
+
+22
+00:01:17,320 --> 00:01:20,710
+return a 404 error.
+ So on the top from
+
+23
+00:01:20,710 --> 00:01:25,220
+django dot http module.
+ we need to import http four
+
+24
+00:01:25,220 --> 00:01:28,340
+or four class now
+ back to our view of
+
+25
+00:01:28,340 --> 00:01:31,720
+function. When we catch this exception. we
+
+26
+00:01:31,720 --> 00:01:34,970
+should raise the HDD before of our exception. So
+
+27
+00:01:34,970 --> 00:01:39,160
+instead of returning.
+ we're going to raise http four
+
+28
+00:01:39,160 --> 00:01:43,360
+or four because this is an exception
+ class that we need to raise. So
+
+29
+00:01:43,740 --> 00:01:47,060
+save the changes. 
+Back in the browser. 
+Let's
+
+30
+00:01:47,060 --> 00:01:50,540
+pass an invalid movie idea here.
+ and we get a
+
+31
+00:01:50,540 --> 00:01:55,080
+page not found with a status code 404. 
+Now
+
+32
+00:01:55,080 --> 00:01:58,420
+back to view function. 
+Every time we have to get a single object and render
+
+33
+00:01:58,420 --> 00:02:02,250
+it, we'll have to follow this pattern.
+We have to add this try statement,
+
+34
+00:02:02,260 --> 00:02:05,570
+get the movie,
+render it and 
+then catch an
+
+35
+00:02:05,570 --> 00:02:08,890
+exception of type DoesNotExist and 
+then raise an
+
+36
+00:02:08,900 --> 00:02:12,790
+Http404 exception. 
+In a real application where
+
+37
+00:02:12,800 --> 00:02:16,460
+you have a lot of view functions
+ like this detailed view function. this pattern
+
+38
+00:02:16,470 --> 00:02:19,810
+ends up being so repetitive.
+ So that's why we have a shortcut for
+
+39
+00:02:19,810 --> 00:02:23,140
+that in Django. Because.
+ as I told you before. Django is
+
+40
+00:02:23,140 --> 00:02:26,730
+focused on productivity so
+ we can build applications with
+
+41
+00:02:26,730 --> 00:02:30,050
+less code. So on the top. Here we
+
+42
+00:02:30,050 --> 00:02:33,560
+have this module. Django. that shortcut from
+
+43
+00:02:33,560 --> 00:02:37,430
+this module. Let's import get object or
+
+44
+00:02:37,570 --> 00:02:41,910
+four or four. This is a function.
+ This function implements
+
+45
+00:02:42,440 --> 00:02:46,200
+this pattern so we don't have to
+ repeat it in every view function. So
+
+46
+00:02:46,200 --> 00:02:49,650
+now we can simplify this
+ view function like this. We
+
+47
+00:02:49,650 --> 00:02:53,170
+remove. try and accept
+
+48
+00:02:53,170 --> 00:02:56,420
+statements. Now. instead of getting
+
+49
+00:02:56,420 --> 00:02:59,990
+a single object using the get method.
+ we're going to use the shortcut
+
+50
+00:02:59,990 --> 00:03:03,930
+function. That was just important. So but
+
+51
+00:03:03,930 --> 00:03:07,670
+still it is recall. Get object or
+
+52
+00:03:07,670 --> 00:03:11,090
+four or four. We passed the primary key.
+ and this function will
+
+53
+00:03:11,100 --> 00:03:14,600
+automatically raise a four or four exception.
+ If this movie doesn't
+
+54
+00:03:14,600 --> 00:03:18,210
+exist now. save the changes back
+
+55
+00:03:18,210 --> 00:03:21,420
+in the browser refresh. 
+Oops. I missed the
+
+56
+00:03:21,420 --> 00:03:25,030
+first argument. 
+So here this function should know
+
+57
+00:03:25,040 --> 00:03:28,570
+what kind of model to work with.
+So earlier we used the
+
+58
+00:03:28,570 --> 00:03:32,240
+Movie class, the Movie model,
+but currently when calling this function
+
+59
+00:03:32,250 --> 00:03:35,580
+we haven't specified this model.
+So this function doesn't know
+
+60
+00:03:35,590 --> 00:03:38,820
+what model it should query.
+So as the first argument we need to
+
+61
+00:03:38,820 --> 00:03:42,850
+pass our model class. that is movie. Okay
+
+62
+00:03:43,240 --> 00:03:51,000
+Now save the changes and 
+refresh this one more time, 
+now we get a Page not found error
+

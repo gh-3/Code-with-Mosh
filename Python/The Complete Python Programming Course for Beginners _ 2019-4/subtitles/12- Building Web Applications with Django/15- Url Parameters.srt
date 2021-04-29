@@ -1,0 +1,353 @@
+2
+00:00:04,360 --> 00:00:08,230
+Now our video application currently only displays the list of movies. 
+It
+
+3
+00:00:08,230 --> 00:00:11,850
+would be nice if we could click
+ on a movie and see its details. So
+
+4
+00:00:12,240 --> 00:00:15,560
+the first thing we need to do is
+ to define a u R L that takes
+
+5
+00:00:15,560 --> 00:00:18,980
+a parameter like movies slash one where one
+
+6
+00:00:18,980 --> 00:00:22,420
+is the id of a movie.
+ So that can be s code
+
+7
+00:00:22,430 --> 00:00:26,470
+in our movies. APP. Let's open
+ up your else dot pie Here
+
+8
+00:00:26,470 --> 00:00:30,130
+. We need to define a
+ new U R L pattern. So let's
+
+9
+00:00:30,130 --> 00:00:33,440
+call the path function as the
+ first argument you're going to pass
+
+10
+00:00:33,440 --> 00:00:36,820
+a string like this.
+ We use angle brackets to define a
+
+11
+00:00:36,820 --> 00:00:40,690
+parameter. Let's call that movie. Underline it now
+
+12
+00:00:40,690 --> 00:00:44,310
+to refresh your memory. Earlier.
+ I told you that the main Euros module
+
+13
+00:00:44,310 --> 00:00:47,930
+in our project hands off
+ any or else that starts
+
+14
+00:00:47,940 --> 00:00:51,530
+with movies slash to this Urals module in
+
+15
+00:00:51,530 --> 00:00:54,700
+the movies App. Let's take a look.
+ So here in
+
+16
+00:00:54,700 --> 00:00:58,030
+the vidly folder. let's open up Urals. that
+
+17
+00:00:58,030 --> 00:01:01,830
+pie. So here we
+ define a Ural pattern. So
+
+18
+00:01:01,830 --> 00:01:05,950
+we're telling Django that any
+ girl that starts with movies Slash
+
+19
+00:01:05,960 --> 00:01:09,160
+should be handed off to
+ the Urals module in the
+
+20
+00:01:09,160 --> 00:01:12,880
+movies app. Now back
+ to the movies app when
+
+21
+00:01:12,880 --> 00:01:16,140
+we add a parameter here
+ that represents a u R
+
+22
+00:01:16,140 --> 00:01:19,600
+L that looks like this because
+ all the Urals were working within
+
+23
+00:01:19,600 --> 00:01:23,360
+this module. Start with movies slash. Okay
+
+24
+00:01:23,740 --> 00:01:28,360
+. now we need to map
+ this to a view function. So views
+
+25
+00:01:28,740 --> 00:01:31,900
+. Let's call that detail. Currently.
+ we don't have that. but we're going to
+
+26
+00:01:31,900 --> 00:01:35,150
+create it soon. Now. as a best practice.
+ we should also give
+
+27
+00:01:35,150 --> 00:01:38,510
+you the name. These names
+ are useful in situations where we
+
+28
+00:01:38,510 --> 00:01:42,550
+have multiple references to a u R L.
+ Let's say slash movies
+
+29
+00:01:44,540 --> 00:01:47,960
+slash one Now.
+ for whatever reason. we decided to
+
+30
+00:01:47,960 --> 00:01:51,250
+change this u R l
+ to something like this. Let's
+
+31
+00:01:51,250 --> 00:01:55,090
+say old system slash movies slash one. If
+
+32
+00:01:55,090 --> 00:01:58,940
+you have multiple references.
+ multiple hard coded references to
+
+33
+00:01:58,940 --> 00:02:02,530
+you are like this. Then we'll
+ have to update all those references to
+
+34
+00:02:02,530 --> 00:02:06,440
+the New York girl. So that's
+ why we use names here. These
+
+35
+00:02:06,440 --> 00:02:10,160
+names should uniquely identify you are
+ less so in our 10 place. Instead
+
+36
+00:02:10,160 --> 00:02:13,480
+of hard coding these Urs.
+ we reference them with their names and
+
+37
+00:02:13,480 --> 00:02:15,890
+then in the future. if you want to
+ change the u. R l. we can change
+
+38
+00:02:15,890 --> 00:02:20,150
+it in a single place. I'm going to
+ show you that later in this section. So
+
+39
+00:02:20,740 --> 00:02:24,800
+back to the business.
+ Let's call this detail and
+
+40
+00:02:24,800 --> 00:02:28,200
+also as a best practice.
+ it's better to name space this name
+
+41
+00:02:28,200 --> 00:02:31,860
+. Some movies underline detail and movies
+
+42
+00:02:31,860 --> 00:02:35,910
+underlying index. So this
+ is our neural pattern. Now
+
+43
+00:02:35,910 --> 00:02:39,240
+let's go ahead and create
+ this view function. So if
+
+44
+00:02:39,240 --> 00:02:42,750
+you're on match press command and P.
+ if you're on Windows Press Control P
+
+45
+00:02:43,240 --> 00:02:46,860
+and search for views and the movies app
+
+46
+00:02:47,840 --> 00:02:51,560
+Okay. now let's add a new view function
+
+47
+00:02:52,140 --> 00:02:55,730
+. We call that detail.
+ It takes a request and
+
+48
+00:02:55,730 --> 00:02:59,250
+also a parameter called movie_id because in
+
+49
+00:02:59,250 --> 00:03:02,670
+our URL pattern
+ we use the keyword movie
+
+50
+00:03:02,670 --> 00:03:06,360
+id So when we
+ send a request to let's say
+
+51
+00:03:06,370 --> 00:03:09,890
+movies/1, django will automatically extract
+
+52
+00:03:09,890 --> 00:03:13,600
+one. and then it
+ will call this view function
+
+53
+00:03:13,610 --> 00:03:17,020
+and pass one as an
+ argument for movie I D
+
+54
+00:03:17,030 --> 00:03:21,240
+. Okay. so for now.
+ let's just return and http response
+
+55
+00:03:21,250 --> 00:03:24,450
+with this movie. I d save the
+
+56
+00:03:24,450 --> 00:03:27,750
+changes back in the browser. Let's head
+
+57
+00:03:27,750 --> 00:03:31,480
+over to movies slash one. So
+
+58
+00:03:31,490 --> 00:03:35,450
+we get one here.
+ Let's change this to two beautiful. Everything
+
+59
+00:03:35,450 --> 00:03:39,010
+is working. However.
+ I can pass a non numeric
+
+60
+00:03:39,010 --> 00:03:42,290
+value like a and
+ that also gets passed as
+
+61
+00:03:42,290 --> 00:03:45,700
+the movie idea. But as you
+ know in our model. our movie
+
+62
+00:03:45,700 --> 00:03:49,410
+ids are integers. Look. here's our movies table
+
+63
+00:03:49,420 --> 00:03:52,850
+. The first column is I D.
+ And it's an integer. So
+
+64
+00:03:52,850 --> 00:03:56,150
+by default. Django uses an
+ integer for primary kids. But we
+
+65
+00:03:56,150 --> 00:03:59,840
+can always change that if
+ you want to. So back
+
+66
+00:03:59,840 --> 00:04:03,760
+to the U. R L s module here.
+ I'm going to use a type converter
+
+67
+00:04:03,770 --> 00:04:07,650
+to convert this value
+ to an integer. So we
+
+68
+00:04:07,650 --> 00:04:10,980
+prefix that with int colon. Save the
+
+69
+00:04:10,980 --> 00:04:14,450
+changes now back in the browser. If
+
+70
+00:04:14,450 --> 00:04:18,420
+you pass a as the movie I d.
+ Let's see what happens. Django
+
+71
+00:04:18,420 --> 00:04:21,940
+cannot find that page. So this
+ is some level of protection. We
+
+72
+00:04:21,940 --> 00:04:25,170
+can ensure that we
+ only get numeric values for
+
+73
+00:04:25,170 --> 00:04:28,370
+our movie id parameter.
+Now let's change this back to
+
+74
+00:04:28,370 --> 00:04:31,580
+one. Beautiful. 
+So in the next lecture, we're
+
+75
+00:04:31,580 --> 00:04:37,000
+going to get the movie object with this id and 
+render it on this page.
+

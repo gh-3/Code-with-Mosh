@@ -1,0 +1,243 @@
+1
+00:00:04,140 --> 00:00:07,550
+A machine learning project involves a number of steps. 
+The first step
+
+2
+00:00:07,550 --> 00:00:11,100
+is to import our data which 
+often comes in the form of a csv
+
+3
+00:00:11,100 --> 00:00:14,270
+file. 
+You might have a database with lots of data,
+we can
+
+4
+00:00:14,270 --> 00:00:17,660
+simply export that data and 
+store it in a csv file for
+
+5
+00:00:17,660 --> 00:00:20,760
+the purpose of our machine learning project.
+So we import our
+
+6
+00:00:20,760 --> 00:00:24,260
+data, 
+next we need to clean it and 
+this involved tasks such
+
+7
+00:00:24,260 --> 00:00:27,630
+as removing duplicated data. 
+If you have duplicates in the data, we
+
+8
+00:00:27,630 --> 00:00:30,840
+don't want to feed this to our model because 
+otherwise our model will
+
+9
+00:00:30,840 --> 00:00:34,630
+learn bad patterns in the data and
+it will produce the wrong result. 
+So
+
+10
+00:00:34,630 --> 00:00:38,270
+we should make sure that our input
+data is in good and clean shape. 
+If
+
+11
+00:00:38,270 --> 00:00:42,300
+there are data that is irrelevant,
+we should remove them. 
+If they are duplicated or
+
+12
+00:00:42,310 --> 00:00:45,430
+incomplete, 
+we can remove or modify them. 
+If our
+
+13
+00:00:45,430 --> 00:00:49,210
+data is text based like 
+the name of countries or genres
+
+14
+00:00:49,210 --> 00:00:52,460
+of music or cats and dogs,
+we need to convert them to
+
+15
+00:00:52,460 --> 00:00:55,570
+numerical values. 
+So this step really depends on the
+
+16
+00:00:55,570 --> 00:00:59,410
+kind of data we are working with.
+Every project is different. 
+Now
+
+17
+00:00:59,410 --> 00:01:03,430
+that we have a clean data set,
+we need to split it into two segments: 
+one
+
+18
+00:01:03,430 --> 00:01:06,700
+for training our model and
+the other for testing it to
+
+19
+00:01:06,700 --> 00:01:10,390
+make sure that our model
+produces the right result. 
+For
+
+20
+00:01:10,390 --> 00:01:13,600
+example if you have 1000 pictures of cats and dogs, 
+we can 
+
+21
+00:01:13,600 --> 00:01:17,030
+reserve 80% for training and 
+the other 20% for
+
+22
+00:01:17,030 --> 00:01:20,390
+testing. 
+The next step is to create a model and
+
+23
+00:01:20,390 --> 00:01:24,350
+this involves selecting an algorithm to analyze the data. 
+There's
+
+24
+00:01:24,350 --> 00:01:28,010
+so many different machine learning algorithms out there
+such as decision trees, 
+
+25
+00:01:28,180 --> 00:01:31,490
+neural networks and so on.
+Each algorithm has pros and
+
+26
+00:01:31,490 --> 00:01:34,720
+cons in terms of
+accuracy and performance. 
+So the
+
+27
+00:01:34,720 --> 00:01:38,220
+algorithm you choose depends on 
+the kind of problem you're trying to solve
+
+28
+00:01:38,230 --> 00:01:42,260
+and your input data. 
+Now the good news is that we don't have to explicitly
+
+29
+00:01:42,290 --> 00:01:45,900
+program an algorithm. 
+There are libraries out there that provide these
+
+30
+00:01:45,900 --> 00:01:49,100
+algorithms. 
+One of the most popular ones which we're going to look at
+
+31
+00:01:49,100 --> 00:01:52,370
+in this tutorial is psychic learn.
+So we build a
+
+32
+00:01:52,370 --> 00:01:55,620
+model using an algorithm,
+next we need to train our
+
+33
+00:01:55,620 --> 00:01:58,830
+model. 
+So we feed our training data. 
+Our
+
+34
+00:01:58,830 --> 00:02:02,000
+model will then look for the patterns in the data. 
+So next we
+
+35
+00:02:02,000 --> 00:02:05,360
+can ask it to make predictions. 
+Back to example of cats
+
+36
+00:02:05,360 --> 00:02:08,630
+and dogs, we can ask our model is this a cat or
+
+37
+00:02:08,630 --> 00:02:12,100
+a dog. 
+And our model will make a prediction. 
+Now the prediction
+
+38
+00:02:12,100 --> 00:02:15,350
+is not always accurate.
+In fact when you start out, it's
+
+39
+00:02:15,350 --> 00:02:19,000
+very likely that your predictions are inaccurate.
+So we need to evaluate
+
+40
+00:02:19,000 --> 00:02:22,380
+the predictions and 
+measure their accuracy. 
+Then
+
+41
+00:02:22,380 --> 00:02:26,220
+we need to get back to our model and 
+either select a different algorithm 
+
+42
+00:02:26,220 --> 00:02:29,730
+that is going to produce a more accurate resolve 
+for the kind of problem we're
+
+43
+00:02:29,730 --> 00:02:33,110
+trying to solve or
+ fine tune the parameters of
+
+44
+00:02:33,110 --> 00:02:37,050
+our model. 
+So each algorithm has parameters that 
+we can modify to
+
+45
+00:02:37,060 --> 00:02:40,510
+optimize the accuracy. 
+So these are the high level steps
+
+46
+00:02:40,510 --> 00:02:43,640
+that you follow in a machine learning project.
+Next we look at the libraries and tools for machine learning.
+

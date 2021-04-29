@@ -1,0 +1,412 @@
+1
+00:00:04,240 --> 00:00:07,580
+In this lecture we're going to look
+ at the popular Python libraries that we use
+
+2
+00:00:07,590 --> 00:00:11,090
+in machine learning projects.
+The first one is numpy which provides
+
+3
+00:00:11,100 --> 00:00:15,130
+a multidimensional array, very very popular library. 
+The
+
+4
+00:00:15,130 --> 00:00:18,470
+second one is pandas which is 
+a data analysis library that
+
+5
+00:00:18,470 --> 00:00:21,860
+provides a concept called data frame.
+A data frame is
+
+6
+00:00:21,860 --> 00:00:25,920
+a two dimensional data structure
+similar to an Excel spreadsheet. 
+So
+
+7
+00:00:25,920 --> 00:00:29,140
+we have rows and columns. 
+We can select data in a row or a
+
+8
+00:00:29,140 --> 00:00:32,740
+column or 
+a range of rows and columns, again very
+
+9
+00:00:32,740 --> 00:00:36,300
+very popular in machine learning and data science projects. 
+The
+
+10
+00:00:36,300 --> 00:00:39,900
+third library is MattPlotLib which is 
+a two dimensional
+
+11
+00:00:39,900 --> 00:00:43,240
+plotting library for creating graphs and plots. 
+The
+
+12
+00:00:43,240 --> 00:00:46,610
+next library is Scikit-Learn which is 
+one of the most popular machine
+
+13
+00:00:46,610 --> 00:00:50,200
+learning libraries that provides 
+all these common algorithms like
+
+14
+00:00:50,200 --> 00:00:54,300
+decision trees, neural networks and so on. 
+Now 
+
+15
+00:00:54,300 --> 00:00:57,920
+when working with machine learning project, 
+we use an environment called Jupiter for 
+
+16
+00:00:57,920 --> 00:01:01,260
+writing our code. 
+Technically we can still use VSCode or any
+
+17
+00:01:01,260 --> 00:01:04,590
+other code editors, but 
+these editors are not ideal for machine learning
+
+18
+00:01:04,590 --> 00:01:07,850
+projects because
+ we frequently need to inspect the data and
+
+19
+00:01:07,850 --> 00:01:11,670
+that is really hard in environments 
+like VSCode and terminal. 
+If
+
+20
+00:01:11,670 --> 00:01:14,960
+you're working with a table of 
+ 10 or 20 columns visualizing this 
+
+21
+00:01:14,960 --> 00:01:18,530
+data in a terminal window is really 
+really difficult and messy. 
+So
+
+22
+00:01:18,530 --> 00:01:21,800
+that's why we use Jupiter,
+it makes it really easy to inspect our
+
+23
+00:01:21,800 --> 00:01:25,490
+data. 
+Now to install Jupiter, we're going to use a platform
+
+24
+00:01:25,490 --> 00:01:29,140
+called Anaconda. 
+So head over to anaconda
+
+25
+00:01:29,140 --> 00:01:32,260
+dot com slash download. 
+On this page you
+
+26
+00:01:32,260 --> 00:01:35,900
+can download anaconda distribution 
+for your operating system. 
+So
+
+27
+00:01:35,900 --> 00:01:39,160
+we have distributions for Windows, Mac and Linux.
+
+28
+00:01:39,840 --> 00:01:43,410
+So let's go ahead and install anaconda
+
+29
+00:01:43,410 --> 00:01:47,160
+for python 3.7. 
+Download.
+
+30
+00:01:50,640 --> 00:01:54,180
+Alright. 
+So here's Anaconda downloaded on my machine. 
+Let's double click
+
+31
+00:01:54,180 --> 00:01:57,760
+this. 
+All right. 
+First it's going to run a program to determine
+
+32
+00:01:57,760 --> 00:02:01,890
+if the software can be installed.
+So let's continue. 
+And
+
+33
+00:02:01,890 --> 00:02:05,420
+once you can 
+continue, 
+continue, pretty easy, 
+continue
+
+34
+00:02:05,420 --> 00:02:09,550
+one more time, 
+I agree with the license agreement. Okay.
+
+35
+00:02:09,940 --> 00:02:13,690
+You can use the default installation location,
+so don't worry about that. 
+Just
+
+36
+00:02:13,690 --> 00:02:16,800
+click install. 
+Give it a few seconds. 
+Now the
+
+37
+00:02:16,800 --> 00:02:20,400
+beautiful thing about Anaconda is
+ that it will install Jupiter as
+
+38
+00:02:20,400 --> 00:02:24,120
+well as all those popular
+data science libraries like numpy,
+
+39
+00:02:24,130 --> 00:02:27,760
+pandas and so on. 
+So we don't have to manually install these using pip.
+
+40
+00:02:30,240 --> 00:02:34,290
+All right. 
+Now as part of the next step,
+Anaconda is suggesting to install Microsoft
+
+41
+00:02:34,300 --> 00:02:37,570
+VSCode. 
+We already have this on our machines, 
+so we don't have to install
+
+42
+00:02:37,570 --> 00:02:40,910
+it. 
+We can go with continue and 
+close the
+
+43
+00:02:40,910 --> 00:02:44,200
+installation. 
+Finally we can move this to trash because we
+
+44
+00:02:44,200 --> 00:02:47,860
+don't need this installer in the future. 
+All
+
+45
+00:02:47,860 --> 00:02:52,960
+right. 
+Now open up a terminal window and 
+type jupyter with
+
+46
+00:02:52,960 --> 00:02:56,310
+a white space notebook. 
+
+
+47
+00:02:56,310 --> 00:03:00,660
+This will start the notebook server on your machine. 
+So enter. 
+There
+
+48
+00:03:00,660 --> 00:03:03,860
+you go. 
+This will start the notebook server on your machine. 
+You can
+
+49
+00:03:03,860 --> 00:03:07,130
+see these default messages here.
+Don't worry about them. 
+Now It
+
+50
+00:03:07,140 --> 00:03:10,430
+automatically opens a browser window pointing to
+
+51
+00:03:10,430 --> 00:03:14,700
+local host port 8888. 
+This
+
+52
+00:03:14,700 --> 00:03:17,860
+is what we call Jupyter Dashboard.
+On this dashboard we have
+
+53
+00:03:17,860 --> 00:03:21,720
+a few tabs. 
+The first tab is the files tab and 
+by default this
+
+54
+00:03:21,720 --> 00:03:25,030
+points to your home directory.
+ So every user on your machine has
+
+55
+00:03:25,030 --> 00:03:28,280
+a home directory. 
+This is my home directory on Mac. 
+You can see here
+
+56
+00:03:28,280 --> 00:03:31,930
+we have a desktop folder
+ as well as documents, downloads and
+
+57
+00:03:31,930 --> 00:03:35,150
+so on. 
+On your machine you're going to see different folders. 
+So somewhere on
+
+58
+00:03:35,150 --> 00:03:38,280
+your machine, you need to create a jupyter notebook. 
+I'm going to
+
+59
+00:03:38,280 --> 00:03:42,330
+go to desktop. 
+Here's my desktop.
+I don't have anything here and
+
+60
+00:03:42,330 --> 00:03:45,750
+then click new. 
+I want to create a
+
+61
+00:03:45,750 --> 00:03:49,080
+notebook for Python three.
+In this notebook we can write
+
+62
+00:03:49,090 --> 00:03:52,830
+python code and execut it line by line.
+We can easily visualize
+
+63
+00:03:52,830 --> 00:03:56,120
+our data, as you will see
+over the next few videos. 
+So let's
+
+64
+00:03:56,120 --> 00:03:59,530
+go ahead with this. 
+All
+
+65
+00:03:59,530 --> 00:04:03,780
+right. 
+Here's our first notebook. 
+You can see by default it's called Untitled.
+
+66
+00:04:03,790 --> 00:04:07,080
+Let's change that to HelloWorld. 
+So
+
+67
+00:04:07,080 --> 00:04:11,070
+this is going to be the HelloWorld of 
+our machine learning project. 
+Let's
+
+68
+00:04:11,070 --> 00:04:14,340
+rename this. 
+Now If you look at your desktop, you
+
+69
+00:04:14,340 --> 00:04:18,100
+can see this file, HelloWorld.ipynb,
+
+70
+00:04:18,110 --> 00:04:21,450
+this is a Jupiter notebook.
+It's kind of similar to
+
+71
+00:04:21,450 --> 00:04:25,180
+our py files where we write our python code, but 
+it includes additional
+
+72
+00:04:25,180 --> 00:04:29,340
+data that jupyter uses to execute our code. 
+So
+
+73
+00:04:29,340 --> 00:04:34,070
+back to our notebook.
+Let's do a print Hello
+
+74
+00:04:34,070 --> 00:04:37,480
+world. 
+And then click this
+
+75
+00:04:37,480 --> 00:04:41,380
+run button here. 
+And here's the result printed
+
+76
+00:04:41,390 --> 00:04:45,400
+in Jupiter. 
+So we don't have to navigate back and forth 
+between the terminal window.
+
+77
+00:04:45,410 --> 00:04:48,780
+We can see all the result right here. 
+Next
+
+78
+00:04:48,780 --> 00:04:54,000
+I'm going to show you how to
+ load a data set from a csv file in jupyter.
+

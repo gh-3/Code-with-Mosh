@@ -1,0 +1,636 @@
+2
+00:00:04,000 --> 00:00:07,670
+All right. 
+Now let's create our first view or view function. 
+So here
+
+3
+00:00:07,670 --> 00:00:12,290
+in the movies app, let's
+ open up views.py and
+
+4
+00:00:12,290 --> 00:00:15,730
+define a function called index. Now
+
+5
+00:00:15,730 --> 00:00:19,030
+this name is arbitrary,
+we could call it anything, but usually we
+
+6
+00:00:19,030 --> 00:00:22,360
+use the word index for
+ naming the function that represents the
+
+7
+00:00:22,360 --> 00:00:25,530
+main page of an app.
+For example here in our
+
+8
+00:00:25,530 --> 00:00:28,730
+movies app when we send a
+ request to this address to this
+
+9
+00:00:28,730 --> 00:00:32,050
+end point, our index function
+ is going to get called. So
+
+10
+00:00:32,060 --> 00:00:35,860
+Index represents the main page of an app. 
+Now
+
+11
+00:00:35,870 --> 00:00:39,670
+all our view functions should
+ take a parameter called request.
+
+12
+00:00:39,680 --> 00:00:42,780
+Again the name is arbitrary
+ but the object that is passed to
+
+13
+00:00:42,780 --> 00:00:45,970
+this function is an http request object. We
+
+14
+00:00:45,970 --> 00:00:49,450
+are not going to call this function.
+Django will take care of doing this. 
+So when
+
+15
+00:00:49,450 --> 00:00:52,880
+we send an http request on an endpoint,
+ Django will figure out
+
+16
+00:00:52,890 --> 00:00:56,560
+based on some configuration
+what view function should be called.
+You're
+
+17
+00:00:56,560 --> 00:00:59,810
+going to see that in a minute.
+Now in every view function, we
+
+18
+00:00:59,810 --> 00:01:03,570
+should return an http response. 
+So on
+
+19
+00:01:03,570 --> 00:01:07,680
+the top first let's import
+ the http response class from
+
+20
+00:01:07,690 --> 00:01:11,120
+django.http module so
+
+21
+00:01:11,120 --> 00:01:15,140
+import HttpRequest. Okay.
+
+22
+00:01:15,320 --> 00:01:19,370
+Now in this function
+ we're gonna return an HttpRequest
+
+23
+00:01:19,380 --> 00:01:23,140
+object. 
+Here I'm going to pass some plain text
+
+24
+00:01:23,260 --> 00:01:27,590
+like Hello World and 
+save the changes. Okay.
+
+25
+00:01:27,590 --> 00:01:30,950
+This is our first view. 
+Now we need to map this to URL.
+
+26
+00:01:31,440 --> 00:01:35,240
+So back in the movies app, let's
+
+27
+00:01:35,240 --> 00:01:38,810
+add a new file, 
+by convention the
+
+28
+00:01:38,810 --> 00:01:42,660
+name of this file should be urls.py. 
+So
+
+29
+00:01:42,660 --> 00:01:46,100
+make sure to spell it properly. In
+
+30
+00:01:46,100 --> 00:01:50,000
+this file we're going to create
+a variable called urlpatterns
+
+31
+00:01:50,020 --> 00:01:53,310
+that we should set to a list.
+Okay. This is one of the conventions that
+
+32
+00:01:53,310 --> 00:01:57,280
+Django expects us to follow.
+In this list we add objects
+
+33
+00:01:57,300 --> 00:02:00,670
+that map url end points 
+to our view functions. 
+And
+
+34
+00:02:00,670 --> 00:02:04,480
+for that we use the
+ path function in django. So on
+
+35
+00:02:04,480 --> 00:02:08,850
+the top from Django
+ that you or else let's
+
+36
+00:02:08,850 --> 00:02:12,560
+import the past function. So
+
+37
+00:02:12,560 --> 00:02:16,050
+we call the path function
+ here to create a path object.
+
+38
+00:02:16,540 --> 00:02:20,050
+As the first argument we should 
+specify a url end point.
+
+39
+00:02:20,540 --> 00:02:23,970
+Here I'm going to use an empty string.
+ And this will represent the
+
+40
+00:02:23,970 --> 00:02:27,350
+root of this app.
+For exampl in our movies app,
+
+41
+00:02:27,350 --> 00:02:32,010
+we're going to have url end points like this: 
+movies/
+
+42
+00:02:32,020 --> 00:02:35,720
+that's the root url.
+ We're gonna have movies/1
+
+43
+00:02:35,730 --> 00:02:38,860
+/detail
+here I'm assuming one is the id of a
+
+44
+00:02:38,860 --> 00:02:42,710
+given movie. 
+So here an empty string represents the
+
+45
+00:02:42,710 --> 00:02:46,400
+root of this app. 
+Now don't worry about the movies prefix. 
+We're
+
+46
+00:02:46,400 --> 00:02:49,920
+going to add that in the next step. 
+From the perspective of this app
+
+47
+00:02:49,930 --> 00:02:53,360
+we don't care what the prefix is,
+because we should design these
+
+48
+00:02:53,360 --> 00:02:56,690
+apps for reusability,
+so maybe another developer wants to
+
+49
+00:02:56,690 --> 00:03:00,500
+download our app from pypi.org
+and put it under a
+
+50
+00:03:00,500 --> 00:03:04,130
+url like
+ movies_collection this app shouldn't care
+
+51
+00:03:04,140 --> 00:03:07,680
+where it's hosted.
+So here we use related urls
+
+52
+00:03:07,680 --> 00:03:11,630
+else. Okay? 
+Now let's delete these.
+So
+
+53
+00:03:11,630 --> 00:03:14,800
+this is the root of this app.
+ Now we need to map this to a
+
+54
+00:03:14,800 --> 00:03:18,060
+view function. 
+So we need to import the index function that
+
+55
+00:03:18,060 --> 00:03:22,310
+we created earlier. 
+That is in our views module. 
+So look.
+
+56
+00:03:22,320 --> 00:03:25,480
+The views module is here.
+So you might think we
+
+57
+00:03:25,480 --> 00:03:29,250
+can import the views module like this. Now
+
+58
+00:03:29,250 --> 00:03:32,520
+while this is possible in pure python world, 
+this will
+
+59
+00:03:32,520 --> 00:03:36,260
+not work in Django because
+ of how Django loads these modules.
+
+60
+00:03:36,840 --> 00:03:40,430
+Also there is a problem with
+ importing the views module like this because
+
+61
+00:03:40,430 --> 00:03:44,100
+it is possible that the
+ application that hosts this APP is
+
+62
+00:03:44,100 --> 00:03:47,330
+dependent on a module called views,
+so with this
+
+63
+00:03:47,330 --> 00:03:50,530
+statement we'll end up importing
+the views module that is
+
+64
+00:03:50,530 --> 00:03:54,810
+in the path, 
+that is different from the views module we have inside
+
+65
+00:03:54,810 --> 00:03:58,720
+of this directory. 
+So here we should use a related imports
+
+66
+00:03:58,720 --> 00:04:03,170
+statement. 
+So from period
+
+67
+00:04:03,170 --> 00:04:06,990
+to represent the current directory import the
+
+68
+00:04:06,990 --> 00:04:10,250
+views module. 
+That is better. 
+Now back
+
+69
+00:04:10,250 --> 00:04:13,870
+to the path function as the
+ second argument we need to pass a
+
+70
+00:04:13,870 --> 00:04:17,400
+reference to the view function that is views dot
+
+71
+00:04:17,410 --> 00:04:20,680
+index. 
+Note that I'm not calling this function, I'm
+
+72
+00:04:20,680 --> 00:04:24,030
+simply passing a reference to it.
+At run time, when
+
+73
+00:04:24,030 --> 00:04:27,720
+the user sends an http request 
+to this end point, Django will
+
+74
+00:04:27,720 --> 00:04:31,370
+take care of calling this function
+ and give it an http request
+
+75
+00:04:31,370 --> 00:04:34,470
+object. Okay? 
+Now also as a
+
+76
+00:04:34,470 --> 00:04:37,650
+best practice we should name this url end points. 
+So here
+
+77
+00:04:37,650 --> 00:04:40,940
+we pass a keyword argument name we set it to
+
+78
+00:04:40,950 --> 00:04:44,560
+index. 
+So save the changes. 
+We
+
+79
+00:04:44,560 --> 00:04:47,980
+define this variable urlpatterns that contains one
+
+80
+00:04:47,980 --> 00:04:51,220
+or more path objects that
+map url end points to
+
+81
+00:04:51,220 --> 00:04:55,140
+view functions. 
+We refer to this as a URL configuration.
+
+82
+00:04:55,150 --> 00:04:58,690
+So every app should have a URL configuration. 
+So
+
+83
+00:04:58,690 --> 00:05:02,400
+we're done with configuring urls  for this app, 
+But our main app, the
+
+84
+00:05:02,400 --> 00:05:06,390
+vidly app has no knowledge
+ of the movies app. So
+
+85
+00:05:06,390 --> 00:05:09,790
+if you head over to
+ local host for 8,000 slash movies, nothing
+
+86
+00:05:09,790 --> 00:05:14,050
+is going to happen. 
+Our Django application is not aware of that. So
+
+87
+00:05:14,840 --> 00:05:18,950
+we have to go to the
+ main app that is vidly, see
+
+88
+00:05:18,950 --> 00:05:22,570
+once again here we have urls.py that defines the
+
+89
+00:05:22,570 --> 00:05:25,900
+you're configuration for our main app.
+So see here
+
+90
+00:05:25,900 --> 00:05:29,240
+we have urlpatterns.
+By convention django looks
+
+91
+00:05:29,240 --> 00:05:32,830
+for this variable when starting our Django Project.
+ So make sure to
+
+92
+00:05:32,830 --> 00:05:36,430
+spell this variable exactly as you see here. 
+Now here
+
+93
+00:05:36,430 --> 00:05:40,070
+in this module we have
+ a path that maps anything
+
+94
+00:05:40,070 --> 00:05:43,390
+that starts with admin to
+
+95
+00:05:43,400 --> 00:05:46,850
+admit.site.urls
+ So every django project
+
+96
+00:05:46,850 --> 00:05:50,850
+comes with an administrative panel
+ that is a separate, independent
+
+97
+00:05:50,850 --> 00:05:54,100
+app on its own. 
+We're gonna look at that in the future. 
+So here
+
+98
+00:05:54,100 --> 00:05:57,340
+in this list we need to add a new path object. 
+We're going
+
+99
+00:05:57,340 --> 00:06:00,850
+to tell our vidly app that any path that
+
+100
+00:06:00,850 --> 00:06:04,230
+starts with movies should be handed off to
+
+101
+00:06:04,230 --> 00:06:07,950
+the url configuration in the movies App. So
+
+102
+00:06:08,540 --> 00:06:11,940
+here on line 17 from django.urls we
+
+103
+00:06:11,940 --> 00:06:16,630
+should import another functional
+ that is called include. And
+
+104
+00:06:16,630 --> 00:06:19,920
+here we call that function and
+
+105
+00:06:19,920 --> 00:06:23,600
+pass a string that specifies
+ the name of the module that
+
+106
+00:06:23,600 --> 00:06:27,110
+contains the url configuration
+for the movies app, that
+
+107
+00:06:27,110 --> 00:06:31,250
+is movies.url
+So
+
+108
+00:06:31,260 --> 00:06:34,760
+look. 
+we have this movies directory, 
+inside of this directory we
+
+109
+00:06:34,760 --> 00:06:38,030
+have urls.py. 
+That is why here
+
+110
+00:06:38,030 --> 00:06:41,170
+we need to pass a string movies.url, 
+But we
+
+111
+00:06:41,170 --> 00:06:44,360
+don't add dot py because
+ Django will automatically append the
+
+112
+00:06:44,360 --> 00:06:47,720
+extension and load this module. 
+So with
+
+113
+00:06:47,720 --> 00:06:51,300
+this line whenever we send
+ a request that starts with movies,
+
+114
+00:06:51,310 --> 00:06:54,480
+django would chop off the prefix, 
+that is what we
+
+115
+00:06:54,480 --> 00:06:57,950
+have here, and send the remaining string to
+
+116
+00:06:57,950 --> 00:07:01,130
+this module, movies.url.
+That is the
+
+117
+00:07:01,130 --> 00:07:04,610
+reason in the url configuration for
+
+118
+00:07:04,610 --> 00:07:08,550
+the movies app, we use
+an empty string to represent the
+
+119
+00:07:08,550 --> 00:07:12,390
+root of this app. Okay. 
+So back
+
+120
+00:07:12,390 --> 00:07:15,960
+to urls.py. 
+Let's save the changes and restart
+
+121
+00:07:15,960 --> 00:07:19,910
+our Web server. So here
+ on the terminal. let's run Python
+
+122
+00:07:19,910 --> 00:07:23,750
+three. Manage that pie run server
+
+123
+00:07:25,340 --> 00:07:29,520
+. We got this error: no
+ module named movies that you are. Actually
+
+124
+00:07:29,520 --> 00:07:32,850
+. I made a mistake.
+ I should have passed movies that
+
+125
+00:07:32,850 --> 00:07:36,080
+you are else. We have
+ an s at the end. So
+
+126
+00:07:36,080 --> 00:07:40,660
+once again. let's run
+ our Web server. Beautiful. Now
+
+127
+00:07:40,660 --> 00:07:43,530
+if you head over to the home page of our website, 
+you're going to see
+
+128
+00:07:43,540 --> 00:07:48,060
+a "page not found" error. 
+Don't worry about that.
+We're going to fix that shortly. But
+
+129
+00:07:48,440 --> 00:07:51,740
+if you head over to slash movies,
+you're going to see the Hello
+
+130
+00:07:51,740 --> 00:07:59,000
+World message and 
+this verifies that was successfully mapped 
+a url end point to a view function
+

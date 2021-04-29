@@ -1,0 +1,764 @@
+2
+00:00:04,000 --> 00:00:08,200
+In this lecture we're going to learn 
+how to build an API or 
+an Application Programming
+
+3
+00:00:08,200 --> 00:00:11,710
+Interface for our vidly application. 
+With this API other
+
+4
+00:00:11,710 --> 00:00:15,310
+websites or mobile apps can work with our data. 
+In practical
+
+5
+00:00:15,310 --> 00:00:18,940
+terms that means we're going
+ to expose new endpoints that start
+
+6
+00:00:18,950 --> 00:00:22,770
+with API, for example api/movies, so
+
+7
+00:00:22,780 --> 00:00:26,350
+other websites or mobile apps
+ can send an http request
+
+8
+00:00:26,350 --> 00:00:30,310
+to this end point and get the
+ list of our movies in JSON format.
+
+9
+00:00:30,330 --> 00:00:33,960
+That is pure data.
+There is no HTML markup. 
+So
+
+10
+00:00:33,960 --> 00:00:37,300
+they can get the list of our movies and 
+do whatever they want with it. 
+Pretty
+
+11
+00:00:37,300 --> 00:00:41,510
+much most of the popular websites
+ that you're familiar with like Facebook, twitter,
+
+12
+00:00:41,520 --> 00:00:44,750
+YouTube, yelp and so on
+all these websites have APIs,
+
+13
+00:00:44,750 --> 00:00:48,010
+so you can work with their data in your apps. 
+This
+
+14
+00:00:48,010 --> 00:00:51,150
+is the benefit of publishing APIs. 
+Now in this
+
+15
+00:00:51,150 --> 00:00:55,020
+lecture. we're not going to look at
+ consuming a piece that's a different topic
+
+16
+00:00:55,030 --> 00:00:58,610
+. But you're going to learn how
+ to publish a piece so others can consume
+
+17
+00:00:58,610 --> 00:01:01,840
+Europeans. 
+Now when it comes to building APIs
+
+18
+00:01:01,840 --> 00:01:05,910
+in Django applications,
+there are basically two popular frameworks:
+
+19
+00:01:05,930 --> 00:01:09,260
+One of them is django-tastypie
+which is currently at
+
+20
+00:01:09,260 --> 00:01:13,050
+version 0.14 and 
+surprisingly it's
+
+21
+00:01:13,050 --> 00:01:16,250
+beta but it's been actively used in production on
+
+22
+00:01:16,250 --> 00:01:19,760
+several websites. 
+In fact it's been around for a long time since
+
+23
+00:01:19,840 --> 00:01:23,220
+2010. 
+I have personally worked with it and 
+I've been really
+
+24
+00:01:23,220 --> 00:01:26,370
+happy. 
+It has a very nice design and 
+that's the framework that I'm going
+
+25
+00:01:26,370 --> 00:01:29,620
+to show you in this lecture.
+ There is another framework that
+
+26
+00:01:29,620 --> 00:01:33,420
+is called djangorestframework or DRF.
+
+27
+00:01:33,430 --> 00:01:36,500
+This framework is a little bit more feature rich and 
+you may want to
+
+28
+00:01:36,500 --> 00:01:39,940
+use it in a large enterprise application.
+But compared to
+
+29
+00:01:39,940 --> 00:01:43,460
+tasty-pie it's a little bit more complex to use. 
+That's why in
+
+30
+00:01:43,460 --> 00:01:47,050
+this lecture I'm going to use tasty-pie. 
+So back
+
+31
+00:01:47,050 --> 00:01:51,430
+in V s coat under terminal.
+ let's install Django
+
+32
+00:01:51,440 --> 00:01:57,570
+Dash tasty pie. All
+
+33
+00:01:57,570 --> 00:02:02,160
+right. 
+Now we need to create a new app in this project. 
+So python
+
+34
+00:02:02,540 --> 00:02:06,290
+manage.py startapp and
+
+35
+00:02:06,290 --> 00:02:09,520
+we're going to call that app api.
+ So this app is
+
+36
+00:02:09,520 --> 00:02:13,760
+purely responsible for exposing api end points. 
+Let's
+
+37
+00:02:13,760 --> 00:02:17,320
+go ahead. Done.
+Now we need to register this
+
+38
+00:02:17,350 --> 00:02:20,680
+in the list of installed apps So let's
+
+39
+00:02:20,680 --> 00:02:25,120
+go to settings that pie here
+
+40
+00:02:25,120 --> 00:02:28,650
+somewhere. We should have the installed apps.
+ There you go. So
+
+41
+00:02:28,650 --> 00:02:32,410
+we need to reference the conflict class
+ in this app. That is a P
+
+42
+00:02:32,570 --> 00:02:36,670
+dot apps that AP I config. Let's
+
+43
+00:02:36,670 --> 00:02:40,830
+just quickly double check to make
+ sure regard it right. Some in
+
+44
+00:02:40,830 --> 00:02:44,570
+the list of files Here's our AP AP
+
+45
+00:02:44,640 --> 00:02:47,910
+in this app. We have
+ this apps module and here's the
+
+46
+00:02:47,910 --> 00:02:51,560
+name of the class.
+Admit reference AP conflict. 
+Okay.
+
+47
+00:02:52,140 --> 00:02:55,820
+so save the changes. 
+Now in
+
+48
+00:02:55,820 --> 00:02:59,090
+this app we're going to add a new model. 
+So let's
+
+49
+00:02:59,090 --> 00:03:02,480
+open up the models module. 
+In 
+
+50
+00:03:02,480 --> 00:03:06,140
+the world of APIs we 
+refer to our models as resources. 
+You 
+
+51
+00:03:06,140 --> 00:03:09,960
+would have heard the term REST full API. 
+REST stands
+
+52
+00:03:09,960 --> 00:03:13,880
+for Representational State Transfer. 
+It's a technical jargon
+
+53
+00:03:13,880 --> 00:03:17,120
+for a bunch of conventions
+ that define how applications should
+
+54
+00:03:17,120 --> 00:03:21,130
+talk to each other over http protocol. 
+Now
+
+55
+00:03:21,130 --> 00:03:24,660
+in the REST world we have these URLs. 
+URL stands
+
+56
+00:03:24,660 --> 00:03:28,200
+for Uniform Resource Locator. So
+
+57
+00:03:28,200 --> 00:03:31,910
+with this URL we can locate the movies. 
+Movie here
+
+58
+00:03:31,920 --> 00:03:35,980
+is a resource. 
+So essentially in the REST world 
+we're exposing
+
+59
+00:03:35,990 --> 00:03:40,090
+some of our resources
+ using URLs or Uniform Resource
+
+60
+00:03:40,100 --> 00:03:43,590
+Locators. 
+So back to the models module we
+
+61
+00:03:43,590 --> 00:03:47,950
+need to create a movie resource.
+ So class movie
+
+62
+00:03:48,340 --> 00:03:51,640
+resource. You could also call it movie. but
+
+63
+00:03:51,640 --> 00:03:55,050
+it's better to add resource here
+ to differentiate this from the movie
+
+64
+00:03:55,050 --> 00:03:58,470
+model we have in the movies App.
+ Because that movie class
+
+65
+00:03:58,470 --> 00:04:02,200
+is part of our data model. We use
+ that to get data from our database. but
+
+66
+00:04:02,200 --> 00:04:05,820
+this is a movie resource. which is
+ different from that. We use this to represent
+
+67
+00:04:05,820 --> 00:04:09,180
+the concept of a movie
+ in a restful API. You're
+
+68
+00:04:09,180 --> 00:04:12,720
+going to see that shortly.
+So we should derive this class
+
+69
+00:04:12,800 --> 00:04:16,260
+from the ModelResource class in django-tastypie.
+
+70
+00:04:16,640 --> 00:04:20,950
+So on the top from tastypie dot
+
+71
+00:04:21,540 --> 00:04:25,750
+resources we need to import the ModelResource
+
+72
+00:04:25,750 --> 00:04:31,260
+class and then at that here ModelResource. 
+Now 
+
+73
+00:04:31,640 --> 00:04:35,050
+tastypie looks for an inner class in this class
+
+74
+00:04:35,050 --> 00:04:38,600
+called meta. 
+So here we add another class
+
+75
+00:04:38,610 --> 00:04:42,310
+meta. 
+This class defines some metadata about
+
+76
+00:04:42,310 --> 00:04:45,440
+our movie resources.
+So there are a couple of
+
+77
+00:04:45,440 --> 00:04:48,680
+attributes that we need to set here 
+that tastypie looks for and 
+by
+
+78
+00:04:48,680 --> 00:04:51,420
+the way you don't have to memorize any of these,
+you can always come back to
+
+79
+00:04:51,420 --> 00:04:54,830
+tasty pies documentation. 
+So the first attribute is
+
+80
+00:04:54,830 --> 00:04:58,490
+queryset and 
+we need to set this to the quarry for getting
+
+81
+00:04:58,490 --> 00:05:03,620
+the list of all movies.
+So on the top from
+
+82
+00:05:03,620 --> 00:05:07,560
+our movies app dot models module we
+
+83
+00:05:07,560 --> 00:05:10,760
+need to import the movie class and here
+
+84
+00:05:10,760 --> 00:05:15,200
+we're going to say movie dot objects dot all. 
+Now 
+
+85
+00:05:15,200 --> 00:05:18,300
+this all method simply returns a qyery.
+It's not going to
+
+86
+00:05:18,300 --> 00:05:22,080
+go in the database and 
+get the list of all movies. 
+It simply returns
+
+87
+00:05:22,090 --> 00:05:25,590
+a query. 
+This query will be executed at some point
+
+88
+00:05:25,590 --> 00:05:28,990
+in the future. 
+This is what we call lazy loading. 
+So
+
+89
+00:05:28,990 --> 00:05:32,160
+this query object is a lazy object. 
+Now the
+
+90
+00:05:32,160 --> 00:05:36,100
+second attribute that we need to
+ set is resource_name,
+
+91
+00:05:36,320 --> 00:05:40,050
+and we set this to movies, 
+and this determines what our endpoint 
+
+92
+00:05:40,050 --> 00:05:43,700
+will look like. 
+So we use movies here and 
+that means later we'll
+
+93
+00:05:43,700 --> 00:05:46,920
+have an API available at
+
+94
+00:05:46,920 --> 00:05:51,060
+api/movies. 
+Okay. 
+So
+
+95
+00:05:51,540 --> 00:05:54,720
+we're done with our models.
+The next step is to generate our
+
+96
+00:05:54,720 --> 00:05:57,940
+URL endpoints. 
+So let's go to
+
+97
+00:05:57,940 --> 00:06:01,310
+our main vidly app here and open
+
+98
+00:06:01,310 --> 00:06:04,610
+up the U. R. L s module. Currently
+
+99
+00:06:04,610 --> 00:06:08,210
+. we have two Ural patterns.
+ Earlier. we told Django that anywhere
+
+100
+00:06:08,210 --> 00:06:11,400
+else that starts with movies
+ should be delegated to this
+
+101
+00:06:11,400 --> 00:06:15,010
+module. 
+We're going to take the same approach. 
+So let's
+
+102
+00:06:15,010 --> 00:06:18,580
+create another path and 
+tell Django that
+
+103
+00:06:18,590 --> 00:06:22,280
+any URLs that starts with api slash, 
+we
+
+104
+00:06:22,280 --> 00:06:25,910
+want to hand it off to a different module. 
+What is that module?
+
+105
+00:06:26,160 --> 00:06:30,150
+Well here we need to import our 
+MovieResource model.
+
+106
+00:06:30,310 --> 00:06:34,340
+So from api.models let's
+
+107
+00:06:34,340 --> 00:06:37,760
+import the MovieResource model. 
+Next 
+
+108
+00:06:37,760 --> 00:06:41,120
+we need to create an instance of this class. 
+So let's call
+
+109
+00:06:41,120 --> 00:06:46,230
+that movie_resource. 
+Now
+
+110
+00:06:46,230 --> 00:06:49,810
+this object has a property called
+
+111
+00:06:49,810 --> 00:06:53,750
+urls. 
+We don't see that here in intelligence. 
+But this attribute returns
+
+112
+00:06:53,750 --> 00:06:57,540
+the URLs for this MovieResource based on the
+
+113
+00:06:57,540 --> 00:07:01,160
+resource_name that we set here. 
+Okay. 
+So
+
+114
+00:07:01,840 --> 00:07:05,550
+let's delete line 21. 
+Back to our include function.
+
+115
+00:07:05,940 --> 00:07:09,920
+Here we pass movie_resource.urls.
+Save
+
+116
+00:07:09,920 --> 00:07:13,530
+the changes. 
+That's all we had to do to create an API
+
+117
+00:07:13,540 --> 00:07:16,870
+to expose our movie objects or 
+more accurately movie
+
+118
+00:07:16,870 --> 00:07:20,330
+resources. 
+So to recap we installed tasty
+
+119
+00:07:20,330 --> 00:07:23,660
+pie. 
+We created a new app called api. 
+In that
+
+120
+00:07:23,660 --> 00:07:27,120
+app we added a new model that 
+represents our movie
+
+121
+00:07:27,120 --> 00:07:30,360
+resources and 
+finally we registered a new
+
+122
+00:07:30,360 --> 00:07:33,660
+URL pattern in urls.py.
+Now let's test our
+
+123
+00:07:33,660 --> 00:07:36,970
+API. 
+So back here.
+Let's head over to api
+
+124
+00:07:36,970 --> 00:07:40,270
+/movies. 
+There you go. 
+So all
+
+125
+00:07:40,270 --> 00:07:43,890
+our movie objects are serialized as JSON. 
+Here
+
+126
+00:07:43,980 --> 00:07:47,280
+in this JSON object
+we have this property meta. 
+This
+
+127
+00:07:47,280 --> 00:07:50,530
+object has a few properties
+that is used for pagination. 
+You
+
+128
+00:07:50,530 --> 00:07:54,600
+can see currently we have a total
+of two movie objects in our database. 
+Below
+
+129
+00:07:54,600 --> 00:07:57,980
+that we have these objects property
+which is set to an array of
+
+130
+00:07:57,980 --> 00:08:01,230
+movie objects. 
+And here are our movie objects that
+
+131
+00:08:01,230 --> 00:08:04,850
+were retrieved from the database. 
+So more accurately referred
+
+132
+00:08:04,850 --> 00:08:07,990
+to each of these objects as a movie resource. 
+This is the
+
+133
+00:08:07,990 --> 00:08:11,820
+public representation of a
+movie in our application. 
+Now
+
+134
+00:08:11,820 --> 00:08:15,100
+currently this public representation 
+looks exactly like our
+
+135
+00:08:15,100 --> 00:08:18,280
+movie model in the movies app.
+So all the properties we
+
+136
+00:08:18,280 --> 00:08:21,770
+had there also exist here.
+But this may not always
+
+137
+00:08:21,770 --> 00:08:25,040
+be the case in a real world application.
+For example let's
+
+138
+00:08:25,040 --> 00:08:29,030
+say in our api, 
+we don't want to expose this property date
+
+139
+00:08:29,040 --> 00:08:32,270
+created. 
+Let's say this is purely used internally by
+
+140
+00:08:32,270 --> 00:08:36,000
+our application. 
+So back to our api app. 
+Here
+
+141
+00:08:36,000 --> 00:08:40,200
+in the meta class,
+we can set this attribute, exclude, we
+
+142
+00:08:40,200 --> 00:08:43,730
+set it to a list and 
+in this list we specify the
+
+143
+00:08:43,730 --> 00:08:47,440
+properties or the fields that 
+wewant to exclude, in this case date
+
+144
+00:08:47,450 --> 00:08:51,920
+underlined created. 
+Save the changes. 
+Back
+
+145
+00:08:51,920 --> 00:08:55,180
+here. 
+Let's refresh. 
+Now that property is
+
+146
+00:08:55,180 --> 00:08:58,930
+gone. Beautiful. 
+We also have this property resource_uri
+
+147
+00:08:58,930 --> 00:09:02,860
+that only exists in our movie resource objects,
+and
+
+148
+00:09:02,860 --> 00:09:06,440
+this returns a url that
+ we can access to get more details about
+
+149
+00:09:06,440 --> 00:09:10,440
+this movie. 
+So that is set to /api/movies/1,
+
+150
+00:09:10,440 --> 00:09:13,520
+where one is the id of this movie. 
+So if
+
+151
+00:09:13,520 --> 00:09:16,640
+you head over to this address, we
+
+152
+00:09:16,640 --> 00:09:20,570
+can see the properties of this movie object only. 
+So
+
+153
+00:09:20,570 --> 00:09:26,000
+in this lecture 
+we built a fully function api 
+with only a few lines of code.
+

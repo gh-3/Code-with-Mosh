@@ -1,0 +1,722 @@
+2
+00:00:04,430 --> 00:00:08,410
+In this lecture, we're going to look at
+a very important package called Numpy, which
+
+3
+00:00:08,410 --> 00:00:11,550
+is heavily used in scientific computations. 
+So if
+
+4
+00:00:11,550 --> 00:00:15,130
+you wanna get into data science and machine learning,
+this is one of the packages
+
+5
+00:00:15,130 --> 00:00:18,400
+you will be using quite often.
+There also several other packages that
+
+6
+00:00:18,400 --> 00:00:21,920
+are built on top of this package.
+So it's a very comprehensive topic,
+
+7
+00:00:21,920 --> 00:00:25,130
+and it really requires its own course.
+But in this lecture, I'm going
+
+8
+00:00:25,130 --> 00:00:28,490
+to give you a very sweet introduction to numpy.
+So you know what it
+
+9
+00:00:28,490 --> 00:00:31,730
+is and 
+what you can do with it. 
+So here on
+
+10
+00:00:31,730 --> 00:00:39,360
+the terminal, let's do 
+pipenv install numbpy. 
+So
+
+11
+00:00:39,360 --> 00:00:43,410
+numpy enriches python by bringing superfast, multidimensional
+
+12
+00:00:43,410 --> 00:00:46,840
+arrays that takes less memory
+ than the built in lists in
+
+13
+00:00:46,840 --> 00:00:51,070
+python. So any time you
+ want to work with large multidimensional
+
+14
+00:00:51,070 --> 00:00:54,440
+arrays, numpy is your best friend.
+ So let's important on
+
+15
+00:00:54,440 --> 00:00:57,980
+the top import numpy. we
+
+16
+00:00:57,980 --> 00:01:01,740
+can optionally give it an
+ alias using the ass keyword. So
+
+17
+00:01:01,740 --> 00:01:05,300
+call it np. and now
+ we can access this module with
+
+18
+00:01:05,300 --> 00:01:09,130
+np. This makes our code shorter
+ because in a real application. you're
+
+19
+00:01:09,130 --> 00:01:12,550
+going to use this package a lot
+ so we don't want to type numpy dot
+
+20
+00:01:12,550 --> 00:01:15,880
+numpy dot numpy dot, Okay? 
+Now here
+
+21
+00:01:15,880 --> 00:01:19,190
+we have this array function
+ for creating an array. We can
+
+22
+00:01:19,190 --> 00:01:22,470
+pass a normal list here.
+ and this will return a
+
+23
+00:01:22,470 --> 00:01:26,290
+numpy array.
+Let's have a look. 
+So print
+
+24
+00:01:26,510 --> 00:01:29,910
+array. 
+So here's our array.
+
+25
+00:01:29,910 --> 00:01:33,380
+but this is actually a numpy array. 
+So if
+
+26
+00:01:33,380 --> 00:01:37,150
+you print the type of this array, you
+
+27
+00:01:37,150 --> 00:01:40,460
+can see it's an instance of n dimensional array
+
+28
+00:01:40,460 --> 00:01:43,820
+class in Numpy.
+Now here we can create a
+
+29
+00:01:43,820 --> 00:01:47,540
+multidimensional array like this. So we
+
+30
+00:01:47,540 --> 00:01:51,060
+have one list in this list. Each item
+
+31
+00:01:51,060 --> 00:01:54,500
+is a list. Here is the first item.
+ It's a list of three
+
+32
+00:01:54,500 --> 00:01:58,440
+items. and here it
+ is the second list with
+
+33
+00:01:58,440 --> 00:02:01,940
+three more items. 
+So now we have a two dimensional array, which
+
+34
+00:02:01,940 --> 00:02:05,540
+is called a matrix in math.
+ Let's print this
+
+35
+00:02:05,540 --> 00:02:09,090
+on a terminal.
+ This is what we get. So
+
+36
+00:02:09,090 --> 00:02:13,260
+we have a matrix with
+two rows and three columns. 
+Now
+
+37
+00:02:14,440 --> 00:02:18,570
+this array object has an attribute called shape. so
+
+38
+00:02:18,570 --> 00:02:21,860
+let's print array.shape and
+
+39
+00:02:21,860 --> 00:02:25,320
+run the program. 
+There you go.
+ So as you see this returns
+
+40
+00:02:25,330 --> 00:02:28,960
+a tuple that specifies the
+ number of items in each demention.
+
+41
+00:02:29,340 --> 00:02:32,590
+So here we have a matrix
+with two rows and three columns and that's
+
+42
+00:02:32,590 --> 00:02:36,330
+why we get that tuple with two and three .
+Now in
+
+43
+00:02:36,330 --> 00:02:40,100
+numpy we have a bunch of
+ helper methods for creating arrays and initializing
+
+44
+00:02:40,100 --> 00:02:43,800
+them with zeros, ones, specific numbers or
+
+45
+00:02:43,800 --> 00:02:48,190
+random values. 
+Let me show you. 
+So np
+
+46
+00:02:48,200 --> 00:02:51,490
+dot zeros. This will create an array and
+
+47
+00:02:51,500 --> 00:02:55,160
+initialize it with zeros. Now the
+ first argument of this method is
+
+48
+00:02:55,160 --> 00:02:58,340
+a tuple that represents the shape of this array. 
+So here we
+
+49
+00:02:58,340 --> 00:03:02,780
+pass a topple.
+let's say three and four. 
+Now
+
+50
+00:03:02,780 --> 00:03:07,660
+we get an array and
+printed on the terminal. 
+So
+
+51
+00:03:08,340 --> 00:03:11,710
+we get a matrix of
+ three rows and four columns, and
+
+52
+00:03:11,710 --> 00:03:15,040
+each element is initialized to zero.
+Now by default all these
+
+53
+00:03:15,040 --> 00:03:18,370
+numbers are floating point numbers.
+ That's why we have this decimal point
+
+54
+00:03:18,370 --> 00:03:21,610
+here. 
+If you want to change the data type, you can pass a
+
+55
+00:03:21,610 --> 00:03:25,410
+second argument here that is dtype.
+So dtype,
+
+56
+00:03:25,420 --> 00:03:28,940
+we set this to let's say integer. 
+Run the program again.
+
+57
+00:03:28,940 --> 00:03:32,460
+So now all our numbers are integers. 
+Now
+
+58
+00:03:32,460 --> 00:03:35,580
+We have another method called ones.
+and we use that if
+
+59
+00:03:35,580 --> 00:03:39,590
+you want to initialize this array with ones.
+Let's take a look. 
+Here
+
+60
+00:03:39,590 --> 00:03:43,310
+it is. 
+We can also fill this array with a specific number.
+
+61
+00:03:43,320 --> 00:03:46,720
+So we call the full method, and
+
+62
+00:03:46,720 --> 00:03:50,330
+as the second argument we'll pass the
+ number we want to fill this array with.
+
+63
+00:03:50,340 --> 00:03:53,970
+Let's say five and here's the result.
+
+64
+00:03:53,980 --> 00:03:57,220
+So pretty cool, right?
+ We also have a method for creating an
+
+65
+00:03:57,220 --> 00:04:00,800
+array with random values. 
+So we
+
+66
+00:04:00,800 --> 00:04:04,360
+go to the random module, in this module
+we have this random function.
+
+67
+00:04:05,040 --> 00:04:08,280
+So we just passed the shape of this array and this will
+
+68
+00:04:08,280 --> 00:04:11,990
+create a three by four
+array and every item
+
+69
+00:04:12,000 --> 00:04:15,670
+is a random number. 
+Now if you want to do this in pure python without
+
+70
+00:04:15,670 --> 00:04:18,890
+numpy, our code is definitely longer than
+
+71
+00:04:18,890 --> 00:04:22,120
+this.
+It's going to be two or three lines of code. 
+So numpy
+
+72
+00:04:22,120 --> 00:04:25,290
+makes a lot of trivial things really really easy. 
+So
+
+73
+00:04:25,290 --> 00:04:28,840
+now we have a three by four array.
+ We can access individual elements
+
+74
+00:04:28,840 --> 00:04:32,240
+using an index. 
+So here we have our array. 
+Let's get
+
+75
+00:04:32,240 --> 00:04:36,100
+the element at the first row 
+and the first column. 
+So
+
+76
+00:04:36,100 --> 00:04:39,560
+print. 
+So here's our array and as you can see
+
+77
+00:04:39,940 --> 00:04:43,460
+the item at the first row in the first column 
+is this number which is printed
+
+78
+00:04:43,460 --> 00:04:47,260
+here. 
+Now in contrast, if this array was
+
+79
+00:04:47,270 --> 00:04:50,420
+a multidimensional list in Python,
+our code would end up
+
+80
+00:04:50,420 --> 00:04:53,820
+looking like this:
+array of zero and zero. 
+So
+
+81
+00:04:53,820 --> 00:04:56,910
+we would have extra square brackets
+ and this would make our code a
+
+82
+00:04:56,910 --> 00:05:00,550
+little bit noisy. 
+Now let me show you something really powerful.
+
+83
+00:05:00,940 --> 00:05:05,510
+I'm going to print an expression like this: 
+array greater
+
+84
+00:05:05,510 --> 00:05:09,050
+than 0.2. 
+Now let me comment
+
+85
+00:05:09,050 --> 00:05:12,190
+out what we have online 8, We don't need it anymore. 
+Let's run
+
+86
+00:05:12,190 --> 00:05:15,940
+the program. 
+See what we get here.
+Here's our original array
+
+87
+00:05:16,140 --> 00:05:19,570
+and below that 
+we have an array of Boolean values. 
+Each
+
+88
+00:05:19,580 --> 00:05:22,810
+element determines if the corresponding element in
+
+89
+00:05:22,810 --> 00:05:27,260
+the original array was greater than 0.2. 
+Extremely
+
+90
+00:05:27,260 --> 00:05:30,570
+powerful. 
+If you want to do this in pure python would have to write a
+
+91
+00:05:30,570 --> 00:05:33,940
+lot more code than
+this simple expression. 
+So Numpy
+
+92
+00:05:33,940 --> 00:05:37,730
+arrays support various kinds of mathematical operations. 
+We
+
+93
+00:05:37,730 --> 00:05:41,470
+also have boolean indexing. 
+Again extremely powerful.
+
+94
+00:05:41,480 --> 00:05:44,870
+So we print array of, now
+
+95
+00:05:44,870 --> 00:05:49,160
+instead of using a numerical index,
+use a Boolean expression. 
+So
+
+96
+00:05:49,170 --> 00:05:53,700
+let's say array is greater than 0.2. 
+Let's
+
+97
+00:05:53,700 --> 00:05:57,850
+run the program and 
+see what happens.
+So this will return a new
+
+98
+00:05:57,850 --> 00:06:01,540
+array with only
+ the values that are greater than
+
+99
+00:06:01,540 --> 00:06:05,140
+0.2. 
+We also have a bunch of functions
+
+100
+00:06:05,140 --> 00:06:08,250
+for performing computations on arrays.
+Let me show you a
+
+101
+00:06:08,250 --> 00:06:12,460
+few examples. 
+So let's print numpy
+
+102
+00:06:12,620 --> 00:06:15,960
+dot sum and we pass our array.
+This returns the
+
+103
+00:06:15,960 --> 00:06:19,680
+sum of all items in this array. 
+So
+
+104
+00:06:19,890 --> 00:06:23,240
+here's a result. 
+That's pretty cool. 
+We also
+
+105
+00:06:23,240 --> 00:06:26,960
+have floor and this returns a
+
+106
+00:06:26,960 --> 00:06:30,930
+new array with the exact same
+ dimension and computes the floor of
+
+107
+00:06:30,930 --> 00:06:34,360
+each item here. 
+Similar to floor We
+
+108
+00:06:34,360 --> 00:06:38,240
+have ceil to get the ceiling
+ of each number or round. 
+ Let's
+
+109
+00:06:38,240 --> 00:06:41,680
+run this. 
+So when we round these
+
+110
+00:06:41,680 --> 00:06:46,180
+numbers, we get an array of zero's and one's. 
+Pretty cool. 
+And
+
+111
+00:06:46,180 --> 00:06:49,960
+one last thing before I finish this lecture.
+we can also perform arithmetic
+
+112
+00:06:49,960 --> 00:06:53,310
+operations between arrays and numbers.
+Let me show you.
+
+113
+00:06:53,320 --> 00:06:57,120
+So I'm going to delete all this code. 
+Let's
+
+114
+00:06:57,120 --> 00:07:01,260
+say we have one array
+ here and p dot array with
+
+115
+00:07:01,290 --> 00:07:05,440
+1 2 3. We have another array here. Now
+
+116
+00:07:05,440 --> 00:07:09,410
+we can print first plus second Let's
+
+117
+00:07:09,410 --> 00:07:12,560
+run it. 
+So here's the result. 
+All the
+
+118
+00:07:12,560 --> 00:07:16,600
+arithmetic operators that you're
+ familiar with like multiplication, division
+
+119
+00:07:16,610 --> 00:07:20,790
+subtraction, All these are
+supported by numpy arrays. 
+We
+
+120
+00:07:20,790 --> 00:07:24,240
+can also add a number
+ to our first array.
+
+121
+00:07:24,250 --> 00:07:27,790
+Let's see what happens.
+So this creates a new array and
+
+122
+00:07:27,790 --> 00:07:31,700
+adds 2 to each item in the original array. 
+Now
+
+123
+00:07:31,700 --> 00:07:35,360
+here's a real world example of
+using this operation. 
+Let's say we have
+
+124
+00:07:36,140 --> 00:07:40,550
+an array of dimensions in inch 
+and you want to convert it to centimeters. So
+
+125
+00:07:41,040 --> 00:07:44,930
+dimensions underline. Inch was
+ set it to numpy dot
+
+126
+00:07:44,930 --> 00:07:48,830
+r a and pass 123 Here. Now
+
+127
+00:07:48,830 --> 00:07:52,210
+to convert these values to centimeter.
+ we can write code like this
+
+128
+00:07:52,220 --> 00:07:56,470
+so dimensions on the nine centimeter equals
+
+129
+00:07:56,470 --> 00:08:02,030
+dimensions. Underline inch multiplied by 2.54 Let's
+
+130
+00:08:02,030 --> 00:08:06,140
+print the result. So there
+
+131
+00:08:06,140 --> 00:08:10,000
+you go. 
+Again Pretty easy. 
+If you want to do this in pure python
+
+132
+00:08:10,000 --> 00:08:13,500
+without the use of numpy our code would be longer. 
+Let me show you.
+
+133
+00:08:13,510 --> 00:08:17,600
+So as comparison, we create dimensions inch
+
+134
+00:08:17,600 --> 00:08:20,830
+and set it to a regular list in Python. 
+Now
+
+135
+00:08:20,830 --> 00:08:24,380
+we need a list comprehension
+to transform this array into
+
+136
+00:08:24,380 --> 00:08:27,700
+a different array. 
+So here is the syntax for list
+
+137
+00:08:27,700 --> 00:08:31,090
+comprehension. 
+Item for item in list. 
+In this
+
+138
+00:08:31,090 --> 00:08:34,610
+case. our list is dimensions inch. Let's
+
+139
+00:08:34,610 --> 00:08:38,100
+call each item X. Now we
+ need to get X and multiplied by
+
+140
+00:08:38,100 --> 00:08:42,600
+2.54 And with this we get dimensions
+
+141
+00:08:42,600 --> 00:08:46,420
+onderline Centimeter. 
+So this is the implementation
+
+142
+00:08:46,420 --> 00:08:49,600
+in pure python.
+And here is the implementation in
+
+143
+00:08:49,600 --> 00:08:53,030
+Numpy. 
+So numpy provides multidimensional arrays
+
+144
+00:08:53,030 --> 00:08:56,750
+that are super fast and
+take less memory Plus 
+they support
+
+145
+00:08:56,930 --> 00:09:00,760
+various kinds of mathematical operations
+that regular python lists don't.
+So it's the cool library for scientific computation.
+

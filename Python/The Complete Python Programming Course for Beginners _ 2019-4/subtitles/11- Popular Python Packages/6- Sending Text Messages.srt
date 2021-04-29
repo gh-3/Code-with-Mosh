@@ -1,0 +1,456 @@
+2
+00:00:04,000 --> 00:00:07,950
+In this lecture I'm going to teach you 
+How to send text messages using TWILIO.
+
+3
+00:00:08,340 --> 00:00:11,890
+TWILIO is a very popular communication platform for
+
+4
+00:00:11,900 --> 00:00:15,410
+adding voice, video and messaging to our applications. 
+For
+
+5
+00:00:15,410 --> 00:00:19,330
+example, you can quickly 
+make and receive video calls, 
+send
+
+6
+00:00:19,330 --> 00:00:23,600
+text messages, and 
+this is particularly useful for confirming reservations, 
+
+7
+00:00:23,610 --> 00:00:27,270
+sending appointment reminders or promotions.
+The possibilities are
+
+8
+00:00:27,280 --> 00:00:31,120
+endless. 
+They provide an API that is perfectly documented
+
+9
+00:00:31,120 --> 00:00:34,870
+and it's super easy to use. 
+So we can directly communicate with
+
+10
+00:00:34,870 --> 00:00:38,230
+this API by sending http requests using the
+
+11
+00:00:38,230 --> 00:00:41,460
+request module. 
+But they also provide a library that
+
+12
+00:00:41,460 --> 00:00:44,960
+we can install using pip or penv.
+This library
+
+13
+00:00:44,960 --> 00:00:48,510
+is essentially a wrapper around their API. 
+So
+
+14
+00:00:48,510 --> 00:00:52,370
+it gives us objects, and 
+these objects encapsulates all
+
+15
+00:00:52,370 --> 00:00:55,960
+that http communication, so 
+we no longer have to work at
+
+16
+00:00:55,960 --> 00:00:59,880
+a low level of sending
+http requests to twilio API,
+
+17
+00:00:59,890 --> 00:01:03,860
+we work at a higher level, 
+in a more abstract and 
+simplified fashion.
+
+18
+00:01:04,240 --> 00:01:07,730
+Their objects, 
+these objects have methods,
+recall them and they
+
+19
+00:01:07,730 --> 00:01:11,410
+internally will take care of
+sending the right http requests to
+
+20
+00:01:11,410 --> 00:01:14,650
+twilio api. 
+All right. 
+so the first thing you need to do is
+
+21
+00:01:14,650 --> 00:01:18,700
+to create a twilio account. 
+Let's go to the sign up page. 
+Here
+
+22
+00:01:18,700 --> 00:01:22,070
+we have a simple form. 
+You need to provide your First Name, Last Name
+
+23
+00:01:22,070 --> 00:01:25,350
+Email and Password. 
+On the next page, It's going to ask you
+
+24
+00:01:25,350 --> 00:01:28,530
+to provide a phone number, and 
+this is used to verify your
+
+25
+00:01:28,530 --> 00:01:32,040
+account. 
+So pause the video and do these steps when you're done, come
+
+26
+00:01:32,040 --> 00:01:36,520
+back continue watching. 
+Okay
+
+27
+00:01:36,520 --> 00:01:39,960
+so here we are on twilio console. 
+On the left side,
+
+28
+00:01:39,960 --> 00:01:43,140
+let's go to phone numbers.
+we need to provision a
+
+29
+00:01:43,140 --> 00:01:46,650
+phone number for 
+sending text messages or 
+making phone calls.
+
+30
+00:01:47,040 --> 00:01:50,950
+So let's click "Get Started" and
+
+31
+00:01:50,950 --> 00:01:56,870
+then click "Get your first Twilio phone number". 
+All
+
+32
+00:01:56,870 --> 00:01:59,790
+right. 
+This is the number we're going to use to send a text message in the
+
+33
+00:01:59,790 --> 00:02:05,370
+next step. 
+So let's go ahead and 
+choose this number. 
+Beautiful.
+
+34
+00:02:05,520 --> 00:02:08,750
+We have set up our account.
+Now we are ready to write a program to send
+
+35
+00:02:08,750 --> 00:02:12,040
+a text message using Twili. 
+So let's start
+
+36
+00:02:12,040 --> 00:02:16,360
+by creating a brand new project.
+We're going to call that PyText.
+
+37
+00:02:17,140 --> 00:02:20,490
+Now let's go to this folder and
+
+38
+00:02:20,490 --> 00:02:24,920
+open it in VSCode. 
+All
+
+39
+00:02:24,920 --> 00:02:28,550
+right. 
+Here first we need to install Twilio. 
+So pipenv
+
+40
+00:02:28,940 --> 00:02:35,620
+install twilio. 
+Okay.
+
+41
+00:02:35,620 --> 00:02:39,350
+Beautiful. 
+Now let's add a new file here, We
+
+42
+00:02:39,350 --> 00:02:42,450
+call it app dot py. 
+Next we
+
+43
+00:02:42,450 --> 00:02:46,100
+need to select our virtual environment.
+So we can either click this
+
+44
+00:02:46,100 --> 00:02:49,760
+virtual environment on the status bar
+or we can press
+
+45
+00:02:49,920 --> 00:02:53,380
+shift command and p on Mac or 
+shift control
+
+46
+00:02:53,380 --> 00:02:57,050
+p on windows. 
+Here we search for python
+
+47
+00:02:57,250 --> 00:03:01,460
+interpreter. There you go. So let's select that, and
+
+48
+00:03:01,460 --> 00:03:04,960
+we set this to PyText. 
+Okay.
+
+49
+00:03:05,540 --> 00:03:09,360
+Now from twilio dot rest
+
+50
+00:03:10,040 --> 00:03:13,710
+we need to import the client class. So
+
+51
+00:03:13,710 --> 00:03:17,370
+this class represents a client to twilio rest
+
+52
+00:03:17,370 --> 00:03:21,410
+API. 
+Now let's create a client object. Here
+
+53
+00:03:21,410 --> 00:03:25,680
+We need to pass an account_sid,
+which is short for security identier
+
+54
+00:03:25,730 --> 00:03:29,060
+as well as an authentication token.
+We can find both
+
+55
+00:03:29,060 --> 00:03:32,440
+these on twilio console. 
+So here on twilio
+
+56
+00:03:32,440 --> 00:03:36,280
+console, on the top,
+you can see the PROJECT NAME, right
+
+57
+00:03:36,280 --> 00:03:40,200
+below that we've got ACCOUNT SID or security Identifier
+
+58
+00:03:40,350 --> 00:03:44,690
+Let's copy this. 
+Now back In VSCode. Here
+
+59
+00:03:44,690 --> 00:03:48,230
+I'm going to store this in a separate variable. 
+So later we can export
+
+60
+00:03:48,230 --> 00:03:51,700
+this and put it in a separate module. 
+So account
+
+61
+00:03:51,700 --> 00:03:55,990
+sid we set it to this string. Now
+
+62
+00:03:55,990 --> 00:04:00,300
+back to twilio consol, below
+ accounts it We've got authentication
+
+63
+00:04:00,300 --> 00:04:04,460
+token. So let's view that, copy and
+
+64
+00:04:04,460 --> 00:04:08,450
+then similarly 
+we're going to store it in a separate variable, so auth
+
+65
+00:04:08,460 --> 00:04:12,540
+underlying token, we set it to this string. 
+Now
+
+66
+00:04:12,540 --> 00:04:15,990
+we create a client object and 
+pass account_sid as
+
+67
+00:04:15,990 --> 00:04:19,570
+well as the authentication token. 
+And here's
+
+68
+00:04:19,570 --> 00:04:23,200
+our client object. 
+This client object has a few interesting
+
+69
+00:04:23,200 --> 00:04:27,040
+attributes. 
+The one that we're going to look at in this lecture is messages,
+
+70
+00:04:27,230 --> 00:04:31,440
+and we use that to send text messages. 
+We also have calls
+
+71
+00:04:31,680 --> 00:04:36,420
+for making voice calls.
+ We've got fax, video, chat
+
+72
+00:04:36,430 --> 00:04:40,880
+and so on. 
+So messages. 
+Now
+
+73
+00:04:40,880 --> 00:04:45,030
+this object has a method called create. Here
+
+74
+00:04:45,030 --> 00:04:48,860
+We need to pass three pieces of information. 
+to
+
+75
+00:04:49,340 --> 00:04:53,870
+which we set to a phone number, 
+from
+
+76
+00:04:53,880 --> 00:04:59,690
+underline which we set to our twilio number. 
+This
+
+77
+00:04:59,690 --> 00:05:03,260
+is the phone number that we generated earlier. 
+And
+
+78
+00:05:03,260 --> 00:05:06,670
+finally body, let's
+
+79
+00:05:06,670 --> 00:05:10,180
+say "This is our first message".
+So with only
+
+80
+00:05:10,180 --> 00:05:13,860
+four lines of code we can 
+easily send a text message to
+
+81
+00:05:13,860 --> 00:05:17,110
+any numbers in the world.
+ This create method takes care of
+
+82
+00:05:17,110 --> 00:05:21,160
+sending the right http request to twilio api. 
+So
+
+83
+00:05:21,160 --> 00:05:24,690
+finally it will return a call object. 
+This call 
+
+84
+00:05:24,690 --> 00:05:28,310
+object has attributes, like
+
+85
+00:05:28,320 --> 00:05:31,550
+date_created, date_sent, date_updated and so
+
+86
+00:05:31,550 --> 00:05:34,800
+on. 
+So this was the
+
+87
+00:05:34,800 --> 00:05:38,300
+basics of sending text messages using TWILIO. 
+Now earlier
+
+88
+00:05:38,300 --> 00:05:41,670
+when we consume the yelp api, 
+I told you that you should not store
+
+89
+00:05:41,680 --> 00:05:45,400
+this kind of information in your source code
+and then check it into a version control
+
+90
+00:05:45,400 --> 00:05:48,850
+system like git. 
+So as a best practice, we should
+
+91
+00:05:48,850 --> 00:05:52,100
+take these two variables out, 
+put them in a separate file and then
+
+92
+00:05:52,110 --> 00:05:55,250
+exclude that file from our version control system. 
+But I'm
+
+93
+00:05:55,250 --> 00:06:02,000
+not going to do that, because 
+you already know how to do it and 
+I don't wanna waste your time repeating what you already know.
+
