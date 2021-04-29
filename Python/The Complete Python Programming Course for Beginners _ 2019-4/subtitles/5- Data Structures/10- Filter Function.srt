@@ -1,0 +1,150 @@
+2
+00:00:04,000 --> 00:00:08,030
+Here's another scenario for using a lambda function.
+ so we have our
+
+3
+00:00:08,030 --> 00:00:11,650
+list of items. Let's say we
+ want to filter this list and
+
+4
+00:00:11,660 --> 00:00:15,080
+only get the items
+ with price greater than or
+
+5
+00:00:15,090 --> 00:00:18,270
+equal to $10 again. One basic way is
+
+6
+00:00:18,270 --> 00:00:22,250
+to define an empty list like filtered. Then
+
+7
+00:00:22,260 --> 00:00:25,510
+we each right over our list
+ of items for each item we
+
+8
+00:00:25,510 --> 00:00:28,700
+get the price. If it
+ matches our criteria. will add it
+
+9
+00:00:28,700 --> 00:00:32,680
+to this list. But that's pretty basic.
+ A better approach is
+
+10
+00:00:32,680 --> 00:00:36,270
+to use the built in filter function. Look
+
+11
+00:00:36,270 --> 00:00:40,000
+at the parameters. 
+This function just like the map function takes
+
+12
+00:00:40,000 --> 00:00:43,610
+two parameters:
+a function and an
+
+13
+00:00:43,620 --> 00:00:46,840
+iterable. 
+so it will apply this function on
+
+14
+00:00:46,850 --> 00:00:50,390
+each item of this iterable.
+ If the item matches some
+
+15
+00:00:50,390 --> 00:00:53,730
+criteria, it will return it. So, let's
+
+16
+00:00:53,730 --> 00:00:57,160
+see how we can use this function. 
+As the first argument we're
+
+17
+00:00:57,160 --> 00:01:00,850
+going to pass a lambda function.
+ This function takes
+
+18
+00:01:01,440 --> 00:01:05,020
+and I am and
+ returns a Boolean value that
+
+19
+00:01:05,030 --> 00:01:08,300
+determines if this item matches the criteria or
+
+20
+00:01:08,300 --> 00:01:11,960
+not. In this case.
+ we want to get the price of
+
+21
+00:01:11,960 --> 00:01:15,750
+each item and see if
+ it's greater than or equal to
+
+22
+00:01:15,760 --> 00:01:19,190
+$10. So the result of
+ this expression is a boolean
+
+23
+00:01:19,190 --> 00:01:23,470
+value. If it's true.
+ this item will be returned. Now
+
+24
+00:01:23,470 --> 00:01:27,370
+. as the second argument to
+ the filter function. we pass our items
+
+25
+00:01:27,370 --> 00:01:30,830
+list. Let's temporarily store the result in
+
+26
+00:01:30,830 --> 00:01:35,790
+a variable called X and then printed. So
+
+27
+00:01:35,830 --> 00:01:39,480
+we get a filter object.
+ A filter object, just
+
+28
+00:01:39,480 --> 00:01:42,760
+like a map object, is
+ iterable so we can loop over
+
+29
+00:01:42,760 --> 00:01:46,460
+it and we can also convert
+ it to a list right away
+
+30
+00:01:46,840 --> 00:01:50,680
+. So let's call list. Now
+
+31
+00:01:50,680 --> 00:01:54,590
+we get filtered list that we can print
+
+32
+00:01:54,600 --> 00:01:58,300
+on the terminal. So as you can see.
+ we only have product one
+
+33
+00:01:58,310 --> 00:02:02,120
+and three because their prices are greater than
+

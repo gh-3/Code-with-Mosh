@@ -1,0 +1,203 @@
+2
+00:00:04,000 --> 00:00:07,510
+Now let me show you something really cool.
+ I'm going to define two
+
+3
+00:00:07,510 --> 00:00:11,750
+variables: x And y. A
+
+4
+00:00:11,750 --> 00:00:15,550
+basic exercise we give to
+ people who starting programming is
+
+5
+00:00:15,550 --> 00:00:19,000
+to write code to swap two variables. Do
+
+6
+00:00:19,000 --> 00:00:22,310
+you know how to do this?
+ If you don't pause the video and think
+
+7
+00:00:22,310 --> 00:00:25,710
+about it for a minute.
+ But here is the solution to
+
+8
+00:00:25,710 --> 00:00:29,350
+swap two variables.
+ we need a third variable. So
+
+9
+00:00:29,350 --> 00:00:32,500
+I'm going to define a third
+ variable like z and set it
+
+10
+00:00:32,500 --> 00:00:36,720
+to x. So basically
+ we're copying the value of x into
+
+11
+00:00:36,730 --> 00:00:39,880
+a separate variable as a backup. 
+Now we
+
+12
+00:00:39,880 --> 00:00:44,420
+can override x with y. So we
+
+13
+00:00:44,420 --> 00:00:47,670
+said x to y
+ we copy the value of
+
+14
+00:00:47,670 --> 00:00:51,210
+y two x.
+ Now we have the old value
+
+15
+00:00:51,210 --> 00:00:54,530
+of x stored in z. 
+So we
+
+16
+00:00:54,530 --> 00:00:58,120
+can use that to override y
+we said y
+
+17
+00:00:58,120 --> 00:01:01,430
+to the With these three lines.
+ we can swap the
+
+18
+00:01:01,430 --> 00:01:04,790
+value of these two variables. So if
+
+19
+00:01:04,790 --> 00:01:08,300
+we print x as well as
+
+20
+00:01:08,300 --> 00:01:12,030
+y we will see that
+
+21
+00:01:12,040 --> 00:01:15,840
+x is changed to 11 and y is 10. 
+I've
+
+22
+00:01:15,840 --> 00:01:19,000
+got a good news for you;
+In Python We can swap the
+
+23
+00:01:19,000 --> 00:01:22,690
+value of two variables using
+ only one line of code and
+
+24
+00:01:22,690 --> 00:01:26,330
+without a third variable.
+ let me show you. So instead
+
+25
+00:01:26,330 --> 00:01:29,950
+of writing these realigns.
+ we can simply right eggs
+
+26
+00:01:30,440 --> 00:01:34,250
+. comma y equals y.
+ Come on. X. Now. if
+
+27
+00:01:34,250 --> 00:01:37,520
+we run this code. we get
+ the exact same result. But let
+
+28
+00:01:37,520 --> 00:01:41,400
+me explain what exactly
+ happens under the hood. 
+ Here
+
+29
+00:01:41,400 --> 00:01:45,260
+online four, 
+on the right side of the assignment operator, 
+we're 
+
+30
+00:01:45,260 --> 00:01:48,820
+defining a tuple,
+because in the last lecture I told you that
+
+31
+00:01:48,830 --> 00:01:52,460
+when defining a topple
+ you can use parenthesis or you
+
+32
+00:01:52,460 --> 00:01:55,750
+can exclude the parenthesis. So this code is
+
+33
+00:01:55,760 --> 00:01:59,360
+exactly equivalent to this: We have
+
+34
+00:01:59,360 --> 00:02:03,070
+a tuple, 
+What is y? it's 11,
+What is x? It's
+
+35
+00:02:03,070 --> 00:02:06,590
+10. 
+Now, What do we have on line five? We
+
+36
+00:02:06,590 --> 00:02:10,190
+have a topple that we're unpacking.
+ So we're setting x
+
+37
+00:02:10,320 --> 00:02:13,590
+to 11 and 
+y to 10.
+ And that is
+
+38
+00:02:13,590 --> 00:02:17,260
+why with this line of code,
+ we can easily swap two variables.
+
+39
+00:02:17,940 --> 00:02:21,470
+For this very reason,
+ We can define multiple variables on
+
+40
+00:02:21,470 --> 00:02:24,860
+the same line. 
+so we can define a and b and set
+
+41
+00:02:24,860 --> 00:02:29,090
+them to 1 and 2. 
+Once again, we're
+
+42
+00:02:29,090 --> 00:02:37,000
+defining a tuple and
+ then unpacking it on the left side.
+ So a will be 1 and
+ b will be 2
+

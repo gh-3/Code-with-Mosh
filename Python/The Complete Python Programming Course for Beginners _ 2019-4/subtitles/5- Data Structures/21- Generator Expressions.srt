@@ -1,0 +1,305 @@
+2
+00:00:04,000 --> 00:00:08,350
+Here we are creating a list
+ using a list comprehension expression. Then
+
+3
+00:00:08,350 --> 00:00:11,620
+we iterate over all the
+ numbers in this list and print
+
+4
+00:00:11,620 --> 00:00:15,090
+them. When we run this program.
+ we get the even numbers from
+
+5
+00:00:15,090 --> 00:00:18,310
+0 to 18.
+ This is perfectly fine; but there
+
+6
+00:00:18,310 --> 00:00:22,170
+are situations that you might be
+ working with a really large dataset,
+
+7
+00:00:22,180 --> 00:00:25,590
+or perhaps an infinite stream of data. 
+In
+
+8
+00:00:25,590 --> 00:00:29,360
+those situations, you shouldn't store all
+ those values in the memory because
+
+9
+00:00:29,360 --> 00:00:32,680
+that's very memory inefficient. For example. What
+
+10
+00:00:32,680 --> 00:00:36,050
+if. instead of range of 10
+ here we had the range of. let's
+
+11
+00:00:36,050 --> 00:00:39,550
+say. a billion. We don't want
+ to store a billion objects in memory
+
+12
+00:00:39,650 --> 00:00:43,120
+that takes too much memory.
+ In situations like this, it's
+
+13
+00:00:43,120 --> 00:00:46,850
+more efficient to use a generator object. 
+generator
+
+14
+00:00:46,850 --> 00:00:50,060
+objects are iterable.
+So just like lists, we can
+
+15
+00:00:50,070 --> 00:00:53,740
+iterate over them. 
+And in each iteration it generate or
+
+16
+00:00:53,740 --> 00:00:57,210
+spit out a new value.
+ So unlike lists, they
+
+17
+00:00:57,210 --> 00:01:00,660
+don't store all the values in memory,
+ they generate a
+
+18
+00:01:00,660 --> 00:01:03,820
+new value in each iteration.
+ Let me show you
+
+19
+00:01:03,820 --> 00:01:07,310
+how that works. 
+So here I'm going to replace these square
+
+20
+00:01:07,310 --> 00:01:11,280
+brackets with parenthesis. 
+save
+
+21
+00:01:11,280 --> 00:01:14,750
+the changes. 
+run the program.
+ we get the exact same result,
+
+22
+00:01:15,140 --> 00:01:18,560
+however values is no longer a list. 
+It's
+
+23
+00:01:18,560 --> 00:01:23,440
+a generator object. 
+Let me show you.
+So print values.
+run
+
+24
+00:01:23,440 --> 00:01:27,240
+the program. 
+We get a generator object. 
+So
+
+25
+00:01:27,240 --> 00:01:30,510
+as you can see, generator objects are iterable.
+ We can iterate over
+
+26
+00:01:30,510 --> 00:01:34,600
+them. In each iteration.
+ they spit out a new value. But
+
+27
+00:01:34,600 --> 00:01:38,500
+what is interesting, 
+is the size of generator objects. 
+Let
+
+28
+00:01:38,500 --> 00:01:41,790
+me show you how you can get
+ the size of an object. So on
+
+29
+00:01:41,790 --> 00:01:45,090
+the top from the sys module. we
+
+30
+00:01:45,090 --> 00:01:48,560
+should import a function called Get size off
+
+31
+00:01:49,440 --> 00:01:53,730
+. So here we have a generator object.
+ Let's change range to
+
+32
+00:01:54,010 --> 00:01:57,520
+1000. Now let's print the
+ size of this object. So
+
+33
+00:01:57,520 --> 00:02:00,870
+I'm going to delete everything here.
+ call. get size
+
+34
+00:02:00,870 --> 00:02:04,330
+of function. pass our generator object
+
+35
+00:02:04,330 --> 00:02:07,440
+and then print the result.
+ Let's also add a
+
+36
+00:02:07,440 --> 00:02:12,010
+label here. so generator run
+
+37
+00:02:12,010 --> 00:02:15,640
+the program so our generator object takes 100
+
+38
+00:02:15,640 --> 00:02:19,360
+and 20 bytes of memory.
+ What if we change the range to
+
+39
+00:02:20,240 --> 00:02:23,510
+100,000? 
+Let's run the program. 
+The
+
+40
+00:02:23,510 --> 00:02:27,190
+size of this generator object remains consistent. In
+
+41
+00:02:27,190 --> 00:02:30,720
+contrast, 
+if we used a list comprehension expression here,
+
+42
+00:02:30,730 --> 00:02:34,400
+we would end up with a list of 100,000 items. 
+Let
+
+43
+00:02:34,400 --> 00:02:39,270
+me show you. So I'm going to
+ copy this line and then duplicated and
+
+44
+00:02:39,280 --> 00:02:42,480
+change parenthesis to square brackets. So now
+
+45
+00:02:42,480 --> 00:02:46,340
+we have a list.
+ Let's copy this line as well. Change
+
+46
+00:02:46,340 --> 00:02:49,740
+the label and see the size
+
+47
+00:02:49,740 --> 00:02:53,520
+of this list. Run the program.
+ So our list is taking
+
+48
+00:02:53,530 --> 00:02:56,740
+over 800,000 bytes of memory compared to
+
+49
+00:02:56,740 --> 00:03:00,870
+our generator object that takes
+ only 100 and 20 bites. So
+
+50
+00:03:00,900 --> 00:03:04,610
+in situations where you're dealing
+ with a really large dataset
+
+51
+00:03:04,620 --> 00:03:08,120
+or potentially an infinite
+ stream of data, use a
+
+52
+00:03:08,120 --> 00:03:12,130
+generator expression to create a generator object. So
+
+53
+00:03:12,130 --> 00:03:16,150
+when we use parenthesis
+ around the comprehension expression, just
+
+54
+00:03:16,150 --> 00:03:19,390
+be aware that because generator
+ objects don't store all the
+
+55
+00:03:19,390 --> 00:03:22,820
+items in memory, you won't be able
+ to get the total number of items you're
+
+56
+00:03:22,820 --> 00:03:26,530
+working with. 
+For example: 
+Here let's
+
+57
+00:03:26,530 --> 00:03:29,790
+just keep the generator object and then 
+print the
+
+58
+00:03:29,790 --> 00:03:33,110
+len of values. 
+Let me run this code. 
+we'll get
+
+59
+00:03:33,110 --> 00:03:36,910
+an error. 
+Let's take a look.
+ Objects of type generator
+
+60
+00:03:36,910 --> 00:03:40,410
+has no land because we
+ can only access these items,
+
+61
+00:03:40,410 --> 00:03:43,650
+these values, when we
+iterate over a generator object. 
+So
+
+62
+00:03:43,650 --> 00:03:47,360
+we won't know ahead of time, 
+how many objects or 
+how many items this generator is going to produce
+

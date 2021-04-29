@@ -1,0 +1,278 @@
+﻿1
+00:00:03,960 --> 00:00:06,960
+In Python, we have three logical operators
+
+2
+00:00:07,160 --> 00:00:11,680
+and we use these operators
+to model more complex conditions.
+
+3
+00:00:11,880 --> 00:00:16,920
+So these operators are and or and not,
+
+4
+00:00:17,120 --> 00:00:20,000
+let's see, a real world example
+of using this operators.
+
+5
+00:00:20,200 --> 00:00:23,880
+So imagine we're building
+an application for processing loans.
+
+6
+00:00:24,080 --> 00:00:27,920
+So we need two variables, high income.
+
+7
+00:00:28,120 --> 00:00:30,280
+We can set this to true.
+
+8
+00:00:30,480 --> 00:00:35,360
+And good underline credit,
+which set it to true.
+
+9
+00:00:35,560 --> 00:00:38,040
+Now here's the condition
+we want to implement.
+
+10
+00:00:38,240 --> 00:00:41,520
+If the applicant has high income and good
+
+11
+00:00:41,720 --> 00:00:45,080
+credit score, then they
+are eligible for the loan.
+
+12
+00:00:45,280 --> 00:00:55,040
+So if high income and good credit,
+we had to call in and prevent eligible.
+
+13
+00:00:55,240 --> 00:01:00,360
+Now, note that here I have not compared
+the value of this variable with true.
+
+14
+00:01:00,560 --> 00:01:03,360
+That is one of the issues I see
+in a lot of beginners code.
+
+15
+00:01:03,560 --> 00:01:08,280
+This is redundant and unprofessional
+because high income is a boolean.
+
+16
+00:01:08,480 --> 00:01:10,400
+So it's either true or false.
+
+17
+00:01:10,600 --> 00:01:13,640
+We don't need to compare true with true.
+
+18
+00:01:13,840 --> 00:01:15,880
+So if this condition is true
+
+19
+00:01:16,080 --> 00:01:22,480
+and this second condition is true, then
+we will prevent eligible, indeterminable.
+
+20
+00:01:22,680 --> 00:01:28,200
+So say the changes and run the program,
+obviously, this person is eligible.
+
+21
+00:01:28,400 --> 00:01:31,320
+However, if one of these conditions is
+
+22
+00:01:31,520 --> 00:01:34,840
+false, we will not be
+eligible in the terminal.
+
+23
+00:01:35,040 --> 00:01:38,280
+So let's add an EL statement here.
+
+24
+00:01:38,480 --> 00:01:42,760
+And PRAnd not eligible.
+
+25
+00:01:42,960 --> 00:01:44,560
+We're on the program.
+
+26
+00:01:44,760 --> 00:01:46,520
+We see not eligible.
+
+27
+00:01:46,720 --> 00:01:52,280
+So this is how the and operator works
+with and operator, if both conditions are
+
+28
+00:01:52,480 --> 00:01:57,200
+true, the result will be true
+in contrast with the owner operator,
+
+29
+00:01:57,400 --> 00:02:01,880
+as long as at least one of the conditions
+is true, the result will be true.
+
+30
+00:02:02,080 --> 00:02:08,840
+So if I replace and with or here
+we should see eligible and a terminal.
+
+31
+00:02:09,040 --> 00:02:10,480
+Let's run it one more time.
+
+32
+00:02:10,680 --> 00:02:11,800
+There you go.
+
+33
+00:02:12,000 --> 00:02:14,360
+So these are the and and or operators.
+
+34
+00:02:14,560 --> 00:02:17,640
+Now let's take a look at an
+example of the not operator.
+
+35
+00:02:17,840 --> 00:02:23,760
+So I'm going to define another variable
+still and set it to true temporarily.
+
+36
+00:02:23,960 --> 00:02:28,120
+I'm going to remove this expression and
+simplify it will come back to this later.
+
+37
+00:02:28,320 --> 00:02:33,600
+So let's say if the person is eligible,
+if they are not a student,
+
+38
+00:02:33,800 --> 00:02:37,720
+then not operator basically in
+the value of a bullier.
+
+39
+00:02:37,920 --> 00:02:40,640
+So in this case, student is true.
+
+40
+00:02:40,840 --> 00:02:44,600
+When we apply the not operator,
+the result will be false.
+
+41
+00:02:44,800 --> 00:02:46,480
+So in this case, our condition will be
+
+42
+00:02:46,680 --> 00:02:50,960
+false and that's why this print
+statement will not be executed.
+
+43
+00:02:51,160 --> 00:02:54,760
+Let me show you the same Rhondda program.
+
+44
+00:02:54,960 --> 00:02:59,400
+They are not eligible
+if a student was false.
+
+45
+00:02:59,600 --> 00:03:01,600
+When we apply, the not operator will get
+
+46
+00:03:01,800 --> 00:03:05,200
+through, so our condition will be
+true and we'll see it eligible.
+
+47
+00:03:05,400 --> 00:03:07,000
+Let's run it one more time.
+
+48
+00:03:07,200 --> 00:03:08,520
+There you go.
+
+49
+00:03:08,720 --> 00:03:12,680
+With this operators,
+we can model even more complex conditions,
+
+50
+00:03:12,880 --> 00:03:16,200
+here is an example,
+a person can be eligible
+
+51
+00:03:16,400 --> 00:03:23,520
+if they have either high income or good
+credit and they should not be a student.
+
+52
+00:03:23,720 --> 00:03:25,840
+Let me show you how
+to implement this condition.
+
+53
+00:03:26,040 --> 00:03:31,160
+So if high income or good credit,
+
+54
+00:03:31,360 --> 00:03:34,760
+we want at least one of these
+conditions to be true.
+
+55
+00:03:34,960 --> 00:03:38,240
+So we put these in parentheses.
+
+56
+00:03:38,440 --> 00:03:43,200
+We want to separate these from the other
+condition, which is not a student.
+
+57
+00:03:43,400 --> 00:03:45,640
+Now, the result of this should be true,
+
+58
+00:03:45,840 --> 00:03:49,120
+which means at least one of these
+conditions should be true.
+
+59
+00:03:49,320 --> 00:03:54,280
+After that, we'll add and not student.
+
+60
+00:03:54,480 --> 00:03:56,360
+And finally caught.
+
+61
+00:03:56,560 --> 00:04:00,600
+So it is operators, you can model
+all kinds of real world scenarios.
+

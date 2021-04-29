@@ -1,0 +1,138 @@
+﻿1
+00:00:04,080 --> 00:00:08,080
+In this lecture, I'm gonna show you
+a technique for writing cleaner code.
+
+2
+00:00:08,280 --> 00:00:10,080
+So let's say we're building an application
+
+3
+00:00:10,280 --> 00:00:13,920
+for a university
+and we wanna check to see if the person
+
+4
+00:00:14,120 --> 00:00:18,400
+who's applying for this university
+program is eligible or not.
+
+5
+00:00:18,600 --> 00:00:23,800
+So we start by defining
+a variable called Age Sedita 22.
+
+6
+00:00:24,000 --> 00:00:33,400
+Now, if age is greater than or equal
+to 18, Courland Prent eligible.
+
+7
+00:00:33,600 --> 00:00:39,800
+Remove the indentation else,
+colon print, not eligible.
+
+8
+00:00:40,000 --> 00:00:43,080
+Let's run a program, make sure it works.
+
+9
+00:00:43,280 --> 00:00:44,320
+Beautiful.
+
+10
+00:00:44,520 --> 00:00:46,640
+Now, there is nothing wrong in this piece
+
+11
+00:00:46,840 --> 00:00:51,200
+of code, but I want to show you a cleaner
+way to achieve the same result.
+
+12
+00:00:51,400 --> 00:00:54,040
+Instead of having a print statement here,
+
+13
+00:00:54,240 --> 00:00:59,600
+we can define a variable like message
+and set it to this string.
+
+14
+00:00:59,800 --> 00:01:01,480
+That is the first step.
+
+15
+00:01:01,680 --> 00:01:09,440
+So message equals this string
+and then we will print this message.
+
+16
+00:01:09,640 --> 00:01:14,560
+Now, when you have and if else statement
+with this structure where you're basically
+
+17
+00:01:14,760 --> 00:01:19,320
+assigning a value to a variable,
+you can rewrite this in a simpler way.
+
+18
+00:01:19,520 --> 00:01:22,320
+So this is how it works.
+
+19
+00:01:22,520 --> 00:01:25,000
+All we want to do over these few lines is
+
+20
+00:01:25,200 --> 00:01:27,800
+to assign a value to this
+message variable.
+
+21
+00:01:27,800 --> 00:01:30,720
+Right.
+So we start with the message.
+
+22
+00:01:30,920 --> 00:01:33,200
+We set it to eligible
+
+23
+00:01:33,400 --> 00:01:40,960
+if age is greater than or equal to 18
+or else we set it to not eligible.
+
+24
+00:01:41,160 --> 00:01:43,240
+This statement is almost like plain
+
+25
+00:01:43,440 --> 00:01:47,440
+English,
+so what we have on line seven is exactly
+
+26
+00:01:47,640 --> 00:01:51,840
+equivalent to these four
+lines of code delete.
+
+27
+00:01:52,040 --> 00:01:54,800
+Save the changes round the program.
+
+28
+00:01:55,000 --> 00:01:57,000
+You can see this person is eligible.
+
+29
+00:01:57,200 --> 00:02:03,840
+If I change the age to 12 and run
+the program, we get not eligible.
+
+30
+00:02:04,040 --> 00:02:07,040
+So what we have here is
+called ternary operator.
+

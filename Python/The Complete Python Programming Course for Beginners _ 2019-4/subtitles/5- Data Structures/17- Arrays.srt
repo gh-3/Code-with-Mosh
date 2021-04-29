@@ -1,0 +1,235 @@
+2
+00:00:04,000 --> 00:00:07,880
+So, you have learned a lot about
+ lists in Python. These lists are
+
+3
+00:00:07,880 --> 00:00:11,440
+very useful. 
+But if you're dealing with a large sequence of
+
+4
+00:00:11,440 --> 00:00:15,390
+numbers, we have a more
+ efficient data type in python called
+
+5
+00:00:15,510 --> 00:00:19,320
+array. These arrays take less memory and perform
+
+6
+00:00:19,330 --> 00:00:22,730
+a little bit faster. 
+But note that you will see the difference only
+
+7
+00:00:22,730 --> 00:00:26,670
+if you're dealing with a large
+ list of numbers, let's say 10,000 or
+
+8
+00:00:26,670 --> 00:00:29,890
+more. So for 90% of the cases. you
+
+9
+00:00:29,890 --> 00:00:34,060
+will use lists. But if you run
+ your program and you see some performance problems,
+
+10
+00:00:34,080 --> 00:00:37,560
+then you can see if you
+ can solve the problem by replacing a
+
+11
+00:00:37,560 --> 00:00:41,340
+list with an array.
+ If you don't have any performance problems
+
+12
+00:00:41,340 --> 00:00:44,650
+don't try to optimize.
+ In other words, don't solve a
+
+13
+00:00:44,650 --> 00:00:47,850
+problem that doesn't exist.
+ So let me show you how
+
+14
+00:00:47,850 --> 00:00:51,060
+to use arrays in python. 
+To use an
+
+15
+00:00:51,060 --> 00:00:55,010
+array we need to import it
+ from the array module. So on
+
+16
+00:00:55,010 --> 00:00:58,950
+the top from array import array.
+
+17
+00:00:59,940 --> 00:01:03,590
+So we have a module called array
+ and in this module we
+
+18
+00:01:03,590 --> 00:01:06,790
+have a class called array.
+ It has the same name as
+
+19
+00:01:06,790 --> 00:01:10,960
+the module itself. 
+Now we call array
+
+20
+00:01:11,740 --> 00:01:15,200
+Look at the first parameter.
+ This is called a typecode which is
+
+21
+00:01:15,200 --> 00:01:18,760
+a string that determines the
+ type of objects in your array.
+
+22
+00:01:19,940 --> 00:01:24,050
+So here in Google,
+ search for Python 3 type
+
+23
+00:01:24,060 --> 00:01:28,490
+code. 
+then click the first link. 
+In
+
+24
+00:01:28,490 --> 00:01:32,860
+this table, you can see all
+ the type code in Python. so
+
+25
+00:01:32,860 --> 00:01:36,150
+it's a string of one
+ character that determines the type
+
+26
+00:01:36,150 --> 00:01:40,150
+of objects in your list.
+ So if you're dealing with signed integers,
+
+27
+00:01:40,160 --> 00:01:43,760
+you should use a lower case i.
+So here
+
+28
+00:01:44,070 --> 00:01:47,710
+let's add i. 
+And then as the second argument, we pass
+
+29
+00:01:47,730 --> 00:01:51,360
+a list of integers.
+ so we move this list here.
+
+30
+00:01:52,040 --> 00:01:57,120
+Now we get an array.
+We can call it numbers. 
+In
+
+31
+00:01:57,120 --> 00:02:00,640
+this object, similar to lists,
+ We have methods for adding
+
+32
+00:02:00,640 --> 00:02:04,860
+new objects or removing existing ones. 
+so we can call numbers
+
+33
+00:02:04,870 --> 00:02:08,790
+dot append to append a number
+ to the end of the list. Or
+
+34
+00:02:08,790 --> 00:02:12,290
+we can use insert
+ to add a number at
+
+35
+00:02:12,290 --> 00:02:16,520
+a specific index. We also have pop and
+
+36
+00:02:16,520 --> 00:02:20,330
+remove exactly like lists.
+ and we can also access
+
+37
+00:02:20,340 --> 00:02:23,750
+items by their index. 
+So we can get the first item in
+
+38
+00:02:23,750 --> 00:02:27,270
+this array. However unlike lists, the
+
+39
+00:02:27,280 --> 00:02:30,740
+objects in this array are tight.
+ So here every
+
+40
+00:02:30,750 --> 00:02:33,920
+object should be an integer.
+ If we try to put a
+
+41
+00:02:33,920 --> 00:02:37,320
+floating point number here or any
+ other kind of objects will get
+
+42
+00:02:37,320 --> 00:02:40,740
+an error. let me show you.
+ So I'm going to change the first item
+
+43
+00:02:40,740 --> 00:02:44,800
+to 1.0. Now let's run the program. We
+
+44
+00:02:44,800 --> 00:02:48,440
+get this type error
+ in major argument expected. Got
+
+45
+00:02:48,450 --> 00:02:51,900
+float. So every object in this array should
+
+46
+00:02:51,900 --> 00:02:55,190
+be of the same type,
+ which is determined at the time of
+
+47
+00:02:55,190 --> 00:02:58,760
+creating the array using the typecode.
+ So to recap,
+
+48
+00:02:59,140 --> 00:03:02,300
+use arrays only if
+ you're dealing with a large sequence of
+
+49
+00:03:02,300 --> 00:03:11,000
+numbers and you encounter performance problems, 
+for other cases use lists and tuples by default.
+

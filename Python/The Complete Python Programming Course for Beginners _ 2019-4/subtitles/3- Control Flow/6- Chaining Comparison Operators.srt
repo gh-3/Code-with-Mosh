@@ -1,0 +1,92 @@
+1
+00:00:00,840 --> 00:00:04,330
+mhm and this
+
+2
+00:00:04,330 --> 00:00:08,220
+lecture. I'm going to show you
+ how to change comparison operators. This
+
+3
+00:00:08,220 --> 00:00:11,440
+is a very powerful technique
+ for writing clean code. Here's an
+
+4
+00:00:11,440 --> 00:00:14,770
+example. Let's say we want
+ to implement a rule that
+
+5
+00:00:14,770 --> 00:00:18,950
+says age should be between 18 and 65
+
+6
+00:00:20,140 --> 00:00:23,850
+. Here's how we can implement it.
+ So we define a variable like age
+
+7
+00:00:23,860 --> 00:00:27,220
+7 to 22. Now. if age is
+
+8
+00:00:27,220 --> 00:00:30,840
+greater than or equal
+ to 18 and age is
+
+9
+00:00:30,840 --> 00:00:35,260
+less than 65 then we print eligible
+
+10
+00:00:36,040 --> 00:00:39,920
+. Now here's a question for you.
+ How do we write this rule in math. We
+
+11
+00:00:39,920 --> 00:00:44,070
+can write it like this well
+
+12
+00:00:44,070 --> 00:00:47,560
+. more accurately. We should
+ have an equal sign here. so
+
+13
+00:00:47,570 --> 00:00:51,490
+age should be between 18 and 65
+
+14
+00:00:51,500 --> 00:00:54,660
+. This is how we write
+ this rule in math. Now I've got
+
+15
+00:00:54,660 --> 00:00:58,280
+some good news for you.
+ We can write the exact same expression in
+
+16
+00:00:58,280 --> 00:01:02,150
+Python. so I'm going
+ to move this up put
+
+17
+00:01:02,540 --> 00:01:06,360
+And if statement here Line four and
+
+18
+00:01:06,360 --> 00:01:09,780
+93 are exactly equivalent.
+ But as you can see
+
+19
+00:01:09,790 --> 00:01:13,420
+. Line four is cleaner
+ and easier to read. So let's
+
+20
+00:01:13,420 --> 00:01:16,680
+get rid of Line three. This is what
+

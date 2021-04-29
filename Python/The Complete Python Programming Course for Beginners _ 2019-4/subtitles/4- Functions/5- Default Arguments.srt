@@ -1,0 +1,112 @@
+1
+00:00:00,840 --> 00:00:04,470
+mhm. Yeah. Earlier
+
+2
+00:00:04,470 --> 00:00:08,410
+. I told you that all the
+ parameters that you define for a function are
+
+3
+00:00:08,410 --> 00:00:11,990
+required by default. In this lecture.
+ I'm going to show you how
+
+4
+00:00:11,990 --> 00:00:15,940
+to make the by parameter optional. So let's
+
+5
+00:00:15,940 --> 00:00:19,750
+say we don't want
+ to explicitly pass by equals
+
+6
+00:00:19,750 --> 00:00:23,440
+one. Every time we want
+ to call this increment function. we
+
+7
+00:00:23,440 --> 00:00:27,450
+want to use this function
+ to increment value by one. So
+
+8
+00:00:28,140 --> 00:00:32,130
+we removed the second argument.
+ Now we need to give this parameter
+
+9
+00:00:32,140 --> 00:00:35,750
+a default value. so we
+ set it to one. Now
+
+10
+00:00:35,750 --> 00:00:39,720
+. if we call this function
+ and don't supply the second argument
+
+11
+00:00:39,730 --> 00:00:42,980
+. this default value will be used.
+ Otherwise the value that
+
+12
+00:00:42,980 --> 00:00:46,560
+we specify here will be used.
+ Let me show you. So we
+
+13
+00:00:46,560 --> 00:00:50,390
+run this program. The result is three. But
+
+14
+00:00:50,400 --> 00:00:54,080
+if we pass. the second argument here will
+
+15
+00:00:54,090 --> 00:00:58,530
+increment to buy five.
+ so we will get seven so
+
+16
+00:00:58,530 --> 00:01:02,250
+you can see it's pretty easy
+ to make a parameter optional. Just
+
+17
+00:01:02,250 --> 00:01:06,060
+be aware that all
+ these optional parameters should come
+
+18
+00:01:06,070 --> 00:01:09,560
+after the required parameters. In other
+
+19
+00:01:09,560 --> 00:01:13,510
+words. I cannot add another required parameter
+
+20
+00:01:13,510 --> 00:01:17,610
+here. Let's call that another.
+ I cannot add that here. If
+
+21
+00:01:17,610 --> 00:01:21,250
+I save the changes. you can see.
+ we get a red underline
+
+22
+00:01:21,250 --> 00:01:25,070
+here. So all the optional parameters should
+
+23
+00:01:25,070 --> 00:01:28,740
+come after the required parameters. Now
+
+24
+00:01:28,750 --> 00:01:32,380
+. obviously. in this case.
+ we don't need the second parameter. so let's
+

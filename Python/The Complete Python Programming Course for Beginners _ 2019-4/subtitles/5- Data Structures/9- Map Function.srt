@@ -1,0 +1,246 @@
+2
+00:00:04,320 --> 00:00:08,100
+Over the next two lecturers I'm going to
+ show you more examples of using lambdas
+
+3
+00:00:08,110 --> 00:00:11,680
+in your programs. So here we
+ have this list of items. Let's
+
+4
+00:00:11,690 --> 00:00:15,060
+imagine we want to transform
+ this list into a different shape.
+
+5
+00:00:15,440 --> 00:00:18,750
+So currently each item in
+ this list is a topple of
+
+6
+00:00:18,750 --> 00:00:21,990
+two items. Let's say
+ we're only interested in the
+
+7
+00:00:21,990 --> 00:00:25,940
+price of these items. so we
+ want to transform this list into
+
+8
+00:00:25,940 --> 00:00:29,290
+a list of numbers.
+ That is the list of prices. Here
+
+9
+00:00:29,290 --> 00:00:32,670
+is a basic way to do this.
+ We can define an
+
+10
+00:00:32,680 --> 00:00:36,650
+empty less. then iterate over our
+
+11
+00:00:36,650 --> 00:00:41,140
+list of items.
+ So for item in items we
+
+12
+00:00:41,140 --> 00:00:45,230
+call prices data hand item of
+
+13
+00:00:45,230 --> 00:00:49,350
+one which returns the
+ price of each item. Now
+
+14
+00:00:49,350 --> 00:00:53,280
+let's print the prices so we
+
+15
+00:00:53,280 --> 00:00:57,170
+get a list of numbers.
+ With this code we have transformed or
+
+16
+00:00:57,170 --> 00:01:00,900
+mapped our original list into a different list.
+
+17
+00:01:00,910 --> 00:01:04,310
+Okay. that there is a
+ better and more elegant way to achieve
+
+18
+00:01:04,310 --> 00:01:07,970
+the same result. 
+Instead of this loop, we can use the
+
+19
+00:01:07,970 --> 00:01:12,050
+map function. so we
+
+20
+00:01:12,050 --> 00:01:15,370
+call the built in map function.
+ As we can see. this
+
+21
+00:01:15,370 --> 00:01:18,870
+function takes two parameters: 
+a function and
+
+22
+00:01:19,030 --> 00:01:22,480
+one or more iterables.
+So as the first argument we
+
+23
+00:01:22,480 --> 00:01:25,910
+can pass a lambda function.
+ And as the second argument we
+
+24
+00:01:25,910 --> 00:01:29,500
+can pass our list of items.
+ This map function
+
+25
+00:01:29,510 --> 00:01:32,940
+will apply our lambda
+ function on each item in
+
+26
+00:01:32,940 --> 00:01:36,340
+this list. 
+Let me show you what I mean. So it passed a
+
+27
+00:01:36,340 --> 00:01:40,540
+lambda. This lambda is
+ a function that will transform
+
+28
+00:01:40,670 --> 00:01:44,380
+each item in our original list. So
+
+29
+00:01:44,390 --> 00:01:47,990
+the parameter to dysfunction is item. And
+
+30
+00:01:47,990 --> 00:01:51,760
+here we simply want to return
+ the price of that item. So item
+
+31
+00:01:52,140 --> 00:01:55,280
+of one. Now. as the second argument to
+
+32
+00:01:55,280 --> 00:01:59,060
+the map function. we need
+ to pass our items list
+
+33
+00:01:59,640 --> 00:02:02,970
+. So this map
+ function will iterate over this
+
+34
+00:02:02,980 --> 00:02:06,620
+iterable and it will call this Lambda function
+
+35
+00:02:06,630 --> 00:02:09,800
+on each item of this vulnerable. Now
+
+36
+00:02:09,800 --> 00:02:12,880
+. let's see what this function
+ returns so temporarily I'm going to
+
+37
+00:02:12,880 --> 00:02:17,080
+assign this to a variable called eggs.
+ Let's print X
+
+38
+00:02:17,120 --> 00:02:20,770
+. And also we don't
+ need these three lines because
+
+39
+00:02:20,770 --> 00:02:24,860
+we can achieve the same result
+ using the map function so delayed
+
+40
+00:02:25,240 --> 00:02:29,010
+. Now. let's run this program.
+ So this map function returns
+
+41
+00:02:29,020 --> 00:02:32,950
+a map object which is another iterable. So
+
+42
+00:02:32,950 --> 00:02:37,250
+we can easily iterate over
+ it for item in X. we'll
+
+43
+00:02:37,250 --> 00:02:41,280
+print item. There
+
+44
+00:02:41,280 --> 00:02:45,230
+you go so we
+ get the prices. Alternatively we
+
+45
+00:02:45,230 --> 00:02:49,060
+can convert this map object
+ into a list object. So
+
+46
+00:02:49,640 --> 00:02:53,600
+we can use our list function. Earlier
+
+47
+00:02:53,600 --> 00:02:57,400
+you learn that you can
+ pass any iterables to this list function
+
+48
+00:02:57,560 --> 00:03:01,660
+to create a new list. So we
+
+49
+00:03:01,660 --> 00:03:05,250
+passed it here and now
+ we can rename X two
+
+50
+00:03:05,300 --> 00:03:09,160
+prices and simply print prices
+
+51
+00:03:09,940 --> 00:03:13,280
+. We don't need this loop here.
+ Let's run the program. So
+
+52
+00:03:13,280 --> 00:03:16,540
+we get a list of three numbers.
+ So this is
+
+53
+00:03:16,540 --> 00:03:25,000
+how the map function works.
+ It takes a lambda function and
+ applies it on every item of this iterable.
+

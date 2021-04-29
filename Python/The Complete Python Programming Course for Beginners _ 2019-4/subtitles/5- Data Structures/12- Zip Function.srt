@@ -1,0 +1,124 @@
+2
+00:00:04,360 --> 00:00:08,070
+Here we have to list. Let's say we
+ want to combine these two lists into
+
+3
+00:00:08,070 --> 00:00:11,730
+a single list of topples like this. So
+
+4
+00:00:11,730 --> 00:00:15,640
+we have a list where
+ each item is a topple and
+
+5
+00:00:15,650 --> 00:00:19,110
+in the first couple. we're going
+ to have the first element of each
+
+6
+00:00:19,110 --> 00:00:22,210
+list. So one and 10 Similarly. in the
+
+7
+00:00:22,210 --> 00:00:26,530
+second Topple. we're going to have
+ the second element of each list. And
+
+8
+00:00:26,530 --> 00:00:29,740
+finally. the third Topple. How can we
+
+9
+00:00:29,740 --> 00:00:33,780
+combine these two lists into
+ a single list like this. Well
+
+10
+00:00:33,790 --> 00:00:37,720
+. in this case. we can use
+ the map function or a list comprehension
+
+11
+00:00:37,730 --> 00:00:41,370
+because both these work
+ with a single list. But
+
+12
+00:00:41,370 --> 00:00:44,860
+here we're combining multiple lists. To achieve this
+
+13
+00:00:44,860 --> 00:00:48,450
+. we use the
+ built in zip function. So
+
+14
+00:00:48,460 --> 00:00:52,920
+zip. Look. this function takes multiple deliverables
+
+15
+00:00:53,080 --> 00:00:56,530
+and it will combine them the
+ way I showed you. So we
+
+16
+00:00:56,530 --> 00:01:00,250
+pass list one and list too. Let's
+
+17
+00:01:00,250 --> 00:01:04,290
+print the result on the terminal. So
+
+18
+00:01:04,290 --> 00:01:08,160
+look, it returns a zip object
+ which is also iterable.
+
+19
+00:01:08,740 --> 00:01:12,530
+So we can iterate over
+ it or simply pass it to
+
+20
+00:01:12,530 --> 00:01:15,890
+the built in list function to convert it
+
+21
+00:01:15,890 --> 00:01:19,170
+to a list. Now. let me
+ show you something cool as you
+
+22
+00:01:19,170 --> 00:01:23,030
+saw this zip function
+ takes one or more honorables
+
+23
+00:01:23,150 --> 00:01:26,640
+so we don't have to pass a list here.
+ I can also pass a
+
+24
+00:01:26,640 --> 00:01:30,420
+string like ABC and look
+
+25
+00:01:30,420 --> 00:01:34,440
+at the result. So now our strength ABC
+
+26
+00:01:34,600 --> 00:01:37,910
+is spread across multiple topples in
+
+27
+00:01:37,910 --> 00:01:41,220
+this list. That's pretty powerful.
+If you want to actually have the same thing
+
+28
+00:01:41,230 --> 00:01:44,550
+in other programming languages you have to write several lines of code,
+but in Python we can do it in a single line.
+

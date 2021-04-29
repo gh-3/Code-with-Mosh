@@ -1,0 +1,139 @@
+1
+00:00:04,340 --> 00:00:07,440
+all right. Time for an exercise.
+ I want you to write a
+
+2
+00:00:07,440 --> 00:00:11,200
+program to display the even numbers between 1
+
+3
+00:00:11,200 --> 00:00:15,700
+to 10. So when you run this program.
+ you should see 2 4 6 and 8
+
+4
+00:00:15,700 --> 00:00:19,000
+and after these I want
+ you to print this message: We
+
+5
+00:00:19,000 --> 00:00:22,220
+have 4 even numbers. Now,
+
+6
+00:00:22,220 --> 00:00:25,450
+here is a quick hint.
+ Before you get started. you should call the
+
+7
+00:00:25,450 --> 00:00:28,730
+range function with 1 and 10.
+ Do not use
+
+8
+00:00:28,730 --> 00:00:32,020
+the third argument which is called Step.
+ So basically, I
+
+9
+00:00:32,020 --> 00:00:36,170
+want you to iterate over all the
+ numbers between 1 to 10. Check
+
+10
+00:00:36,180 --> 00:00:39,420
+if each number is an
+ even number and then print it on
+
+11
+00:00:39,420 --> 00:00:42,730
+the terminal. So pause the video. Spend two
+
+12
+00:00:42,730 --> 00:00:50,400
+minutes on this exercise. When you're done,
+ come back Continue watching. So
+
+13
+00:00:50,400 --> 00:00:54,280
+we start with a four
+ loop for number in range 1
+
+14
+00:00:54,280 --> 00:00:57,640
+to 10 colon. We check
+
+15
+00:00:57,640 --> 00:01:00,920
+to see if the remainder
+ of division of this number by
+
+16
+00:01:00,920 --> 00:01:04,550
+two equals zero. So if number module
+
+17
+00:01:04,550 --> 00:01:08,760
+IHS two equals zero. then reprint
+
+18
+00:01:09,500 --> 00:01:12,780
+this number. Now let's
+
+19
+00:01:12,780 --> 00:01:17,060
+run this program. So we get 2468 Beautiful
+
+20
+00:01:17,440 --> 00:01:20,880
+. Now to count the even numbers.
+ we need a separate
+
+21
+00:01:20,880 --> 00:01:24,220
+variable. So let's call that count. Initially. we
+
+22
+00:01:24,220 --> 00:01:27,600
+set it to zero Now in
+ this if block. every time we
+
+23
+00:01:27,600 --> 00:01:31,250
+find an even number.
+ we need to increment count
+
+24
+00:01:31,260 --> 00:01:35,430
+. So we said
+ Count Plus equals one. And
+
+25
+00:01:35,430 --> 00:01:39,190
+finally. after our four loop.
+ we can print a
+
+26
+00:01:39,190 --> 00:01:44,470
+formatted strength. We have count. even
+
+27
+00:01:44,640 --> 00:01:48,400
+numbers. Let's run the program. And
+
+28
+00:01:48,400 --> 00:01:51,560
+here's the result. So that brings
+ us to the end of this
+
+29
+00:01:51,560 --> 00:01:54,930
+section. In the next section.
+ you're going to learn how to create your
+
+30
+00:01:54,940 --> 00:01:58,110
+own functions. I hope you
+ enjoy the section and thank you
+

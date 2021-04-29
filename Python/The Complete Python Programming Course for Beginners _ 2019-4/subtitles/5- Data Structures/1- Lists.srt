@@ -1,0 +1,294 @@
+1
+00:00:00,840 --> 00:00:04,410
+mhm. Yeah. In
+
+2
+00:00:04,410 --> 00:00:08,430
+this section. we're going to look at
+ the built in data structures in python. which
+
+3
+00:00:08,430 --> 00:00:12,060
+are extremely important when building real applications. First
+
+4
+00:00:12,060 --> 00:00:15,880
+. we're going to look at lists.
+ and then we'll look at topples, sets and
+
+5
+00:00:15,880 --> 00:00:19,440
+dictionaries. So earlier. you have
+ seen that we can use square
+
+6
+00:00:19,440 --> 00:00:23,460
+brackets to define a list
+ or a sequence of objects
+
+7
+00:00:23,840 --> 00:00:27,330
+. In between these brackets.
+ we can have objects of any type so
+
+8
+00:00:27,330 --> 00:00:31,010
+we can have a list
+ of strings like this and
+
+9
+00:00:31,010 --> 00:00:34,900
+then assigned to a variable like letters. We
+
+10
+00:00:34,900 --> 00:00:38,130
+can also have a list
+ of numbers Boolean or even a
+
+11
+00:00:38,130 --> 00:00:41,570
+list of lists. Let me show you.
+ So here we have a
+
+12
+00:00:41,570 --> 00:00:45,000
+list. Each item in this
+ list will be a list
+
+13
+00:00:45,010 --> 00:00:48,290
+itself. So here's the first item. which is
+
+14
+00:00:48,290 --> 00:00:52,080
+a list of two items.
+ Now let's add another
+
+15
+00:00:52,080 --> 00:00:55,470
+item to our main
+ or parent list. This item
+
+16
+00:00:55,470 --> 00:00:58,750
+is also a list with two items. so
+
+17
+00:00:58,750 --> 00:01:02,670
+now we have a matrix.
+ which is a two dimensional
+
+18
+00:01:02,670 --> 00:01:06,140
+list. Now let me show
+ you some cool tricks. Let's
+
+19
+00:01:06,140 --> 00:01:09,550
+say you want to have
+ a list of 100 zeros. You
+
+20
+00:01:09,550 --> 00:01:12,910
+don't want to manually create that like this.
+ That's very ugly. Let me
+
+21
+00:01:12,910 --> 00:01:16,650
+show you a better way.
+ So we define a list of one item
+
+22
+00:01:16,670 --> 00:01:20,450
+on zero and then we
+ can multiply it by 100
+
+23
+00:01:20,940 --> 00:01:25,190
+and the result will be this.
+ Let me show you print
+
+24
+00:01:25,200 --> 00:01:29,720
+zeros. Here it is. There
+
+25
+00:01:29,720 --> 00:01:33,340
+you go. So. using a
+ star or an asterisk we
+
+26
+00:01:33,340 --> 00:01:36,740
+can repeat the items in
+ a list. Now Similarly we
+
+27
+00:01:36,740 --> 00:01:40,100
+can use a plus
+ to concatenate multiple lists. Let
+
+28
+00:01:40,100 --> 00:01:44,060
+me show you. So first.
+ I'm going to change this to five
+
+29
+00:01:45,140 --> 00:01:48,450
+. Now let's define a variable combined. which
+
+30
+00:01:48,450 --> 00:01:53,090
+is our zeros list. plus letters. Let's
+
+31
+00:01:53,090 --> 00:01:56,660
+see what happens. Print combined. You
+
+32
+00:01:56,660 --> 00:01:59,920
+know it. So we
+ have five zeros. followed by
+
+33
+00:01:59,930 --> 00:02:03,510
+ABC. As you can see in Python, every
+
+34
+00:02:03,510 --> 00:02:06,630
+object in the list can be of
+ a different type. so they don't have to
+
+35
+00:02:06,630 --> 00:02:10,320
+be exactly the same type.
+ We can combine a list of numbers with
+
+36
+00:02:10,320 --> 00:02:13,690
+strings and bullion or even lists. Now
+
+37
+00:02:13,690 --> 00:02:17,630
+let's say you want to have
+ a list of numbers like 0123 all
+
+38
+00:02:17,630 --> 00:02:21,530
+the way up to 20. You don't want
+ to type all of this by hand. There
+
+39
+00:02:21,530 --> 00:02:25,240
+is a better way.
+ So we had this list function as
+
+40
+00:02:25,240 --> 00:02:28,560
+you can see this function
+ takes an iterable so we
+
+41
+00:02:28,560 --> 00:02:32,610
+can pass any iterable here and
+ convert it to a list. Earlier
+
+42
+00:02:32,610 --> 00:02:36,400
+. you learn about the range function.
+ This function returns a
+
+43
+00:02:36,400 --> 00:02:40,040
+range object. which is iterable.
+ which means we can iterate or
+
+44
+00:02:40,040 --> 00:02:43,520
+loop over it. So here
+ we can call this function and
+
+45
+00:02:43,520 --> 00:02:46,850
+past 20 and with
+ this we can create a
+
+46
+00:02:46,850 --> 00:02:51,710
+list of numbers from 0 to 20.
+ Then I'll show you. So let's
+
+47
+00:02:51,710 --> 00:02:55,330
+story in numbers and then printed on
+
+48
+00:02:55,330 --> 00:02:58,680
+the terminal. There you go. So zero up
+
+49
+00:02:58,680 --> 00:03:03,500
+to 20. But note that
+ 20 itself is not included as
+
+50
+00:03:03,510 --> 00:03:07,440
+another example. Let's call the list function and
+
+51
+00:03:07,440 --> 00:03:11,010
+pass a string.
+ Earlier. I told you that strings
+
+52
+00:03:11,010 --> 00:03:14,660
+are also vulnerable. We can loop
+ over them so we can pass them
+
+53
+00:03:15,040 --> 00:03:19,200
+to the list function and
+ see what we get. Let's
+
+54
+00:03:19,200 --> 00:03:22,770
+print chars on the terminal so
+
+55
+00:03:22,770 --> 00:03:26,350
+you can see each character
+ in our original string is
+
+56
+00:03:27,140 --> 00:03:30,370
+an item in this list.
+ So these are a few
+
+57
+00:03:30,370 --> 00:03:33,600
+different ways to create a
+ list in Python. Now that we
+
+58
+00:03:33,600 --> 00:03:36,990
+have a list. we can get the
+ number of items in that list using
+
+59
+00:03:36,990 --> 00:03:40,540
+the land function.
+ So here we can print the
+
+60
+00:03:40,540 --> 00:03:44,100
+len or length of chars. Let's take
+
+61
+00:03:44,100 --> 00:03:47,940
+a look. So we have
+ 11 items in this list. Over
+
+62
+00:03:47,940 --> 00:03:51,450
+the next few lectures
+ we'll look at various operations around lists.
+

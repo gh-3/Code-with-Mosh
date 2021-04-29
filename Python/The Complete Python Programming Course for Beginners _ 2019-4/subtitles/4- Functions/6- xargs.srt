@@ -1,0 +1,310 @@
+1
+00:00:00,840 --> 00:00:04,260
+mhm. Yeah. there
+
+2
+00:00:04,260 --> 00:00:07,940
+are times that you may want to
+ create a function that takes a variable
+
+3
+00:00:07,940 --> 00:00:11,540
+number of arguments.
+ Here is an example. Let's define
+
+4
+00:00:11,540 --> 00:00:15,840
+this function. Multiply. It takes two parameters X
+
+5
+00:00:15,940 --> 00:00:20,070
+and Y and simply returns X times
+
+6
+00:00:20,080 --> 00:00:23,960
+y. Now we can
+ call this function like this
+
+7
+00:00:25,640 --> 00:00:29,700
+. So far. so good.
+ But what if you want to pass one
+
+8
+00:00:29,700 --> 00:00:33,120
+or two more arguments here.
+ That doesn't work because our
+
+9
+00:00:33,120 --> 00:00:36,480
+multiply function takes only two parameters. To
+
+10
+00:00:36,480 --> 00:00:40,680
+solve this problem. we need
+ to replace these two parameters with
+
+11
+00:00:40,680 --> 00:00:44,160
+a single parameter. We use
+ a plural name here to
+
+12
+00:00:44,170 --> 00:00:48,040
+indicate that this is
+ a collection of arguments and
+
+13
+00:00:48,040 --> 00:00:51,760
+then we prefix it with an asterisk.
+ This is the magical part
+
+14
+00:00:52,140 --> 00:00:56,550
+. Let me show you what happens
+ when you use an asterisk here. So
+
+15
+00:00:56,560 --> 00:01:00,900
+temporarily. let's do it this
+ line and simply print numbers
+
+16
+00:01:00,910 --> 00:01:05,100
+. Let's see what we get here.
+ So run the program. You
+
+17
+00:01:05,100 --> 00:01:08,480
+can see all our
+ arguments and they're packed in
+
+18
+00:01:08,480 --> 00:01:12,180
+parenthesis. What is this. Well. earlier
+
+19
+00:01:12,180 --> 00:01:15,740
+you learned about lists. I briefly mentioned that
+
+20
+00:01:15,740 --> 00:01:19,540
+you can use square brackets to
+ create a list of objects like
+
+21
+00:01:19,540 --> 00:01:23,530
+2 3 4 5. Now. later in the
+ course we have a comprehensive section
+
+22
+00:01:23,530 --> 00:01:26,920
+about lists. so don't worry
+ about the details of lists and
+
+23
+00:01:26,920 --> 00:01:30,310
+how they work. But what I want you to note here is
+
+24
+00:01:30,310 --> 00:01:33,550
+that the only difference between
+ this list and what we
+
+25
+00:01:33,550 --> 00:01:36,910
+have here is in the notation.
+ So we use
+
+26
+00:01:36,920 --> 00:01:40,450
+square brackets to create lists and parenthesis to
+
+27
+00:01:40,450 --> 00:01:44,160
+create topples. Some people call
+ it two poles or two poles
+
+28
+00:01:44,540 --> 00:01:48,050
+. So a topple is similar to
+ a list and that it's a collection of
+
+29
+00:01:48,050 --> 00:01:51,340
+objects. The difference is
+ that we cannot modify this
+
+30
+00:01:51,340 --> 00:01:55,410
+collection. We cannot add a
+ new object to this topple once
+
+31
+00:01:55,410 --> 00:01:59,160
+again. Later in the course.
+ we're going to have a comprehensive section about
+
+32
+00:01:59,170 --> 00:02:02,810
+list topples and other data structures. What
+
+33
+00:02:02,810 --> 00:02:06,430
+matters now is that
+ these topples just like lists
+
+34
+00:02:06,440 --> 00:02:09,960
+are iterable so we can
+ iterate over them. which means
+
+35
+00:02:09,960 --> 00:02:14,850
+we can use them in loops.
+ Let me show you. So that's
+
+36
+00:02:14,850 --> 00:02:19,350
+right for number in numbers. Colon
+
+37
+00:02:19,840 --> 00:02:23,930
+. let's just print one
+ number at a time. Actually
+
+38
+00:02:23,930 --> 00:02:27,160
+. we don't need this
+ line so delayed and run
+
+39
+00:02:27,160 --> 00:02:30,560
+the program. So we
+ iterate over this top hole
+
+40
+00:02:30,940 --> 00:02:34,450
+. and in each iteration we get
+ one number and printed on the terminal
+
+41
+00:02:34,940 --> 00:02:38,600
+. So now. with a simple change.
+ We can calculate the product of
+
+42
+00:02:38,610 --> 00:02:41,890
+all these numbers.
+ All we have to do is
+
+43
+00:02:41,890 --> 00:02:45,240
+to define a variable like total.
+ Initially. we set it
+
+44
+00:02:45,240 --> 00:02:49,030
+to one and then in each iteration we
+
+45
+00:02:49,030 --> 00:02:52,560
+get total and multiplied by the
+
+46
+00:02:52,560 --> 00:02:56,580
+current number. Or we
+ can rewrite this statement using
+
+47
+00:02:56,590 --> 00:03:01,040
+an augmented assignment operator. So total times
+
+48
+00:03:01,050 --> 00:03:04,560
+equal number. line five and
+
+49
+00:03:04,560 --> 00:03:07,670
+four are exactly identical. So I'm going to
+
+50
+00:03:07,670 --> 00:03:12,190
+use line five because it's
+ shorter and cleaner delayed and
+
+51
+00:03:12,190 --> 00:03:15,590
+finally we'll return the total. Now
+
+52
+00:03:15,590 --> 00:03:19,320
+. one of the issues I see often in beginners code is
+
+53
+00:03:19,320 --> 00:03:22,760
+that they don't use
+ this indentation properly. So they
+
+54
+00:03:22,760 --> 00:03:26,270
+put the return statement here
+ and then they wonder why their
+
+55
+00:03:26,270 --> 00:03:30,190
+function doesn't work properly.
+ If you put the return statement here
+
+56
+00:03:30,200 --> 00:03:33,330
+. it will be part of
+ the for loop. So it will
+
+57
+00:03:33,330 --> 00:03:36,970
+be executed in each
+ iteration in this case after
+
+58
+00:03:36,970 --> 00:03:40,350
+the first iteration.
+ Because of this return. statement will
+
+59
+00:03:40,350 --> 00:03:43,900
+return from this multiply function.
+ so the total will
+
+60
+00:03:43,900 --> 00:03:47,300
+not be calculated properly.
+ We need to put this at
+
+61
+00:03:47,300 --> 00:03:51,220
+the same level of invitation as other statements
+
+62
+00:03:51,220 --> 00:03:54,680
+and dysfunction. So here we
+ have our four statement. We
+
+63
+00:03:54,680 --> 00:03:58,440
+loop over all the numbers
+ we calculate the total and
+
+64
+00:03:58,440 --> 00:04:01,910
+then finally return it. So with
+
+65
+00:04:01,910 --> 00:04:05,740
+this implementation we can get
+ the result and printed on
+
+66
+00:04:05,740 --> 00:04:09,570
+the terminal. Let's run the program and you
+
