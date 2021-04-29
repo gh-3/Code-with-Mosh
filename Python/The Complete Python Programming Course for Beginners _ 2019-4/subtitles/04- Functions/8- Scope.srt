@@ -1,0 +1,389 @@
+2
+00:00:04,000 --> 00:00:08,180
+In programming We have a very
+ important concept called scope which
+
+3
+00:00:08,180 --> 00:00:11,580
+refers to the region of
+ the code where a variable is
+
+4
+00:00:11,580 --> 00:00:15,810
+defined. So in this example
+ we have this message variable. The
+
+5
+00:00:15,810 --> 00:00:19,080
+scope of this variable
+ is the greet function. It
+
+6
+00:00:19,090 --> 00:00:22,500
+only exists inside of dysfunction. So if
+
+7
+00:00:22,500 --> 00:00:27,140
+we go outside of this
+ function and try to print message
+
+8
+00:00:27,150 --> 00:00:30,530
+. see what happens as soon as I save the change as we get this
+
+9
+00:00:30,530 --> 00:00:35,030
+red underline undefined variable message and
+
+10
+00:00:35,400 --> 00:00:39,630
+if we run our program.
+ we get this name error. Name
+
+11
+00:00:39,780 --> 00:00:43,390
+message is not defined. The same rule applies
+
+12
+00:00:43,390 --> 00:00:47,030
+to the parameters of our functions.
+ So if you add a name parameter
+
+13
+00:00:47,030 --> 00:00:51,060
+here and then try
+ to print it outside of
+
+14
+00:00:51,060 --> 00:00:54,310
+the great function. we get
+ the same error. So the
+
+15
+00:00:54,310 --> 00:00:58,430
+scope of the name and message
+ variables are the greet function and
+
+16
+00:00:58,430 --> 00:01:01,760
+we refer to these
+ variables as local variables in
+
+17
+00:01:01,760 --> 00:01:05,020
+this function. Their local in this function
+ which means they don't
+
+18
+00:01:05,020 --> 00:01:08,500
+exist anywhere else. And that means
+
+19
+00:01:08,500 --> 00:01:12,350
+we can have another function.
+ Let's say. send email
+
+20
+00:01:13,540 --> 00:01:17,500
+with a parameter with the same name.
+ Here we can have a
+
+21
+00:01:17,500 --> 00:01:21,860
+message variable. But this
+ message variable is completely different
+
+22
+00:01:22,120 --> 00:01:25,340
+from the message variable we have
+ in the greet function. And of
+
+23
+00:01:25,340 --> 00:01:28,650
+course the same rule applies
+ to the name parameters in
+
+24
+00:01:28,650 --> 00:01:32,190
+these functions. they are completely separate. These local
+
+25
+00:01:32,190 --> 00:01:35,410
+variables have a short lifetime. So when we
+
+26
+00:01:35,410 --> 00:01:38,810
+call let's say the greet function and
+
+27
+00:01:38,810 --> 00:01:42,340
+pass the name. 
+Python interpreter will allocate some
+
+28
+00:01:42,340 --> 00:01:46,710
+memory and have the
+ name and message variables reference
+
+29
+00:01:46,860 --> 00:01:50,300
+those memory locations.
+when we finish executing the
+
+30
+00:01:50,300 --> 00:01:53,500
+greet function because these
+ variables are not referenced or
+
+31
+00:01:53,500 --> 00:01:57,380
+used anywhere else
+ eventually they get garbage collected, which
+
+32
+00:01:57,380 --> 00:02:00,940
+means Python Interpreter will release the memory that
+
+33
+00:02:00,950 --> 00:02:04,860
+allocated for these variables.
+ So these are the local variables.
+
+34
+00:02:05,340 --> 00:02:09,470
+In contrast to local variables,
+ we have global variables. So
+
+35
+00:02:09,480 --> 00:02:13,170
+if we move this message variable outside of
+
+36
+00:02:13,170 --> 00:02:16,980
+the greet function, now
+ it's a global variable. which means it's
+
+37
+00:02:16,990 --> 00:02:20,300
+accessible anywhere in this file,
+ So the scope of
+
+38
+00:02:20,300 --> 00:02:23,730
+this variable is this file.
+ We can use it anywhere in this file
+
+39
+00:02:23,730 --> 00:02:26,980
+in any functions or outside
+ of a function. Now for
+
+40
+00:02:26,980 --> 00:02:30,210
+this reason, global variables
+ stay in memory for a
+
+41
+00:02:30,210 --> 00:02:33,830
+longer period of time until
+ they are garbage collected. And
+
+42
+00:02:33,830 --> 00:02:37,150
+you should not use them that often.
+ In fact global variables are
+
+43
+00:02:37,150 --> 00:02:41,080
+really evil. 
+so as a best practice create functions
+
+44
+00:02:41,090 --> 00:02:44,450
+with parameters and local variables. Now what
+
+45
+00:02:44,450 --> 00:02:48,200
+if here in the
+ greet function we set message
+
+46
+00:02:48,390 --> 00:02:52,040
+to; Let's say b.
+ Now let's delete this second function
+
+47
+00:02:52,040 --> 00:02:55,870
+we don't really need it for now.
+ so we call the greet function. In
+
+48
+00:02:55,870 --> 00:02:59,650
+this function we assign a new
+ value to the message Variable. Now
+
+49
+00:02:59,650 --> 00:03:03,110
+let's print this message and see what
+
+50
+00:03:03,110 --> 00:03:06,560
+we get. What do you think
+ we're going to get? Well, let's
+
+51
+00:03:06,560 --> 00:03:09,690
+take a look. We get a. But didn't
+
+52
+00:03:09,690 --> 00:03:13,570
+we change the value
+ of message variable to b? not
+
+53
+00:03:13,570 --> 00:03:17,180
+really, because by default Python interpreter treats
+
+54
+00:03:17,180 --> 00:03:21,350
+this message variable as a local
+ variable at the greet function, even
+
+55
+00:03:21,350 --> 00:03:25,090
+though it has the same
+ name as the global variable that
+
+56
+00:03:25,090 --> 00:03:29,350
+we have on line one.
+ So these two variables are separate. I
+
+57
+00:03:29,350 --> 00:03:33,360
+have seen some tutorials or
+ even books teaching you bad practices.
+
+58
+00:03:33,370 --> 00:03:36,810
+For example they show you
+ how to modify the value of
+
+59
+00:03:36,810 --> 00:03:40,360
+this global message variable inside of a function.
+
+60
+00:03:40,740 --> 00:03:44,520
+Let me show you how to do that.
+ But remember this is a bad practice
+
+61
+00:03:44,520 --> 00:03:47,920
+and you should avoid it at all times.
+ I will explain the reason
+
+62
+00:03:47,920 --> 00:03:51,520
+in a second.
+ so these tutorials or books teach
+
+63
+00:03:51,520 --> 00:03:55,160
+you to use the global keyword here and
+
+64
+00:03:55,170 --> 00:03:59,410
+reference the message variable. When Python interpreter sees
+
+65
+00:03:59,410 --> 00:04:02,920
+this line it will realize that
+ in this function we want to use
+
+66
+00:04:03,040 --> 00:04:06,650
+the global message variable so
+ it will not define a
+
+67
+00:04:06,650 --> 00:04:10,540
+local variable in this function. Now with this change
+
+68
+00:04:10,550 --> 00:04:13,970
+if we run our program
+ you can see we get
+
+69
+00:04:14,000 --> 00:04:18,050
+b on the terminal
+ because in this function we are modifying the
+
+70
+00:04:18,050 --> 00:04:21,240
+value of the global message variable. Why is
+
+71
+00:04:21,240 --> 00:04:24,750
+this bad? Because it is
+ possible that you might have multiple
+
+72
+00:04:24,750 --> 00:04:28,560
+functions that rely on the
+ value of this global variable.
+
+73
+00:04:28,940 --> 00:04:32,260
+If you accidentally or deliberately change the
+
+74
+00:04:32,260 --> 00:04:35,660
+value of this global variable
+ in one function this might
+
+75
+00:04:35,660 --> 00:04:39,050
+have a side effect in other functions. Those
+
+76
+00:04:39,050 --> 00:04:42,290
+functions may not behave properly.
+ and this way we can
+
+77
+00:04:42,290 --> 00:04:45,740
+create a bug in our program.
+ So global
+
+78
+00:04:45,740 --> 00:04:49,500
+variables have always been bad.
+ This is not a python thing. This
+
+79
+00:04:49,500 --> 00:04:52,680
+is a discussion that's been
+ going on for decades. Avoid them
+
+80
+00:04:52,680 --> 00:04:56,080
+as much as you can. or if
+ there are situations that you really need
+
+81
+00:04:56,080 --> 00:04:59,750
+to define a variable globally
+ in a file that's okay. but
+
+82
+00:04:59,750 --> 00:05:03,340
+do not modify it in a function
+ as you see here, this is a really bad
+
+83
+00:05:03,340 --> 00:05:06,700
+practice. 
+so that's all about local and global variables
+

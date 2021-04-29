@@ -1,0 +1,302 @@
+1
+00:00:01,440 --> 00:00:04,590
+Yeah. yeah. So this is
+
+2
+00:00:04,590 --> 00:00:08,890
+the simplified version of this
+ great function we created earlier. Now,
+
+3
+00:00:08,890 --> 00:00:13,140
+in programming. we have
+ two types of functions: functions
+
+4
+00:00:13,360 --> 00:00:17,060
+that perform a task and functions that
+
+5
+00:00:17,060 --> 00:00:20,580
+calculate and return a value. Here
+
+6
+00:00:20,580 --> 00:00:24,310
+are some examples. Both
+ the print and greet functions
+
+7
+00:00:24,320 --> 00:00:27,530
+are examples of type one. They performing a
+
+8
+00:00:27,530 --> 00:00:31,230
+task which is printing
+ something on the terminal. In
+
+9
+00:00:31,230 --> 00:00:35,030
+contrast, the round function is
+
+10
+00:00:35,030 --> 00:00:38,440
+an example of a function
+ that calculates and returns a
+
+11
+00:00:38,450 --> 00:00:42,020
+value. So the functions that
+ you create fall into these
+
+12
+00:00:42,020 --> 00:00:45,770
+two categories. Now. let me
+ show you how to rewrite this
+
+13
+00:00:45,770 --> 00:00:49,370
+great function. But in the second form.
+ So instead of printing
+
+14
+00:00:49,370 --> 00:00:52,980
+this string on the terminal. we simply return
+
+15
+00:00:52,980 --> 00:00:58,250
+it. Let me show you. So I'm
+ going to delay it. All this code define
+
+16
+00:00:58,250 --> 00:01:02,660
+a new function.
+ But could it get underlying greeting
+
+17
+00:01:03,340 --> 00:01:07,170
+. We had the name
+ parameter and simply return this
+
+18
+00:01:07,170 --> 00:01:11,280
+formatted string high name. That's
+
+19
+00:01:11,290 --> 00:01:14,600
+all we have to do. So we
+ use the return statement to return a
+
+20
+00:01:14,610 --> 00:01:19,600
+value from this function.
+ Now we can call this function. get
+
+21
+00:01:19,610 --> 00:01:23,270
+underlined greeting. pass a name like
+
+22
+00:01:23,270 --> 00:01:26,660
+Marsh. Because it returns a
+ value we can store that
+
+23
+00:01:26,660 --> 00:01:31,100
+value in a separate variable like message. Now
+
+24
+00:01:31,100 --> 00:01:34,400
+you might be curious which
+ form of these grating functions is
+
+25
+00:01:34,400 --> 00:01:37,800
+better? Well, with this first implementation we
+
+26
+00:01:37,800 --> 00:01:41,000
+are locked to printing something
+ in the terminal. In the
+
+27
+00:01:41,000 --> 00:01:44,470
+future if you want to write
+ that message in a file or send
+
+28
+00:01:44,470 --> 00:01:48,170
+it in an email
+ you have to create another function so
+
+29
+00:01:48,170 --> 00:01:52,410
+we cannot reuse this greet
+ function in other scenarios. In
+
+30
+00:01:52,410 --> 00:01:56,050
+contrast this second form is not tied
+
+31
+00:01:56,060 --> 00:01:59,310
+to printing something under terminal.
+ It simply returns a
+
+32
+00:01:59,310 --> 00:02:02,640
+value. Now we get this value
+ and we can do whatever we
+
+33
+00:02:02,640 --> 00:02:07,470
+want with it. We can
+ print it on the terminal. or
+
+34
+00:02:07,520 --> 00:02:11,140
+we can use the
+ built in open function to
+
+35
+00:02:11,140 --> 00:02:14,850
+write this message to a file
+ so we can create a fire like
+
+36
+00:02:14,860 --> 00:02:18,060
+content dot txt. Open it
+
+37
+00:02:18,060 --> 00:02:21,270
+for writing. This returns
+ a file object. and then
+
+38
+00:02:21,270 --> 00:02:24,990
+we can call file that right message. Now,
+
+39
+00:02:24,990 --> 00:02:28,370
+don't worry about these two lines.
+ Later in the course I'm going to talk
+
+40
+00:02:28,370 --> 00:02:32,220
+about working with files. But what I want you to take away here
+
+41
+00:02:32,230 --> 00:02:35,460
+is that we have this message variable
+ and we can do whatever we want with
+
+42
+00:02:35,460 --> 00:02:39,350
+it. We can print it on the
+ terminal, write it to a file, send
+
+43
+00:02:39,350 --> 00:02:42,630
+it in an email and so on.
+ And one more thing before we
+
+44
+00:02:42,630 --> 00:02:46,010
+finish this lecture. So here's
+ our great function. and as
+
+45
+00:02:46,010 --> 00:02:49,450
+you can see.
+ we're simply printing a string. Now
+
+46
+00:02:49,750 --> 00:02:53,540
+. if we call great.
+ give it a name. run
+
+47
+00:02:53,540 --> 00:02:57,060
+the program. We get this
+ message by March. But what
+
+48
+00:02:57,060 --> 00:03:00,500
+if we put this
+ inside of a call to
+
+49
+00:03:00,500 --> 00:03:04,740
+the print function.
+ Let's see what we get. We
+
+50
+00:03:04,740 --> 00:03:08,930
+get high marsh followed by None.
+ What is this? None
+
+51
+00:03:08,940 --> 00:03:12,310
+is the return value
+ of the greet function. So
+
+52
+00:03:12,310 --> 00:03:15,810
+in Python all functions by default return the
+
+53
+00:03:15,810 --> 00:03:19,080
+None value. None is
+ an object that represents the
+
+54
+00:03:19,090 --> 00:03:22,460
+absence of a value. Later in the course
+ you're going to learn more about
+
+55
+00:03:22,460 --> 00:03:25,890
+None. What matters now
+ is that all functions return
+
+56
+00:03:25,890 --> 00:03:29,890
+None by default unless you specifically return
+
+57
+00:03:29,900 --> 00:03:34,550
+a value. So here if we return some
+
+58
+00:03:34,550 --> 00:03:37,880
+string. none will no longer
+
+59
+00:03:37,880 --> 00:03:41,210
+be returned. I just want
+ to clarify something. Earlier I
+
+60
+00:03:41,210 --> 00:03:44,700
+told you that we have two
+ types of functions in programming: functions
+
+61
+00:03:44,700 --> 00:03:48,060
+that carry out a task
+ or functions that calculate and
+
+62
+00:03:48,060 --> 00:03:52,060
+return a value. So back
+ to the code we previously had.
+
+63
+00:03:53,240 --> 00:03:56,730
+So even though this
+ function returns None by default, it
+
+64
+00:03:56,730 --> 00:03:59,810
+is still classified as a
+ function that carries out a task
+

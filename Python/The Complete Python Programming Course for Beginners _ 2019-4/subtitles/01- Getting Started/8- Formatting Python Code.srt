@@ -1,0 +1,283 @@
+1
+00:00:04,900 --> 00:00:06,100
+In Python Community,
+
+2
+00:00:06,100 --> 00:00:10,600
+We have a bunch of documents called python enhancement proposals
+
+3
+00:00:10,600 --> 00:00:12,900
+or peps here on Google.
+
+4
+00:00:12,900 --> 00:00:17,500
+If you search for python peps, you can see the list of all
+
+5
+00:00:17,500 --> 00:00:22,100
+this paps under python.org slash Dev slash peps.
+
+6
+00:00:22,800 --> 00:00:24,300
+Let's have a quick look here.
+
+7
+00:00:26,500 --> 00:00:30,400
+So here are the paps we can see each pep has a number and
+
+8
+00:00:30,400 --> 00:00:31,100
+a title.
+
+9
+00:00:31,600 --> 00:00:35,000
+The one that is very popular amongst python developers is
+
+10
+00:00:35,000 --> 00:00:39,700
+pep 8, which is a style guide for python code. a style guide
+
+11
+00:00:39,700 --> 00:00:43,100
+is basically a document that defines a bunch of rules for
+
+12
+00:00:43,100 --> 00:00:45,200
+formatting and styling our code.
+
+13
+00:00:45,700 --> 00:00:48,500
+If you follow these conventions the code that you write will
+
+14
+00:00:48,500 --> 00:00:51,500
+end up being consistent with other people's code.
+
+15
+00:00:52,000 --> 00:00:56,100
+If you have time you can go ahead and read this Pepe documentation.
+
+16
+00:00:56,500 --> 00:00:59,200
+But if not, don't worry because throughout this course I'm
+
+17
+00:00:59,200 --> 00:01:02,900
+gonna explain the key things in pep 8. In this lecture,
+
+18
+00:01:02,900 --> 00:01:05,600
+I'm gonna show you a tool that helps you automatically
+
+19
+00:01:05,600 --> 00:01:08,300
+format your code according to pep8.
+
+20
+00:01:09,700 --> 00:01:10,700
+So back in vs code.
+
+21
+00:01:10,800 --> 00:01:15,400
+Let's write some python code x equals 1. here
+
+22
+00:01:15,400 --> 00:01:17,700
+I'm declaring a variable and setting it to one.
+
+23
+00:01:17,900 --> 00:01:19,500
+If you're not familiar with variables,
+
+24
+00:01:19,500 --> 00:01:21,100
+Don't worry, in the next section
+
+25
+00:01:21,100 --> 00:01:22,300
+You're gonna learn about them.
+
+26
+00:01:22,900 --> 00:01:26,200
+So according to pep8 this code is considered ugly.
+
+27
+00:01:26,700 --> 00:01:31,000
+Because by convention we should add a space around this equal
+
+28
+00:01:31,000 --> 00:01:33,400
+sign or the assignment operator.
+
+29
+00:01:33,900 --> 00:01:36,600
+Now since you're starting out with python, you probably don't
+
+30
+00:01:36,600 --> 00:01:37,400
+know these rules.
+
+31
+00:01:37,500 --> 00:01:40,400
+So let me show you a tool that helps you automatically format
+
+32
+00:01:40,400 --> 00:01:40,900
+your code.
+
+33
+00:01:41,400 --> 00:01:43,900
+Let's revert this back to its original state.
+
+34
+00:01:44,400 --> 00:01:44,600
+Now.
+
+35
+00:01:44,600 --> 00:01:48,400
+We need to go back to the command palette remember so it's
+
+36
+00:01:48,400 --> 00:01:52,800
+right here under View and the shortcut is shift command and
+
+37
+00:01:52,800 --> 00:01:57,600
+pee. Here if you search for format, you can see this command:
+
+38
+00:01:57,700 --> 00:02:02,100
+Format Document. The first time you execute this command, you're
+
+39
+00:02:02,100 --> 00:02:06,500
+going to see this message here. formatter autopep8 is not
+
+40
+00:02:06,500 --> 00:02:10,100
+installed. So there are a bunch of tools for formatting python
+
+41
+00:02:10,100 --> 00:02:14,700
+code. The most popular one is auto pate and this is the tool
+
+42
+00:02:14,700 --> 00:02:16,200
+that this python extension
+
+43
+00:02:16,200 --> 00:02:18,500
+We installed uses to format our code.
+
+44
+00:02:18,900 --> 00:02:25,300
+So let's go ahead and install this. Good. now one more time
+
+45
+00:02:25,300 --> 00:02:30,000
+Let's open up the command palette and execute format document.
+
+46
+00:02:31,100 --> 00:02:34,000
+See, this tool automatically formats out code, beautiful.
+
+47
+00:02:34,300 --> 00:02:36,200
+Let's take a look at another example.
+
+48
+00:02:36,800 --> 00:02:40,000
+I'm going to declare another variable Y and set it to two
+
+49
+00:02:40,400 --> 00:02:44,600
+and if variable with the long name like unit underlined prize.
+
+50
+00:02:44,600 --> 00:02:45,800
+I'm set this to 3.
+
+51
+00:02:46,200 --> 00:02:50,600
+Now some developers have this habit of formatting there variable
+
+52
+00:02:50,600 --> 00:02:51,800
+declarations like this.
+
+53
+00:02:52,900 --> 00:02:58,400
+So they put all these equal signs and the same column. According
+
+54
+00:02:58,400 --> 00:02:59,200
+to pep8
+
+55
+00:02:59,300 --> 00:03:00,500
+this is considered ugly.
+
+56
+00:03:01,000 --> 00:03:06,800
+So once again, let's format our code. That is better, beautiful.
+
+57
+00:03:07,200 --> 00:03:10,700
+Now let me show you a trick. opening up this command palette and
+
+58
+00:03:10,700 --> 00:03:13,800
+searching for format document every time is a little bit
+
+59
+00:03:13,800 --> 00:03:14,800
+time consuming.
+
+60
+00:03:15,300 --> 00:03:18,200
+So I wanna show you how to have your file automatically
+
+61
+00:03:18,200 --> 00:03:20,500
+formatted as soon as you save the changes.
+
+62
+00:03:21,500 --> 00:03:22,200
+On the top.
+
+63
+00:03:22,200 --> 00:03:26,900
+Let's go to the code menu preferences and settings.
+
+64
+00:03:28,900 --> 00:03:33,200
+Here in the search box search for formatOnSave.
+
+65
+00:03:34,400 --> 00:03:39,600
+So we have this option editor format on Save take this. Now
+
+66
+00:03:39,600 --> 00:03:40,900
+back to app.py
+
+67
+00:03:41,700 --> 00:03:45,000
+I'm going to change the formatting of these lines make them
+
+68
+00:03:45,000 --> 00:03:45,800
+really ugly.
+
+69
+00:03:46,400 --> 00:03:46,900
+Now,
+
+70
+00:03:47,000 --> 00:03:51,800
+As soon as I save the changes you can see my code is reformatted.
+
+71
+00:03:51,800 --> 00:03:52,400
+beautiful.
