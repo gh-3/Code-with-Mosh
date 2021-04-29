@@ -1,0 +1,253 @@
+WEBVTT
+
+1
+00:00:04.000 --> 00:00:08.000
+In this lecture, I'm gonna show you linting in action.
+
+2
+00:00:08.000 --> 00:00:12.000
+So let's start by writing some invalid code like this. Print
+
+3
+00:00:12.000 --> 00:00:16.000
+space with no parenthesis and then hello
+
+4
+00:00:16.000 --> 00:00:20.000
+world. Earlier I told you that print is a built in function,
+
+5
+00:00:20.000 --> 00:00:24.000
+and whenever you want to use or call a function you should always use
+
+6
+00:00:24.000 --> 00:00:28.000
+parenthesis. Now to be more precise this is actually valid python 2
+
+7
+00:00:28.000 --> 00:00:32.000
+code, but because we're using python 3 here, this is invalid
+
+8
+00:00:32.000 --> 00:00:36.000
+code from python 3's point of view. So now when I
+
+9
+00:00:36.000 --> 00:00:40.000
+save the changes you can see this red underline here.
+
+10
+00:00:40.000 --> 00:00:44.000
+Let's hover our mouse over this underline. We
+
+11
+00:00:44.000 --> 00:00:48.000
+can see this tool tip it's coming from pylint and here's the error message.
+
+12
+00:00:48.000 --> 00:00:52.000
+missing parenthesis in call to print. Did you mean
+
+13
+00:00:52.000 --> 00:00:56.000
+print with parenthesis, so this is the benefit of linting. As
+
+14
+00:00:56.000 --> 00:01:00.000
+you're writing code you can see potential problems in your code, you don't have to
+
+15
+00:01:00.000 --> 00:01:04.000
+wait to run your program to see these errors. So now,
+
+16
+00:01:04.000 --> 00:01:08.000
+if you put parenthesis here, and
+
+17
+00:01:08.000 --> 00:01:12.000
+save the changes, you can see that red underline is gone. Let's
+
+18
+00:01:12.000 --> 00:01:16.000
+look at another error. Let's type 2+
+
+19
+00:01:16.000 --> 00:01:20.000
+and then save the changes. Earlier we ran this code
+
+20
+00:01:20.000 --> 00:01:24.000
+in python interpreters interactive shell. There we got
+
+21
+00:01:24.000 --> 00:01:28.000
+a syntax or grammar error. So if you hover
+
+22
+00:01:28.000 --> 00:01:32.000
+your mouse here one more time, you can see pylint is telling us
+
+23
+00:01:32.000 --> 00:01:36.000
+this is invalid syntax or invalid grammar, it's like
+
+24
+00:01:36.000 --> 00:01:40.000
+an incomplete sentence. So this is linting in action. Now let me show
+
+25
+00:01:40.000 --> 00:01:44.000
+you a couple useful shortcuts here. On the top,
+
+26
+00:01:44.000 --> 00:01:48.000
+look at the view menu, here we have this problems menu,
+
+27
+00:01:48.000 --> 00:01:52.000
+look at the short cut, on Mac it's shift command and m
+
+28
+00:01:52.000 --> 00:01:56.000
+on windows it's shift control m.
+
+29
+00:01:56.000 --> 00:02:00.000
+So as you're working with VSCode try to memorize these shortcuts because they
+
+30
+00:02:00.000 --> 00:02:04.000
+really help you write code faster. Now let's take a look
+
+31
+00:02:04.000 --> 00:02:08.000
+at this problems panel. So this problems panel
+
+32
+00:02:08.000 --> 00:02:12.000
+lists all the issues in your code in one place.
+
+33
+00:02:12.000 --> 00:02:16.000
+So if you have an application with multiple files this is really useful because
+
+34
+00:02:16.000 --> 00:02:20.000
+some of those files may not currently be open, so this linter,
+
+35
+00:02:20.000 --> 00:02:24.000
+pylint, will analyze all your files and if it finds any issues
+
+36
+00:02:24.000 --> 00:02:28.000
+it will list them here in the problems panel. Now you can also put this
+
+37
+00:02:28.000 --> 00:02:32.000
+on the right side of the screen, so let's put it here,
+
+38
+00:02:32.000 --> 00:02:36.000
+so as you write code these problems will occur here.
+
+39
+00:02:36.000 --> 00:02:40.000
+Now let's fix this issue, so I'm going to add 3 here, save the
+
+40
+00:02:40.000 --> 00:02:44.000
+changes and you can see the problem disappear. And one last
+
+41
+00:02:44.000 --> 00:02:48.000
+thing before we finish this lecture. Once again on the top, let's go
+
+42
+00:02:48.000 --> 00:02:52.000
+to the view menu, the first item is command palette.
+
+43
+00:02:52.000 --> 00:02:56.000
+This is a very important feature in vs code, once again look at
+
+44
+00:02:56.000 --> 00:03:00.000
+the short cut that is shift command and p on Mac or shift
+
+45
+00:03:00.000 --> 00:03:04.000
+control p on windows. With this command palette
+
+46
+00:03:04.000 --> 00:03:08.000
+you can execute various commands in VSCode. If you type
+
+47
+00:03:08.000 --> 00:03:12.000
+lint here, you can see all commands related to linting.
+
+48
+00:03:12.000 --> 00:03:16.000
+As you can see all these commands are prefixed with python
+
+49
+00:03:16.000 --> 00:03:20.000
+because these commands come with the python extension that
+
+50
+00:03:20.000 --> 00:03:24.000
+we installed earlier. So these are additional features available to us
+
+51
+00:03:24.000 --> 00:03:28.000
+in vs code. The first command is select linter.
+
+52
+00:03:28.000 --> 00:03:32.000
+In this list you can see various linters available
+
+53
+00:03:32.000 --> 00:03:36.000
+for pylint so as you're reading tutorials or talking to other people you will
+
+54
+00:03:36.000 --> 00:03:40.000
+hear about linters such as flake8,
+
+55
+00:03:40.000 --> 00:03:44.000
+mypy, pep8 and so on. Different developers prefer different linters,
+
+56
+00:03:44.000 --> 00:03:48.000
+I personally prefer pylint, that is the most popular one,
+
+57
+00:03:48.000 --> 00:03:52.000
+and that is the default linter set in the python extension
+
+58
+00:03:52.000 --> 00:03:56.000
+of vs code. If you're adventurous, you can try using other
+
+59
+00:03:56.000 --> 00:04:00.000
+linters on your own, the difference between these linters is in how
+
+60
+00:04:00.000 --> 00:04:04.000
+they find and report errors. Some error messages are more
+
+61
+00:04:04.000 --> 00:04:08.000
+meaningful or more friendly, the others are more ambiguous.
+
+62
+00:04:08.000 --> 00:04:12.000
+So that's all about linting. In the next lecture we'll talk about formatting
+
+63
+00:04:12.000 --> 00:04:14.366
+code.
